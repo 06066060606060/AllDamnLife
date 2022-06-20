@@ -5,9 +5,7 @@
     @include('parts.filter')
 </div>
 @include('parts.section')
-
-@include('parts.pagination')
 @include('parts.newsletter')
-
+@include('parts.pagination')
 
 @endsection
