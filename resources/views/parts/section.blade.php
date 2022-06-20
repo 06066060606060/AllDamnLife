@@ -15,7 +15,7 @@
         <div class="back">
 
             <p class="p-2">Details arriére de la carte..</p>
-            <a class="w-24 h-12 p-2 bg-blue-600 rounded">test</a>
+            <a class="w-24 h-12 p-2 bg-blue-600 rounded hover:bg-blue-400 hover:text-gray-300">test</a>
         </div>
     </div>
   {{---------}}
@@ -23,14 +23,14 @@
   {{-- CARTE --}}
   <div class="flip">
     <div class="front">
-        <span class="ribbon">20€</span>
+        <span class="ribbon">30€</span>
         <img class="icon" src="/img/steam.png">
         <p>Details avant carte</p>
     </div>
     <div class="back">
 
         <p class="p-2">Details arriére de la carte..</p>
-        <a class="w-24 h-12 p-2 bg-blue-600 rounded">test</a>
+        <a class="w-24 h-12 p-2 bg-blue-600 rounded hover:bg-blue-400 hover:text-gray-300">test</a>
     </div>
 </div>
 {{---------}}
@@ -39,13 +39,13 @@
   <div class="flip">
     <div class="front">
         <span class="ribbon">20€</span>
-        <img class="icon" src="/img/google.png">
+        <img class="icon" src="/img/netflix.png">
         <p>Details avant carte</p>
     </div>
     <div class="back">
 
         <p class="p-2">Details arriére de la carte..</p>
-        <a class="w-24 h-12 p-2 bg-blue-600 rounded">test</a>
+        <a class="w-24 h-12 p-2 bg-blue-600 rounded hover:bg-blue-400 hover:text-gray-300">test</a>
     </div>
 </div>
 {{---------}}
@@ -54,13 +54,13 @@
   <div class="flip">
     <div class="front">
         <span class="ribbon">20€</span>
-        <img class="icon" src="/img/google.png">
+        <img class="icon" src="/img/xbox.png">
         <p>Details avant carte</p>
     </div>
     <div class="back">
 
         <p class="p-2">Details arriére de la carte..</p>
-        <a class="w-24 h-12 p-2 bg-blue-600 rounded">test</a>
+        <a class="w-24 h-12 p-2 bg-blue-600 rounded hover:bg-blue-400 hover:text-gray-300">test</a>
     </div>
 </div>
 {{---------}}
@@ -69,13 +69,13 @@
   <div class="flip">
     <div class="front">
         <span class="ribbon">20€</span>
-        <img class="icon" src="/img/google.png">
+        <img class="icon" src="/img/amazon.png">
         <p>Details avant carte</p>
     </div>
     <div class="back">
 
         <p class="p-2">Details arriére de la carte..</p>
-        <a class="w-24 h-12 p-2 bg-blue-600 rounded">test</a>
+        <a class="w-24 h-12 p-2 bg-blue-600 rounded hover:bg-blue-400 hover:text-gray-300">test</a>
     </div>
 </div>
 {{---------}}
@@ -84,13 +84,13 @@
   <div class="flip">
     <div class="front">
         <span class="ribbon">20€</span>
-        <img class="icon" src="/img/google.png">
+        <img class="icon" src="/img/itunes.png">
         <p>Details avant carte</p>
     </div>
     <div class="back">
 
         <p class="p-2">Details arriére de la carte..</p>
-        <a class="w-24 h-12 p-2 bg-blue-600 rounded">test</a>
+        <a class="w-24 h-12 p-2 bg-blue-600 rounded hover:bg-blue-400 hover:text-gray-300">test</a>
     </div>
 </div>
 {{---------}}
@@ -99,13 +99,13 @@
   <div class="flip">
     <div class="front">
         <span class="ribbon">20€</span>
-        <img class="icon" src="/img/google.png">
+        <img class="icon" src="/img/disney.png">
         <p>Details avant carte</p>
     </div>
     <div class="back">
 
         <p class="p-2">Details arriére de la carte..</p>
-        <a class="w-24 h-12 p-2 bg-blue-600 rounded">test</a>
+        <a class="w-24 h-12 p-2 bg-blue-600 rounded hover:bg-blue-400 hover:text-gray-300">test</a>
     </div>
 </div>
 {{---------}}
@@ -114,13 +114,13 @@
   <div class="flip">
     <div class="front">
         <span class="ribbon">20€</span>
-        <img class="icon" src="/img/google.png">
+        <img class="icon" src="/img/psn.png">
         <p>Details avant carte</p>
     </div>
     <div class="back">
 
         <p class="p-2">Details arriére de la carte..</p>
-        <a class="w-24 h-12 p-2 bg-blue-600 rounded">test</a>
+        <a class="w-24 h-12 p-2 bg-blue-600 rounded hover:bg-blue-400 hover:text-gray-300">test</a>
     </div>
 </div>
 {{---------}}
