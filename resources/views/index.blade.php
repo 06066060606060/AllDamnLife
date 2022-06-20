@@ -11,5 +11,4 @@
 
 
 @endsection
-{{-- SECTION NEWSLETTER --}}
-@include('parts.newsletter')
+
