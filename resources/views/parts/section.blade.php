@@ -3,97 +3,131 @@
 
 
 {{-- SECTION CONTENT --}}
-<div class="max-w-screen-xl p-5 mx-auto bg-gray-800 text-gray-100">
+<div class="max-w-screen-xl p-5 mx-auto text-gray-100 bg-gray-800">
+
+  {{-- CARTE --}}
     <div class="flip">
-        <div class="front" style="background-image: url(/img/googleplay.png)">
-            <h1 class="">25€</hi>
+        <div class="front">
+            <span class="ribbon">20€</span>
+            <img class="icon" src="/img/google.png">
+            <p>Details avant carte</p>
         </div>
         <div class="back">
 
-            <p>Good tools make application development quicker and easier to maintain than if you did everything by
-                hand..</p>
+            <p class="p-2">Details arriére de la carte..</p>
+            <a class="w-24 h-12 p-2 bg-blue-600 rounded">test</a>
         </div>
     </div>
-    <div class="flip">
-        <div class="front" style="background-image: url(img/dezzer.jpg)">
-            <h1 class="text-shadow">18€</hi>
-        </div>
-        <div class="back">
+  {{---------}}
+   
+  {{-- CARTE --}}
+  <div class="flip">
+    <div class="front">
+        <span class="ribbon">20€</span>
+        <img class="icon" src="/img/steam.png">
+        <p>Details avant carte</p>
+    </div>
+    <div class="back">
 
-            <p>Good tools make application development quicker and easier to maintain than if you did everything by
-                hand..</p>
-        </div>
+        <p class="p-2">Details arriére de la carte..</p>
+        <a class="w-24 h-12 p-2 bg-blue-600 rounded">test</a>
     </div>
-    <div class="flip">
-        <div class="front" style="background-image: url(/img/carte2.jpg)">
-            <h1 class="text-shadow">15€</hi>
-        </div>
-        <div class="back">
+</div>
+{{---------}}
 
-            <p>Good tools make application development quicker and easier to maintain than if you did everything by
-                hand..</p>
-        </div>
+  {{-- CARTE --}}
+  <div class="flip">
+    <div class="front">
+        <span class="ribbon">20€</span>
+        <img class="icon" src="/img/google.png">
+        <p>Details avant carte</p>
     </div>
-    <div class="flip">
-        <div class="front"
-            style="background-image: url(img/netflix.jpeg)">
-            <h1 class="text-shadow">10€</hi>
-        </div>
-        <div class="back">
+    <div class="back">
 
-            <p>Good tools make application development quicker and easier to maintain than if you did everything by
-                hand..</p>
-        </div>
+        <p class="p-2">Details arriére de la carte..</p>
+        <a class="w-24 h-12 p-2 bg-blue-600 rounded">test</a>
     </div>
-    <div class="flip">
-        <div class="front"
-            style="background-image: url()">
-            <h1 class="">25€</hi>
-        </div>
-        <div class="back">
+</div>
+{{---------}}
 
-            <p>Good tools make application development quicker and easier to maintain than if you did everything by
-                hand..</p>
-        </div>
+  {{-- CARTE --}}
+  <div class="flip">
+    <div class="front">
+        <span class="ribbon">20€</span>
+        <img class="icon" src="/img/google.png">
+        <p>Details avant carte</p>
     </div>
-    <div class="flip">
-        <div class="front"
-            style="background-image: url(/img/googleplay2.jpeg)">
-            <h1 class="text-shadow">18€</hi>
-        </div>
-        <div class="back">
+    <div class="back">
 
-            <p>Good tools make application development quicker and easier to maintain than if you did everything by
-                hand..</p>
-        </div>
+        <p class="p-2">Details arriére de la carte..</p>
+        <a class="w-24 h-12 p-2 bg-blue-600 rounded">test</a>
     </div>
-    <div class="flip">
-        <div class="front"
-            style="background-image: url(https://images.pexels.com/photos/36717/amazing-animal-beautiful-beautifull.jpg?w=1260&h=750&dpr=2&auto=compress&cs=tinysrgb)">
-            <h1 class="text-shadow">15€</hi>
-        </div>
-        <div class="back">
+</div>
+{{---------}}
 
-            <p>Good tools make application development quicker and easier to maintain than if you did everything by
-                hand..</p>
-        </div>
+  {{-- CARTE --}}
+  <div class="flip">
+    <div class="front">
+        <span class="ribbon">20€</span>
+        <img class="icon" src="/img/google.png">
+        <p>Details avant carte</p>
     </div>
-    <div class="flip">
-        <div class="front"
-            style="background-image: url(https://images.pexels.com/photos/36717/amazing-animal-beautiful-beautifull.jpg?w=1260&h=750&dpr=2&auto=compress&cs=tinysrgb)">
-            <h1 class="text-shadow">10€</hi>
-        </div>
-        <div class="back">
+    <div class="back">
 
-            <p>Good tools make application development quicker and easier to maintain than if you did everything by
-                hand..</p>
-        </div>
+        <p class="p-2">Details arriére de la carte..</p>
+        <a class="w-24 h-12 p-2 bg-blue-600 rounded">test</a>
     </div>
+</div>
+{{---------}}
+
+  {{-- CARTE --}}
+  <div class="flip">
+    <div class="front">
+        <span class="ribbon">20€</span>
+        <img class="icon" src="/img/google.png">
+        <p>Details avant carte</p>
+    </div>
+    <div class="back">
+
+        <p class="p-2">Details arriére de la carte..</p>
+        <a class="w-24 h-12 p-2 bg-blue-600 rounded">test</a>
+    </div>
+</div>
+{{---------}}
+
+  {{-- CARTE --}}
+  <div class="flip">
+    <div class="front">
+        <span class="ribbon">20€</span>
+        <img class="icon" src="/img/google.png">
+        <p>Details avant carte</p>
+    </div>
+    <div class="back">
+
+        <p class="p-2">Details arriére de la carte..</p>
+        <a class="w-24 h-12 p-2 bg-blue-600 rounded">test</a>
+    </div>
+</div>
+{{---------}}
+
+  {{-- CARTE --}}
+  <div class="flip">
+    <div class="front">
+        <span class="ribbon">20€</span>
+        <img class="icon" src="/img/google.png">
+        <p>Details avant carte</p>
+    </div>
+    <div class="back">
+
+        <p class="p-2">Details arriére de la carte..</p>
+        <a class="w-24 h-12 p-2 bg-blue-600 rounded">test</a>
+    </div>
+</div>
+{{---------}}
 
 
 </div>
 
-{{-- SECTION NEWSLETTER --}}
 
 
 
