@@ -95,10 +95,5 @@
 
 </div>
 
-{{-- SECTION NEWSLETTER --}}
-@include('parts.newsletter')
 
-{{-- SECTION FOOTER --}}
-
-@include('parts.pagination')
 
