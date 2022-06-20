@@ -1,8 +1,6 @@
 
 {{-- SECTION FILTRES --}}
-<div class="max-w-screen-xl mx-auto ">
-    @include('parts.filter')
-</div>
+
 
 {{-- SECTION CONTENT --}}
 <div class="max-w-screen-xl p-5 mx-auto bg-gray-800 text-gray-100">
@@ -96,9 +94,6 @@
 </div>
 
 {{-- SECTION NEWSLETTER --}}
-@include('parts.newsletter')
 
-{{-- SECTION FOOTER --}}
 
-@include('parts.pagination')
 
