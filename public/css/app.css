@@ -8798,8 +8798,6 @@ img{
   border-color: rgb(45 212 191 / var(--tw-border-opacity));
 }
 
-
-.dark .dark\:bg-violet-400 {
   --tw-bg-opacity: 1;
   background-color: rgb(167 139 250 / var(--tw-bg-opacity));
 }
@@ -8810,8 +8808,6 @@ img{
   background-color: rgb(17 24 39 / var(--tw-bg-opacity));
 }
 
-
-.dark .dark\:text-gray-100 {
   --tw-text-opacity: 1;
   color: rgb(243 244 246 / var(--tw-text-opacity));
 }
@@ -8828,8 +8824,6 @@ img{
   color: rgb(45 212 191 / var(--tw-text-opacity));
 }
 
-
-@media (min-width: 640px) {
 
   .sm\:w-2\/3 {
     width: 66.666667%;
@@ -8863,8 +8857,6 @@ img{
 }
 
 
-@media (min-width: 1024px) {
-
   .lg\:flex {
     display: flex;
   }
@@ -8882,8 +8874,6 @@ img{
   }
 }
 
-
-@media (min-width: 1280px) {
 
   .xl\:grid-cols-4 {
     grid-template-columns: repeat(4, minmax(0, 1fr));
