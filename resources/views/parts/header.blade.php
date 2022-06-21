@@ -1,6 +1,6 @@
 <div class="p-4 text-gray-100 bg-gray-800">
     <div class="flex items-center justify-between h-16 max-w-screen-xl px-4 mx-auto">
-        <div class="flex flex-1 w-0 lg:hidden">
+        <!-- <div class="flex flex-1 w-0 lg:hidden">
             <button class="p-2 text-gray-600 bg-gray-100 rounded-full" type="button">
                 <svg class="w-5 h-5" fill="none" stroke="currentColor" viewbox="0 0 24 24"
                     xmlns="http://www.w3.org/2000/svg">
@@ -8,18 +8,18 @@
                         stroke-linejoin="round" stroke-width="2"></path>
                 </svg>
             </button>
-        </div>
+        </div> -->
 
         <div class="flex items-center space-x-4">
             <img src="/img/logo.png" alt="logo" class="w-auto h-12">
         </div>
 
-        <div class="flex justify-end flex-1 w-0 lg:hidden">
+        <!-- <div class="flex justify-end flex-1 w-0 lg:hidden">
             <button class="p-2 text-gray-300 bg-gray-100 rounded-full" type="button">
             </button>
-        </div>
+        </div> -->
 
-        <form class="hidden mb-0 lg:flex">
+        <form class="mb-0 lg:flex">
             <div class="relative">
                 <input
                     class="h-10 pl-4 pr-10 text-sm text-white placeholder-gray-300 bg-gray-600 border-gray-200 rounded-lg focus:z-10"

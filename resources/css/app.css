@@ -50,6 +50,7 @@ img{
 
  .flip {
 	 position: relative;
+	 overflow: hidden;
 }
  .flip > .front, .flip > .back {
 	 display: block;
@@ -106,17 +107,23 @@ img{
 /* BANDEAU PRIX CARTE */
 .ribbon {
 	position: absolute;
-	right: 10px; top: 10px;
-	z-index: 1;
+	right: -25px; top: 25px;
 	overflow: hidden;
+	z-index: 1;
 	text-align: right;
 	color: white;
+	transform: rotate(45deg);
+	padding-top: 4px;
+	padding-bottom: 4px;
+	background-color: rgb(25, 79, 141);
+	padding-left: 50px;
+	padding-right: 50px;
 
   }
 
-  .icon{
-	padding-top: 40px;
-  }
-
+ 
 
 /* FIN ANIMATION CARTE_________________________________________________ */
+
+
+

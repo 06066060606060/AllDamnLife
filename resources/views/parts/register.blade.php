@@ -2,7 +2,7 @@
 
     <button @click="modelOpen =!modelOpen"
         class="flex items-center justify-center px-4 py-2 mx-1 space-x-2 text-sm tracking-wide text-white capitalize transition-colors duration-200 transform bg-gray-500 rounded-md hover:bg-gray-700 focus:outline-none focus:bg-gray-500 focus:ring focus:ring-gray-300 focus:ring-opacity-50">
-        <span>Sign In</span>
+        <span>S'inscrire</span>
     </button>
 
     <div x-cloak x-show="modelOpen" class="fixed inset-0 z-50 overflow-y-auto" aria-labelledby="modal-title" role="dialog"
@@ -24,55 +24,51 @@
                 <section class="">
 
                     {{-- @click="modelOpen = false" --}}
-                    <div class="w-full max-w-md p-8 space-y-3 rounded-xl dark:bg-gray-600 dark:text-gray-100">
-                        <img src="/img/logo.png" alt="logo">
+                    <div class="w-full max-w-md p-8 space-y-3 text-gray-100 bg-gray-600 rounded-xl">
+                        <img class="p-2 bg-gray-900 rounded" src="/img/logo.png" alt="logo">
                     
 
                         <form novalidate="" action="" class="space-y-6 ng-untouched ng-pristine ng-valid">
                             <div class="space-y-1 text-sm">
-                                <label for="nom" class="block dark:text-gray-400">Nom</label>
+                                <label for="nom" class="block text-gray-400">Nom</label>
                                 <input type="text" name="nom" id="nom" placeholder="Nom"
-                                    class="w-full px-4 py-3 rounded-md dark:border-gray-700 dark:bg-gray-900 dark:text-gray-100 focus:dark:border-teal-400">
+                                    class="w-full px-4 py-3 text-gray-100 bg-gray-900 border-gray-700 rounded-md focus:border-teal-400">
                             </div>
                             <div class="space-y-1 text-sm">
-                                <label for="prenom" class="block dark:text-gray-400">Prenom</label>
+                                <label for="prenom" class="block text-gray-400">Prenom</label>
                                 <input type="text" name="prenom" id="prenom" placeholder="prenom"
-                                    class="w-full px-4 py-3 rounded-md dark:border-gray-700 dark:bg-gray-900 dark:text-gray-100 focus:dark:border-teal-400">
+                                    class="w-full px-4 py-3 text-gray-100 bg-gray-900 border-gray-700 rounded-md focus:border-teal-400">
                             </div>
                             <div class="space-y-1 text-sm">
-                                <label for="email" class="block dark:text-gray-400">email</label>
+                                <label for="email" class="block text-gray-400">Email</label>
                                 <input type="email" name="email" id="email" placeholder="exemple@mail.com"
-                                    class="w-full px-4 py-3 rounded-md dark:border-gray-700 dark:bg-gray-900 dark:text-gray-100 focus:dark:border-teal-400">
+                                    class="w-full px-4 py-3 text-gray-100 bg-gray-900 border-gray-700 rounded-md focus:border-teal-400">
                             </div>
                             <div class="space-y-1 text-sm">
-                                <label for="password" class="block dark:text-gray-400">Password</label>
+                                <label for="password" class="block text-gray-400">Mot de passe</label>
                                 <input type="password" name="password" id="password" placeholder="Password"
-                                    class="w-full px-4 py-3 rounded-md dark:border-gray-700 dark:bg-gray-900 dark:text-gray-100 focus:dark:border-teal-400">
-                                <div class="flex justify-end text-xs dark:text-gray-400">
-                                    <a rel="noopener noreferrer" href="#">Forgot Password?</a>
-                                </div>
+                                    class="w-full px-4 py-3 text-gray-100 bg-gray-900 border-gray-700 rounded-md focus:border-teal-400">
+                                
                             </div>
                             <button
-                                class="block w-full p-3 text-center rounded-sm dark:text-gray-900 dark:bg-teal-400">Sign
-                                in</button>
+                                class="block w-full p-3 text-center text-gray-900 bg-teal-400 rounded">S'inscrire
+                                </button>
                         </form>
                         <div class="flex items-center pt-4 space-x-1">
-                            <div class="flex-1 h-px sm:w-16 dark:bg-gray-700"></div>
-                            <p class="px-3 text-sm dark:text-gray-400">Login with social accounts</p>
-                            <div class="flex-1 h-px sm:w-16 dark:bg-gray-700"></div>
+                            <div class="flex-1 h-px bg-gray-700 sm:w-16"></div>
+                            <p class="px-3 text-sm text-gray-400">S'inscrire via un réseau social</p>
+                            <div class="flex-1 h-px bg-gray-700 sm:w-16"></div>
                         </div>
                         <div class="flex justify-center space-x-4">
                             <button aria-label="Log in with Google" class="p-3 rounded-sm">
                             <i class="fa-brands fa-google"></i>
                             </button>
                             
-                            <button aria-label="Log in with GitHub" class="p-3 rounded-sm">
+                            <button aria-label="Log in with Facebook" class="p-3 rounded-sm">
                             <i class="fa-brands fa-facebook-f"></i>
                             </button>
                         </div>
-                        <p class="text-xs text-center sm:px-6 dark:text-gray-400">Don't have an account?
-                            <a rel="noopener noreferrer" href="#" class="underline dark:text-gray-100">Sign up</a>
-                        </p>
+                        
                     </div>
 
                 </section>
