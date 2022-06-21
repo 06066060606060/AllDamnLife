@@ -8780,14 +8780,6 @@ img{
 }
  @media (min-width: 768px) {
 
-  .md\:w-2\/3 {
-    width: 66.666667%;
-  }
-
-  .md\:w-full {
-    width: 100%;
-  }
-
   .md\:grid-cols-3 {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
@@ -8804,10 +8796,6 @@ img{
 
   .lg\:hidden {
     display: none;
-  }
-
-  .lg\:w-full {
-    width: 100%;
   }
 
   .lg\:w-0 {
