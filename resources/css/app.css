@@ -50,7 +50,7 @@ img{
 
  .flip {
 	 position: relative;
-	 overflow: hidden;
+
 }
  .flip > .front, .flip > .back {
 	 display: block;
@@ -61,6 +61,7 @@ img{
 }
  .flip > .front {
 	 transform: rotateY(0deg);
+	 overflow: hidden;
 }
  .flip > .back {
 	 position: absolute;
@@ -107,8 +108,7 @@ img{
 /* BANDEAU PRIX CARTE */
 .ribbon {
 	position: absolute;
-	right: -25px; top: 25px;
-	overflow: hidden;
+	right: -30px; top: 20px;
 	z-index: 1;
 	text-align: right;
 	color: white;
