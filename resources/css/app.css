@@ -6,10 +6,10 @@
 @import "~@fortawesome/fontawesome-free/css/solid";
 @import "~@fortawesome/fontawesome-free/css/brands";
 
-@import url('https://fonts.googleapis.com/css?family=Roboto+Mono');
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+
  * {
 	 box-sizing: border-box;
-	 font-weight: normal;
 	 margin: 0;
 	 padding: 0;
 }
@@ -19,6 +19,10 @@
     color: white;
   }
 
+  [x-cloak] { 
+	display: none
+ }
+  
 html{
 
 }
@@ -29,10 +33,10 @@ img{
 
  body {
 	 text-align: center;
-	 font-family: 'Roboto Mono';
 	 padding: 1em;
 	 /* background-repeat: no-repeat;
 	 background-size: cover; */
+	 font-family: 'Lato', sans-serif;
 
 }
  h1 {
