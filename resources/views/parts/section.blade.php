@@ -105,7 +105,7 @@
     <div class="back">
 
         <p class="p-2">Details arriére de la carte..</p>
-        <a class="w-24 h-12 p-2 bg-blue-600 rounded hover:bg-blue-400 hover:text-gray-300">test</a>
+        <a class="w-24 h-12 p-2 bg-blue-600 rounded hover:bg-blue-400 hover:text-gray-300">Voir plus</a>
     </div>
 </div>
 {{---------}}

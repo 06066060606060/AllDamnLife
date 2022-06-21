@@ -19425,9 +19425,12 @@ var __WEBPACK_AMD_DEFINE_RESULT__;/**
 /*!*******************************!*\
   !*** ./resources/css/app.css ***!
   \*******************************/
-/***/ (() => {
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-throw new Error("Module build failed (from ./node_modules/mini-css-extract-plugin/dist/loader.js):\nModuleBuildError: Module build failed (from ./node_modules/postcss-loader/dist/cjs.js):\nSyntaxError\n\n(93:1909) C:\\laragon\\www\\AllDamnLife\\resources\\css\\app.css Unclosed string\n\n \u001b[90m 91 | \u001b[39m\u001b[32m\t height: 400px;\u001b[39m\n \u001b[90m 92 | \u001b[39m\u001b[32m\t padding: 1em 2em;\u001b[39m\n\u001b[1m\u001b[31m>\u001b[39m\u001b[22m\u001b[90m 93 | \u001b[39m\u001b[32m\tbackground-image: url(\"\u001b[39mdata\u001b[33m:\u001b[39mimage/svg+xml,%3csvg xmlns=\u001b[32m'http://www.w3.org/2000/svg'\u001b[39m version=\u001b[32m'1.1'\u001b[39m xmlns\u001b[33m:\u001b[39mxlink=\u001b[32m'http://www.w3.org/1999/xlink'\u001b[39m xmlns\u001b[33m:\u001b[39msvgjs=\u001b[32m'http://svgjs.com/svgjs'\u001b[39m width=\u001b[32m'300'\u001b[39m height=\u001b[32m'400'\u001b[39m preserveAspectRatio=\u001b[32m'none'\u001b[39m viewBox=\u001b[32m'0 0 300 400'\u001b[39m%3e%3cg mask=\u001b[32m'url(%26quot%3b%23SvgjsMask1055%26quot%3b)'\u001b[39m fill=\u001b[32m'none'\u001b[39m%3e%3crect width=\u001b[32m'300'\u001b[39m height=\u001b[32m'400'\u001b[39m x=\u001b[32m'0'\u001b[39m y=\u001b[32m'0'\u001b[39m fill=\u001b[32m'rgba(78%2c 79%2c 79%2c 1)'\u001b[39m%3e%3c/rect%3e%3cpath d=\u001b[32m'M0%2c115.899C25.304%2c117.498%2c52.109%2c127.81%2c74.522%2c115.958C97.292%2c103.918%2c111.547%2c78.744%2c117.609%2c53.71C123.207%2c30.591%2c109.456%2c8.293%2c106.301%2c-15.284C103.104%2c-39.171%2c111.22%2c-64.997%2c98.947%2c-85.738C85.903%2c-107.781%2c62.198%2c-121.185%2c38.253%2c-130.277C12.98%2c-139.873%2c-14.407%2c-144.855%2c-40.75%2c-138.781C-67.948%2c-132.51%2c-93.26%2c-117.716%2c-110.712%2c-95.932C-127.836%2c-74.557%2c-137.919%2c-46.924%2c-136.239%2c-19.588C-134.684%2c5.713%2c-113.892%2c24.199%2c-101.954%2c46.561C-90.914%2c67.24%2c-88.088%2c93.726%2c-68.705%2c106.908C-49.211%2c120.166%2c-23.528%2c114.412%2c0%2c115.899'\u001b[39m fill=\u001b[32m'%23393a3a'\u001b[39m%3e%3c/path%3e%3cpath d=\u001b[32m'M300 529.61C325.449 527.5840000000001 349.818 523.939 373.461 514.307 401.565 502.858 433.23699999999997 493.8 450 468.503 467.555 442.01 472.262 407.209 464.91499999999996 376.289 457.812 346.39300000000003 434.358 323.751 410.89300000000003 303.911 390.017 286.26 364.13 278.474 338.377 269.3 311.008 259.55 284.231 244.018 255.535 248.565 225.34699999999998 253.348 199.45499999999998 272.475 178.41500000000002 294.646 156.714 317.51300000000003 139.224 345.036 134.414 376.192 129.579 407.514 136.217 440.072 151.696 467.728 166.51 494.196 190.624 514.955 218.61700000000002 526.635 244.187 537.3050000000001 272.38 531.809 300 529.61'\u001b[39m fill=\u001b[32m'%23636464'\u001b[39m%3e%3c/path%3e%3c/g%3e%3cdefs%3e%3cmask id=\u001b[32m'SvgjsMask1055'\u001b[39m%3e%3crect width=\u001b[32m'300'\u001b[39m height=\u001b[32m'400'\u001b[39m fill=\u001b[32m'white'\u001b[39m%3e%3c/rect%3e%3c/mask%3e%3c/defs%3e%3c/svg%3e\u001b[32m\")\u001b[39m\u001b[33m;\u001b[39m\n \u001b[90m    | \u001b[39m     \t                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              \u001b[1m\u001b[31m^\u001b[39m\u001b[22m\n \u001b[90m 94 | \u001b[39m\t border-radius\u001b[33m:\u001b[39m 10px\u001b[33m;\u001b[39m\n \u001b[90m 95 | \u001b[39m\u001b[33m}\u001b[39m\n\n    at processResult (C:\\laragon\\www\\AllDamnLife\\node_modules\\webpack\\lib\\NormalModule.js:758:19)\n    at C:\\laragon\\www\\AllDamnLife\\node_modules\\webpack\\lib\\NormalModule.js:860:5\n    at C:\\laragon\\www\\AllDamnLife\\node_modules\\loader-runner\\lib\\LoaderRunner.js:400:11\n    at C:\\laragon\\www\\AllDamnLife\\node_modules\\loader-runner\\lib\\LoaderRunner.js:252:18\n    at context.callback (C:\\laragon\\www\\AllDamnLife\\node_modules\\loader-runner\\lib\\LoaderRunner.js:124:13)\n    at Object.loader (C:\\laragon\\www\\AllDamnLife\\node_modules\\postcss-loader\\dist\\index.js:140:7)");
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+// extracted by mini-css-extract-plugin
+
 
 /***/ }),
 
@@ -19654,7 +19657,42 @@ process.umask = function() { return 0; };
 /******/ 		return module.exports;
 /******/ 	}
 /******/ 	
+/******/ 	// expose the modules object (__webpack_modules__)
+/******/ 	__webpack_require__.m = __webpack_modules__;
+/******/ 	
 /************************************************************************/
+/******/ 	/* webpack/runtime/chunk loaded */
+/******/ 	(() => {
+/******/ 		var deferred = [];
+/******/ 		__webpack_require__.O = (result, chunkIds, fn, priority) => {
+/******/ 			if(chunkIds) {
+/******/ 				priority = priority || 0;
+/******/ 				for(var i = deferred.length; i > 0 && deferred[i - 1][2] > priority; i--) deferred[i] = deferred[i - 1];
+/******/ 				deferred[i] = [chunkIds, fn, priority];
+/******/ 				return;
+/******/ 			}
+/******/ 			var notFulfilled = Infinity;
+/******/ 			for (var i = 0; i < deferred.length; i++) {
+/******/ 				var [chunkIds, fn, priority] = deferred[i];
+/******/ 				var fulfilled = true;
+/******/ 				for (var j = 0; j < chunkIds.length; j++) {
+/******/ 					if ((priority & 1 === 0 || notFulfilled >= priority) && Object.keys(__webpack_require__.O).every((key) => (__webpack_require__.O[key](chunkIds[j])))) {
+/******/ 						chunkIds.splice(j--, 1);
+/******/ 					} else {
+/******/ 						fulfilled = false;
+/******/ 						if(priority < notFulfilled) notFulfilled = priority;
+/******/ 					}
+/******/ 				}
+/******/ 				if(fulfilled) {
+/******/ 					deferred.splice(i--, 1)
+/******/ 					var r = fn();
+/******/ 					if (r !== undefined) result = r;
+/******/ 				}
+/******/ 			}
+/******/ 			return result;
+/******/ 		};
+/******/ 	})();
+/******/ 	
 /******/ 	/* webpack/runtime/compat get default export */
 /******/ 	(() => {
 /******/ 		// getDefaultExport function for compatibility with non-harmony modules
@@ -19716,13 +19754,68 @@ process.umask = function() { return 0; };
 /******/ 		};
 /******/ 	})();
 /******/ 	
+/******/ 	/* webpack/runtime/jsonp chunk loading */
+/******/ 	(() => {
+/******/ 		// no baseURI
+/******/ 		
+/******/ 		// object to store loaded and loading chunks
+/******/ 		// undefined = chunk not loaded, null = chunk preloaded/prefetched
+/******/ 		// [resolve, reject, Promise] = chunk loading, 0 = chunk loaded
+/******/ 		var installedChunks = {
+/******/ 			"/js/app": 0,
+/******/ 			"css/app": 0
+/******/ 		};
+/******/ 		
+/******/ 		// no chunk on demand loading
+/******/ 		
+/******/ 		// no prefetching
+/******/ 		
+/******/ 		// no preloaded
+/******/ 		
+/******/ 		// no HMR
+/******/ 		
+/******/ 		// no HMR manifest
+/******/ 		
+/******/ 		__webpack_require__.O.j = (chunkId) => (installedChunks[chunkId] === 0);
+/******/ 		
+/******/ 		// install a JSONP callback for chunk loading
+/******/ 		var webpackJsonpCallback = (parentChunkLoadingFunction, data) => {
+/******/ 			var [chunkIds, moreModules, runtime] = data;
+/******/ 			// add "moreModules" to the modules object,
+/******/ 			// then flag all "chunkIds" as loaded and fire callback
+/******/ 			var moduleId, chunkId, i = 0;
+/******/ 			if(chunkIds.some((id) => (installedChunks[id] !== 0))) {
+/******/ 				for(moduleId in moreModules) {
+/******/ 					if(__webpack_require__.o(moreModules, moduleId)) {
+/******/ 						__webpack_require__.m[moduleId] = moreModules[moduleId];
+/******/ 					}
+/******/ 				}
+/******/ 				if(runtime) var result = runtime(__webpack_require__);
+/******/ 			}
+/******/ 			if(parentChunkLoadingFunction) parentChunkLoadingFunction(data);
+/******/ 			for(;i < chunkIds.length; i++) {
+/******/ 				chunkId = chunkIds[i];
+/******/ 				if(__webpack_require__.o(installedChunks, chunkId) && installedChunks[chunkId]) {
+/******/ 					installedChunks[chunkId][0]();
+/******/ 				}
+/******/ 				installedChunks[chunkId] = 0;
+/******/ 			}
+/******/ 			return __webpack_require__.O(result);
+/******/ 		}
+/******/ 		
+/******/ 		var chunkLoadingGlobal = self["webpackChunk"] = self["webpackChunk"] || [];
+/******/ 		chunkLoadingGlobal.forEach(webpackJsonpCallback.bind(null, 0));
+/******/ 		chunkLoadingGlobal.push = webpackJsonpCallback.bind(null, chunkLoadingGlobal.push.bind(chunkLoadingGlobal));
+/******/ 	})();
+/******/ 	
 /************************************************************************/
 /******/ 	
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
-/******/ 	__webpack_require__("./resources/js/app.js");
-/******/ 	// This entry module doesn't tell about it's top-level declarations so it can't be inlined
-/******/ 	var __webpack_exports__ = __webpack_require__("./resources/css/app.css");
+/******/ 	// This entry module depends on other loaded chunks and execution need to be delayed
+/******/ 	__webpack_require__.O(undefined, ["css/app"], () => (__webpack_require__("./resources/js/app.js")))
+/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["css/app"], () => (__webpack_require__("./resources/css/app.css")))
+/******/ 	__webpack_exports__ = __webpack_require__.O(__webpack_exports__);
 /******/ 	
 /******/ })()
 ;
