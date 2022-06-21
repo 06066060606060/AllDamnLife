@@ -6,10 +6,10 @@
 @import "~@fortawesome/fontawesome-free/css/solid";
 @import "~@fortawesome/fontawesome-free/css/brands";
 
-@import url('https://fonts.googleapis.com/css?family=Roboto+Mono');
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+
  * {
 	 box-sizing: border-box;
-	 font-weight: normal;
 	 margin: 0;
 	 padding: 0;
 }
@@ -19,6 +19,10 @@
     color: white;
   }
 
+  [x-cloak] { 
+	display: none
+ }
+  
 html{
 
 }
@@ -29,10 +33,10 @@ img{
 
  body {
 	 text-align: center;
-	 font-family: 'Roboto Mono';
 	 padding: 1em;
 	 /* background-repeat: no-repeat;
 	 background-size: cover; */
+	 font-family: 'Lato', sans-serif;
 
 }
  h1 {
@@ -46,6 +50,7 @@ img{
 
  .flip {
 	 position: relative;
+	 overflow: hidden;
 }
  .flip > .front, .flip > .back {
 	 display: block;
@@ -102,17 +107,23 @@ img{
 /* BANDEAU PRIX CARTE */
 .ribbon {
 	position: absolute;
-	right: 10px; top: 10px;
-	z-index: 1;
+	right: -25px; top: 25px;
 	overflow: hidden;
+	z-index: 1;
 	text-align: right;
 	color: white;
+	transform: rotate(45deg);
+	padding-top: 4px;
+	padding-bottom: 4px;
+	background-color: rgb(25, 79, 141);
+	padding-left: 50px;
+	padding-right: 50px;
 
   }
 
-  .icon{
-	padding-top: 40px;
-  }
-
+ 
 
 /* FIN ANIMATION CARTE_________________________________________________ */
+
+
+
