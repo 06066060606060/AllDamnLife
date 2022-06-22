@@ -8912,6 +8912,10 @@ video {
   padding-top: 1rem;
   padding-bottom: 1rem;
 }
+.px-2 {
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
 .pr-3 {
   padding-right: 0.75rem;
 }
@@ -9501,6 +9505,13 @@ img{
 .focus\:bg-violet-500:focus {
   --tw-bg-opacity: 1;
   background-color: rgb(139 92 246 / var(--tw-bg-opacity));
+}
+
+ 
+
+.focus\:bg-blue-500:focus {
+  --tw-bg-opacity: 1;
+  background-color: rgb(59 130 246 / var(--tw-bg-opacity));
 }
 
  
