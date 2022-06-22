@@ -17,6 +17,10 @@ Route::get('/', function () {
     return view('index');
 });
 
+Route::get('/users', function () {
+    return view('users');
+});
+
 Route::get('card',function (){
     return view('card');
 });
