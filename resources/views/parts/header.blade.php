@@ -11,7 +11,7 @@
         </div> -->
 
         <div class="flex items-center pb-4 mx-auto space-x-4 md:mx-0 lg:mx-0">
-            <img src="/img/logo.png" alt="logo" class="w-auto h-12">
+            <a href="/"><img src="/img/logo.png" alt="logo" class="w-auto h-12"></a>
         </div>
 
         <div class="sm:hidden md:flex lg:flex">
@@ -40,7 +40,7 @@
                         class="flex items-center justify-center h-8 px-4 pt-1 pb-1 mx-1 space-x-2 tracking-wide text-white transition-colors duration-200 transform rounded-md bg-violet-600 hover:bg-violet-400 focus:outline-none focus:bg-violet-500">
                         <i class="fa-solid fa-user"></i>
                     </a>
-                    <a href="/panier"
+                    <a href="/cart"
                         class="flex items-center justify-center h-8 px-4 pt-1 pb-1 mx-1 space-x-2 tracking-wide text-white transition-colors duration-200 transform rounded-md bg-emerald-500 hover:bg-emerald-300 focus:outline-none focus:bg-emerald-500">
                         <i class="fa-solid fa-basket-shopping"></i>
                     </a>
@@ -69,7 +69,7 @@
                     class="flex items-center justify-center h-8 px-4 pt-1 pb-1 mx-1 space-x-2 tracking-wide text-white transition-colors duration-200 transform rounded-md bg-violet-600 hover:bg-violet-400 focus:outline-none focus:bg-violet-500">
                     <i class="fa-solid fa-user"></i>
                 </a>
-                <a href="/panier"
+                <a href="/cart"
                     class="flex items-center justify-center h-8 px-4 pt-1 pb-1 mx-1 space-x-2 tracking-wide text-white transition-colors duration-200 transform rounded-md bg-emerald-500 hover:bg-emerald-300 focus:outline-none focus:bg-emerald-500">
                     <i class="fa-solid fa-basket-shopping"></i>
                 </a>
