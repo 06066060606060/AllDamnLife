@@ -21,3 +21,6 @@ Route::get('/users', function () {
     return view('users');
 });
 
+Route::get('card',function (){
+    return view('card');
+});
