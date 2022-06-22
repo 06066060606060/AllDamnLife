@@ -1,15 +1,15 @@
-<div class="w-full px-5 bg-gray-800 rounded-lg shadow">
+<div class="w-full px-4 bg-gray-800 rounded-lg shadow">
     <div>
         <div class="grid grid-cols-2 gap-4 md:grid-cols-3 xl:grid-cols-4">
             <select
-            class="w-full px-4 py-3 text-sm text-white bg-gray-600 border-transparent rounded-md focus:border-gray-500  focus:ring-0">
+            class="w-full px-4 py-3 text-sm text-white bg-gray-600 border-transparent rounded-md focus:border-gray-500 focus:ring-0">
             <option value="">Toutes les catégories</option>
                 <option value="for-rent">Jeux-vidéos</option>
                 <option value="for-sale">Streaming</option>
             </select>
 
             <select
-                class="w-full px-4 py-3 text-sm text-white bg-gray-600 border-transparent rounded-md focus:border-gray-500  focus:ring-0">
+                class="w-full px-4 py-3 text-sm text-white bg-gray-600 border-transparent rounded-md focus:border-gray-500 focus:ring-0">
                 <option value="">Notation</option>
                 <option value="fully-furnished">5 stars</option>
                 <option value="partially-furnished">3 stars</option>
@@ -17,7 +17,7 @@
             </select>
 
             <select
-                class="w-full px-4 py-3 text-sm text-white bg-gray-600 border-transparent rounded-md focus:border-gray-500  focus:ring-0">
+                class="w-full px-4 py-3 text-sm text-white bg-gray-600 border-transparent rounded-md focus:border-gray-500 focus:ring-0">
                 <option value="">Gamme de prix</option>
                 <option value="1000">More than 100€</option>
                 <option value="2000">Between 50€ & 100€</option>
@@ -26,7 +26,7 @@
             </select>
 
             <select
-                class="w-full px-4 py-3 text-sm text-white bg-gray-600 border-transparent rounded-md focus:border-gray-500  focus:ring-0">
+                class="w-full px-4 py-3 text-sm text-white bg-gray-600 border-transparent rounded-md focus:border-gray-500 focus:ring-0">
                 <option value="">Type de service</option>
                 <option value="200">Achats</option>
                 <option value="400">Abonnement</option>

@@ -35,27 +35,53 @@
             </div>
         </form>
 
-        <div class="items-center hidden space-x-4 lg:flex">
-       @include('parts.login')
-       @include('parts.register')
-        </div>
+        <div class="sm:hidden md:flex lg:flex">
+        @guest
+            <div class="items-center hidden space-x-4 lg:flex">
+                @include('parts.login')
+                @include('parts.register')
+            </div>
+        @endguest
+
+
+        @auth
+            <div class="items-center hidden space-x-4 lg:flex">
+                <a href="/logout" class="flex items-center justify-center h-8 px-4 pt-1 pb-1 mx-1 space-x-2 tracking-wide text-white transition-colors duration-200 transform rounded-md bg-violet-600 hover:bg-gray-600 focus:outline-none focus:bg-gray-500 focus:ring focus:ring-gray-300 focus:ring-opacity-50">
+                    <i class="fa-solid fa-user"></i>
+                    </a>
+                <a href="/logout" class="flex items-center justify-center h-8 px-4 pt-1 pb-1 mx-1 space-x-2 tracking-wide text-white transition-colors duration-200 transform rounded-md bg-emerald-500 hover:bg-gray-600 focus:outline-none focus:bg-gray-500 focus:ring focus:ring-gray-300 focus:ring-opacity-50">
+                    <i class="fa-solid fa-basket-shopping"></i>
+                    </a>
+                <a href="/logout" class="flex items-center justify-center h-8 px-4 pt-1 pb-1 mx-1 space-x-2 tracking-wide text-white transition-colors duration-200 transform bg-gray-600 rounded-md hover:bg-gray-500 focus:outline-none focus:bg-gray-500 focus:ring focus:ring-gray-300 focus:ring-opacity-50">
+                <i class="fa-solid fa-right-from-bracket"></i>
+                </a>
+            </div>
+        @endauth
     </div>
 
-    <div class="border-t border-gray-100 lg:hidden">
-        <form class="hidden mb-0 lg:flex">
-            <div class="relative">
-                <input
-                    class="h-10 pl-4 pr-10 text-sm text-black placeholder-gray-300 border-gray-200 rounded-lg focus:z-10"
-                    placeholder="Search..." type="text" />
+    </div>
 
-                <button class="absolute inset-y-0 right-0 p-2 mr-px text-gray-600 rounded-r-lg" type="submit">
-                    <svg class="w-5 h-5" fill="currentColor" viewbox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                        <path clip-rule="evenodd"
-                            d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z"
-                            fill-rule="evenodd"></path>
-                    </svg>
-                </button>
+    <div class="flex flex-row pb-2 border-b border-gray-100 lg:hidden md:hidden">
+        @guest
+            <div class="flex flex-row m-auto ">
+                @include('parts.login')
+                @include('parts.register')
             </div>
-        </form>
+        @endguest
+
+
+        @auth
+            <div class="flex flex-row mx-auto space-x-4">
+                <a href="/logout" class="flex items-center justify-center h-8 px-4 pt-1 pb-1 mx-1 space-x-2 tracking-wide text-white transition-colors duration-200 transform rounded-md bg-violet-600 hover:bg-gray-600 focus:outline-none focus:bg-gray-500 focus:ring focus:ring-gray-300 focus:ring-opacity-50">
+                    <i class="fa-solid fa-user"></i>
+                    </a>
+                <a href="/logout" class="flex items-center justify-center h-8 px-4 pt-1 pb-1 mx-1 space-x-2 tracking-wide text-white transition-colors duration-200 transform rounded-md bg-emerald-500 hover:bg-gray-600 focus:outline-none focus:bg-gray-500 focus:ring focus:ring-gray-300 focus:ring-opacity-50">
+                    <i class="fa-solid fa-basket-shopping"></i>
+                    </a>
+                <a href="/logout" class="flex items-center justify-center h-8 px-4 pt-1 pb-1 mx-1 space-x-2 tracking-wide text-white transition-colors duration-200 transform bg-gray-600 rounded-md hover:bg-gray-500 focus:outline-none focus:bg-gray-500 focus:ring focus:ring-gray-300 focus:ring-opacity-50">
+                <i class="fa-solid fa-right-from-bracket"></i>
+                </a>
+            </div>
+        @endauth
     </div>
 </div>
