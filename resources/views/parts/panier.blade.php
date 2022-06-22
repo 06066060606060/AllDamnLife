@@ -2,7 +2,7 @@
     <div class="mx-8">
         <div class="grid grid-cols-1 md:grid-cols-2">
             <div
-                class="py-8 bg-gray-600 rounded-t rounded-b-none md:rounded-br-none md:rounded-tr-none md:rounded-l-lg md:py-12">
+                class="py-8 bg-gray-600 rounded-t rounded-b-none md:rounded-br-none md:rounded-tr-none md:rounded-l-lg md:py-12 panier">
                 <div class="max-w-lg px-4 mx-auto md:px-8">
                     <div class="flex items-center">
                         <img class="w-10 h-10 bg-blue-900 rounded-full" src="/img/avatar.png">
@@ -82,7 +82,7 @@
                 </div>
             </div>
 
-            <div class="py-12 bg-gray-100 rounded-b md:py-24 lg:rounded-r-lg md:rounded-bl-none">
+            <div class="py-12 bg-gray-100 rounded-b md:py-24 lg:rounded-r-lg md:rounded-bl-none panier">
                 <div class="max-w-lg px-4 mx-auto lg:px-8">
                     <form class="grid grid-cols-6 gap-4">
                         <div class="col-span-3">

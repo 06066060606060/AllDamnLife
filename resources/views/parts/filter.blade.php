@@ -1,4 +1,4 @@
-<div class="w-full px-4 bg-gray-800 rounded-lg shadow">
+<div class="w-full px-4 rounded-lg shadow">
   
         <div class="grid grid-cols-2 gap-4 md:grid-cols-3 xl:grid-cols-5">
             <form class="flex">

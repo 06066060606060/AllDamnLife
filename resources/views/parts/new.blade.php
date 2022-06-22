@@ -1,6 +1,6 @@
 <section class="max-w-screen-xl pt-4 mx-auto">
     <div class="p-4 mx-4 text-gray-100 ">
-        <div class="container flex flex-col mx-auto lg:flex-row">
+        <div class="container flex flex-col mx-auto lg:flex-row news">
             <div class="w-full pl-5 rounded-l-lg lg:w-1/3"
                 style="background-image: url('/img/news.jpg'); background-position: center center; background-size: cover; ">
             </div>

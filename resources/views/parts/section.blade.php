@@ -3,7 +3,7 @@
 
 
 {{-- SECTION CONTENT --}}
-<div class="max-w-screen-xl p-5 mx-auto text-gray-100 bg-gray-800">
+<div class="max-w-screen-xl p-5 mx-auto text-gray-100">
 
   {{-- CARTE --}}
     <div class="flip">
