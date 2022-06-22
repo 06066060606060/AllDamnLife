@@ -21,6 +21,14 @@ Route::get('/users', function () {
     return view('users');
 });
 
+Route::get('/categories', function () {
+    return view('categories');
+});
+
+Route::get('/giveCards', function () {
+    return view('giveCards');
+});
+
 Route::get('card',function (){
     return view('card');
 });
