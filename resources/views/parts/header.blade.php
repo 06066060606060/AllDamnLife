@@ -11,19 +11,19 @@
         </div> -->
 
         <div class="flex items-center pb-4 mx-auto space-x-4 md:mx-0 lg:mx-0">
-            <img src="/img/logo.png" alt="logo" class="w-auto h-12">
+            <a href="/"><img src="/img/logo.png" alt="logo" class="w-auto h-12"></a>
         </div>
 
         <div class="sm:hidden md:flex lg:flex">
             @if (session('success'))
                 <div x-data="{ show: true }" x-show="show" x-init="setTimeout(() => show = false, 8000)" class="pt-1 pr-4">
                     <span class='text-white text-bold'>Bienvenue {{ Auth::user()->prenom }}</span>
-                 </div> 
+                </div>
             @endif
             @if (session('error'))
-                    <div x-data="{ show: true }" x-show="show" x-init="setTimeout(() => show = false, 8000)" class="pt-2 pr-4">
-                        <span class='text-red-600 text-bold'>Login ou Mots de passe incorrect</span>
-                    </div>
+                <div x-data="{ show: true }" x-show="show" x-init="setTimeout(() => show = false, 8000)" class="pt-2 pr-4">
+                    <span class='text-red-600 text-bold'>Login ou Mots de passe incorrect</span>
+                </div>
             @endif
 
             @guest
@@ -35,12 +35,17 @@
 
 
             @auth
-                <div class="items-center hidden space-x-4 md:flex lg:flex">
+
+                <div class="items-center hidden space-x-2 md:flex lg:flex">
+                    <a href="/users"
+                        class="flex items-center justify-center h-8 px-4 pt-1 pb-1 mx-1 space-x-2 tracking-wide text-white transition-colors duration-200 transform bg-blue-600 rounded-md hover:bg-blue-400 focus:outline-none focus:bg-blue-500">
+                        <i class="fa-solid fa-gear"></i>
+                    </a>
                     <a href="/account"
                         class="flex items-center justify-center h-8 px-4 pt-1 pb-1 mx-1 space-x-2 tracking-wide text-white transition-colors duration-200 transform rounded-md bg-violet-600 hover:bg-violet-400 focus:outline-none focus:bg-violet-500">
                         <i class="fa-solid fa-user"></i>
                     </a>
-                    <a href="/panier"
+                    <a href="/cart"
                         class="flex items-center justify-center h-8 px-4 pt-1 pb-1 mx-1 space-x-2 tracking-wide text-white transition-colors duration-200 transform rounded-md bg-emerald-500 hover:bg-emerald-300 focus:outline-none focus:bg-emerald-500">
                         <i class="fa-solid fa-basket-shopping"></i>
                     </a>
@@ -64,12 +69,16 @@
 
 
         @auth
-            <div class="flex flex-row mx-auto space-x-4">
+            <div class="flex flex-row mx-auto space-x-2">
+                <a href="/users"
+                    class="flex items-center justify-center h-8 px-4 pt-1 pb-1 mx-1 space-x-2 tracking-wide text-white transition-colors duration-200 transform bg-blue-600 rounded-md hover:bg-blue-400 focus:outline-none focus:bg-blue-500">
+                    <i class="fa-solid fa-gear"></i>
+                </a>
                 <a href="/account"
                     class="flex items-center justify-center h-8 px-4 pt-1 pb-1 mx-1 space-x-2 tracking-wide text-white transition-colors duration-200 transform rounded-md bg-violet-600 hover:bg-violet-400 focus:outline-none focus:bg-violet-500">
                     <i class="fa-solid fa-user"></i>
                 </a>
-                <a href="/panier"
+                <a href="/cart"
                     class="flex items-center justify-center h-8 px-4 pt-1 pb-1 mx-1 space-x-2 tracking-wide text-white transition-colors duration-200 transform rounded-md bg-emerald-500 hover:bg-emerald-300 focus:outline-none focus:bg-emerald-500">
                     <i class="fa-solid fa-basket-shopping"></i>
                 </a>
