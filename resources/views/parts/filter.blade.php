@@ -4,7 +4,7 @@
             <form class="flex">
                 <div class="relative">
                     <input
-                        class="h-10 pl-4 text-sm text-white placeholder-gray-300 bg-gray-600 border-gray-200 rounded-lg pr-14 focus:z-10"
+                        class="h-10 pl-4 text-sm text-white placeholder-gray-300 bg-gray-600 border-gray-200 rounded-md pr-14 focus:z-10"
                         placeholder="Search..." type="text" />
     
                     <button class="absolute inset-y-0 right-0 p-2 mr-px text-gray-600 rounded-r-lg" type="submit">
