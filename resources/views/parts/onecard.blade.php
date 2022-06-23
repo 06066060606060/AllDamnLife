@@ -1,4 +1,4 @@
-<div class="container m-auto px-6 py-4 md:px-12 lg:px-20">
+<div class="container m-auto px-6 md:px-12 lg:px-20">
     <div class="mt-12 m-auto -space-y-4 items-center justify-center md:flex md:space-y-0 md:-space-x-4 xl:w-10/12">
         <div class="relative z-10 -mx-4 group md:w-6/12 md:mx-0 lg:w-5/12">
             <div aria-hidden="true"
@@ -50,21 +50,18 @@
 
                 <!-- component -->
                 <div class="flex flex-col justify-center">
-<h1 class="text-white">Carte Google Play</h1>
-                    <p class="text-sm text-white font-light px-6 py-4">
-                       details de la carte fzfrkjfgfjfggsfm
-                       sdgfdgdgfsdgzergregfrerdstgfregdsrtgsd
-                       freterzdstfrzegtryretretertretreteter
-                    </p>
-                    <div class="flex flex-row justify-center">
-                        <div
-                            class="px-8 py-3 font-bold rounded-full bg-gray-100 text-black mx-2">20 €</div>
-
-                        <button type="button"
-                            class="px-8 py-3 font-semibold rounded-full bg-emerald-500 text-gray-800 mx-2">Ajouter
-                            au
-                            panier</button>
-                    </div>
+                    <h1 class="text-white">Carte Google Play</h1>
+                    <span class="text-sm text-white font-light px-6 py-4">
+                        details de la carte fzfrkjfgfjfggsfm ytfhgiuhoijj hhojpklmùlm
+                    </span>
+                    <a
+                        class="flex items-center justify-center h-8 px-4 pt-1 pb-1 mx-1 mb-2 space-x-2 tracking-wide text-white bg-blue-600 rounded-md">
+                        20 €
+                    </a>
+                    <a href="/cart"
+                        class="flex items-center justify-center h-8 px-4 pt-1 pb-1 mx-1 space-x-2 tracking-wide text-white transition-colors duration-200 transform rounded-md btnmenu bg-violet-600 hover:bg-violet-400 focus:outline-none focus:bg-violet-500">
+                        Ajouter au panier
+                    </a>
                 </div>
 
             </div>
@@ -94,36 +91,37 @@
             </div>
         </div>
         <div class="p-4 space-y-2 text-xl text-gray-400">
-            <p>yes yo no p sit amet turpis leo. Praesent varius eleifend elit, eu dictum lectus consequat vitae. Etiam ut
+            <p>yes yo no p sit amet turpis leo. Praesent varius eleifend elit, eu dictum lectus consequat vitae. Etiam
+                ut
                 dolor
                 id justo fringilla finibus.</p>
         </div>
     </div>
 
     <div
-    class=" btnmenu container flex flex-col w-full max-w-lg p-6 mt-4 mx-4 divide-y rounded-md divide-gray-700 bg-gray-900 text-gray-100 transition duration-500 hover:scale-105">
-    <div class="flex justify-between p-4">
-        <div class="flex space-x-4">
-            <div>
-                <img src="/img/avatar.png" alt="" class="object-cover w-12 h-12 rounded-full bg-gray-500">
+        class=" btnmenu container flex flex-col w-full max-w-lg p-6 mt-4 mx-4 divide-y rounded-md divide-gray-700 bg-gray-900 text-gray-100 transition duration-500 hover:scale-105">
+        <div class="flex justify-between p-4">
+            <div class="flex space-x-4">
+                <div>
+                    <img src="/img/avatar.png" alt="" class="object-cover w-12 h-12 rounded-full bg-gray-500">
+                </div>
+                <div>
+                    <h4 class="font-bold">Leroy Jenkins</h4>
+                    <span class="text-xl text-gray-400">1 days ago</span>
+                </div>
             </div>
-            <div>
-                <h4 class="font-bold">Leroy Jenkins</h4>
-                <span class="text-xl text-gray-400">1 days ago</span>
+            <div class="flex items-center space-x-2 text-yellow-500">
+                <i class="fa-solid fa-star"></i>
+                <span class="text-xl font-bold">2</span>
             </div>
         </div>
-        <div class="flex items-center space-x-2 text-yellow-500">
-            <i class="fa-solid fa-star"></i>
-            <span class="text-xl font-bold">2</span>
+        <div class="p-4 space-y-2 text-xl text-gray-400">
+            <p>Vivamus sit amet turpis leo. Praesent varius eleifend elit, eu dictum lectus consequat vitae. Etiam ut
+                dolor
+                id justo fringilla finibus.</p>
         </div>
     </div>
-    <div class="p-4 space-y-2 text-xl text-gray-400">
-        <p>Vivamus sit amet turpis leo. Praesent varius eleifend elit, eu dictum lectus consequat vitae. Etiam ut
-            dolor
-            id justo fringilla finibus.</p>
-    </div>
-</div>
-   
+
 
 
 
