@@ -1,10 +1,7 @@
-<<<<<<< HEAD
+
 <div class="container m-auto px-6 md:px-12 lg:px-20">
     <div class="mt-12 m-auto -space-y-4 items-center justify-center md:flex md:space-y-0 md:-space-x-4 xl:w-10/12">
-=======
-<div class="container px-6 m-auto md:px-12 lg:px-20">
-    <div class="items-center justify-center m-auto mt-12 -space-y-4 md:flex md:space-y-0 md:-space-x-4 xl:w-10/12">
->>>>>>> e4f74abe40c891b62d4647d5f6e49f762b04a094
+
         <div class="relative z-10 -mx-4 group md:w-6/12 md:mx-0 lg:w-5/12">
             <div aria-hidden="true"
                 class="absolute top-0 w-full h-full transition duration-500 shadow-xl btnmenu rounded-2xl bg-emerald-500 group-hover:scale-105 lg:group-hover:scale-110">
