@@ -137,18 +137,4 @@ h1 {
     border-radius: 10px;
 }
 
-.ribbon2 {
-    position: absolute;
-    right: 25px;
-    top: 25px;
-    overflow: hidden;
-    z-index: 1;
-    text-align: right;
-    color: white;
-    transform: rotate(45deg);
-    padding-top: 4px;
-    padding-bottom: 4px;
-    background-color: rgb(25, 79, 141);
-    padding-left: 50px;
-    padding-right: 50px;
-}
+
