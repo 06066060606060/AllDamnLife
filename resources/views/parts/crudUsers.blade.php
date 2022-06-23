@@ -4,7 +4,7 @@
         <div class="container">
             <table
             
-                class="flex flex-row flex-no-wrap justify-center w-full my-5 overflow-hidden bg-gray-900 rounded-lg sm:shadow-lg">
+                class="flex flex-row flex-no-wrap justify-center w-full my-5 overflow-hidden bg-gray-900 rounded-lg sm:shadow-lg btnmenu">
                 
                     
                        
@@ -16,7 +16,6 @@
 
                         <th class="p-3 text-center ">Nom</th>
                         <th class="p-3 text-center">Prenom</th>
-                        
                         <th class="p-3 text-center">Email</th>
                         <th class="p-3 text-center " width="110px">Lire</th>
                         <th class="p-3 text-center" width="110px">Modifier</th>
@@ -34,13 +33,12 @@
                      
                     <tr class="flex flex-col flex-no wrap sm:table-row">
                         
-                        <td class="p-3 hover:bg-gray-800">{{ $user->nom }}</td>
-                        <td class="p-3 hover:bg-gray-800">{{ $user->prenom }}</td>
-                       
-                        <td class="p-3 truncate hover:bg-gray-800 ">{{ $user->email }}
+                        <td class="p-3">{{ $user->nom }}</td>
+                        <td class="p-3">{{ $user->prenom }}</td>
+                        <td class="p-3 truncate ">{{ $user->email }}
                         </td>
                         <td
-                            class="p-3 text-green-400 cursor-pointer hover:bg-gray-800 hover:text-green-600 hover:font-medium">
+                            class="p-3 text-green-400 cursor-pointer hover:text-green-600 hover:font-medium">
                            <a href="/user/{{ $user->id }}"> <i class="fa-solid fa-eye"></i> </a>
                         </td>
                         <td>
