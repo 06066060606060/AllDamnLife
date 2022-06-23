@@ -3,44 +3,65 @@
     <div class="flex items-center justify-center">
         <div class="container">
             <table
+            
                 class="flex flex-row flex-no-wrap justify-center w-full my-5 overflow-hidden bg-gray-900 rounded-lg sm:shadow-lg">
+                
+                    
+                       
                 <thead class="text-white">
+
+                    @foreach ($users as $user)
+                    
                     <tr class="flex flex-col rounded-l-lg bg-emerald-500 flex-no wrap sm:table-row ">
+
                         <th class="p-3 text-center ">Nom</th>
                         <th class="p-3 text-center">Prenom</th>
+                        <th class="p-3 text-center">Username</th>
                         <th class="p-3 text-center">Email</th>
-                        <th class="p-3 text-center " width="110px">Actions</th>
-                        <th class="p-3 text-center" width="110px">Actions</th>
-                        <th class="p-3 text-center" width="110px">Actions</th>
+                        <th class="p-3 text-center " width="110px">Lire</th>
+                        <th class="p-3 text-center" width="110px">Modifier</th>
+                        <th class="p-3 text-center" width="110px">Supprimer</th>
 
                     </tr>
-                </thead>
-                <tbody class="flex-1 text-white sm:flex-none">
 
-                    <tr class="flex flex-col flex-no wrap sm:table-row ">
-                        <td class="p-3 hover:bg-gray-800">Montegu</td>
-                        <td class="p-3 hover:bg-gray-800">Tommy</td>
-                        <td class="p-3 truncate hover:bg-gray-800 ">tommy.montegu@alldamnlife.com
+                    @endforeach
+
+                </thead> 
+                
+                <tbody class="flex-1 text-white sm:flex-none">
+                    
+                     @foreach ($users as $user)
+                     
+                    <tr class="flex flex-col flex-no wrap sm:table-row">
+                        
+                        <td class="p-3 hover:bg-gray-800">{{ $user->nom }}</td>
+                        <td class="p-3 hover:bg-gray-800">{{ $user->prenom }}</td>
+                        <td class="p-3 hover:bg-gray-800">{{ $user->username }}</td>
+                        <td class="p-3 truncate hover:bg-gray-800 ">{{ $user->email }}
                         </td>
                         <td
                             class="p-3 text-green-400 cursor-pointer hover:bg-gray-800 hover:text-green-600 hover:font-medium">
-                            <i class="fa-solid fa-eye"></i>
+                           <a href="/user/{{ $user->id }}"> <i class="fa-solid fa-eye"></i> </a>
                         </td>
-                        <td
-                            class="p-3 text-blue-400 cursor-pointer hover:bg-gray-800 hover:text-blue-600 hover:font-medium">
-                            <i class="fa-solid fa-pen-to-square"></i>
+                        <td>
+                        @include('parts.updateUser')
                         </td>
-                        <td
-                            class="p-3 text-red-400 cursor-pointer hover:bg-gray-800 hover:text-red-600 hover:font-medium">
-                            <i class="fa-solid fa-trash-can"></i>
+                        <td>
+                        @include('parts.deleteUsers')
                         </td>
-                    </tr>
+                    </tr> 
+
+                    @endforeach
 
                 </tbody>
+               
             </table>
         </div>
     </div>
 </div>
+
+
+
 <style>
     @media (min-width: 640px) {
         table {
