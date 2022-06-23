@@ -29,7 +29,7 @@
     </div>
     <div class="back">
 
-        <p class="p-2">Details arriére de la carte..</p>
+        <p class="p-2">Details arrière de la carte..</p>
         <a class="w-24 h-12 p-2 bg-blue-600 rounded hover:bg-blue-400 hover:text-gray-300">test</a>
     </div>
 </div>
@@ -40,11 +40,11 @@
     <div class="front">
         <span class="ribbon">20€</span>
         <img class="icon" src="/img/netflix.png">
-        <p>Details avant carte</p>
+        <p>Détails avant carte</p>
     </div>
     <div class="back">
 
-        <p class="p-2">Details arriére de la carte..</p>
+        <p class="p-2">Details arrière de la carte..</p>
         <a class="w-24 h-12 p-2 bg-blue-600 rounded hover:bg-blue-400 hover:text-gray-300">test</a>
     </div>
 </div>
@@ -55,11 +55,11 @@
     <div class="front">
         <span class="ribbon">20€</span>
         <img class="icon" src="/img/xbox.png">
-        <p>Details avant carte</p>
+        <p>Détails avant carte</p>
     </div>
     <div class="back">
 
-        <p class="p-2">Details arriére de la carte..</p>
+        <p class="p-2">Détails arrière de la carte..</p>
         <a class="w-24 h-12 p-2 bg-blue-600 rounded hover:bg-blue-400 hover:text-gray-300">test</a>
     </div>
 </div>
@@ -70,11 +70,11 @@
     <div class="front">
         <span class="ribbon">20€</span>
         <img class="icon" src="/img/amazon.png">
-        <p>Details avant carte</p>
+        <p>Détails avant carte</p>
     </div>
     <div class="back">
 
-        <p class="p-2">Details arriére de la carte..</p>
+        <p class="p-2">Détails arrière de la carte..</p>
         <a class="w-24 h-12 p-2 bg-blue-600 rounded hover:bg-blue-400 hover:text-gray-300">test</a>
     </div>
 </div>
@@ -100,11 +100,11 @@
     <div class="front">
         <span class="ribbon">20€</span>
         <img class="icon" src="/img/disney.png">
-        <p>Details avant carte</p>
+        <p>Détails avant carte</p>
     </div>
     <div class="back">
 
-        <p class="p-2">Details arriére de la carte..</p>
+        <p class="p-2">Détails arrière de la carte..</p>
         <a class="w-24 h-12 p-2 bg-blue-600 rounded hover:bg-blue-400 hover:text-gray-300">test</a>
     </div>
 </div>
@@ -115,11 +115,11 @@
     <div class="front">
         <span class="ribbon">20€</span>
         <img class="icon" src="/img/psn.png">
-        <p>Details avant carte</p>
+        <p>Détails avant carte</p>
     </div>
     <div class="back">
 
-        <p class="p-2">Details arriére de la carte..</p>
+        <p class="p-2">Détails arrière de la carte..</p>
         <a class="w-24 h-12 p-2 bg-blue-600 rounded hover:bg-blue-400 hover:text-gray-300">test</a>
     </div>
 </div>
@@ -127,7 +127,6 @@
 
 
 </div>
-
 
 
 
