@@ -6,10 +6,10 @@
 			</div>
 			<ul class="flex flex-wrap items-center space-x-4 sm:space-x-8">
 				<li>
-					<a rel="noopener noreferrer" href="#">Terms of Use</a>
+					<a rel="noopener noreferrer" href="#">C.G.U</a>
 				</li>
 				<li>
-					<a rel="noopener noreferrer" href="#">Privacy</a>
+					<a rel="noopener noreferrer" href="#">Contactez-nous</a>
 				</li>
 			</ul>
 		</div>
