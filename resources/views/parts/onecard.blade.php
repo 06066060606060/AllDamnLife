@@ -20,21 +20,21 @@
 
                             <div class="flex flex-col items-center w-full">
                                 <div class="flex flex-col items-center py-6 space-y-3">
-                                    <div class="flex space-x-3">
+                                    <div class="flex space-x-3 ">
                                         <button type="button" title="Rate 1 stars" aria-label="Rate 1 stars">
-                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star text-yellow-500"></i>
                                         </button>
-                                        <button type="button" title="Rate 2 stars" aria-label="Rate 2 stars">
-                                            <i class="fa-solid fa-star"></i>
+                                        <button type="button" title="Rate 2 stars " aria-label="Rate 2 stars">
+                                            <i class="fa-solid fa-star text-yellow-500"></i>
                                         </button>
                                         <button type="button" title="Rate 3 stars" aria-label="Rate 3 stars">
-                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star text-yellow-500"></i>
                                         </button>
                                         <button type="button" title="Rate 4 stars" aria-label="Rate 4 stars">
-                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star text-yellow-500"></i>
                                         </button>
                                         <button type="button" title="Rate 5 stars" aria-label="Rate 5 stars">
-                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star "></i>
                                         </button>
                                     </div>
                                 </div>
