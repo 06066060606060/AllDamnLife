@@ -1,18 +1,4 @@
 <div class="max-w-screen-xl mx-auto ">
-<<<<<<< HEAD
-<div class="flex items-center justify-center">
-    <div class="container">
-        <table class="flex flex-row flex-no-wrap justify-center w-full my-5 overflow-hidden bg-gray-900 rounded-lg sm:shadow-lg">
-            <thead class="text-white">
-                <tr
-                    class="flex flex-col  rounded-l-lg bg-emerald-500 flex-no wrap sm:table-row ">
-                    <th class="p-3 text-center ">Nom</th>
-                    <th class="p-3 text-center">Prenom</th>
-                    <th class="p-3 text-center">Email</th>
-                    <th class="p-3 text-center " width="110px">Actions</th>
-                    <th class="p-3 text-center" width="110px">Actions</th>
-                    <th class="p-3 text-center" width="110px">Actions</th>
-=======
 
     <div class="flex items-center justify-center">
         <div class="container">
@@ -23,7 +9,6 @@
                     
                        
                 <thead class="text-white">
->>>>>>> af600f8a4fd532686aa51a23fe3b140cb47fd50e
 
                     @foreach ($users as $user)
                     
