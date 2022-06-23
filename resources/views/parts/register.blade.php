@@ -28,7 +28,8 @@
                         <img class="p-2 bg-gray-900 rounded" src="/img/logo.png" alt="logo">
                     
 
-                        <form novalidate="" action="" class="space-y-6 ng-untouched ng-pristine ng-valid">
+                        <form action="/register" class="space-y-6 ng-untouched ng-pristine ng-valid"  method="post">
+                            @csrf
                             <div class="space-y-1 text-sm">
                                 <label for="nom" class="block text-gray-400">Nom</label>
                                 <input type="text" name="nom" id="nom" placeholder="Nom"
@@ -51,7 +52,7 @@
                                 
                             </div>
                             <button
-                                class="block w-full p-3 text-center text-gray-900 bg-teal-400 rounded">S'inscrire
+                                class="block w-full p-3 text-center text-gray-900 transition-colors duration-200 bg-teal-400 rounded hover:bg-teal-200 focus:bg-teal-200">S'inscrire
                                 </button>
                         </form>
                         <div class="flex items-center pt-4 space-x-1">

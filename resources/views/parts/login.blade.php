@@ -28,7 +28,8 @@
                         <img class="p-2 bg-gray-900 rounded" src="/img/logo.png" alt="logo">
                     
 
-                        <form novalidate="" action="" class="space-y-6 ng-untouched ng-pristine ng-valid">
+                        <form action="/login" class="space-y-6 ng-untouched ng-pristine ng-valid" method="post">
+                            @csrf
                             
                             <div class="space-y-1 text-sm">
                                 <label for="email" class="block text-gray-400">email</label>
@@ -42,7 +43,7 @@
                                 
                             </div>
                             <button
-                                class="block w-full p-3 text-center text-gray-900 bg-teal-400 rounded">S'identifier</button>
+                                class="block w-full p-3 text-center text-gray-900 bg-teal-400 hover:bg-teal-200 focus:bg-teal-200 rounded transition-colors duration-200">S'identifier</button>
                         </form>
                         <div class="flex items-center pt-4 space-x-1">
                             <div class="flex-1 h-px bg-gray-700 sm:w-16"></div>
