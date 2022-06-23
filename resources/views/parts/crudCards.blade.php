@@ -31,8 +31,8 @@
                 </thead>
                 <tbody class="flex-1 text-white sm:flex-none">
     
-                    <tr class="flex flex-col flex-no wrap sm:table-row ">
-                        <td class="p-3">une image</td>
+                    <tr class="flex flex-col flex-no wrap sm:table-row">
+                        <td class="p-3">une image</td> 
                         <td class="p-3">350 €</td>
                         <td class="p-3">C'est cool</td>
                         <td class="p-3">5/5</td>
@@ -47,12 +47,9 @@
                             class="p-3 text-red-400 cursor-pointer hover:text-red-600 hover:font-medium">
                             <i class="fa-solid fa-trash-can"></i></td>
                     </tr>
-
-
-
-                    
+     
                     <tr class="flex flex-col flex-no wrap sm:table-row ">
-                    <td class="p-3">une image</td>
+                        <td class="p-3">une image</td>
                         <td class="p-3">350 €</td>
                         <td class="p-3">C'est sympa</td>
                         <td class="p-3">4.5/5</td>
@@ -67,9 +64,10 @@
                             class="p-3 text-red-400 cursor-pointer hover:text-red-600 hover:font-medium">
                             <i class="fa-solid fa-trash-can"></i></td>
                     </tr>
-    
+             
     
                 </tbody>
+             
             </table>
         </div>
     </div>
