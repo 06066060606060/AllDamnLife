@@ -30,14 +30,6 @@ img {
     user-select: none;
 }
 
-<<<<<<< HEAD
-body {
-    text-align: center;
-    padding: 1em;
-    /* background-repeat: no-repeat;
-	 background-size: cover; */
-    font-family: "Lato", sans-serif;
-=======
  body {
 	 text-align: center;
 	 padding: 1em;
@@ -46,7 +38,6 @@ body {
 	 background-image: url(/img/SimpleShiny.svg);
 	 background-repeat: no-repeat;
 	background-size: cover;
->>>>>>> 121bc3b94b18f870a0e8147b8404966549e1241b
 }
 h1 {
     font-size: 2.2em;
@@ -112,26 +103,6 @@ h1 {
     color: #999;
 }
 
-<<<<<<< HEAD
-/* BANDEAU PRIX CARTE */
-.ribbon {
-    position: absolute;
-    right: -25px;
-    top: 25px;
-    overflow: hidden;
-    z-index: 1;
-    text-align: right;
-    color: white;
-    transform: rotate(45deg);
-    padding-top: 4px;
-    padding-bottom: 4px;
-    background-color: rgb(25, 79, 141);
-    padding-left: 50px;
-    padding-right: 50px;
-}
-
-/* FIN ANIMATION CARTE_________________________________________________ */
-=======
  .flip {
 	 position: relative;
 	 opacity: 95%;
@@ -205,9 +176,8 @@ h1 {
 	background-color: rgb(25, 79, 141);
 	padding-left: 50px;
 	padding-right: 50px;
->>>>>>> 121bc3b94b18f870a0e8147b8404966549e1241b
 
-
+}
 
 
 /*DETAILS CARD_________________________________________________________*/
