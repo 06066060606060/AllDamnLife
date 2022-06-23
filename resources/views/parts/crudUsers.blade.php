@@ -1,5 +1,4 @@
 <div class="max-w-screen-xl mx-auto ">
-
 <div class="flex items-center justify-center">
     <div class="container">
         <table class="flex flex-row flex-no-wrap justify-center w-full my-5 overflow-hidden bg-gray-900 rounded-lg sm:shadow-lg">
