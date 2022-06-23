@@ -1,5 +1,9 @@
+<div class="max-w-screen-xl mx-auto ">
+	<div class="flex items-center text-gray-100 pb-2">
+        <a rel="noopener noreferrer" href="/users"
+            class="px-5 py-1 border-b-2 border-gray-700 hover:border-blue-400 hover:text-blue-400">Retour</a>
+    </div>
 <div class="container p-2 mx-auto text-gray-100 sm:p-4">
-	<h2 class="mb-4 text-2xl font-semibold leading-tight">Utilisateur 1</h2>
 	<div class="overflow-x-auto">
 		<table class="w-full p-6 text-xs text-left whitespace-nowrap">
 			<colgroup>
@@ -61,4 +65,5 @@
 			</tbody>
 		</table>
 	</div>
+</div>
 </div>
