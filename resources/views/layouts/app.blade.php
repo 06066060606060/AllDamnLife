@@ -5,7 +5,7 @@
     @include('parts.head')
 </head>
 
-<body class="bg-gray-800 dark">
+<body>
 
     <header>
         @include('parts.header')
@@ -15,7 +15,7 @@
         @yield('main')
     </main>
 
-    <footer class="px-4 py-8 text-gray-400 bg-gray-800">
+    <footer class="px-4 py-8 text-gray-400">
         @include('parts.footer')
     </footer>
 
