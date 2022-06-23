@@ -15,9 +15,10 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        User::factory()
-        ->count(15)
+
         
-        ->create();
+        $this->call([
+            AdminUserSeeder::class,
+        ]);
     }
 }

@@ -35,6 +35,14 @@ Route::get('card',function (){
     return view('card');
 });
 
+Route::get('/cart', function () {
+    return view('cart');
+});
+
+Route::get('/account', function () {
+    return view('account');
+});
+
 
 Route::post('/register',[AuthController::class,'register'])->name('register');
 Route::post('/login',[AuthController::class,'login'])->name('login');

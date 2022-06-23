@@ -1,4 +1,6 @@
 @extends('layouts.app')
+
 @section('main')
-@include('parts.onecard')
+@include('parts.panier')
+
 @endsection
