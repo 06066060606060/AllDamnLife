@@ -2,7 +2,7 @@
 
     <div class="flex items-center justify-center">
         <div class="container">
-            <table class="flex flex-row flex-no-wrap justify-center w-full my-5 overflow-hidden bg-gray-900 rounded-lg sm:shadow-lg">
+            <table class="flex flex-row flex-no-wrap justify-center w-full my-5 overflow-hidden bg-gray-900 rounded-lg sm:shadow-lg btnmenu">
                 <thead class="text-white">
                     <tr
                         class="flex flex-col rounded-l-lg bg-emerald-500 flex-no wrap sm:table-row ">
@@ -31,45 +31,43 @@
                 </thead>
                 <tbody class="flex-1 text-white sm:flex-none">
     
-                    <tr class="flex flex-col flex-no wrap sm:table-row ">
-                        <td class="p-3 hover:bg-gray-800">une image</td>
-                        <td class="p-3 hover:bg-gray-800">350 €</td>
-                        <td class="p-3 hover:bg-gray-800">C'est cool</td>
-                        <td class="p-3 hover:bg-gray-800">5/5</td>
-                        <td class="p-3 hover:bg-gray-800">20</td>
+                    <tr class="flex flex-col flex-no wrap sm:table-row">
+                        <td class="p-3">une image</td> 
+                        <td class="p-3">350 €</td>
+                        <td class="p-3">C'est cool</td>
+                        <td class="p-3">5/5</td>
+                        <td class="p-3">20</td>
                          <td
-                            class="p-3 text-green-400 cursor-pointer hover:bg-gray-800 hover:text-green-600 hover:font-medium">
+                            class="p-3 text-green-400 cursor-pointer hover:text-green-600 hover:font-medium">
                             <i class="fa-solid fa-eye"></i></td>
                         <td
-                            class="p-3 text-blue-400 cursor-pointer hover:bg-gray-800 hover:text-blue-600 hover:font-medium">
+                            class="p-3 text-blue-400 cursor-pointer hover:text-blue-600 hover:font-medium">
                             <i class="fa-solid fa-pen-to-square"></i></td>
                         <td
-                            class="p-3 text-red-400 cursor-pointer hover:bg-gray-800 hover:text-red-600 hover:font-medium">
+                            class="p-3 text-red-400 cursor-pointer hover:text-red-600 hover:font-medium">
                             <i class="fa-solid fa-trash-can"></i></td>
                     </tr>
-
-
-
-                    
+     
                     <tr class="flex flex-col flex-no wrap sm:table-row ">
-                    <td class="p-3 hover:bg-gray-800">une image</td>
-                        <td class="p-3 hover:bg-gray-800">350 €</td>
-                        <td class="p-3 hover:bg-gray-800">C'est sympa</td>
-                        <td class="p-3 hover:bg-gray-800">4.5/5</td>
-                        <td class="p-3 hover:bg-gray-800">10</td>
+                        <td class="p-3">une image</td>
+                        <td class="p-3">350 €</td>
+                        <td class="p-3">C'est sympa</td>
+                        <td class="p-3">4.5/5</td>
+                        <td class="p-3">10</td>
                          <td
-                            class="p-3 text-green-400 cursor-pointer hover:bg-gray-800 hover:text-green-600 hover:font-medium">
+                            class="p-3 text-green-400 cursor-pointer hover:text-green-600 hover:font-medium">
                             <i class="fa-solid fa-eye"></i></td>
                         <td
-                            class="p-3 text-blue-400 cursor-pointer hover:bg-gray-800 hover:text-blue-600 hover:font-medium">
+                            class="p-3 text-blue-400 cursor-pointer hover:text-blue-600 hover:font-medium">
                             <i class="fa-solid fa-pen-to-square"></i></td>
                         <td
-                            class="p-3 text-red-400 cursor-pointer hover:bg-gray-800 hover:text-red-600 hover:font-medium">
+                            class="p-3 text-red-400 cursor-pointer hover:text-red-600 hover:font-medium">
                             <i class="fa-solid fa-trash-can"></i></td>
                     </tr>
-    
+             
     
                 </tbody>
+             
             </table>
         </div>
     </div>
