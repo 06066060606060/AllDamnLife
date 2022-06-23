@@ -66,6 +66,7 @@
                     </a>
                     <a href="/cart"
                         class="flex items-center justify-center h-8 px-4 pt-1 pb-1 mx-1 space-x-2 tracking-wide text-white transition-colors duration-200 transform rounded-md btnmenu bg-emerald-500 hover:bg-emerald-300 focus:outline-none focus:bg-emerald-700">
+
                         Ajouter au panier
                     </a>
                 </div>
