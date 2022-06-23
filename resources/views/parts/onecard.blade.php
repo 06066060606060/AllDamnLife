@@ -1,5 +1,11 @@
-<div class="container px-6 m-auto md:px-12 lg:px-20">
-    <div class="items-center justify-center m-auto mt-12 -space-y-4 md:flex md:space-y-0 md:-space-x-4 xl:w-10/12">
+
+<div class="max-w-screen-xl mx-auto">
+    <div class="flex items-center text-gray-100 pb-2">
+        <a rel="noopener noreferrer" href="/"
+            class="px-5 py-1 border-b-2 border-gray-700 hover:border-blue-400 hover:text-blue-400">Retour</a>
+    </div>
+    <div class="mt-4 m-auto -space-y-4 items-center justify-center md:flex md:space-y-0 md:-space-x-4 ">
+
         <div class="relative z-10 -mx-4 group md:w-6/12 md:mx-0 lg:w-5/12">
             <div aria-hidden="true"
                 class="absolute top-0 w-full h-full transition duration-500 shadow-xl btnmenu rounded-2xl bg-emerald-500 group-hover:scale-105 lg:group-hover:scale-110">
@@ -59,7 +65,8 @@
                         20 €
                     </a>
                     <a href="/cart"
-                        class="flex items-center justify-center h-8 px-4 pt-1 pb-1 mx-1 space-x-2 tracking-wide text-white transition-colors duration-200 transform rounded-md btnmenu bg-emerald-500 hover:bg-violet-400 focus:outline-none focus:bg-violet-500">
+                        class="flex items-center justify-center h-8 px-4 pt-1 pb-1 mx-1 space-x-2 tracking-wide text-white transition-colors duration-200 transform rounded-md btnmenu bg-emerald-500 hover:bg-emerald-300 focus:outline-none focus:bg-emerald-700">
+
                         Ajouter au panier
                     </a>
                 </div>
