@@ -11,7 +11,6 @@ Route::get('/', function () {
     return view('index');
 });
 
-
 // Route::get('/users', function () {
 //     return view('users');
 // });
@@ -22,10 +21,6 @@ Route::get('/categories', function () {
 
 Route::get('/giveCards', function () {
     return view('giveCards');
-});
-
-Route::get('card',function (){
-    return view('card');
 });
 
 Route::get('/cart', function () {
@@ -51,3 +46,4 @@ route::get('user/{id}', [UsersController::class, 'showUsers'])->whereNumber('id'
 Route::get('/',[ProductController::class,'getProduct']);
 
 Route::post('/actif/{id}', [UsersController::class,'activisor']);
+Route::get('/card/{id}',[ProductController::class,'getOneProduct']);
