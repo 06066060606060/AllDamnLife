@@ -2,22 +2,15 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\ProductController;
 use App\Http\Controllers\UsersController;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
+
 
 Route::get('/', function () {
     return view('index');
 });
+
 
 // Route::get('/users', function () {
 //     return view('users');
@@ -54,3 +47,5 @@ route::get('/users', [UsersController::class, 'getUsers'])->name('getUsers');
 route::post('users/{id}', [UsersController::class, 'update'])->whereNumber('id')->name('updateUsers');
 route::delete('delete/{id}', [UsersController::class,'destroy'])->name('delete');
 route::get('user/{id}', [UsersController::class, 'showUsers'])->whereNumber('id')->name('readUsers');
+
+Route::get('/',[ProductController::class,'getProduct']);

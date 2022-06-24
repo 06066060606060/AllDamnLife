@@ -98,9 +98,9 @@ h1 {
 }
 .flip > .front p,
 .flip > .back p {
-    font-size: 0.9125rem;
+    font-size: 1.2rem;
     line-height: 160%;
-    color: #999;
+    color: white;
 }
 
  .flip {
@@ -160,7 +160,7 @@ h1 {
  .flip > .front p, .flip > .back p {
 	 font-size: 0.9125rem;
 	 line-height: 160%;
-	 color: #999;
+	 color: white;
 }
  
 /* BANDEAU PRIX CARTE */
