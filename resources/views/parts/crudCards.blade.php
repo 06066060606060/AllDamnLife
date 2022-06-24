@@ -11,9 +11,9 @@
                         <th class="p-3 text-center ">Détails</th>
                         <th class="p-3 text-center ">Note</th>
                         <th class="p-3 text-center ">Commentaires</th>
-                        <th class="p-3 text-center " width="110px">Actions</th>
-                        <th class="p-3 text-center" width="110px">Actions</th>
-                        <th class="p-3 text-center" width="110px">Actions</th>
+                        <<th class="p-3 text-center " width="110px">consulter</th>
+                        <th class="p-3 text-center" width="110px">Modifier</th>
+                        <th class="p-3 text-center" width="110px">Supprimer</th>
     
                     </tr>
                     <tr
@@ -23,16 +23,16 @@
                     <th class="p-3 text-center ">Détails</th>
                     <th class="p-3 text-center ">Note</th>
                     <th class="p-3 text-center ">Commentaires</th>
-                    <th class="p-3 text-center " width="110px">Actions</th>
-                    <th class="p-3 text-center" width="110px">Actions</th>
-                    <th class="p-3 text-center" width="110px">Actions</th>
+                    <th class="p-3 text-center " width="110px">consulter</th>
+                    <th class="p-3 text-center" width="110px">Modifier</th>
+                    <th class="p-3 text-center" width="110px">Supprimer</th>
 
                 </tr>
                 </thead>
                 <tbody class="flex-1 text-white sm:flex-none">
     
                     <tr class="flex flex-col flex-no wrap sm:table-row">
-                        <td class="p-3">une image</td> 
+                        <td class=""> <img  class="w-10 h-10 sm:w-14 sm:h-14 mx-auto" src="/img/netflix.png" alt="yolo"></td> 
                         <td class="p-3">350 €</td>
                         <td class="p-3">C'est cool</td>
                         <td class="p-3">5/5</td>
@@ -49,7 +49,7 @@
                     </tr>
      
                     <tr class="flex flex-col flex-no wrap sm:table-row ">
-                        <td class="p-3">une image</td>
+                        <td class=""><img  class="w-10 h-10 sm:w-14 sm:h-14 mx-auto" src="/img/google.png" alt="yolo"></td>
                         <td class="p-3">350 €</td>
                         <td class="p-3">C'est sympa</td>
                         <td class="p-3">4.5/5</td>
