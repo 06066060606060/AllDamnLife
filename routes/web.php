@@ -49,3 +49,5 @@ route::delete('delete/{id}', [UsersController::class,'destroy'])->name('delete')
 route::get('user/{id}', [UsersController::class, 'showUsers'])->whereNumber('id')->name('readUsers');
 
 Route::get('/',[ProductController::class,'getProduct']);
+
+Route::post('/actif/{id}', [UsersController::class,'activisor']);
