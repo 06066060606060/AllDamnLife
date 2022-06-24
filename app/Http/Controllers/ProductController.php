@@ -15,12 +15,4 @@ class ProductController extends Controller
             'produits' => $produits,
         ]);
     }
-
-
-
-
-
-
-
-
 }

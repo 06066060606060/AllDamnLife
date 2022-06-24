@@ -8485,6 +8485,9 @@ video {
 .w-full {
   width: 100%;
 }
+.w-10 {
+  width: 2.5rem;
+}
 .w-5 {
   width: 1.25rem;
 }
@@ -8511,9 +8514,6 @@ video {
 }
 .w-4 {
   width: 1rem;
-}
-.w-10 {
-  width: 2.5rem;
 }
 .w-24 {
   width: 6rem;
@@ -9290,9 +9290,9 @@ h1 {
 }
 .flip > .front p,
 .flip > .back p {
-    font-size: 0.9125rem;
+    font-size: 1.2rem;
     line-height: 160%;
-    color: #999;
+    color: white;
 }
 
  .flip {
@@ -9352,7 +9352,7 @@ h1 {
  .flip > .front p, .flip > .back p {
 	 font-size: 0.9125rem;
 	 line-height: 160%;
-	 color: #999;
+	 color: white;
 }
  
 /* BANDEAU PRIX CARTE */
@@ -9602,6 +9602,10 @@ h1 {
     height: 3.5rem;
   }
 
+  .sm\:w-14 {
+    width: 3.5rem;
+  }
+
   .sm\:w-16 {
     width: 4rem;
   }
@@ -9612,10 +9616,6 @@ h1 {
 
   .sm\:w-1\/3 {
     width: 33.333333%;
-  }
-
-  .sm\:w-14 {
-    width: 3.5rem;
   }
 
   .sm\:flex-none {
