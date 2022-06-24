@@ -16,7 +16,7 @@
 
                         <th class="p-3 text-center ">Nom</th>
                         <th class="p-3 text-center">Prenom</th>
-                        <th class="p-3 text-center">Username</th>
+
                         <th class="p-3 text-center">Email</th>
                         <th class="p-3 text-center " width="110px">Lire</th>
                         <th class="p-3 text-center" width="110px">Modifier</th>
@@ -36,7 +36,7 @@
                         
                         <td class="p-3 hover:bg-gray-800">{{ $user->nom }}</td>
                         <td class="p-3 hover:bg-gray-800">{{ $user->prenom }}</td>
-                        <td class="p-3 hover:bg-gray-800">{{ $user->username }}</td>
+                        
                         <td class="p-3 truncate hover:bg-gray-800 ">{{ $user->email }}
                         </td>
                         <td
@@ -50,16 +50,18 @@
                         @include('parts.deleteUsers')
                         </td>
                     </tr> 
-
+                    
                     @endforeach
 
                 </tbody>
                
             </table>
+
+
         </div>
+        
     </div>
 </div>
-
 
 
 <style>
