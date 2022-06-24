@@ -16,14 +16,17 @@ class UsersController extends Controller
     {
         
         $users = User::all();
+        $member= User::onlyTrashed()->get();
 
         return view('users', [
 
             
             'users' => $users,
+            'member' => $member,
             
 
         ]);
+        
     }
 
     /**
@@ -66,6 +69,7 @@ class UsersController extends Controller
             
             
         ]);
+        
     }
 
     /**
@@ -124,10 +128,13 @@ class UsersController extends Controller
     {
         $delete = User::find($id);
         $delete->delete();
+       
 
-        return redirect()->route('users');
+        return redirect()->route('getUsers');
+
     }
     }
+    
 
 
    
