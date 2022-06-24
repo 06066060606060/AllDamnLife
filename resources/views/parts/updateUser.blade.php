@@ -37,7 +37,7 @@
 
                     {{-- @click="modelOpen = false" --}}
                     <div class="w-full max-w-md p-8 space-y-3 text-gray-100 bg-gray-600 rounded-xl">
-                        <img class="p-2 bg-gray-900 rounded" src="/img/logo.png" alt="logo">
+                        
                     
 
                         <form action="{{route('updateUsers',$user['id'])}}" class="space-y-6 ng-untouched ng-pristine ng-valid" method="post">
