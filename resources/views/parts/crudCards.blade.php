@@ -32,7 +32,7 @@
                 <tbody class="flex-1 text-white sm:flex-none">
     
                     <tr class="flex flex-col flex-no wrap sm:table-row">
-                        <td class=""> <img  class="w-10 h-10 sm:w-14 sm:h-14 mx-auto" src="/img/netflix.png" alt="yolo"></td> 
+                        <td class=""> <img  class="w-10 h-10 sm:w-14 sm:h-14 mx-auto" src="/img/netflix.png" alt="logo card"></td> 
                         <td class="p-3">350 €</td>
                         <td class="p-3">C'est cool</td>
                         <td class="p-3">5/5</td>
@@ -48,22 +48,7 @@
                             <i class="fa-solid fa-trash-can"></i></td>
                     </tr>
      
-                    <tr class="flex flex-col flex-no wrap sm:table-row ">
-                        <td class=""><img  class="w-10 h-10 sm:w-14 sm:h-14 mx-auto" src="/img/google.png" alt="yolo"></td>
-                        <td class="p-3">350 €</td>
-                        <td class="p-3">C'est sympa</td>
-                        <td class="p-3">4.5/5</td>
-                        <td class="p-3">10</td>
-                         <td
-                            class="p-3 text-green-400 cursor-pointer hover:text-green-600 hover:font-medium">
-                            <i class="fa-solid fa-eye"></i></td>
-                        <td
-                            class="p-3 text-blue-400 cursor-pointer hover:text-blue-600 hover:font-medium">
-                            <i class="fa-solid fa-pen-to-square"></i></td>
-                        <td
-                            class="p-3 text-red-400 cursor-pointer hover:text-red-600 hover:font-medium">
-                            <i class="fa-solid fa-trash-can"></i></td>
-                    </tr>
+                    
              
     
                 </tbody>
