@@ -19,7 +19,7 @@ class CreateProduitsTable extends Migration
             $table->longText('description');
             $table->integer('prix');
             $table->longText('image');
-            $table->integer('quantite');
+            $table->integer('note')->default(0);
             $table->timestamp('updated_at')->useCurrent()->on('update')->useCurrent();
             $table->timestamp('created_at')->useCurrent()->on('update')->useCurrent();
             $table->integer('cat_id')->index();
