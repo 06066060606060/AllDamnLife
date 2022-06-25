@@ -8,8 +8,6 @@
         </div>
     @endif
 
-
-
 <div x-data="{ modelOpen: false }">
 
     <button @click="modelOpen =!modelOpen"
