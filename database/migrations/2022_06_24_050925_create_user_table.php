@@ -27,7 +27,7 @@ class CreateUserTable extends Migration
             $table->dateTime('date_derniere_connexion')->nullable();
             $table->enum('profil', ['admin','abonne','client'])->default('abonne');;
             $table->enum('type_identification', ['ADL','SOCIAL'])->default('ADL');;
-            $table->tinyInteger('actif')->default(0);
+            $table->tinyInteger('actif')->default(1);
             $table->date('date_naissance')->nullable();
             $table->string('username')->nullable();
             $table->string('numero_telephone')->nullable();

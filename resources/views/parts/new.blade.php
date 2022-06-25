@@ -9,7 +9,7 @@
                 <p class="mt-4 mb-8 text-sm">Lorem ipsum dolor sit amet consectetur adipisicing elit. Non voluptatum rem
                     amet!</p>
 					<div class="flex flex-row justify-center">
-                <button class="w-32 p-3 text-center text-gray-900 rounded bg-emerald-500 hover:bg-gray-500">Plus
+                <button class="w-32 p-3 text-center text-white rounded bg-emerald-500 hover:bg-gray-500">Plus
                     d'infos</button>
 				</div>
             </div>
