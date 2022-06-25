@@ -38,20 +38,24 @@
 
                 <div class="items-center hidden space-x-2 md:flex lg:flex">
                     <a href="/users"
-                        class="flex items-center justify-center h-8 px-4 pt-1 pb-1 mx-1 space-x-2 tracking-wide text-white transition-colors duration-200 transform bg-blue-600 rounded-md btnmenu hover:bg-blue-400 focus:outline-none focus:bg-blue-500">
+                        class="flex items-center justify-center h-8 px-4 pt-1 pb-1 mx-1 space-x-2 tracking-wide text-white transition-colors duration-200 transform bg-blue-600 rounded-md tooltip btnmenu hover:bg-blue-400 focus:outline-none focus:bg-blue-500">
                         <i class="fa-solid fa-gear"></i>
+                        <span class="px-4 tooltiptext">Gestion</span>
                     </a>
                     <a href="/account"
-                        class="flex items-center justify-center h-8 px-4 pt-1 pb-1 mx-1 space-x-2 tracking-wide text-white transition-colors duration-200 transform rounded-md btnmenu bg-violet-600 hover:bg-violet-400 focus:outline-none focus:bg-violet-500">
+                        class="flex items-center justify-center h-8 px-4 pt-1 pb-1 mx-1 space-x-2 tracking-wide text-white transition-colors duration-200 transform rounded-md tooltip btnmenu bg-violet-600 hover:bg-violet-400 focus:outline-none focus:bg-violet-500">
                         <i class="fa-solid fa-user"></i>
+                        <span class="px-4 tooltiptext">Mon Profil</span>
                     </a>
                     <a href="/cart"
-                        class="flex items-center justify-center h-8 px-4 pt-1 pb-1 mx-1 space-x-2 tracking-wide text-white transition-colors duration-200 transform rounded-md btnmenu bg-emerald-500 hover:bg-emerald-300 focus:outline-none focus:bg-emerald-500">
+                        class="flex items-center justify-center h-8 px-4 pt-1 pb-1 mx-1 space-x-2 tracking-wide text-white transition-colors duration-200 transform rounded-md tooltip btnmenu bg-emerald-500 hover:bg-emerald-300 focus:outline-none focus:bg-emerald-500">
                         <i class="fa-solid fa-basket-shopping"></i>
+                        <span class="px-4 tooltiptext">Mon Panier</span>
                     </a>
                     <a href="/logout"
-                        class="flex items-center justify-center h-8 px-4 pt-1 pb-1 mx-1 space-x-2 tracking-wide text-white transition-colors duration-200 transform bg-gray-600 rounded-md btnmenu hover:bg-gray-400 focus:outline-none focus:bg-gray-500">
+                        class="flex items-center justify-center h-8 px-4 pt-1 pb-1 mx-1 space-x-2 tracking-wide text-white transition-colors duration-200 transform bg-gray-600 rounded-md tooltip btnmenu hover:bg-gray-400 focus:outline-none focus:bg-gray-500">
                         <i class="fa-solid fa-right-from-bracket"></i>
+                        <span class="px-4 tooltiptext">Se déconnecter</span>
                     </a>
                 </div>
             @endauth
@@ -73,6 +77,7 @@
                 <a href="/users"
                     class="flex items-center justify-center h-8 px-4 pt-1 pb-1 mx-1 space-x-2 tracking-wide text-white transition-colors duration-200 transform bg-blue-600 rounded-md btnmenu hover:bg-blue-400 focus:outline-none focus:bg-blue-500">
                     <i class="fa-solid fa-gear"></i>
+
                 </a>
                 <a href="/account"
                     class="flex items-center justify-center h-8 px-4 pt-1 pb-1 mx-1 space-x-2 tracking-wide text-white transition-colors duration-200 transform rounded-md btnmenu bg-violet-600 hover:bg-violet-400 focus:outline-none focus:bg-violet-500">
@@ -94,28 +99,30 @@
 <style>
     /* Tooltip container */
     .tooltip {
-      position: relative;
-      display: inline-block;
-      border-bottom: 1px dotted black; /* If you want dots under the hoverable text */
+        position: relative;
+        display: inline-block;
+        border-bottom: 1px dotted black;
+        /* If you want dots under the hoverable text */
     }
-    
+
     /* Tooltip text */
     .tooltip .tooltiptext {
-      visibility: hidden;
-      width: 120px;
-      background-color: black;
-      color: #fff;
-      text-align: center;
-      padding: 5px 0;
-      border-radius: 6px;
-     
-      /* Position the tooltip text - see examples below! */
-      position: absolute;
-      z-index: 1;
+        visibility: hidden;
+        width: 130px;
+        top: -35px;
+        left: -50px;
+        color: rgba(255, 255, 255, 0.534);
+        text-alrgba(255, 255, 255, 0.459) center;
+        padding: 4px 4px;
+        border-radius: 6px;
+
+        /* Position the tooltip text - see examples below! */
+        position: absolute;
+        z-index: 1;
     }
-    
+
     /* Show the tooltip text when you mouse over the tooltip container */
     .tooltip:hover .tooltiptext {
-      visibility: visible;
+        visibility: visible;
     }
-    </style>
+</style>
