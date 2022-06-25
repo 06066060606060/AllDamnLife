@@ -2,7 +2,7 @@
 
     <div class="flex items-center justify-center">
         <div class="container">
-            <table class="flex flex-row flex-no-wrap justify-center w-full my-5 overflow-hidden bg-gray-900 rounded-lg sm:shadow-lg btnmenu">
+            <table class="flex flex-row flex-no-wrap justify-center w-full my-5 overflow-hidden bg-gray-600 rounded-lg sm:shadow-lg btnmenu">
                 <thead class="text-white">
                     <tr
                         class="flex flex-col rounded-l-lg bg-emerald-500 flex-no wrap sm:table-row ">
@@ -32,7 +32,7 @@
                 <tbody class="flex-1 text-white sm:flex-none">
     
                     <tr class="flex flex-col flex-no wrap sm:table-row">
-                        <td class=""> <img  class="w-10 h-10 sm:w-14 sm:h-14 mx-auto" src="/img/netflix.png" alt="yolo"></td> 
+                        <td class=""> <img  class="w-10 h-10 mx-auto sm:w-14 sm:h-14" src="/img/netflix.png" alt="yolo"></td> 
                         <td class="p-3">350 €</td>
                         <td class="p-3">C'est cool</td>
                         <td class="p-3">5/5</td>
@@ -49,7 +49,7 @@
                     </tr>
      
                     <tr class="flex flex-col flex-no wrap sm:table-row ">
-                        <td class=""><img  class="w-10 h-10 sm:w-14 sm:h-14 mx-auto" src="/img/google.png" alt="yolo"></td>
+                        <td class=""><img  class="w-10 h-10 mx-auto sm:w-14 sm:h-14" src="/img/google.png" alt="yolo"></td>
                         <td class="p-3">350 €</td>
                         <td class="p-3">C'est sympa</td>
                         <td class="p-3">4.5/5</td>

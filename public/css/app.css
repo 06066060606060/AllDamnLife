@@ -8969,6 +8969,9 @@ video {
 .pl-1 {
   padding-left: 0.25rem;
 }
+.pt-24 {
+  padding-top: 6rem;
+}
 .text-center {
   text-align: center;
 }
@@ -9481,6 +9484,14 @@ h1 {
   color: rgb(31 41 55 / var(--tw-text-opacity));
 }
 
+<<<<<<< HEAD
+=======
+.hover\:text-blue-300:hover {
+  --tw-text-opacity: 1;
+  color: rgb(147 197 253 / var(--tw-text-opacity));
+}
+
+>>>>>>> 26d091fef08c4f04251bfe87a3cf184b134a8eb3
 .focus\:z-10:focus {
   z-index: 10;
 }
@@ -9540,6 +9551,14 @@ h1 {
   color: rgb(252 165 165 / var(--tw-text-opacity));
 }
 
+<<<<<<< HEAD
+=======
+.focus\:text-yellow-500:focus {
+  --tw-text-opacity: 1;
+  color: rgb(234 179 8 / var(--tw-text-opacity));
+}
+
+>>>>>>> 26d091fef08c4f04251bfe87a3cf184b134a8eb3
 .focus\:outline-none:focus {
   outline: 2px solid transparent;
   outline-offset: 2px;
