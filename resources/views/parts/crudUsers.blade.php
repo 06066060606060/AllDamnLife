@@ -15,7 +15,7 @@
                     <tr class="flex flex-col rounded-l-lg bg-emerald-500 flex-no wrap sm:table-row ">
 
                         <th class="p-3 text-center ">Nom</th>
-                        <th class="p-3 text-center">Prenom</th>
+                        <th class="p-3 text-center">Prénom</th>
                         <th class="p-3 text-center">Email</th>
                         <th class="p-3 text-center " width="110px">Lire</th>
                         <th class="p-3 text-center" width="110px">Modifier</th>
