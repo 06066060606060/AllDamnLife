@@ -37,7 +37,7 @@ class User extends Authenticatable
 
     public function panier()
     {
-        return $this->belongsTo(Panier::class);
+        return $this->belongsTo(Paniers::class);
     }
 
 }

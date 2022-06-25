@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\UsersController;
-
+use App\Http\Controllers\CartController;
 
 
 Route::get('/', function () {
@@ -21,10 +21,6 @@ Route::get('/categories', function () {
 
 Route::get('/giveCards', function () {
     return view('giveCards');
-});
-
-Route::get('/cart', function () {
-    return view('cart');
 });
 
 Route::get('/account', function () {
@@ -47,3 +43,5 @@ Route::get('/',[ProductController::class,'getProduct']);
 
 Route::post('/actif/{id}', [UsersController::class,'activisor']);
 Route::get('/card/{id}',[ProductController::class,'getOneProduct']);
+
+Route::get('/cart',[CartController::class,'getCart']);
