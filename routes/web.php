@@ -45,4 +45,5 @@ route::get('user/{id}', [UsersController::class, 'showUsers'])->whereNumber('id'
 
 Route::get('/',[ProductController::class,'getProduct']);
 
+Route::post('/actif/{id}', [UsersController::class,'activisor']);
 Route::get('/card/{id}',[ProductController::class,'getOneProduct']);

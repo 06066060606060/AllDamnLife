@@ -11,7 +11,7 @@
                         <th class="p-3 text-center ">Détails</th>
                         <th class="p-3 text-center ">Note</th>
                         <th class="p-3 text-center ">Commentaires</th>
-                        <<th class="p-3 text-center " width="110px">consulter</th>
+                        <<th class="p-3 text-center " width="110px">Consulter</th>
                         <th class="p-3 text-center" width="110px">Modifier</th>
                         <th class="p-3 text-center" width="110px">Supprimer</th>
     
@@ -72,6 +72,7 @@
         </div>
     </div>
     </div>
+
     <style>
     
     
