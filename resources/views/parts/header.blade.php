@@ -97,12 +97,13 @@
 </div>
 
 <style>
-    /* Tooltip container */
+
+
+    /* ANIMATION SURVOL MENU FULL CSS AU TOP */
     .tooltip {
         position: relative;
         display: inline-block;
         border-bottom: 1px dotted black;
-        /* If you want dots under the hoverable text */
     }
 
     /* Tooltip text */
@@ -115,14 +116,20 @@
         text-alrgba(255, 255, 255, 0.459) center;
         padding: 4px 4px;
         border-radius: 6px;
-
-        /* Position the tooltip text - see examples below! */
         position: absolute;
         z-index: 1;
     }
 
-    /* Show the tooltip text when you mouse over the tooltip container */
     .tooltip:hover .tooltiptext {
         visibility: visible;
+    }
+
+    .tooltip .tooltiptext {
+        opacity: 0;
+        transition: opacity 0.2s;
+    }
+
+    .tooltip:hover .tooltiptext {
+        opacity: 1;
     }
 </style>

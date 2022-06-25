@@ -26,7 +26,7 @@
                                         <i class="fa-solid fa-star"></i>
                                     </div>
                                 </div>
-                                <i class="fa-solid fa-message"></i>
+                             @include('parts.comm')
                             </div>
                         </div>
                     </div>
