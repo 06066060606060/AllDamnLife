@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 use App\Models\Produits;
+use App\Models\Categories;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
@@ -14,6 +15,7 @@ class ProduitsSeeder extends Seeder
      */
     public function run()
     {
+        Categories::create(['id_cat'=> '1', 'label'=> 'Jeux vidéo']);
         Produits::create(['titre'=> 'Carte Cadeau Netflix', 'description'=> 'Films, programmes TV et contenu original, il y en a pour tous les goûts. Les membres de Netflix peuvent regarder leurs programmes de divertissement favoris chez eux et sur tous leurs écrans. Sans aucune publicité. Les membres peuvent utiliser les cartes Netflix pour payer leur abonnement. Les personnes non abonnées peuvent les utiliser pour regarder Netflix immédiatement, sur n’importe quel appareil.', 'prix'=>'25',  'image'=> '/img/netflix.png', 'cat_id'=>'1', 'note'=>'10']);
         Produits::create(['titre'=> 'Carte Cadeau Disney+', 'description'=> 'Disney+, c est le cadeau idéal pour tous. Avec un divertissement en continu signé Disney, Pixar, Marvel, Star Wars, National Geographic et Star, on ne peut pas s ennuyer avec un abonnement Disney+. Des productions originales en passant par les grands classiques ou les monuments du petit écran, chacun trouvera son bonheur et aura toujours quelque chose de nouveau à découvrir !', 'prix'=>'10',  'image'=> '/img/disney.png', 'cat_id'=>'1', 'note'=>'10']);
         Produits::create(['titre'=> 'Carte Cadeau Xbox', 'description'=> 'Offrez au joueur de votre liste une carte cadeau Xbox numérique à utiliser dans le Microsoft Store en ligne, sur Windows et Xbox. * Vous recevrez un e-mail avec un code numérique que le destinataire de votre cadeau peut utiliser pour acheter des jeux populaires, des extensions, des packs de cartes et bien plus encore.', 'prix'=>'25',  'image'=> '/img/xbox.png', 'cat_id'=>'1', 'note'=>'10']);
