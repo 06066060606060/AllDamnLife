@@ -12,7 +12,7 @@ class ProductController extends Controller
    
     public function getProduct()
     {
-        $produits = Produits::all();
+        $produits = Produits::where('id', '!=' ,0)->inRandomOrder()->get();
         return view('index', [
             'produits' => $produits,
         ]);

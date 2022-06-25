@@ -26,6 +26,7 @@
                                         <i class="fa-solid fa-star"></i>
                                     </div>
                                 </div>
+                                <i class="fa-solid fa-message"></i>
                             </div>
                         </div>
                     </div>
@@ -47,7 +48,7 @@
                         {{ $produit->prix }} €
                     </a>
 
-                   {{-- putain pas mal ce petit truc ;) --}}
+                   {{-- putain pas mal ce petit truc merci copilot! --}}
                     <a @auth href="/cart" @else href="/" @endauth    
                         class="flex items-center justify-center h-8 px-4 pt-1 pb-1 mx-1 space-x-2 tracking-wide text-white transition-colors duration-200 transform rounded-md btnmenu bg-emerald-500 hover:bg-emerald-300 focus:outline-none focus:bg-emerald-700">
                         Ajouter au panier
