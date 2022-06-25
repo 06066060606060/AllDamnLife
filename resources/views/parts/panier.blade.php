@@ -23,62 +23,28 @@
                         <div class="flow-root">
                             <ul class="-my-4 divide-y divide-gray-100">
 
+                  
+                               <li class="flex items-center justify-between py-4">
+                                <div class="flex items-start">
+                                    <img class="flex-shrink-0 object-cover w-16 h-16 bg-gray-900 rounded-lg" src="/img/netflix.png" alt="" />
 
-                                {{-- boucle --}}
-                                <li class="flex items-center justify-between py-4">
-                                    <div class="flex items-start">
-                                        <img class="flex-shrink-0 object-cover w-16 h-16 bg-gray-900 rounded-lg" src="/img/netflix.png" alt="" />
+                                    <div class="ml-4">
+                                        <p class="pl-4 text-sm text-white">Carte cadeaux Netflix</p>
 
-                                        <div class="ml-4">
-                                            <p class="pl-4 text-sm text-white">Carte cadeaux Netflix</p>
-
-                                            
-                                        </div>
+                                        
                                     </div>
+                                </div>
 
-                                    <div>
-                                        <p class="text-sm text-emerald-300">
-                                            20€
-                                            <small class="pl-1 ml-4 text-white"><i class="fa-solid fa-trash-can hover:text-red-500 focus:text-red-300"></i></small>
-                                        </p>
-                                    </div>
-                                </li>
-                                {{-- boucle --}}
-                                <li class="flex items-center justify-between py-4">
-                                    <div class="flex items-start">
-                                        <img class="flex-shrink-0 object-cover w-16 h-16 bg-gray-900 rounded-lg" src="/img/xbox.png" alt="" />
-
-                                        <div class="ml-4">
-                                            <p class="pl-4 text-sm text-white">Carte cadeaux Xbox</p>
-
-                                            
-                                        </div>
-                                    </div>
-
-                                    <div>
-                                        <p class="text-sm text-emerald-300">
-                                            50€
-                                            <small class="pl-1 ml-4 text-white"><i class="fa-solid fa-trash-can hover:text-red-500 focus:text-red-300"></i></small>
-                                        </p>
-                                    </div>
-                                </li>
-
-                                <li class="flex items-center justify-between py-4">
-                                    <div class="flex items-start">
-                                        <img class="flex-shrink-0 object-cover w-16 h-16 bg-gray-900 rounded-lg" src="/img/psn.png" alt="" />
-
-                                        <div class="ml-4">
-                                            <p class="pl-4 text-sm text-white">Carte cadeaux PlayStation Network</p>
-                                        </div>
-                                    </div>
-
-                                    <div>
-                                        <p class="text-sm text-emerald-300">
-                                            20€
-                                            <small class="pl-1 ml-4 text-white"><i class="fa-solid fa-trash-can hover:text-red-500 focus:text-red-300"></i></small>
-                                        </p>
-                                    </div>
-                                </li>
+                                <div>
+                                    <p class="text-sm text-emerald-300">
+                                        20€
+                                        <small class="pl-1 ml-4 text-white"><i class="fa-solid fa-trash-can hover:text-red-500 focus:text-red-300"></i></small>
+                                    </p>
+                                </div>
+                            </li>
+                             
+                               
+                             
 
                             </ul>
                         </div>

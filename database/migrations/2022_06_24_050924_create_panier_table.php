@@ -9,7 +9,7 @@ return new class extends Migration
  
     public function up()
     {
-        Schema::create('panier', function (Blueprint $table) {
+        Schema::create('paniers', function (Blueprint $table) {
             $table->id('prod_id');
             $table->foreign('prod_id')->references('id')->on('produits')->onDelete('cascade');
             $table->unsignedBigInteger('user_id');
