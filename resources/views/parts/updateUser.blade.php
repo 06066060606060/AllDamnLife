@@ -13,7 +13,7 @@
 <div x-data="{ modelOpen: false }">
 
     <button @click="modelOpen =!modelOpen"
-    class="p-3 text-blue-400 cursor-pointer hover:text-blue-600 hover:font-medium">
+    class="p-3 text-red-400 cursor-pointer hover:text-red-600 hover:font-medium">
     <i class="fa-solid fa-pen-to-square"></i>
     </button>
 

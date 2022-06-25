@@ -46,7 +46,7 @@ class CreateUserTable extends Migration
             $table->integer('nombre_relance')->default(0);
             $table->text('refused_token')->nullable();
             $table->date('date_last_relance')->nullable();
-            $table->timestamp('deleted_at')->useCurrent();;
+            $table->timestamp('deleted_at')->nullable();
         
         });
     }
