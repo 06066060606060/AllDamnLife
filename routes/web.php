@@ -31,19 +31,22 @@ Route::get('/account', function () {
     return view('account');
 });
 
+Route::post('/register', [AuthController::class, 'register'])->name('register');
 
+Route::post('/login', [AuthController::class, 'login'])->name('login');
 
-Route::post('/register',[AuthController::class,'register'])->name('register');
-Route::post('/login',[AuthController::class,'login'])->name('login');
-Route::get('/logout',[AuthController::class,'logout'])->name('logout');
-
+Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
 
 route::get('/users', [UsersController::class, 'getUsers'])->name('getUsers');
+
 route::post('users/{id}', [UsersController::class, 'update'])->whereNumber('id')->name('updateUsers');
-route::delete('delete/{id}', [UsersController::class,'destroy'])->name('delete');
+
+route::delete('delete/{id}', [UsersController::class, 'destroy'])->name('delete');
+
 route::get('user/{id}', [UsersController::class, 'showUsers'])->whereNumber('id')->name('readUsers');
 
-Route::get('/',[ProductController::class,'getProduct']);
+Route::get('/', [ProductController::class, 'getProduct']);
 
-Route::post('/actif/{id}', [UsersController::class,'activisor']);
-Route::get('/card/{id}',[ProductController::class,'getOneProduct']);
+Route::post('/actif/{id}', [UsersController::class, 'activisor']);
+
+Route::get('/card/{id}', [ProductController::class, 'getOneProduct']);
