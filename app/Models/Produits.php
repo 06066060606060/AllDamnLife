@@ -19,4 +19,10 @@ class Produits extends Model
         return $this->hasMany(Comments::class, 'id_comm', 'user_id', 'product_id', 'contenu' )->orderBy('created_at', 'DESC');
     }
 
+    public function categorie()
+    {
+        return $this->hasOne(Categories::class);
+    }
+  
+
 }
