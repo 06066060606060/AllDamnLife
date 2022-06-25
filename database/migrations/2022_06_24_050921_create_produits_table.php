@@ -13,7 +13,7 @@ return new class extends Migration
             $table->id('id');
             $table->string('titre');
             $table->longText('description');
-            $table->integer('prix');
+            $table->decimal('prix')->default('0');
             $table->longText('image');
             $table->integer('note')->default(0);
             $table->timestamp('updated_at')->useCurrent()->on('update')->useCurrent();

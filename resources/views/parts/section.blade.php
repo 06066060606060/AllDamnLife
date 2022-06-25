@@ -2,7 +2,7 @@
     @foreach ($produits as $produit)
         <div class="flip">
             <div class="front">
-                <span class="ribbon cr cr-top cr-right cr-sticky cr-blue">{{ $produit->prix }} €</span>
+                <span class="ribbon cr cr-top cr-right cr-sticky cr-blue">{{ (int)$produit->prix }} €</span>
                 <img class="icon" src="{{ $produit->image }}">
                 <p class="mt-12">{{ $produit->titre }}</p>
             </div>
