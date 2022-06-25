@@ -6,17 +6,17 @@
                     <tr
                         class="flex flex-col rounded-l-lg bg-emerald-500 flex-no wrap sm:table-row ">
                         <th class="p-3 text-center ">Catégories</th>
-                        <th class="p-3 text-center " width="110px">Actions</th>
-                        <th class="p-3 text-center" width="110px">Actions</th>
-                        <th class="p-3 text-center" width="110px">Actions</th>
+                        <th class="p-3 text-center " width="110px">Consulter</th>
+                        <th class="p-3 text-center" width="110px">Modifier</th>
+                        <th class="p-3 text-center" width="110px">Supprimer</th>
     
                     </tr>
                     <tr
                     class="flex flex-col rounded-l-lg bg-emerald-500 flex-no wrap sm:table-row ">
                     <th class="p-3 text-center ">Catégories</th>
-                    <th class="p-3 text-center " width="110px">Actions</th>
-                    <th class="p-3 text-center" width="110px">Actions</th>
-                    <th class="p-3 text-center" width="110px">Actions</th>
+                    <th class="p-3 text-center " width="110px">Consulter</th>
+                    <th class="p-3 text-center" width="110px">Modifier</th>
+                    <th class="p-3 text-center" width="110px">Supprimer</th>
 
                 </tr>
                 </thead>
