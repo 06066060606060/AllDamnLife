@@ -18,7 +18,7 @@
                         <th class="p-3 text-center">Prénom</th>
                         <th class="p-3 text-center">Email</th>
                         <th class="p-3 text-center">Role</th>
-                        <th class="p-3 text-center " width="110px">Lire</th>
+                        <th class="p-3 text-center " width="110px">Profil</th>
                         <th class="p-3 text-center" width="110px">Modifier</th>
                         <th class="p-3 text-center" width="110px">Activé</th>
 
