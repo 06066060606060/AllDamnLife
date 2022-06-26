@@ -14,12 +14,27 @@ class CartController extends Controller
     {
         $paniers = Paniers::where('user_id', '=',  Auth::user()->id)->get();
         $produits = Produits::All();
-        $price = 50;
         return view('cart', [
-            'price' => $price,
             'paniers' => $paniers,
             'produits' => $produits,
          
         ]);
     }
+
+    public function addtoCart($id)
+    {
+        $paniers = Paniers::where('user_id', '=',  Auth::user()->id)->get();
+        $produits = Produits::All();
+
+        $Panier = new Paniers();
+        $Panier->user_id = Auth::user()->id;
+        $Panier->prod_id = $id;
+        $Panier->save();
+        return redirect()->route('cart')->with('cart_ok', 'ajouté');
+    }
+    
+
+
+
+
 }

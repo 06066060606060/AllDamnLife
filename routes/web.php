@@ -44,4 +44,5 @@ Route::get('/',[ProductController::class,'getProduct']);
 Route::post('/actif/{id}', [UsersController::class,'activisor']);
 Route::get('/card/{id}',[ProductController::class,'getOneProduct']);
 
-Route::get('/cart',[CartController::class,'getCart']);
+Route::get('/cart',[CartController::class,'getCart'])->name('cart');
+Route::get('/addtocart/{id}',[CartController::class,'addtoCart']);
