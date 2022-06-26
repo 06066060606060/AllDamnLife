@@ -2,7 +2,7 @@
 
     <div class="flex items-center justify-center">
         <div class="container">
-            <table class="flex flex-row flex-no-wrap justify-center w-full my-5 overflow-hidden bg-gray-600 rounded-lg sm:shadow-lg btnmenu">
+            <table class="flex flex-row flex-no-wrap justify-center w-full overflow-hidden bg-gray-600 rounded-lg sm:shadow-lg btnmenu">
                 <thead class="text-white">
                     <tr
                         class="flex flex-col rounded-l-lg bg-emerald-500 flex-no wrap sm:table-row ">
