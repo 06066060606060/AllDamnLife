@@ -1,7 +1,7 @@
 <div x-data="{ modelOpen: false }">
 
     <button @click="modelOpen =!modelOpen">
-    <i class="text-xl fa-solid fa-message hover:text-blue-400"></i>
+        <span class="px-4 hover:text-blue-400">Laisser un commentaire</span>
     </button>
 
     <div x-cloak x-show="modelOpen" class="fixed inset-0 z-50 overflow-y-auto" aria-labelledby="modal-title" role="dialog"
@@ -26,9 +26,7 @@
                             @csrf
                             <div class="space-y-1 text-sm">
                                 <label for="comms" class="block pb-2 text-gray-200">Laisser un commentaire</label>
-                                <input value="" 
-                                class="w-full px-4 py-3 text-gray-100 bg-gray-900 border-gray-700 rounded-md focus:border-teal-400"
-                                type="text" name="comms" placeholder="commenter..." />
+                                <textarea class="w-full px-4 py-3 text-gray-100 bg-gray-900 border-gray-700 rounded-md focus:border-teal-400" rows="5" cols="20" minlength="5" name="comms" placeholder="commenter..."> </textarea>
                             </div>
                            
                             <div class="flex flex-col items-center space-y-3">
