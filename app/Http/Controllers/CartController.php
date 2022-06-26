@@ -27,11 +27,12 @@ class CartController extends Controller
         $Panier->user_id = Auth::user()->id;
         $Panier->prod_id = $id;
         $Panier->save();
-        return redirect()->route('cart')->with('cart_ok', 'ajouté');
+        return redirect()->route('getCard', $id)->with('cart_ok', 'ajouté');
     }
     
     public function deletefromCart($id)
     {
+        // A fixer si plusieurs fois meme produit tous sont supprimmé
         $delete = Paniers::where('user_id', '=',  Auth::user()->id)->where('prod_id', '=', $id);
         $delete->delete();
         return redirect()->route('cart')->with('cart_delete', 'ajouté');
