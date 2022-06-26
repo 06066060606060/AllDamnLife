@@ -32,6 +32,7 @@ class CartController extends Controller
     
     public function deletefromCart($id)
     {
+        // A fixer si plusieurs fois méme produit tous sont supprimmé
         $delete = Paniers::where('user_id', '=',  Auth::user()->id)->where('prod_id', '=', $id);
         $delete->delete();
         return redirect()->route('cart')->with('cart_delete', 'ajouté');
