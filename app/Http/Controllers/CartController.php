@@ -12,17 +12,14 @@ class CartController extends Controller
 {
     public function getCart()
     {
-     
-        $paniers = Paniers::with('produit')->get();
+        $paniers = Paniers::where('user_id', '=',  Auth::user()->id)->get();
         $produits = Produits::All();
-        $user = Auth::user();
-        $panier = Paniers::where('user_id', '=', Auth::user()->id)->with('produit')->get();
-       // dd($panier);
+        $price = 50;
         return view('cart', [
-         'panier' => $panier,
-         'paniers' => $paniers,
-         'produits' => $produits,
-         'user' => $user,
+            'price' => $price,
+            'paniers' => $paniers,
+            'produits' => $produits,
+         
         ]);
     }
 }

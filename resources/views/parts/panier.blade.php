@@ -13,16 +13,15 @@
 
                         <h2 class="ml-4 font-medium text-white"> {{ Auth::user()->prenom }}</h2>
                     </div>
-
-                    <div class="mt-8">
-                        <p class="text-2xl font-medium tracking-tight text-emerald-500">40 €</p>
-                        <p class="mt-1 text-sm text-gray-200">Pour l'achat de </p>
+                    @php ($totalcost = 0)
+                    <div class="mt-4">
+                        <p class=" text-gray-200">Contenu du panier</p>
                     </div>
-
                     <div class="mt-12">
                         <div class="flow-root">
                             <ul class="-my-4 divide-y divide-gray-100">
-                                @forelse ($paniers->where('user_id', '=', $user->id) as $panier)
+                                {{--  @forelse comme @foreach mais affiche un truc si c'est vide avec le @empty --}}
+                                @forelse ($paniers as $panier)
                                     @foreach ($produits->where('id', '=', $panier->prod_id) as $produit)
                                         <li class="flex items-center justify-between py-4">
                                             <div class="flex items-start">
@@ -30,13 +29,15 @@
                                                     src="{{ $produit->image }}" alt="" />
 
                                                 <div class="ml-4">
-                                                    <p class="pl-4 text-sm text-white">{{ $produit->titre }}</p>
+                                                    <p class="pl-4 pt-5 text-sm text-white">{{ $produit->titre }}</p>
                                                 </div>
                                             </div>
                                             <div>
                                                 <p class="text-sm text-emerald-300">
                                                     {{ $produit->prix }} €
+                                                    @php ($totalcost += $produit->prix)   
                                                     <small class="pl-1 ml-4 text-white">
+                                                        {{-- A FAIRE FONCTION DELETE PRODUIT DE LA TABLE PANIERS --}}
                                                         <i class="fa-solid fa-trash-can hover:text-red-500 focus:text-red-300"></i>
                                                     </small>
                                                 </p>
@@ -45,12 +46,20 @@
                                     @endforeach
                                 @empty
                                     <div class="flex flex-row justify-center">
-                                        <p class="pt-12 text-sm text-white">Votre panier est vide</p>
+                                        <p class="text-sm text-white">Votre panier est vide</p>
                                     </div>
                                 @endforelse
                             </ul>
                         </div>
                     </div>
+
+                    <div class="mt-8">
+                        <p class="text-sm text-gray-200">Total</p>
+                        <p class="text-2xl pl-1 font-medium tracking-tight text-emerald-500">{{ $totalcost }} €</p>
+                    </div>
+
+
+
                 </div>
             </div>
 
