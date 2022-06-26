@@ -23,9 +23,6 @@ class CartController extends Controller
 
     public function addtoCart($id)
     {
-        $paniers = Paniers::where('user_id', '=',  Auth::user()->id)->get();
-        $produits = Produits::All();
-
         $Panier = new Paniers();
         $Panier->user_id = Auth::user()->id;
         $Panier->prod_id = $id;
@@ -33,8 +30,11 @@ class CartController extends Controller
         return redirect()->route('cart')->with('cart_ok', 'ajouté');
     }
     
-
-
-
-
+    public function deletefromCart($id)
+    {
+        $delete = Paniers::where('user_id', '=',  Auth::user()->id)->where('prod_id', '=', $id);
+        $delete->delete();
+        return redirect()->route('cart')->with('cart_delete', 'ajouté');
+    }
+    
 }
