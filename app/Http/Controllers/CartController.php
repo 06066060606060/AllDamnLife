@@ -14,7 +14,7 @@ class CartController extends Controller
     {
         $paniers = Paniers::where('user_id', '=',  Auth::user()->id)->get();
         $produits = Produits::All();
-        return view('cart', [
+        return view('/cart', [
             'paniers' => $paniers,
             'produits' => $produits,
          

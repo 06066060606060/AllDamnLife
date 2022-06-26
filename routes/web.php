@@ -41,9 +41,9 @@ route::get('user/{id}', [UsersController::class, 'showUsers'])->whereNumber('id'
 
 Route::get('/',[ProductController::class,'getProduct']);
 
-Route::post('/actif/{id}', [UsersController::class,'activisor']);
-Route::get('/card/{id}',[ProductController::class,'getOneProduct'])->name('getCard');;
+Route::post('/actif/{id}', [UsersController::class,'activisor'])->whereNumber('id');
+Route::get('/card/{id}',[ProductController::class,'getOneProduct'])->whereNumber('id')->name('getCard');;
 
 Route::get('/cart',[CartController::class,'getCart'])->name('cart');
-Route::get('/addtocart/{id}',[CartController::class,'addtoCart']);
-Route::get('/deletefromcart/{id}',[CartController::class,'deletefromCart']);
+Route::get('/addtocart/{id}',[CartController::class,'addtoCart'])->whereNumber('id');
+Route::get('/deletefromcart/{id}',[CartController::class,'deletefromCart'])->whereNumber('id');
