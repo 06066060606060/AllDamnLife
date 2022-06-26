@@ -42,7 +42,7 @@ route::get('user/{id}', [UsersController::class, 'showUsers'])->whereNumber('id'
 Route::get('/',[ProductController::class,'getProduct']);
 
 Route::post('/actif/{id}', [UsersController::class,'activisor']);
-Route::get('/card/{id}',[ProductController::class,'getOneProduct']);
+Route::get('/card/{id}',[ProductController::class,'getOneProduct'])->name('getCard');;
 
 Route::get('/cart',[CartController::class,'getCart'])->name('cart');
 Route::get('/addtocart/{id}',[CartController::class,'addtoCart']);
