@@ -46,3 +46,4 @@ Route::get('/card/{id}',[ProductController::class,'getOneProduct']);
 
 Route::get('/cart',[CartController::class,'getCart'])->name('cart');
 Route::get('/addtocart/{id}',[CartController::class,'addtoCart']);
+Route::get('/deletefromcart/{id}',[CartController::class,'deletefromCart']);

@@ -13,33 +13,38 @@
 
                         <h2 class="ml-4 font-medium text-white"> {{ Auth::user()->prenom }}</h2>
                     </div>
-                    @php ($totalcost = 0)
+                    @php($totalcost = 0)
                     <div class="mt-4">
                         <p class=" text-gray-200">Contenu du panier</p>
                     </div>
                     <div class="mt-12">
                         <div class="flow-root">
                             <ul class="-my-4 divide-y divide-gray-100">
-                                {{--  @forelse comme @foreach mais affiche un truc si c'est vide avec le @empty --}}
+                                {{-- @forelse comme @foreach mais affiche un truc si c'est vide avec le @empty --}}
                                 @forelse ($paniers as $panier)
                                     @foreach ($produits->where('id', '=', $panier->prod_id) as $produit)
                                         <li class="flex items-center justify-between py-4">
-                                            <div class="flex items-start">
-                                                <img class="flex-shrink-0 object-cover w-16 h-16 rounded-lg bg-neutral-600"
-                                                    src="{{ $produit->image }}" alt="" />
+                                            <a href="/card/{{ $panier->prod_id }}">
+                                                <div class="flex items-start">
+                                                    <img class="flex-shrink-0 object-cover w-16 h-16 rounded-lg bg-neutral-600"
+                                                        src="{{ $produit->image }}" alt="" />
 
-                                                <div class="ml-4">
-                                                    <p class="pl-4 pt-5 text-sm text-white">{{ $produit->titre }}</p>
+                                                    <div class="ml-4">
+                                                        <p class="pl-4 pt-5 text-sm text-white">{{ $produit->titre }}
+                                                        </p>
+                                                    </div>
                                                 </div>
-                                            </div>
+                                            </a>
                                             <div>
                                                 <p class="text-sm text-emerald-300">
                                                     {{ $produit->prix }} €
-                                                    @php ($totalcost += $produit->prix)   
+                                                    @php($totalcost += $produit->prix)
+                                                    <a href="/deletefromcart/{{ $panier->prod_id }}">
                                                     <small class="pl-1 ml-4 text-white">
-                                                        {{-- A FAIRE FONCTION DELETE PRODUIT DE LA TABLE PANIERS --}}
-                                                        <i class="fa-solid fa-trash-can hover:text-red-500 focus:text-red-300"></i>
+                                                        <i
+                                                            class="fa-solid fa-trash-can hover:text-red-500 focus:text-red-300"></i>
                                                     </small>
+                                                    </a>
                                                 </p>
                                             </div>
                                         </li>
@@ -164,8 +169,8 @@
 
                                     <input
                                         class="border-gray-200 relative rounded-b-lg w-full focus:z-10 text-sm p-2.5 placeholder-gray-400"
-                                        type="text" name="postal-code" id="postal-code" autocomplete="postal-code"
-                                        placeholder="Code Postale" />
+                                        type="text" name="postal-code" id="postal-code"
+                                        autocomplete="postal-code" placeholder="Code Postale" />
                                 </div>
                             </div>
                         </fieldset>
