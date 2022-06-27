@@ -7,11 +7,7 @@ use Illuminate\Http\Request;
 
 class UsersController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+    
     public function getUsers()
     {
         
@@ -25,34 +21,41 @@ class UsersController extends Controller
 
         ]);
     }
+public function updateProfil(Request $request,$id){
+    $validate = $request->validate([
+        'nom' => 'required',
+        'prenom' => 'required',
+        'pseudo' => 'required',
+        'email' => 'required',
+        'adress' => 'required',
+        'phone' => 'required',
+        'ville' => 'required',
+        'pays' => 'required',
+        'zip' => 'required',
+        'password' => 'required',
+        'image' => 'required'
+    ]);    
+    dd($request);
+    $profile=User::where('id','=',$id)->get();
+    $profile=User::find($id);
+    $profile->nom = $validate['nom'];
+    $profile->prenom = $validate['prenom'];
+    $profile->username = $validate['username'];
+    $profile->email = $validate['email'];
+    $profile->email = $validate['address'];
+    $profile->email = $validate['numero_telephone'];
+    $profile->email = $validate['city'];
+    $profile->email = $validate['country'];
+    $profile->email = $validate['zipCode'];
+    $profile->email = $validate['password'];
+    $profile->email = $validate['photo'];
+    $profile->update();
+   
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
+    return redirect()->route('index');
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+}
+    
     public function showUsers($id)
     {
         $users = User::find($id);
@@ -67,26 +70,7 @@ class UsersController extends Controller
             
         ]);
     }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
+       public function update(Request $request, $id)
     
     {
        
@@ -112,12 +96,7 @@ class UsersController extends Controller
         return redirect()->route('getUsers');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+    
     public function destroy($id)
     {
         
