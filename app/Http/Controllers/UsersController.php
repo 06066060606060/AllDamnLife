@@ -40,8 +40,13 @@ class UsersController extends Controller
     }
 
     public function updateProfil(Request $request,$id){
-        $path = Storage::disk('public')->put('avatar', $request->file('photo'));
-        
+
+        if($request->file('photo')!=null){
+        $img = Storage::disk('public')->put('img', $request->file('photo'));
+        $path = '/storage/' . $img;
+        } else {
+        $path = '/img/avatar.png';
+        }
         
         $users=User::where('id','=',$id)->get();
         $users=User::find($id);
@@ -54,7 +59,7 @@ class UsersController extends Controller
         $users->city = $request['ville'];
         $users->country = $request['pays'];
         $users->zipCode = $request['zip'];
-        $users->password = $request['password'];
+       // $users->password = $request['password'];
         $users->photo = $path;
         $users->update();
        
@@ -62,23 +67,13 @@ class UsersController extends Controller
         return redirect('/');
     
     }
-    public function store(Request $request)
-    {
-        //
-    }
-
+  
     public function showUsers($id)
     {
         $users = User::find($id);
         return view('user', [
             'users' => $users,
         ]);
-    }
-
-
-    public function edit($id)
-    {
-        //
     }
 
     public function update(Request $request, $id)
