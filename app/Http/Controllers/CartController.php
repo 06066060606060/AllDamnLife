@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use App\Models\Paniers;
 use App\Models\Produits;
+use Illuminate\Http\Models;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
