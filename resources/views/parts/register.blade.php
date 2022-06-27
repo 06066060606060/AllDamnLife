@@ -33,26 +33,26 @@
                             <div class="space-y-1 text-sm">
                                 <label for="nom" class="block text-gray-400">Nom</label>
                                 <input type="text" name="nom" id="nom" placeholder="Nom"
-                                    class="w-full px-4 py-3 text-gray-100 bg-gray-900 border-gray-700 rounded-md focus:border-teal-400">
+                                    class="w-full px-4 py-3 text-gray-100 bg-gray-900 border-gray-700 rounded-md focus:border-emerald-400">
                             </div>
                             <div class="space-y-1 text-sm">
                                 <label for="prenom" class="block text-gray-400">Prenom</label>
                                 <input type="text" name="prenom" id="prenom" placeholder="prenom"
-                                    class="w-full px-4 py-3 text-gray-100 bg-gray-900 border-gray-700 rounded-md focus:border-teal-400">
+                                    class="w-full px-4 py-3 text-gray-100 bg-gray-900 border-gray-700 rounded-md focus:border-emerald-400">
                             </div>
                             <div class="space-y-1 text-sm">
                                 <label for="email" class="block text-gray-400">Email</label>
                                 <input type="email" name="email" id="email" placeholder="exemple@mail.com"
-                                    class="w-full px-4 py-3 text-gray-100 bg-gray-900 border-gray-700 rounded-md focus:border-teal-400">
+                                    class="w-full px-4 py-3 text-gray-100 bg-gray-900 border-gray-700 rounded-md focus:border-emerald-400">
                             </div>
                             <div class="space-y-1 text-sm">
                                 <label for="password" class="block text-gray-400">Mot de passe</label>
                                 <input type="password" name="password" id="password" placeholder="Password"
-                                    class="w-full px-4 py-3 text-gray-100 bg-gray-900 border-gray-700 rounded-md focus:border-teal-400">
+                                    class="w-full px-4 py-3 text-gray-100 bg-gray-900 border-gray-700 rounded-md focus:border-emerald-400">
                                 
                             </div>
                             <button
-                                class="block w-full p-3 text-center text-gray-900 transition-colors duration-200 bg-teal-400 rounded hover:bg-teal-200 focus:bg-teal-200">S'inscrire
+                                class="block w-full p-3 text-center text-white transition-colors duration-200 rounded bg-emerald-500 hover:bg-emerald-400 focus:bg-emerald-400">S'inscrire
                                 </button>
                         </form>
                         <div class="flex items-center pt-4 space-x-1">

@@ -26,6 +26,17 @@
                 </div>
             @endif
 
+            @if (session('cart_ok'))
+            <div x-data="{ show: true }" x-show="show" x-init="setTimeout(() => show = false, 3000)" class="pt-1 pr-4">
+                <span class='text-green-500 text-bold'>Article ajouté au panier</span>
+            </div>
+        @endif
+        @if (session('cart_delete'))
+            <div x-data="{ show: true }" x-show="show" x-init="setTimeout(() => show = false, 3000)" class="pt-2 pr-4">
+                <span class='text-red-600 text-bold'>Article supprimé du panier</span>
+            </div>
+        @endif
+
             @guest
                 <div class="items-center hidden space-x-4 md:flex lg:flex">
                     @include('parts.login')
@@ -38,20 +49,24 @@
 
                 <div class="items-center hidden space-x-2 md:flex lg:flex">
                     <a href="/users"
-                        class="flex items-center justify-center h-8 px-4 pt-1 pb-1 mx-1 space-x-2 tracking-wide text-white transition-colors duration-200 transform bg-blue-600 rounded-md btnmenu hover:bg-blue-400 focus:outline-none focus:bg-blue-500">
+                        class="flex items-center justify-center h-8 px-4 pt-1 pb-1 mx-1 space-x-2 tracking-wide text-white transition-colors duration-200 transform bg-blue-600 rounded-md tooltip btnmenu hover:bg-blue-400 focus:outline-none focus:bg-blue-500">
                         <i class="fa-solid fa-gear"></i>
+                        <span class="px-4 tooltiptext">Gestion</span>
                     </a>
                     <a href="/account"
-                        class="flex items-center justify-center h-8 px-4 pt-1 pb-1 mx-1 space-x-2 tracking-wide text-white transition-colors duration-200 transform rounded-md btnmenu bg-violet-600 hover:bg-violet-400 focus:outline-none focus:bg-violet-500">
+                        class="flex items-center justify-center h-8 px-4 pt-1 pb-1 mx-1 space-x-2 tracking-wide text-white transition-colors duration-200 transform rounded-md tooltip btnmenu bg-violet-600 hover:bg-violet-400 focus:outline-none focus:bg-violet-500">
                         <i class="fa-solid fa-user"></i>
+                        <span class="px-4 tooltiptext">Mon Profil</span>
                     </a>
                     <a href="/cart"
-                        class="flex items-center justify-center h-8 px-4 pt-1 pb-1 mx-1 space-x-2 tracking-wide text-white transition-colors duration-200 transform rounded-md btnmenu bg-emerald-500 hover:bg-emerald-300 focus:outline-none focus:bg-emerald-500">
+                        class="flex items-center justify-center h-8 px-4 pt-1 pb-1 mx-1 space-x-2 tracking-wide text-white transition-colors duration-200 transform rounded-md tooltip btnmenu bg-emerald-500 hover:bg-emerald-300 focus:outline-none focus:bg-emerald-500">
                         <i class="fa-solid fa-basket-shopping"></i>
+                        <span class="px-4 tooltiptext">Mon Panier</span>
                     </a>
                     <a href="/logout"
-                        class="flex items-center justify-center h-8 px-4 pt-1 pb-1 mx-1 space-x-2 tracking-wide text-white transition-colors duration-200 transform bg-gray-600 rounded-md btnmenu hover:bg-gray-400 focus:outline-none focus:bg-gray-500">
+                        class="flex items-center justify-center h-8 px-4 pt-1 pb-1 mx-1 space-x-2 tracking-wide text-white transition-colors duration-200 transform bg-gray-600 rounded-md tooltip btnmenu hover:bg-gray-400 focus:outline-none focus:bg-gray-500">
                         <i class="fa-solid fa-right-from-bracket"></i>
+                        <span class="px-4 tooltiptext">Se déconnecter</span>
                     </a>
                 </div>
             @endauth
@@ -73,6 +88,7 @@
                 <a href="/users"
                     class="flex items-center justify-center h-8 px-4 pt-1 pb-1 mx-1 space-x-2 tracking-wide text-white transition-colors duration-200 transform bg-blue-600 rounded-md btnmenu hover:bg-blue-400 focus:outline-none focus:bg-blue-500">
                     <i class="fa-solid fa-gear"></i>
+
                 </a>
                 <a href="/account"
                     class="flex items-center justify-center h-8 px-4 pt-1 pb-1 mx-1 space-x-2 tracking-wide text-white transition-colors duration-200 transform rounded-md btnmenu bg-violet-600 hover:bg-violet-400 focus:outline-none focus:bg-violet-500">
@@ -90,3 +106,41 @@
         @endauth
     </div>
 </div>
+
+<style>
+
+
+    /* ANIMATION SURVOL MENU FULL CSS AU TOP */
+    .tooltip {
+        position: relative;
+        display: inline-block;
+        border-bottom: 1px dotted black;
+    }
+
+    /* Tooltip text */
+    .tooltip .tooltiptext {
+        visibility: hidden;
+        width: 130px;
+        top: -35px;
+        left: -50px;
+        color: rgba(255, 255, 255, 0.534);
+        text-alrgba(255, 255, 255, 0.459) center;
+        padding: 4px 4px;
+        border-radius: 6px;
+        position: absolute;
+        z-index: 1;
+    }
+
+    .tooltip:hover .tooltiptext {
+        visibility: visible;
+    }
+
+    .tooltip .tooltiptext {
+        opacity: 0;
+        transition: opacity 0.2s;
+    }
+
+    .tooltip:hover .tooltiptext {
+        opacity: 1;
+    }
+</style>

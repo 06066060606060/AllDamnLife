@@ -2,18 +2,10 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\ProductController;
 use App\Http\Controllers\UsersController;
+use App\Http\Controllers\CartController;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
 
 Route::get('/', function () {
     return view('index');
@@ -29,14 +21,6 @@ Route::get('/categories', function () {
 
 Route::get('/giveCards', function () {
     return view('giveCards');
-});
-
-Route::get('card',function (){
-    return view('card');
-});
-
-Route::get('/cart', function () {
-    return view('cart');
 });
 
 Route::get('/account', function () {
@@ -55,3 +39,12 @@ route::get('/users', [UsersController::class, 'getUsers'])->name('getUsers');
 route::post('users/{id}', [UsersController::class, 'update'])->whereNumber('id')->name('updateUsers');
 route::delete('delete/{id}', [UsersController::class,'destroy'])->name('delete');
 route::get('user/{id}', [UsersController::class, 'showUsers'])->whereNumber('id')->name('readUsers');
+
+Route::get('/',[ProductController::class,'getProduct']);
+
+Route::post('/actif/{id}', [UsersController::class,'activisor'])->whereNumber('id');
+Route::get('/card/{id}',[ProductController::class,'getOneProduct'])->whereNumber('id')->name('getCard');;
+
+Route::get('/cart',[CartController::class,'getCart'])->name('cart');
+Route::get('/addtocart/{id}',[CartController::class,'addtoCart'])->whereNumber('id');
+Route::get('/deletefromcart/{id}',[CartController::class,'deletefromCart'])->whereNumber('id');

@@ -6,11 +6,6 @@ use Illuminate\Support\Facades\Schema;
 
 class CreateUserTable extends Migration
 {
-    /**
-     * Run the migrations.
-     *
-     * @return void
-     */
     public function up()
     {
         Schema::create('users', function (Blueprint $table) {
@@ -27,7 +22,7 @@ class CreateUserTable extends Migration
             $table->dateTime('date_derniere_connexion')->nullable();
             $table->enum('profil', ['admin','abonne','client'])->default('abonne');;
             $table->enum('type_identification', ['ADL','SOCIAL'])->default('ADL');;
-            $table->tinyInteger('actif')->default(0);
+            $table->tinyInteger('actif')->default(1);
             $table->date('date_naissance')->nullable();
             $table->string('username')->nullable();
             $table->string('numero_telephone')->nullable();
@@ -51,11 +46,6 @@ class CreateUserTable extends Migration
         });
     }
 
-    /**
-     * Reverse the migrations.
-     *
-     * @return void
-     */
     public function down()
     {
         Schema::dropIfExists('users');
