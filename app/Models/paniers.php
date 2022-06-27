@@ -9,11 +9,6 @@ class Paniers extends Model
 {
     use HasFactory;
 
-    public function panier()
-    {
-        return $this;
-    }
-
     public function user()
     {
         return $this->belongsTo(User::class);
