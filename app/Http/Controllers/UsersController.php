@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Storage;
 
 use function PHPSTORM_META\registerArgumentsSet;
 
@@ -16,40 +18,7 @@ class UsersController extends Controller
             'users' => $users,
         ]);
     }
-public function updateProfil(Request $request,$id){
-    $validate = $request->validate([
-        'nom' => 'required',
-        'prenom' => 'required',
-        'pseudo' => 'required',
-        'email' => 'required',
-        'adress' => 'required',
-        'phone' => 'required',
-        'ville' => 'required',
-        'pays' => 'required',
-        'zip' => 'required',
-        'password' => 'required',
-        'image' => 'required'
-    ]);    
-    dd($request);
-    $profile=User::where('id','=',$id)->get();
-    $profile=User::find($id);
-    $profile->nom = $validate['nom'];
-    $profile->prenom = $validate['prenom'];
-    $profile->username = $validate['username'];
-    $profile->email = $validate['email'];
-    $profile->email = $validate['address'];
-    $profile->email = $validate['numero_telephone'];
-    $profile->email = $validate['city'];
-    $profile->email = $validate['country'];
-    $profile->email = $validate['zipCode'];
-    $profile->email = $validate['password'];
-    $profile->email = $validate['photo'];
-    $profile->update();
-   
 
-    return redirect()->route('index');
-
-}
     
     public function activisor(Request $request, $id)
     {
@@ -70,7 +39,29 @@ public function updateProfil(Request $request,$id){
         return redirect()->route('getUsers');
     }
 
-
+    public function updateProfil(Request $request,$id){
+        $path = Storage::disk('public')->put('avatar', $request->file('photo'));
+        
+        
+        $users=User::where('id','=',$id)->get();
+        $users=User::find($id);
+        $users->nom = $request['nom'];
+        $users->prenom = $request['prenom'];
+        $users->username = $request['pseudo'];
+        $users->email = $request['email'];
+        $users->address = $request['address'];
+        $users->numero_telephone = $request['phone'];
+        $users->city = $request['ville'];
+        $users->country = $request['pays'];
+        $users->zipCode = $request['zip'];
+        $users->password = $request['password'];
+        $users->photo = $path;
+        $users->update();
+       
+    
+        return redirect('/');
+    
+    }
     public function store(Request $request)
     {
         //

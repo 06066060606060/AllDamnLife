@@ -26,7 +26,7 @@ Route::get('/giveCards', function () {
 Route::get('/account', function () {
     return view('account');
 });
-route::post('account/{id}', [UsersController::class, 'updateProfil'])->whereNumber('id')->name('updateprofil');
+route::post('account/{id}',[UsersController::class, 'updateProfil'])->whereNumber('id')->name('updateprofil');
 
 
 
