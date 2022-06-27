@@ -9546,6 +9546,11 @@ h1 {
   background-color: rgb(4 120 87 / var(--tw-bg-opacity));
 }
 
+.focus\:bg-gray-800:focus {
+  --tw-bg-opacity: 1;
+  background-color: rgb(31 41 55 / var(--tw-bg-opacity));
+}
+
 .focus\:text-red-300:focus {
   --tw-text-opacity: 1;
   color: rgb(252 165 165 / var(--tw-text-opacity));
