@@ -6,7 +6,6 @@ use App\Http\Controllers\ProductController;
 use App\Http\Controllers\UsersController;
 use App\Http\Controllers\CartController;
 
-
 Route::get('/', function () {
     return view('index');
 });
@@ -39,11 +38,11 @@ route::get('/users', [UsersController::class, 'getUsers'])->name('getUsers');
 route::post('users/{id}', [UsersController::class, 'update'])->whereNumber('id')->name('updateUsers');
 route::delete('delete/{id}', [UsersController::class,'destroy'])->name('delete');
 route::get('user/{id}', [UsersController::class, 'showUsers'])->whereNumber('id')->name('readUsers');
+Route::post('/actif/{id}', [UsersController::class,'activisor'])->whereNumber('id');
 
 Route::get('/',[ProductController::class,'getProduct']);
+route::get('/card/{id}',[ProductController::class,'getOneProduct'])->whereNumber('id')->name('getCard');;
 
-Route::post('/actif/{id}', [UsersController::class,'activisor'])->whereNumber('id');
-Route::get('/card/{id}',[ProductController::class,'getOneProduct'])->whereNumber('id')->name('getCard');;
 
 Route::get('/cart',[CartController::class,'getCart'])->name('cart');
 Route::get('/addtocart/{id}',[CartController::class,'addtoCart'])->whereNumber('id');
