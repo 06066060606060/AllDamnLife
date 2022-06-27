@@ -11,9 +11,9 @@
                         <th class="p-3 text-center ">Détails</th>
                         <th class="p-3 text-center ">Note</th>
                         <th class="p-3 text-center ">Commentaires</th>
-                        <th class="p-3 text-center " width="110px">Actions</th>
-                        <th class="p-3 text-center" width="110px">Actions</th>
-                        <th class="p-3 text-center" width="110px">Actions</th>
+                        <th class="p-3 text-center " width="110px">Lire</th>
+                        <th class="p-3 text-center" width="110px">Modifier</th>
+                        <th class="p-3 text-center" width="110px">Supprimer</th>
     
                     </tr>
                     <tr
@@ -23,9 +23,9 @@
                     <th class="p-3 text-center ">Détails</th>
                     <th class="p-3 text-center ">Note</th>
                     <th class="p-3 text-center ">Commentaires</th>
-                    <th class="p-3 text-center " width="110px">Actions</th>
-                    <th class="p-3 text-center" width="110px">Actions</th>
-                    <th class="p-3 text-center" width="110px">Actions</th>
+                    <th class="p-3 text-center " width="110px">Lire</th>
+                    <th class="p-3 text-center" width="110px">Modifier</th>
+                    <th class="p-3 text-center" width="110px">Supprimer</th>
 
                 </tr>
                 </thead>
