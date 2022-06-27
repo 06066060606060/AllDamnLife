@@ -4,12 +4,13 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Storage;
 
 use function PHPSTORM_META\registerArgumentsSet;
 
 class UsersController extends Controller
 {
-
     public function getUsers()
     {
         $users = User::all();
@@ -18,6 +19,7 @@ class UsersController extends Controller
         ]);
     }
 
+    
     public function activisor(Request $request, $id)
     {
         
@@ -37,7 +39,29 @@ class UsersController extends Controller
         return redirect()->route('getUsers');
     }
 
-
+    public function updateProfil(Request $request,$id){
+        $path = Storage::disk('public')->put('avatar', $request->file('photo'));
+        
+        
+        $users=User::where('id','=',$id)->get();
+        $users=User::find($id);
+        $users->nom = $request['nom'];
+        $users->prenom = $request['prenom'];
+        $users->username = $request['pseudo'];
+        $users->email = $request['email'];
+        $users->address = $request['address'];
+        $users->numero_telephone = $request['phone'];
+        $users->city = $request['ville'];
+        $users->country = $request['pays'];
+        $users->zipCode = $request['zip'];
+        $users->password = $request['password'];
+        $users->photo = $path;
+        $users->update();
+       
+    
+        return redirect('/');
+    
+    }
     public function store(Request $request)
     {
         //
@@ -77,11 +101,6 @@ class UsersController extends Controller
         return redirect()->route('getUsers');
     }
 
-    // public function destroy($id)
-    // { 
-    //         $delete = User::find($id);
-    //         $delete->delete();
-    //         return redirect()->route('users');
-    //     }
+    
     
 }
