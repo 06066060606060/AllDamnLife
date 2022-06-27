@@ -8391,6 +8391,9 @@ video {
 .mr-4 {
   margin-right: 1rem;
 }
+.mt-1 {
+  margin-top: 0.25rem;
+}
 .mt-4 {
   margin-top: 1rem;
 }
@@ -8417,9 +8420,6 @@ video {
 }
 .mb-4 {
   margin-bottom: 1rem;
-}
-.mt-1 {
-  margin-top: 0.25rem;
 }
 .block {
   display: block;
@@ -8886,6 +8886,10 @@ video {
   padding-top: 0.75rem;
   padding-bottom: 0.75rem;
 }
+.px-6 {
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
 .py-2 {
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
@@ -8901,10 +8905,6 @@ video {
 .py-6 {
   padding-top: 1.5rem;
   padding-bottom: 1.5rem;
-}
-.px-6 {
-  padding-left: 1.5rem;
-  padding-right: 1.5rem;
 }
 .py-4 {
   padding-top: 1rem;
@@ -9418,6 +9418,11 @@ h1 {
   background-color: rgb(153 246 228 / var(--tw-bg-opacity));
 }
 
+.hover\:bg-gray-600:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(75 85 99 / var(--tw-bg-opacity));
+}
+
 .hover\:bg-blue-400:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(96 165 250 / var(--tw-bg-opacity));
@@ -9436,11 +9441,6 @@ h1 {
 .hover\:bg-gray-400:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(156 163 175 / var(--tw-bg-opacity));
-}
-
-.hover\:bg-gray-600:hover {
-  --tw-bg-opacity: 1;
-  background-color: rgb(75 85 99 / var(--tw-bg-opacity));
 }
 
 .hover\:bg-emerald-400:hover {
@@ -9516,6 +9516,11 @@ h1 {
   background-color: rgb(153 246 228 / var(--tw-bg-opacity));
 }
 
+.focus\:bg-gray-500:focus {
+  --tw-bg-opacity: 1;
+  background-color: rgb(107 114 128 / var(--tw-bg-opacity));
+}
+
 .focus\:bg-blue-500:focus {
   --tw-bg-opacity: 1;
   background-color: rgb(59 130 246 / var(--tw-bg-opacity));
@@ -9529,11 +9534,6 @@ h1 {
 .focus\:bg-emerald-500:focus {
   --tw-bg-opacity: 1;
   background-color: rgb(16 185 129 / var(--tw-bg-opacity));
-}
-
-.focus\:bg-gray-500:focus {
-  --tw-bg-opacity: 1;
-  background-color: rgb(107 114 128 / var(--tw-bg-opacity));
 }
 
 .focus\:bg-emerald-400:focus {
@@ -9573,12 +9573,12 @@ h1 {
   --tw-ring-color: rgb(209 213 219 / var(--tw-ring-opacity));
 }
 
-.focus\:ring-opacity-60:focus {
-  --tw-ring-opacity: 0.6;
-}
-
 .focus\:ring-opacity-50:focus {
   --tw-ring-opacity: 0.5;
+}
+
+.focus\:ring-opacity-60:focus {
+  --tw-ring-opacity: 0.6;
 }
 
 .group:hover .group-hover\:scale-105 {

@@ -40,11 +40,15 @@ class UsersController extends Controller
     }
 
     public function updateProfil(Request $request,$id){
-        $path = Storage::disk('public')->put('avatar', $request->file('photo'));
-        
-        
         $users=User::where('id','=',$id)->get();
         $users=User::find($id);
+        
+        if($request->file('photo')!=null){
+        $path = Storage::disk('public')->put('avatar', $request->file('photo'));
+    } else {
+        $path = '/img/avatar.png';
+    }
+        
         $users->nom = $request['nom'];
         $users->prenom = $request['prenom'];
         $users->username = $request['pseudo'];
@@ -55,7 +59,7 @@ class UsersController extends Controller
         $users->country = $request['pays'];
         $users->zipCode = $request['zip'];
         $users->password = $request['password'];
-        $users->photo = $path;
+        $users->photo =$path;
         $users->update();
        
     
