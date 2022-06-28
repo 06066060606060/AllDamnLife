@@ -9,6 +9,11 @@ class Comments extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'contenu',
+        
+    ];
+
     public function produit()
     {
         return $this->belongsTo(Produits::class, 'id');
@@ -19,3 +24,5 @@ class Comments extends Model
         return $this->belongsTo(User::class);
     }
 }
+
+
