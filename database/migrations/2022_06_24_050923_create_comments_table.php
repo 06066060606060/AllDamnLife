@@ -15,7 +15,10 @@ return new class extends Migration
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->unsignedBigInteger('product_id');
+            $table->integer('note')->default(0);
             $table->foreign('product_id')->references('id')->on('produits')->onDelete('cascade');
+            $table->timestamp('updated_at')->useCurrent()->on('update')->useCurrent();
+            $table->timestamp('created_at')->useCurrent()->on('update')->useCurrent();
         });
     }
 

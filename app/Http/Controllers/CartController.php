@@ -2,11 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\User;
 use App\Models\Paniers;
 use App\Models\Produits;
-use Illuminate\Http\Request;
+use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Session;
 
 class CartController extends Controller
 {
@@ -33,8 +34,7 @@ class CartController extends Controller
     public function deletefromCart($id)
     {
         // A fixer si plusieurs fois meme produit tous sont supprimmé
-        $delete = Paniers::where('user_id', '=',  Auth::user()->id)->where('prod_id', '=', $id);
-        $delete->delete();
+        Paniers::where('user_id', '=',  Auth::user()->id)->where('prod_id', '=', $id)->delete();
         return redirect()->route('cart')->with('cart_delete', 'ajouté');
     }
     

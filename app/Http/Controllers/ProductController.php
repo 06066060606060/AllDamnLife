@@ -3,19 +3,30 @@
 namespace App\Http\Controllers;
 
 use App\Models\Produits;
+use App\Models\Categories;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Session;
-use Illuminate\Support\Facades\Storage;
+use App\Http\Controllers\Controller;
 
 class ProductController extends Controller
 {
    
-    public function getProduct()
+    public function getProduct(Request $request)
     {
-        $produits = Produits::where('id', '!=' ,0)->inRandomOrder()->get();
+
+
+        if ($request->filled('categories')) {
+            $categories = $request->categories;
+            $produits = Produits::where('cat_id', '=', $categories)->get();
+        } else {
+            $produits = Produits::inRandomOrder()->get();
+        }
+
+        $categories = Categories::all();
+
         return view('index', [
-            'produits' => $produits,
-        ]);
+             'produits' => $produits,
+             'categories' => $categories,
+             ]);
     }
 
     public function getOneProduct($id)
@@ -26,4 +37,5 @@ class ProductController extends Controller
             'produit' => $produit,
         ]);
     }
+
 }
