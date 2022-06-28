@@ -4,7 +4,7 @@
         <div class="container">
             <table
             
-                class="flex flex-row flex-no-wrap justify-center w-full my-5 overflow-hidden bg-gray-900 rounded-lg sm:shadow-lg btnmenu">
+                class="flex flex-row flex-no-wrap justify-center w-full my-5 overflow-hidden bg-gray-600 rounded-lg sm:shadow-lg btnmenu">
                 
                     
                        
@@ -15,11 +15,12 @@
                     <tr class="flex flex-col rounded-l-lg bg-emerald-500 flex-no wrap sm:table-row ">
 
                         <th class="p-3 text-center ">Nom</th>
-                        <th class="p-3 text-center">Prenom</th>
+                        <th class="p-3 text-center">Prénom</th>
                         <th class="p-3 text-center">Email</th>
-                        <th class="p-3 text-center " width="110px">Lire</th>
+                        <th class="p-3 text-center">Role</th>
+                        <th class="p-3 text-center " width="110px">Profil</th>
                         <th class="p-3 text-center" width="110px">Modifier</th>
-                        <th class="p-3 text-center" width="110px">Supprimer</th>
+                        <th class="p-3 text-center" width="110px">Activé</th>
 
                     </tr>
 
@@ -36,6 +37,7 @@
                         <td class="p-3">{{ $user->nom }}</td>
                         <td class="p-3">{{ $user->prenom }}</td>
                         <td class="p-3 truncate ">{{ $user->email }}
+                            <td class="p-3 truncate ">{{ $user->profil }}
                         </td>
                         <td
                             class="p-3 text-green-400 cursor-pointer hover:text-green-600 hover:font-medium">

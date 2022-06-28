@@ -5,7 +5,7 @@
     @include('parts.head')
 </head>
 
-<body>
+<body class="min-h-screen">
 
     <header>
         @include('parts.header')

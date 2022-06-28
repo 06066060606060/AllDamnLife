@@ -7,7 +7,6 @@
 @include('parts.new')
 @include('parts.section')
 @include('parts.pagination')
-@include('parts.newsletter')
 
 @endsection
 

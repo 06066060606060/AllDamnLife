@@ -1,12 +1,12 @@
 
 <div class="max-w-screen-xl mx-auto">
-<div class="flex items-center pb-2 text-gray-100">
+<div class="flex items-center pb-2 text-gray-100 text-sm">
     <a rel="noopener noreferrer" href="/"
         class="px-5 py-1 border-b-2 border-gray-700 hover:border-blue-400 hover:text-blue-400">Retour</a>
 </div>
 <section class="p-6 text-gray-50">
 	<form  action="" class="container flex flex-col mx-auto space-y-12 ng-untouched ng-pristine ng-valid">
-		<fieldset class="grid grid-cols-4 gap-6 p-6 bg-gray-900 rounded-md shadow-sm btnmenu">
+		<fieldset class="grid grid-cols-4 gap-6 p-6 bg-gray-600 rounded-md shadow-sm btnmenu">
 			<div class="flex flex-row mx-auto space-x-2 sm:items-center justify-items-center md:justify-evenly">
                 <img src="/img/avatar.png" alt="" class="block w-16 h-16 mr-4 rounded-full cover ">
                 <button type="file" class="px-4 py-2 border border-gray-100 rounded-md">Choisir</button>
