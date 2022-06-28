@@ -43,6 +43,7 @@ route::get('user/{id}', [UsersController::class, 'showUsers'])->whereNumber('id'
 Route::post('/actif/{id}', [UsersController::class,'activisor'])->whereNumber('id');
 
 Route::get('/',[ProductController::class,'getProduct']);
+Route::post('/filter',[ProductController::class,'getProduct']);
 route::get('/card/{id}',[ProductController::class,'getOneProduct'])->whereNumber('id')->name('getCard');;
 
 
