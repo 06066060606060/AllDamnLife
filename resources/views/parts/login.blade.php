@@ -34,16 +34,16 @@
                             <div class="space-y-1 text-sm">
                                 <label for="email" class="block text-gray-400">email</label>
                                 <input type="email" name="email" id="email" placeholder="exemple@mail.com"
-                                    class="w-full px-4 py-3 text-gray-100 bg-gray-900 border-gray-700 rounded-md focus:border-teal-400">
+                                    class="w-full px-4 py-3 text-gray-100 bg-gray-900 border-gray-700 rounded-md focus:border-emerald-400">
                             </div>
                             <div class="space-y-1 text-sm">
                                 <label for="password" class="block text-gray-400">Mot de passe</label>
                                 <input type="password" name="password" id="password" placeholder="Password"
-                                    class="w-full px-4 py-3 text-gray-100 bg-gray-900 border-gray-700 rounded-md focus:border-teal-400">
+                                    class="w-full px-4 py-3 text-gray-100 bg-gray-900 border-gray-700 rounded-md focus:border-emerald-400">
                                 
                             </div>
                             <button
-                                class="block w-full p-3 text-center text-gray-900 bg-teal-400 hover:bg-teal-200 focus:bg-teal-200 rounded transition-colors duration-200">S'identifier</button>
+                                class="block w-full p-3 text-center text-white transition-colors duration-200 rounded bg-emerald-500 hover:bg-emerald-400 focus:bg-emerald-400">Se Connecter</button>
                         </form>
                         <div class="flex items-center pt-4 space-x-1">
                             <div class="flex-1 h-px bg-gray-700 sm:w-16"></div>
@@ -70,3 +70,57 @@
         </div>
     </div>
 </div>
+
+
+{{-- TEST LOADING SCREEN --------------------------------
+    <section id="loading">
+    <div id="loading-content"></div>
+</section>
+<script>
+    async function showLoading() {
+        document.querySelector('#loading').classList.add('loading');
+        document.querySelector('#loading-content').classList.add('loading-content');
+        await new Promise(resolve => setTimeout(resolve, 2000));
+        document.querySelector('#loading').classList.remove('loading');
+        document.querySelector('#loading-content').classList.remove('loading-content');
+    }
+    
+</script>
+
+<style>
+      /* ANIMATION CHARGEMENT */
+
+.loading {
+    z-index: 9999;
+    position: absolute;
+    top: 0;
+    left: -5px;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.loading-content {
+    position: absolute;
+    border: 16px solid #f3f3f3;
+    /* Light grey */
+    border-top: 16px solid #3498db;
+    /* Blue */
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    top: 40%;
+    left: 35%;
+    animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+</style> --}}

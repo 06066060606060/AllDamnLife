@@ -8,12 +8,10 @@
         </div>
     @endif
 
-
-
 <div x-data="{ modelOpen: false }">
 
     <button @click="modelOpen =!modelOpen"
-    class="p-3 text-blue-400 cursor-pointer hover:bg-gray-800 hover:text-blue-600 hover:font-medium">
+    class="p-3 text-red-400 cursor-pointer hover:text-red-600 hover:font-medium">
     <i class="fa-solid fa-pen-to-square"></i>
     </button>
 
@@ -37,7 +35,7 @@
 
                     {{-- @click="modelOpen = false" --}}
                     <div class="w-full max-w-md p-8 space-y-3 text-gray-100 bg-gray-600 rounded-xl">
-                        <img class="p-2 bg-gray-900 rounded" src="/img/logo.png" alt="logo">
+                        
                     
 
                         <form action="{{route('updateUsers',$user['id'])}}" class="space-y-6 ng-untouched ng-pristine ng-valid" method="post">
@@ -66,6 +64,7 @@
                                     class="w-full px-4 py-3 text-gray-100 bg-gray-900 border-gray-700 rounded-md focus:border-teal-400">
                                 
                             </div>
+                           
                             <button
                                 class="block w-full p-3 text-center text-gray-900 transition-colors duration-200 bg-teal-400 rounded hover:bg-teal-200 focus:bg-teal-200">Mettre à jour</button>
                         </form>
