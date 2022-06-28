@@ -9,6 +9,7 @@ class Produits extends Model
 {
     use HasFactory;
 
+    
     public function produit()
     {
         return $this;

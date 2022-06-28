@@ -219,9 +219,6 @@ h1 {
 
 
 /* ETOILES COMMENTAIRE____________ */
-
-
-   
  #nétoile{
     display: none;
   }
@@ -244,5 +241,11 @@ h1 {
     color: black;
   }
 
-
+  .clampdeux {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    padding-bottom: 5px;
+}
   
