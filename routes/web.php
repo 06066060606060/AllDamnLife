@@ -27,16 +27,18 @@ Route::get('/account', function () {
 });
 route::post('account/{id}',[UsersController::class, 'updateProfil'])->whereNumber('id')->name('updateprofil');
 
+Route::post('/register', [AuthController::class, 'register'])->name('register');
 
+Route::post('/login', [AuthController::class, 'login'])->name('login');
 
-Route::post('/register',[AuthController::class,'register'])->name('register');
-Route::post('/login',[AuthController::class,'login'])->name('login');
-Route::get('/logout',[AuthController::class,'logout'])->name('logout');
-
+Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
 
 route::get('/users', [UsersController::class, 'getUsers'])->name('getUsers');
+
 route::post('users/{id}', [UsersController::class, 'update'])->whereNumber('id')->name('updateUsers');
-route::delete('delete/{id}', [UsersController::class,'destroy'])->name('delete');
+
+route::delete('delete/{id}', [UsersController::class, 'destroy'])->name('delete');
+
 route::get('user/{id}', [UsersController::class, 'showUsers'])->whereNumber('id')->name('readUsers');
 Route::post('/actif/{id}', [UsersController::class,'activisor'])->whereNumber('id');
 

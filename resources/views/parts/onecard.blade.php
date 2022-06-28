@@ -19,14 +19,13 @@
                             <div class="flex flex-col items-center w-full">
                                 <div class="flex flex-col items-center py-6 space-y-3">
                                     <div class="flex space-x-3">
-                                        <i class="text-yellow-500 fa-solid fa-star"></i>
-                                        <i class="text-yellow-500 fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
+                                        @for ($i = 0; $i < $produit->note; $i++)
+                                            <i class="text-yellow-500 fa-solid fa-star"></i>
+                                        @endfor
+
                                     </div>
                                 </div>
-                             @include('parts.comm')
+                                @include('parts.comm')
                             </div>
                         </div>
                     </div>
@@ -48,8 +47,8 @@
                         {{ $produit->prix }} €
                     </a>
 
-                   {{-- putain pas mal ce petit truc merci copilot! --}}
-                    <a @auth href="/addtocart/{{ $produit->id }}" @else href="/" @endauth    
+                    {{-- putain pas mal ce petit truc merci copilot! --}}
+                    <a @auth href="/addtocart/{{ $produit->id }}" @else href="/" @endauth
                         class="flex items-center justify-center h-8 px-4 pt-1 pb-1 mx-1 space-x-2 tracking-wide text-white transition-colors duration-200 transform rounded-md btnmenu bg-emerald-500 hover:bg-emerald-300 focus:outline-none focus:bg-emerald-700">
                         Ajouter au panier
                     </a>
@@ -73,7 +72,7 @@
                 </div>
             </div>
             <div class="flex items-center space-x-2 text-yellow-500">
-                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star">{{ $produit->id }}</i>
                 <span class="text-xl font-bold">3</span>
             </div>
         </div>
