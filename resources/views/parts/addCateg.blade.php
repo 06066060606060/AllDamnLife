@@ -11,8 +11,9 @@
 <div x-data="{ modelOpen: false }">
 
     <button @click="modelOpen =!modelOpen"
-    class="p-3 text-red-400 cursor-pointer hover:text-red-600 hover:font-medium">
-    <i class="fa-solid fa-pen-to-square "></i>
+    class="p-3 text-blue-400 cursor-pointer hover:text-blue-600 hover:font-medium ">
+   
+    <i class="fa-solid fa-plus fa-lg"></i><p> Ajouter  une  Catégorie</p>
     </button>
 
     <div x-cloak x-show="modelOpen" class="fixed inset-0 z-50 overflow-y-auto" aria-labelledby="modal-title" role="dialog"
@@ -38,35 +39,20 @@
                         
                     
 
-                        <form action="{{route('updateUsers',$user['id'])}}" class="space-y-6 ng-untouched ng-pristine ng-valid" method="post">
+                        <form action="/categories" class="space-y-6 ng-untouched ng-pristine ng-valid" method="post">
                             @csrf
                             
                             <div class="space-y-1 text-sm">
-                                <label for="nom" class="block text-gray-400">Nom</label>
-                                <input value="{{$user->nom}}" 
+                                <label for="Label" class="block text-gray-400">Label</label>
+                                <input value="" 
                                 class="w-full px-4 py-3 text-gray-100 bg-gray-900 border-gray-700 rounded-md focus:border-teal-400"
-                                type="text" name="nom" placeholder="180" />
+                                type="text" name="label" placeholder="180" />
                                
                             </div>
-                            <div class="space-y-1 text-sm">
-                                <label for="prenom" class="block text-gray-400">Prénom</label>
-                                 <input value="{{$user->prenom}}" type="prenom" name="prenom" id="prenom" placeholder="Prénom"
-                                    class="w-full px-4 py-3 text-gray-100 bg-gray-900 border-gray-700 rounded-md focus:border-teal-400">
-                            </div>
-                            <div class="space-y-1 text-sm">
-                                <label for="username" class="block text-gray-400">Username</label>
-                                 <input value="{{$user->username}}" type="username" name="username" id="username" placeholder="Username"
-                                    class="w-full px-4 py-3 text-gray-100 bg-gray-900 border-gray-700 rounded-md focus:border-teal-400">
-                            </div>
-                            <div class="space-y-1 text-sm">
-                                <label for="email" class="block text-gray-400">Email</label>
-                                 <input value="{{$user->email}}" type="email" name="email" id="email" placeholder="Adresse mail"
-                                    class="w-full px-4 py-3 text-gray-100 bg-gray-900 border-gray-700 rounded-md focus:border-teal-400">
-                                
-                            </div>
-                           
+                      
+                            
                             <button
-                                class="block w-full p-3 text-center text-gray-900 transition-colors duration-200 bg-teal-400 rounded hover:bg-teal-200 focus:bg-teal-200">Mettre à jour</button>
+                                class="block w-full p-3 text-center text-gray-900 transition-colors duration-200 bg-teal-400 rounded hover:bg-teal-200 focus:bg-teal-200">Ajouter</button>
                         </form>
                        
                      
