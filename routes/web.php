@@ -36,14 +36,29 @@ Route::get('/logout',[AuthController::class,'logout'])->name('logout');
 
 route::get('/users', [UsersController::class, 'getUsers'])->name('getUsers');
 route::post('users/{id}', [UsersController::class, 'update'])->whereNumber('id')->name('updateUsers');
-route::delete('delete/{id}', [UsersController::class,'destroy'])->name('delete');
+// route::delete('delete/{id}', [UsersController::class,'destroy'])->name('delete');
 route::get('user/{id}', [UsersController::class, 'showUsers'])->whereNumber('id')->name('readUsers');
 Route::post('/actif/{id}', [UsersController::class,'activisor'])->whereNumber('id');
 
-Route::get('/',[ProductController::class,'getProduct']);
-route::get('/card/{id}',[ProductController::class,'getOneProduct'])->whereNumber('id')->name('getCard');;
 
+
+
+
+
+
+Route::get('/',[ProductController::class,'getProduct']);
+route::get('/card/{id}',[ProductController::class,'getOneProduct'])->whereNumber('id')->name('getCard');
 
 Route::get('/cart',[CartController::class,'getCart'])->name('cart');
 Route::get('/addtocart/{id}',[CartController::class,'addtoCart'])->whereNumber('id');
 Route::get('/deletefromcart/{id}',[CartController::class,'deletefromCart'])->whereNumber('id');
+
+Route::get('/giveCards',[ProductController::class,'getAllProducts'])->name('getAllProducts');
+Route::get('card/{id}', [ProductController::class, 'showProducts'])->whereNumber('id');
+Route::post('/giveCards',[ProductController::class,'addProduct']);
+
+Route::post('/active/{id}', [ProductController::class,'activeur'])->whereNumber('id');
+
+
+
+Route::post('/giveCards/{id}',[ProductController::class, 'update'])->whereNumber('id')->name('updateProduct');

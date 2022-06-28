@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Categories;
 use App\Models\Produits;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
@@ -9,10 +10,10 @@ use Illuminate\Support\Facades\Storage;
 
 class ProductController extends Controller
 {
-   
+
     public function getProduct()
     {
-        $produits = Produits::where('id', '!=' ,0)->inRandomOrder()->get();
+        $produits = Produits::where('id', '!=', 0)->inRandomOrder()->get();
         return view('index', [
             'produits' => $produits,
         ]);
@@ -26,4 +27,113 @@ class ProductController extends Controller
             'produit' => $produit,
         ]);
     }
+
+    public function getAllProducts()
+    {
+        $cards = Produits::with('categ')->get();
+        $categs = Categories::all();
+        // $cards = Produits::all();
+        return view('giveCards', [
+            'cards' => $cards,
+            'categs' => $categs
+        ]);
+    }
+    public function showProducts($id)
+    {
+        $cards = Produits::find($id);
+        return view('card', [
+            'cards' => $cards,
+        ]);
+    }
+
+
+    public function activeur(Request $request, $id)
+    {
+       
+
+
+
+        $card = Produits::find($id);
+
+
+        if ($request->active) {
+            $card->active = 1;
+        } else if ($request->desactive) {
+
+            $card->active = 0;
+        }
+
+
+        $card->update();
+        return redirect()->route('getAllProducts');
+    }
+
+    public function addProduct(Request $request)
+    {
+        if($request->file('image')!=null){
+            $img = Storage::disk('public')->put('img', $request->file('image'));
+            $path = '/storage/' . $img;
+        // if ($request->hasFile('image')) {
+        //     $path = $request->file('image')->store('/img', 'public');
+            //Storage::disk('public')->put('img', $request->file('photo'));
+        }
+        $validate = $request->validate([
+            'titre' => 'required',
+            'prix' => 'required',
+            'description' => 'required',
+            'image' => 'required',
+            'note' => 'required',
+            'categories' => 'required|exists:categories,id',
+            // 'réalisateurs' => 'required|exists:réalisateurs,id',
+            // 'salles' => 'required|exists:salles,id'
+
+
+        ]);
+
+        $card = new Produits();
+
+        $card->titre = $validate['titre'];
+        $card->prix = $validate['prix'];
+        $card->description = $validate['description'];
+        $card->image = $path;
+        $card->note = $validate['note'];
+        $card->cat_id = $validate['categories'];
+
+
+        $card->save();
+
+
+        return redirect()->route('getAllProducts');
+    }
+
+
+    public function update(Request $request, $id)
+
+    {
+        if ($request->hasFile('image')) {
+            $path = $request->file('image')->store('/img', 'public');
+        }
+
+        $validate = $request->validate([
+            'titre' => 'required',
+            'prix' => 'required',
+            'description' => 'required',
+            'image' => 'required',
+            'note' => 'required',
+            'categories' => 'required',
+        ]);
+        $cards = Produits::where('id', '=', $id)->get();
+        $cards = Produits::find($id);
+
+        $cards->titre = $validate['titre'];
+        $cards->prix = $validate['prix'];
+        $cards->description = $validate['description'];
+        $cards->image = $path;
+        $cards->note = $validate['note'];
+        $cards->cat_id = $validate['categories'];
+        $cards->update();
+        return redirect()->route('getAllProducts');
+    }
+   
+
 }

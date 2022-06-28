@@ -19,7 +19,7 @@ return new class extends Migration
             $table->timestamp('updated_at')->useCurrent()->on('update')->useCurrent();
             $table->timestamp('created_at')->useCurrent()->on('update')->useCurrent();
             $table->unsignedBigInteger('cat_id');
-            $table->foreign('cat_id')->references('id_cat')->on('categories')->onDelete('cascade');
+            $table->foreign('cat_id')->references('id')->on('categories')->onDelete('cascade');
         });
     }
 
