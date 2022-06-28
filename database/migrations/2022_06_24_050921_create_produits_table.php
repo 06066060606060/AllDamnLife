@@ -16,11 +16,11 @@ return new class extends Migration
             $table->decimal('prix')->default('0');
             $table->longText('image');
             $table->integer('note')->default(0);
-            $table->tinyInteger('actif')->default(1);
+            $table->tinyInteger('active')->default(1);
             $table->timestamp('updated_at')->useCurrent()->on('update')->useCurrent();
             $table->timestamp('created_at')->useCurrent()->on('update')->useCurrent();
             $table->unsignedBigInteger('cat_id');
-            $table->foreign('cat_id')->references('id')->on('categories')->onDelete('cascade');
+            $table->foreign('cat_id')->references('id_cat')->on('categories')->onDelete('cascade');
         });
     }
 

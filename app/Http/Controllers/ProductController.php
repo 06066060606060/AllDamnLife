@@ -42,7 +42,7 @@ class ProductController extends Controller
 
     public function getAllProducts()
     {
-        $cards = Produits::with('categ')->get();
+        $cards = Produits::with('categs')->get();
         $categs = Categories::all();
         // $cards = Produits::all();
         return view('giveCards', [
@@ -62,8 +62,6 @@ class ProductController extends Controller
     public function activeur(Request $request, $id)
     {
        
-
-
 
         $card = Produits::find($id);
 
