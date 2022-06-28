@@ -50,3 +50,4 @@ route::get('/card/{id}',[ProductController::class,'getOneProduct'])->whereNumber
 Route::get('/cart',[CartController::class,'getCart'])->name('cart');
 Route::get('/addtocart/{id}',[CartController::class,'addtoCart'])->whereNumber('id');
 Route::get('/deletefromcart/{id}',[CartController::class,'deletefromCart'])->whereNumber('id');
+Route::post('/comm/{id}', [ProductController::class, 'addComm'])->name('addComm');

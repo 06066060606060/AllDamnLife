@@ -1,8 +1,9 @@
 <div x-data="{ modelOpen: false }">
-
-    <button @click="modelOpen =!modelOpen">
-        <span class="px-4 hover:text-blue-400">Laisser un commentaire</span>
-    </button>
+    @auth
+        <button @click="modelOpen =!modelOpen">
+            <span class="px-4 hover:text-blue-400">Laisser un commentaire</span>
+        </button>
+    @endauth
 
     <div x-cloak x-show="modelOpen" class="fixed inset-0 z-50 overflow-y-auto" aria-labelledby="modal-title" role="dialog"
         aria-modal="true">
@@ -22,24 +23,40 @@
                 <section class="">
                     {{-- @click="modelOpen = false" --}}
                     <div class="w-full max-w-md p-4 space-y-3 text-gray-100 bg-gray-600 rounded-xl">
-                        <form action="" class="space-y-6 ng-untouched ng-pristine ng-valid" method="post">
+                        <form action="/comm/{{ $produit->id }}" class="space-y-6 ng-untouched ng-pristine ng-valid"
+                            method="post">
                             @csrf
                             <div class="space-y-1 text-sm">
                                 <label for="comms" class="block pb-2 text-gray-200">Laisser un commentaire</label>
-                                <textarea class="w-full px-4 py-3 text-gray-100 bg-gray-900 border-gray-700 rounded-md focus:border-teal-400" rows="5" cols="20" minlength="5" name="comms" placeholder="commenter..."> </textarea>
+                                <textarea class="w-full px-4 py-3 text-gray-100 bg-gray-900 border-gray-700 rounded-md focus:border-teal-400"
+                                    rows="5" cols="20" minlength="5" name="contenu" placeholder="commenter..."> </textarea>
                             </div>
-                           
+                            @auth
+
+                                <input type="hidden" name="user_id" value="{{ Auth::user()->id }}">
+                            @endauth
+                            <input type="hidden" name="product_id" value="{{ $produit->id }}">
+
                             <div class="flex flex-col items-center space-y-3">
-                                <label for="star" class="block text-sm text-gray-200">Noter</label>
+                                <label for="note" class="block text-sm text-gray-200">Noter</label>
                                 <div class="flex space-x-3">
-                                    <i class="text-yellow-500 fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
+                                    
+                                    <input type="hidden" id="note" name="note" value="0">
+                                        <input type="radio" id="nétoile"> <span
+                                            class="etoile" onclick="change(1)">★</span>
+                                            <input type="radio" id="nétoile"> <span
+                                            class="etoile" onclick="change(2)">★</span>
+                                            <input type="radio" id="nétoile"> <span
+                                            class="etoile" onclick="change(3)">★</span>
+                                            <input type="radio" id="nétoile"> <span
+                                            class="etoile" onclick="change(4)">★</span>
+                                            <input type="radio" id="nétoile"> <span
+                                            class="etoile" onclick="change(5)">★</span>
+                                    
                                 </div>
                             </div>
-                            <button class="block w-full p-3 text-center text-gray-900 transition-colors duration-200 bg-teal-400 rounded hover:bg-teal-200 focus:bg-teal-200">Poster</button>
+                            <button
+                                class="block w-full p-3 text-center text-gray-900 transition-colors duration-200 bg-teal-400 rounded hover:bg-teal-200 focus:bg-teal-200">Poster</button>
                         </form>
                     </div>
                 </section>
@@ -47,3 +64,42 @@
         </div>
     </div>
 </div>
+
+<script>
+function change(lanote){
+         var manote =  document.getElementById("note"); 
+        manote.value = lanote;
+          
+}
+
+    let note = 0;
+    let etoiles = document.querySelectorAll('.etoile');
+
+    etoiles.forEach((etoile, id) => {
+        etoile.addEventListener('click', (elem) => {
+            note = (id + 1);
+            elem.target.classList.remove('black');
+            elem.target.classList.add('gold');
+        });
+        etoile.addEventListener('mouseenter', (elem) => {
+            let cible = elem.target.classList;
+            cible.remove('grey');
+            cible.remove('gold');
+            cible.add('black');
+
+            for (let i = 0; i < etoiles.length; i++) {
+                let classes = etoiles[i].classList;
+                if (i < id) {
+                    classes.add('gold');
+                    classes.remove('grey');
+                    classes.remove('black');
+                }
+                if (i > id) {
+                    classes.add('grey');
+                    classes.remove('black');
+                    classes.remove('gold');
+                }
+            }
+        });
+    });
+</script>

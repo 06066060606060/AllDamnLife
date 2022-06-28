@@ -59,7 +59,8 @@
 </div>
 
 <div class="flex flex-col justify-center mx-auto mt-10 md:flex-row">
-    <div
+    @foreach ($comments as $comment)
+         <div
         class="container flex flex-col w-full max-w-lg p-6 mx-4 mt-4 text-gray-100 transition duration-500 bg-gray-900 divide-y divide-gray-700 rounded-md btnmenu hover:scale-105">
         <div class="flex justify-between p-4">
             <div class="flex space-x-4">
@@ -67,44 +68,25 @@
                     <img src="/img/avatar.png" alt="" class="object-cover w-12 h-12 bg-gray-500 rounded-full">
                 </div>
                 <div>
-                    <h4 class="font-bold">David Johns</h4>
-                    <span class="text-xl text-gray-400">2 days ago</span>
+                    <h4 class="font-bold">{{$comment->user->prenom}} {{$comment->user->nom}}</h4>
+                    <span class="text-sm text-gray-400">{{ $comment->created_at->diffForHumans() }} </span>
                 </div>
             </div>
-            <div class="flex items-center space-x-2 text-yellow-500">
-                <i class="fa-solid fa-star">{{ $produit->id }}</i>
-                <span class="text-xl font-bold">3</span>
+            <div class="flex flex-row items-center space-x-2 text-yellow-500">
+                @for ($i = 0; $i < $comment->note; $i++)
+                <i class="text-yellow-500 fa-solid fa-star"></i>
+            @endfor
+              
             </div>
+            
         </div>
         <div class="p-4 space-y-2 text-xl text-gray-400">
-            <p>yes yo no p sit amet turpis leo. Praesent varius eleifend elit, eu dictum lectus consequat vitae. Etiam
-                ut
-                dolor
-                id justo fringilla finibus.</p>
-        </div>
-    </div>
+            <p>{{$comment->contenu}}</p>
 
-    <div
-        class="container flex flex-col w-full max-w-lg p-6 mx-4 mt-4 text-gray-100 transition duration-500 bg-gray-900 divide-y divide-gray-700 rounded-md btnmenu hover:scale-105">
-        <div class="flex justify-between p-4">
-            <div class="flex space-x-4">
-                <div>
-                    <img src="/img/avatar.png" alt="" class="object-cover w-12 h-12 bg-gray-500 rounded-full">
-                </div>
-                <div>
-                    <h4 class="font-bold">Leroy Jenkins</h4>
-                    <span class="text-xl text-gray-400">1 days ago</span>
-                </div>
-            </div>
-            <div class="flex items-center space-x-2 text-yellow-500">
-                <i class="fa-solid fa-star"></i>
-                <span class="text-xl font-bold">2</span>
-            </div>
-        </div>
-        <div class="p-4 space-y-2 text-xl text-gray-400">
-            <p>Vivamus sit amet turpis leo. Praesent varius eleifend elit, eu dictum lectus consequat vitae. Etiam ut
-                dolor
-                id justo fringilla finibus.</p>
+            
         </div>
     </div>
+@endforeach
+   
+    
 </div>
