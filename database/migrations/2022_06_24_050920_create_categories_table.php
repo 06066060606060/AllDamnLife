@@ -4,28 +4,21 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateCategoriesTable extends Migration
+return new class extends Migration
 {
-    /**
-     * Run the migrations.
-     *
-     * @return void
-     */
+   
     public function up()
     {
         Schema::create('categories', function (Blueprint $table) {
-            $table->increments('id_cat');
+            $table->id('id_cat');
             $table->longText('label');
+            $table->timestamp('updated_at')->useCurrent()->on('update')->useCurrent();
+            $table->timestamp('created_at')->useCurrent()->on('update')->useCurrent();
         });
     }
 
-    /**
-     * Reverse the migrations.
-     *
-     * @return void
-     */
     public function down()
     {
         Schema::dropIfExists('categories');
     }
-}
+};

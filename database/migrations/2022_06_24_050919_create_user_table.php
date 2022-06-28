@@ -6,11 +6,6 @@ use Illuminate\Support\Facades\Schema;
 
 class CreateUserTable extends Migration
 {
-    /**
-     * Run the migrations.
-     *
-     * @return void
-     */
     public function up()
     {
         Schema::create('users', function (Blueprint $table) {
@@ -25,8 +20,8 @@ class CreateUserTable extends Migration
             $table->enum('gender',['HOMME','FEMME','AUTRE'])->nullable();
             $table->enum('etat_compte',['SIGNUP_SOCIAL_WAITING_IDENTITY_VALIDATION','SIGNUP_WAITING_EMAIL_VALIDATION','SIGNUP_WAITING_CGU_VALIDATION','SIGNUP_WAITING_STEP_PACK','SIGNUP_WAITING_STEP_PAYMENT','SIGNUP_WAITING_STEP_CF','SIGNUP_WAITING_STEP_PARTNER_LOGIN','SIGNUP_WAITING_STEP_IMPORT_PASSWORD','ACCOUNT_BANNED','ACCOUNT_ACTIVATED','ACCOUNT_CANCELED','ACCOUNT_DEACTIVATED','ACCOUNT_DELETED'])->default('SIGNUP_WAITING_EMAIL_VALIDATION');
             $table->dateTime('date_derniere_connexion')->nullable();
-            $table->enum('profil', ['admin','abonne','client'])->default('abonne');;
-            $table->enum('type_identification', ['ADL','SOCIAL'])->default('ADL');;
+            $table->enum('profil', ['admin','abonne','client'])->default('abonne');
+            $table->enum('type_identification', ['ADL','SOCIAL'])->default('ADL');
             $table->tinyInteger('actif')->default(1);
             $table->date('date_naissance')->nullable();
             $table->string('username')->nullable();
@@ -35,7 +30,7 @@ class CreateUserTable extends Migration
             $table->string('zipCode')->nullable();
             $table->string('city')->nullable();
             $table->string('country')->nullable();
-            $table->longText('photo')->nullable();
+            $table->string('photo')->default('/img/avatar.png');
             $table->string('last_email')->nullable();
             $table->string('remember_token')->nullable();
             $table->timestamp('created_at')->useCurrent();
@@ -51,11 +46,6 @@ class CreateUserTable extends Migration
         });
     }
 
-    /**
-     * Reverse the migrations.
-     *
-     * @return void
-     */
     public function down()
     {
         Schema::dropIfExists('users');

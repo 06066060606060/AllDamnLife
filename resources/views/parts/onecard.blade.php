@@ -1,5 +1,5 @@
 <div class="max-w-screen-xl mx-auto">
-    <div class="flex items-center pb-2 text-gray-100">
+    <div class="flex items-center pb-2 text-gray-100 text-sm">
         <a rel="noopener noreferrer" href="/"
             class="px-5 py-1 border-b-2 border-gray-700 hover:border-blue-400 hover:text-blue-400">Retour</a>
     </div>
@@ -49,7 +49,7 @@
                     </a>
 
                    {{-- putain pas mal ce petit truc merci copilot! --}}
-                    <a @auth href="/cart" @else href="/" @endauth    
+                    <a @auth href="/addtocart/{{ $produit->id }}" @else href="/" @endauth    
                         class="flex items-center justify-center h-8 px-4 pt-1 pb-1 mx-1 space-x-2 tracking-wide text-white transition-colors duration-200 transform rounded-md btnmenu bg-emerald-500 hover:bg-emerald-300 focus:outline-none focus:bg-emerald-700">
                         Ajouter au panier
                     </a>

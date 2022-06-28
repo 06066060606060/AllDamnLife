@@ -17,7 +17,8 @@
                         <th class="p-3 text-center ">Nom</th>
                         <th class="p-3 text-center">Prénom</th>
                         <th class="p-3 text-center">Email</th>
-                        <th class="p-3 text-center " width="110px">Consulter</th>
+                        <th class="p-3 text-center">Role</th>
+                        <th class="p-3 text-center " width="110px">Profil</th>
                         <th class="p-3 text-center" width="110px">Modifier</th>
                         <th class="p-3 text-center" width="110px">Activé</th>
 
@@ -36,6 +37,7 @@
                         <td class="p-3">{{ $user->nom }}</td>
                         <td class="p-3">{{ $user->prenom }}</td>
                         <td class="p-3 truncate ">{{ $user->email }}
+                            <td class="p-3 truncate ">{{ $user->profil }}
                         </td>
                         <td
                             class="p-3 text-green-400 cursor-pointer hover:text-green-600 hover:font-medium">

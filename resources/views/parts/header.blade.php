@@ -26,6 +26,17 @@
                 </div>
             @endif
 
+            @if (session('cart_ok'))
+            <div x-data="{ show: true }" x-show="show" x-init="setTimeout(() => show = false, 3000)" class="pt-1 pr-4">
+                <span class='text-green-500 text-bold'>Article ajouté au panier</span>
+            </div>
+        @endif
+        @if (session('cart_delete'))
+            <div x-data="{ show: true }" x-show="show" x-init="setTimeout(() => show = false, 3000)" class="pt-2 pr-4">
+                <span class='text-red-600 text-bold'>Article supprimé du panier</span>
+            </div>
+        @endif
+
             @guest
                 <div class="items-center hidden space-x-4 md:flex lg:flex">
                     @include('parts.login')
