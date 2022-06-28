@@ -5,12 +5,13 @@ namespace App\Http\Controllers;
 use Carbon\Carbon;
 use App\Models\Produits;
 use App\Models\Comments;
+use App\Models\Categories;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Storage;
 use App\Http\Controllers\Controller;
-use App\Models\Categories;
+
 
 
 class ProductController extends Controller

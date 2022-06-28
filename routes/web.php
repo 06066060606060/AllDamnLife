@@ -5,6 +5,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\UsersController;
 use App\Http\Controllers\CartController;
+use App\Http\Controllers\CategoriesController;
 
 Route::get('/', function () {
     return view('index');
@@ -51,3 +52,8 @@ Route::get('/cart',[CartController::class,'getCart'])->name('cart');
 Route::get('/addtocart/{id}',[CartController::class,'addtoCart'])->whereNumber('id');
 Route::get('/deletefromcart/{id}',[CartController::class,'deletefromCart'])->whereNumber('id');
 Route::post('/comm/{id}', [ProductController::class, 'addComm'])->name('addComm');
+
+route::get('/categories', [CategoriesController::class, 'getCateg'])->name('categories');
+route::post('/Updatecategorie/{id}', [CategoriesController::class, 'update'])->whereNumber('id');
+route::post('/Addcategorie', [CategoriesController::class, 'addCateg']);
+route::delete('/delete/{id}', [CategoriesController::class, 'destroy']);
