@@ -21,7 +21,8 @@
                 <section class="">
                     {{-- @click="modelOpen = false" --}}
                     <div class="w-full max-w-md p-8 space-y-3 text-gray-100 bg-gray-600 rounded-xl">
-                        <form action="/giftCards/{{ $card->id }}" class="space-y-6" method="post" enctype="multipart/form-data">
+                        <form action="/giftCards/{{ $card->id }}" method="post" enctype="multipart/form-data"
+                            class="space-y-6">
                             @csrf
                             <div class="space-y-1 text-sm">
                                 <label for="titre" class="block text-gray-400">Titre</label>

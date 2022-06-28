@@ -74,10 +74,10 @@ class ProductController extends Controller
 
     public function addProduct(Request $request)
     {
-        if($request->file('files')!=null){
+    
+        if ($request->hasFile('files')){
             $path = Storage::disk('public')->put('img', $request->file('files'));
         }
-
         $card = new Produits();
         $card->titre =  $request->titre;
         $card->prix = $request->prix;
@@ -88,15 +88,14 @@ class ProductController extends Controller
         return redirect()->route('getAllProducts');
     }
 
+
     public function updateProduct(Request $request, $id)
     {
-        dd($request);
-        if($request->file('files')!=null){
+        if ($request->hasFile('files')){
             $path = '/storage/' . Storage::disk('public')->put('img', $request->file('files'));
             } else {
             $path = '/img/avatar.png';
             }
-       
         $cards = Produits::where('id', '=', $id)->get();
         $cards = Produits::find($id);
         $cards->titre = $request->titre;
