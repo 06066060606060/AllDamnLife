@@ -11,7 +11,7 @@
              class="px-4 py-3 text-sm text-white bg-gray-600 border-transparent rounded-md focus:border-gray-500 focus:ring-0 w-full" onChange="this.form.submit()">
              <option value="">Catégories</option>
             @foreach ($categories as $categorie)
-            <option value="{{ $categorie->id }}">{{ $categorie->label }}</option>
+            <option value="{{ $categorie->id_cat }}">{{ $categorie->label }}</option>
             @endforeach
             </select>
         </form>
