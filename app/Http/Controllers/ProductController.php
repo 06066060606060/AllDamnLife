@@ -4,9 +4,14 @@ namespace App\Http\Controllers;
 
 use Carbon\Carbon;
 use App\Models\Produits;
-use App\Models\Categories;
+use App\Models\Comments;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\Storage;
 use App\Http\Controllers\Controller;
+use App\Models\Categories;
+
 
 class ProductController extends Controller
 {
@@ -41,6 +46,18 @@ class ProductController extends Controller
             'comments' => $comments,
             'timer' => $timer,
         ]);
+    }
+    public function addComm(Request $request, $id)
+    {
+    
+        $comm = new Comments();
+        $comm->contenu = $request->contenu;
+        $comm->user_id = Auth::user()->id;
+        $comm->product_id = $id;
+        $comm->note = $request->note;
+        $comm->save();
+
+        return redirect()->route('getCard', ['id' => $id]);
     }
 
 }

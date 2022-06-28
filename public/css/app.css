@@ -9039,10 +9039,6 @@ video {
   --tw-text-opacity: 1;
   color: rgb(229 231 235 / var(--tw-text-opacity));
 }
-.text-black {
-  --tw-text-opacity: 1;
-  color: rgb(0 0 0 / var(--tw-text-opacity));
-}
 .text-gray-900 {
   --tw-text-opacity: 1;
   color: rgb(17 24 39 / var(--tw-text-opacity));
@@ -9409,18 +9405,15 @@ h1 {
 
 /* ETOILES COMMENTAIRE____________ */
 
-* {
-    margin: 0;
-    padding: 0;
-  }
+
    
-  input {
+ #nétoile{
     display: none;
   }
    
   .etoile {
     color: grey;
-    font-size: 3em;
+    font-size: 2em;
     cursor: pointer;
   }
    

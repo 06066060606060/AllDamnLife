@@ -220,18 +220,15 @@ h1 {
 
 /* ETOILES COMMENTAIRE____________ */
 
-* {
-    margin: 0;
-    padding: 0;
-  }
+
    
-  input {
+ #nétoile{
     display: none;
   }
    
   .etoile {
     color: grey;
-    font-size: 3em;
+    font-size: 2em;
     cursor: pointer;
   }
    

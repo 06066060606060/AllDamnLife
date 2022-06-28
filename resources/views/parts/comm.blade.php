@@ -40,19 +40,19 @@
                             <div class="flex flex-col items-center space-y-3">
                                 <label for="note" class="block text-sm text-gray-200">Noter</label>
                                 <div class="flex space-x-3">
-                                    {{-- <input class="text-black" type="number" id="note" name="note" min="0" max="5" value="0"> --}}
-                                    <form method="post" action="#">
-                                        <input type="radio" id="note" name="note" value="1"> <span
-                                            class="etoile">★</span>
-                                        <input type="radio" id="note" name="note" value="2"> <span
-                                            class="etoile">★</span>
-                                        <input type="radio" id="note" name="note" value="3"> <span
-                                            class="etoile">★</span>
-                                        <input type="radio" id="note" name="note" value="4"> <span
-                                            class="etoile">★</span>
-                                        <input type="radio" id="note" name="note" value="5"> <span
-                                            class="etoile">★</span>
-                                    </form>
+                                    
+                                    <input type="hidden" id="note" name="note" value="0">
+                                        <input type="radio" id="nétoile"> <span
+                                            class="etoile" onclick="change(1)">★</span>
+                                            <input type="radio" id="nétoile"> <span
+                                            class="etoile" onclick="change(2)">★</span>
+                                            <input type="radio" id="nétoile"> <span
+                                            class="etoile" onclick="change(3)">★</span>
+                                            <input type="radio" id="nétoile"> <span
+                                            class="etoile" onclick="change(4)">★</span>
+                                            <input type="radio" id="nétoile"> <span
+                                            class="etoile" onclick="change(5)">★</span>
+                                    
                                 </div>
                             </div>
                             <button
@@ -66,6 +66,12 @@
 </div>
 
 <script>
+function change(lanote){
+         var manote =  document.getElementById("note"); 
+        manote.value = lanote;
+          
+}
+
     let note = 0;
     let etoiles = document.querySelectorAll('.etoile');
 
