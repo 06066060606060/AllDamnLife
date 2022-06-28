@@ -43,8 +43,9 @@ route::get('user/{id}', [UsersController::class, 'showUsers'])->whereNumber('id'
 Route::post('/actif/{id}', [UsersController::class,'activisor'])->whereNumber('id');
 
 Route::get('/',[ProductController::class,'getProduct']);
-route::get('/card/{id}',[ProductController::class,'getOneProduct'])->whereNumber('id')->name('getCard');
-Route::name('contenu.comments')->get('{post}/comments', [ProductController::class, 'comments']);
+Route::post('/filter',[ProductController::class,'getProduct']);
+route::get('/card/{id}',[ProductController::class,'getOneProduct'])->whereNumber('id')->name('getCard');;
+
 
 Route::get('/cart',[CartController::class,'getCart'])->name('cart');
 Route::get('/addtocart/{id}',[CartController::class,'addtoCart'])->whereNumber('id');
