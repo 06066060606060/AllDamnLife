@@ -1,4 +1,4 @@
-<form action="/delete/{{$categ->id}}" method="POST">
+<form action="/delete/{{$categ->id_cat}}" method="POST">
     @csrf
     
     @method('delete')

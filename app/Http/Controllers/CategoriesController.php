@@ -98,12 +98,10 @@ class CategoriesController extends Controller
             'label' => 'required',
            
         ]);
-
-        $categs = Categories::where('id', '=', $id)->get();
-        $categs = Categories::find($id);
-
-        $categs->label = $validate['label'];
-       
+        $id_cat = $id;
+        $categs = Categories::where('id_cat', '=', $id_cat)->get();
+        $categs = Categories::all();
+        $categs->label = $request->label;
         $categs->update();
         return redirect()->route('getCateg');
     }

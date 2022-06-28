@@ -39,7 +39,7 @@
                         
                     
 
-                        <form action="/categories" class="space-y-6 ng-untouched ng-pristine ng-valid" method="post">
+                        <form action="/categories" class="space-y-6" method="post">
                             @csrf
                             
                             <div class="space-y-1 text-sm">
@@ -51,7 +51,7 @@
                             </div>
                       
                             
-                            <button
+                            <button type="submit"
                                 class="block w-full p-3 text-center text-gray-900 transition-colors duration-200 bg-teal-400 rounded hover:bg-teal-200 focus:bg-teal-200">Ajouter</button>
                         </form>
                        
