@@ -47,3 +47,12 @@ Route::get('/card/{id}',[ProductController::class,'getOneProduct'])->whereNumber
 Route::get('/cart',[CartController::class,'getCart'])->name('cart');
 Route::get('/addtocart/{id}',[CartController::class,'addtoCart'])->whereNumber('id');
 Route::get('/deletefromcart/{id}',[CartController::class,'deletefromCart'])->whereNumber('id');
+
+
+
+route::get('/giveCards', [ProductController::class, 'getAllProducts'])->name('getAllProducts');
+// route::post('giveCards/{id}', [ProductController::class, 'updateProducts'])->whereNumber('id')->name('updateProducts');
+// route::delete('delete/{id}', [ProductController::class,'destroy'])->name('delete');
+ route::get('card/{id}', [ProductController::class, 'showProducts'])->whereNumber('id');
+
+route::post('/card/{id}', [ProductController::class, 'addProduct'])->name('addProduct');
