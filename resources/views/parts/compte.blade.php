@@ -22,7 +22,7 @@
 					<input required id="nom" name="nom" type="text" placeholder="Nom" class="w-full pl-2 text-gray-900 border-gray-700 rounded-md focus:ring focus:ring-opacity-60 " value="{{Auth::user()->nom }}">
 				</div>
 				<div class="col-span-full sm:col-span-3">
-					<label for="prenom" class="text-sm">Prenom</label>
+					<label for="prenom" class="text-sm">Prénom</label>
 					<input required id="prenom" name="prenom" type="text" placeholder="Prenom" class="w-full pl-2 text-gray-900 border-gray-700 rounded-md focus:ring focus:ring-opacity-60 " value="{{Auth::user()->prenom }}">
 				</div>
                 <div class="col-span-full sm:col-span-3">
