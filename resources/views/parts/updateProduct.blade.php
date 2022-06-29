@@ -42,18 +42,18 @@
                                     class="w-full px-4 py-3 text-gray-100 bg-gray-900 border-gray-700 rounded-md focus:border-teal-400">
                             </div>
                             <div class="space-y-1 text-sm">
-                                <img class="h-40 w-auto mx-auto" src="{{ $card->image }}">
+                                <img class="w-auto h-40 mx-auto" src="{{ $card->image }}">
                             </div>
                             <div class="space-y-1 text-sm">
-                                <label for="files"
+                                <label for="images"
                                     class="flex items-center justify-center h-10 px-6 py-3 mt-1 space-x-2 text-sm tracking-wide text-white transition-colors duration-200 transform bg-gray-900 rounded-md hover:bg-gray-700 focus:outline-none focus:bg-gray-800 focus:ring focus:ring-gray-300 focus:ring-opacity-50">Changer
                                     d'image</label>
-                                <input type="file" style="display:none" id="files" name="files">
+                                <input type="file" style="display:none" id="images" name="images">
                             </div>
                             <div class="relative inline-block w-64">
                                 <label for="prix" class="block text-gray-400">Catégories</label>
                                 <select name="categories"
-                                    class="block w-full px-4 py-2 pr-8 leading-tight text-gray-100 bg-gray-900 border border-gray-700 rounded-md shadow appearance-none  focus:outline-none focus:shadow-outline">
+                                    class="block w-full px-4 py-2 pr-8 leading-tight text-gray-100 bg-gray-900 border border-gray-700 rounded-md shadow appearance-none focus:outline-none focus:shadow-outline">
                                     @foreach ($categories as $categorie)
                                         <option value="{{ $categorie->id_cat }}"> {{ $categorie->label }}</option>
                                     @endforeach

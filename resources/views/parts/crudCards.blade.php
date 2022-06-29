@@ -21,7 +21,7 @@
                     @forelse ($cards as $card)
                         <tr class="flex flex-col flex-no wrap sm:table-row">
                             <td class="p-3">{{ $card->titre }}</td>
-                            <td class=""> <img class="w-10 h-10 mx-auto sm:w-14 sm:h-14" src="{{ asset('storage/' . $card->image) }}" alt=""></td>
+                            <td class=""> <img class="w-10 h-10 mx-auto sm:w-14 sm:h-14" src="{{ asset('storage' . $card->image) }}" alt=""></td>
                             <td class="p-3">{{ $card->prix }}</td>
                             <td class="p-3 clampdeux">{{ $card->description }}</td>
                             <td class="p-3 text-green-400 cursor-pointer hover:text-green-600 hover:font-medium"><a
