@@ -45,10 +45,11 @@
                                     class="w-full px-4 py-3 text-gray-100 bg-gray-900 border-gray-700 rounded-md focus:border-teal-400">
                             </div>
                             <div class="space-y-1 text-sm">
-                                <label for="files"
-                                    class="flex items-center justify-center h-10 px-6 py-3 mt-1 space-x-2 text-sm tracking-wide text-white transition-colors duration-200 transform bg-gray-900 rounded-md hover:bg-gray-700 focus:outline-none focus:bg-gray-800 focus:ring focus:ring-gray-300 focus:ring-opacity-50">Ajouter
-                                    une image</label>
-                                <input type="file" style="display:none" id="files" name="files">
+                                <label class="">
+
+                                    <span class="mt-2 text-base leading-normal">Select a file</span>
+                                    <input type="file" name="images" class="hidden" />
+                                </label>
                             </div>
                             <div class="relative inline-block w-64">
                                 <select name="categories"

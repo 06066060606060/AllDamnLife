@@ -14,7 +14,6 @@ use App\Http\Controllers\Controller;
 
 
 
-
 class ProductController extends Controller
 {
    
@@ -75,20 +74,19 @@ class ProductController extends Controller
 
     public function addProduct(Request $request)
     {
-    
-        if ($request->hasFile('files')){
-            $path = Storage::disk('public')->put('img', $request->file('files'));
+        if ($request->hasFile('images')){
+            $path = Storage::disk('public')->put('img', $request->file('images'));
         }
+
         $card = new Produits();
         $card->titre =  $request->titre;
         $card->prix = $request->prix;
         $card->description = $request->description;
-        $card->image = $path;
-        $card->cat_id =  $request->cat_id;
+        $card->image = '/storage/' . $path;
+        $card->cat_id =  $request->categories;
         $card->save();
         return redirect()->route('getAllProducts');
     }
-
 
     public function updateProduct(Request $request, $id)
     {

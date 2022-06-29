@@ -57,6 +57,7 @@
 <style>
     @media (min-width: 640px) {
         table {
+            
             display: inline-table !important;
         }
 
