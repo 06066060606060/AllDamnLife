@@ -1,7 +1,7 @@
 <div x-data="{ modelOpen: false }">
-    <button @click="modelOpen =!modelOpen" class="p-3 text-red-400 cursor-pointer hover:text-blue-600 hover:font-medium">
-        <i class="fa-solid fa-plus"></i>
-    </button>
+    <button @click="modelOpen =!modelOpen"
+    class="bg-blue-600 p-3 pl-4 pr-4 rounded-lg font-bold transition duration-500 ease-in-out hover:ring-2 ring-offset-2 ring-blue-400 text-white mt-4">Ajouter une carte cadeau</button>
+  </button>
 
     <div x-cloak x-show="modelOpen" class="fixed inset-0 z-50 overflow-y-auto" aria-labelledby="modal-title" role="dialog"
         aria-modal="true">
