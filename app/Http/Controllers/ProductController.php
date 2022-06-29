@@ -27,7 +27,7 @@ class ProductController extends Controller
             $produits = Produits::inRandomOrder()->get();
         }
 
-        $categories = Categories::all();
+        $categories = Categories::all();  // A FAIRE NOTE FROM COMM
 
         return view('index', [
              'produits' => $produits,
