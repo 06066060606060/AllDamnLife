@@ -9,6 +9,18 @@ class Produits extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'id',
+        'titre',
+        'description',
+        'prix',
+        'image',
+        'note',
+        'actif',
+        'cat_id',
+        
+    ];
+    
     public function produit()
     {
         return $this;

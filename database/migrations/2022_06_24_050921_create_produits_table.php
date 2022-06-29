@@ -15,8 +15,8 @@ return new class extends Migration
             $table->longText('description');
             $table->decimal('prix')->default('0');
             $table->longText('image');
-            $table->integer('note')->default(0);
-            $table->tinyInteger('active')->default(1);
+            $table->integer('note')->default(0)->nullable();
+            $table->tinyInteger('actif')->default(1);
             $table->timestamp('updated_at')->useCurrent()->on('update')->useCurrent();
             $table->timestamp('created_at')->useCurrent()->on('update')->useCurrent();
             $table->unsignedBigInteger('cat_id');

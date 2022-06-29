@@ -1,17 +1,8 @@
-@if ($errors->any())
-        <div class="alert alert-danger">
-            <ul>
-                @foreach ($errors->all() as $error)
-                    <li>{{ $error }}</li>
-                @endforeach
-            </ul>
-        </div>
-    @endif
 
 <div x-data="{ modelOpen: false }">
 
     <button @click="modelOpen =!modelOpen"
-    class="p-3 text-red-400 cursor-pointer hover:text-red-600 hover:font-medium">
+    class="p-3 text-blue-400 cursor-pointer hover:text-blue-600 hover:font-medium">
     <i class="fa-solid fa-pen-to-square"></i>
     </button>
 
@@ -32,15 +23,10 @@
                 x-transition:leave-end="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
                 class="inline-block pt-8 overflow-hidden transition-all transform rounded-lg 2xl:max-w-2xl">
                 <section class="">
-
                     {{-- @click="modelOpen = false" --}}
                     <div class="w-full max-w-md p-8 space-y-3 text-gray-100 bg-gray-600 rounded-xl">
-                        
-                    
-
                         <form action="{{route('updateUsers',$user['id'])}}" class="space-y-6 ng-untouched ng-pristine ng-valid" method="post">
                             @csrf
-                            
                             <div class="space-y-1 text-sm">
                                 <label for="nom" class="block text-gray-400">Nom</label>
                                 <input value="{{$user->nom}}" 

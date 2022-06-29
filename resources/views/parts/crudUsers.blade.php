@@ -5,15 +5,9 @@
             <table
             
                 class="flex flex-row flex-no-wrap justify-center w-full my-5 overflow-hidden bg-gray-600 rounded-lg sm:shadow-lg btnmenu">
-                
-                    
-                       
                 <thead class="text-white">
-
                     @foreach ($users as $user)
-                    
                     <tr class="flex flex-col rounded-l-lg bg-emerald-500 flex-no wrap sm:table-row ">
-
                         <th class="p-3 text-center ">Nom</th>
                         <th class="p-3 text-center">Prénom</th>
                         <th class="p-3 text-center">Email</th>
@@ -21,19 +15,13 @@
                         <th class="p-3 text-center " width="110px">Profil</th>
                         <th class="p-3 text-center" width="110px">Modifier</th>
                         <th class="p-3 text-center" width="110px">Activé</th>
-
                     </tr>
-
                     @endforeach
-
                 </thead> 
-                
                 <tbody class="flex-1 text-white sm:flex-none">
                     
                      @foreach ($users as $user)
-                     
                     <tr class="flex flex-col flex-no wrap sm:table-row">
-                        
                         <td class="p-3">{{ $user->nom }}</td>
                         <td class="p-3">{{ $user->prenom }}</td>
                         <td class="p-3 truncate ">{{ $user->email }}
