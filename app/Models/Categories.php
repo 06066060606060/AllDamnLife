@@ -15,4 +15,7 @@ class Categories extends Model
         'label',
         
     ];
+
+//yfiltruglgl
+
 }

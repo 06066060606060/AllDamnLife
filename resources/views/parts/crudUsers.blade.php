@@ -38,23 +38,26 @@
                         @include('parts.deleteUsers')
                         </td>
                     </tr> 
-
+                    
                     @endforeach
 
                 </tbody>
                
             </table>
+
+
         </div>
+        
     </div>
 
     
 </div>
 
 
-
 <style>
     @media (min-width: 640px) {
         table {
+            
             display: inline-table !important;
         }
 

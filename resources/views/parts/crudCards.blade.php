@@ -16,6 +16,11 @@
                             <th class="p-3 text-center" width="110px">Supprimer</th>
                         </tr>
                     @endforeach
+
+
+
+
+                    
                 </thead>
                 <tbody class="flex-1 text-white sm:flex-none">
                     @forelse ($cards as $card)
@@ -26,7 +31,7 @@
                             <td class="p-3 clampdeux">{{ $card->description }}</td>
                             <td class="p-3 text-green-400 cursor-pointer hover:text-green-600 hover:font-medium"><a
                                     href="/card/{{ $card->id }}">
-                                    <i class="fa-solid fa-eye"></i></a></td>
+                                    <i class="fa-solid fa-eye"></i></a></td>2
                             <td> @include('parts.updateProduct')</td>
                              <td>
                                 @include('parts.activeProduct')
@@ -41,7 +46,7 @@
                         </div>
                     @endforelse
                 </tbody>
-
+          
             </table>
             @include('parts.addProduct')
         </div>

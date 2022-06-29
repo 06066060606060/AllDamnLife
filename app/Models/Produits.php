@@ -35,6 +35,13 @@ class Produits extends Model
     {
         return $this->hasOne(Categories::class);
     }
+
+    public function categ()
+    {
+
+        return $this->belongsTo(Categories::class, 'cat_id');
+  
+      }
   
 
 }

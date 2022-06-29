@@ -52,6 +52,13 @@ Route::post('/active/{id}', [ProductController::class,'activeur'])->whereNumber(
 Route::post('/giftCards/{id}',[ProductController::class, 'updateProduct'])->whereNumber('id')->name('updateProduct');
 route::delete('/deleteCard/{id}', [ProductController::class, 'deleteCard'])->name('delete');
 
+
+
+
+
+Route::get('/',[ProductController::class,'getProduct']);
+route::get('/card/{id}',[ProductController::class,'getOneProduct'])->whereNumber('id')->name('getCard');
+
 Route::get('/cart',[CartController::class,'getCart'])->name('cart');
 Route::get('/addtocart/{id}',[CartController::class,'addtoCart'])->whereNumber('id');
 Route::get('/deletefromcart/{id}',[CartController::class,'deletefromCart'])->whereNumber('id');
