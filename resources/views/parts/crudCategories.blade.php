@@ -4,7 +4,7 @@
 
             <table
                 class="flex flex-row flex-no-wrap justify-center w-full my-5 overflow-hidden bg-gray-600 rounded-lg sm:shadow-lg btnmenu">
-                @include('parts.addCateg')
+               
                 <thead class="text-white">
 
                     @foreach ($categories as $categorie)
@@ -40,6 +40,7 @@
         </div>
     </div>
 </div>
+@include('parts.addCateg')
 <style>
     @media (min-width: 640px) {
         table {
