@@ -77,12 +77,12 @@ class ProductController extends Controller
         if ($request->hasFile('images')){
             $path = Storage::disk('public')->put('img', $request->file('images'));
         }
-
+    
         $card = new Produits();
         $card->titre =  $request->titre;
         $card->prix = $request->prix;
         $card->description = $request->description;
-        $card->image = $path;
+        $card->image = '/storage/' . $path;
         $card->cat_id =  $request->categories;
         $card->save();
         return redirect()->route('getAllProducts');
@@ -100,7 +100,7 @@ class ProductController extends Controller
         $cards->titre = $request->titre;
         $cards->prix = $request->prix;
         $cards->description = $request->description;
-        $cards->image = $path;
+        $cards->image = '/storage/' . $path;
         $cards->cat_id = $request->categories;
         $cards->update();
         return redirect()->route('getAllProducts');
