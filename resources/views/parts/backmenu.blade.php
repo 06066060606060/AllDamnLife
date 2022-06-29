@@ -10,5 +10,6 @@
             articles</a>
         <a rel="noopener noreferrer" href="/categories"
             class="px-5 py-1 border-b-2 border-gray-700 hover:border-blue-400 hover:text-blue-400">Catégories</a>
+           
     </div>
 </div>
