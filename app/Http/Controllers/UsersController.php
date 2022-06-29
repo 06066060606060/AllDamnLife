@@ -82,7 +82,6 @@ class UsersController extends Controller
         $validate = $request->validate([
             'nom' => 'required',
             'prenom' => 'required',
-            'username' => 'required',
             'email' => 'required'
         ]);
         $users = User::where('id', '=', $id)->get();
@@ -90,7 +89,6 @@ class UsersController extends Controller
 
         $users->nom = $validate['nom'];
         $users->prenom = $validate['prenom'];
-        $users->username = $validate['username'];
         $users->email = $validate['email'];
         $users->update();
         return redirect()->route('getUsers');

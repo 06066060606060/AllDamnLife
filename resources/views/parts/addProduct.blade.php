@@ -22,7 +22,7 @@
                 <section class="">
                     {{-- @click="modelOpen = false" --}}
                     <div class="w-full max-w-md p-8 space-y-3 text-gray-100 bg-gray-600 rounded-xl">
-                        <form action="/giftCards" method="post" enctype="multipart/form-data" class="space-y-6">
+                        <form action="{{ route('addProduct') }}" method="POST" enctype="multipart/form-data" class="space-y-6">
                             @csrf
                             <div class="space-y-1 text-sm">
                                 <label for="titre" class="block text-gray-400">Titre</label>
@@ -36,7 +36,7 @@
                                     Description
                                 </label>
                                 <textarea name="description"
-                                    class="block w-full mt-1 shadow-sm  placeholder:text-right px-4 py-3 text-gray-100 bg-gray-900 border-gray-700 rounded-md focus:border-teal-400"
+                                    class="block w-full px-4 py-3 mt-1 text-gray-100 bg-gray-900 border-gray-700 rounded-md shadow-sm placeholder:text-right focus:border-teal-400"
                                     rows="4"></textarea>
                             </div>
                             <div class="space-y-1 text-sm">
@@ -45,14 +45,15 @@
                                     class="w-full px-4 py-3 text-gray-100 bg-gray-900 border-gray-700 rounded-md focus:border-teal-400">
                             </div>
                             <div class="space-y-1 text-sm">
-                                <label for="files"
-                                    class="flex items-center justify-center h-10 px-6 py-3 mt-1 space-x-2 text-sm tracking-wide text-white transition-colors duration-200 transform bg-gray-900 rounded-md hover:bg-gray-700 focus:outline-none focus:bg-gray-800 focus:ring focus:ring-gray-300 focus:ring-opacity-50">Ajouter
-                                    une image</label>
-                                <input type="file" style="display:none" id="files" name="files">
+                                <label class="">
+                                  
+                                    <span class="mt-2 text-base leading-normal">Select a file</span>
+                                    <input type="file" name="images" class="hidden" />
+                                </label>
                             </div>
                             <div class="relative inline-block w-64">
                                 <select name="categories"
-                                    class="block w-full px-4 py-2 pr-8 leading-tight text-gray-100 bg-gray-900 border border-gray-700 rounded-md shadow appearance-none  focus:outline-none focus:shadow-outline">
+                                    class="block w-full px-4 py-2 pr-8 leading-tight text-gray-100 bg-gray-900 border border-gray-700 rounded-md shadow appearance-none focus:outline-none focus:shadow-outline">
                                     @foreach ($categories as $categorie)
                                         <option value="{{ $categorie->id_cat }}">
                                             {{ $categorie->label }}
@@ -62,8 +63,7 @@
                             </div>
 
                             <button
-                                class="block w-full p-3 text-center text-gray-900 transition-colors duration-200 bg-teal-400 rounded 
-                                hover:bg-teal-200 focus:bg-teal-200">Ajouter</button>
+                                class="block w-full p-3 text-center text-gray-900 transition-colors duration-200 bg-teal-400 rounded hover:bg-teal-200 focus:bg-teal-200">Ajouter</button>
                         </form>
                     </div>
                 </section>
