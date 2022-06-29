@@ -16,6 +16,11 @@
                             <th class="p-3 text-center" width="110px">Supprimer</th>
                         </tr>
                     @endforeach
+
+
+
+
+                    
                 </thead>
                 <tbody class="flex-1 text-white sm:flex-none">
                     @forelse ($cards as $card)
