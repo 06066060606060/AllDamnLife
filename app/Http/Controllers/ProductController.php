@@ -82,7 +82,7 @@ class ProductController extends Controller
         $card->titre =  $request->titre;
         $card->prix = $request->prix;
         $card->description = $request->description;
-        $card->image = $path;
+        $card->image = '/storage/' . $path;
         $card->cat_id =  $request->categories;
         $card->save();
         return redirect()->route('getAllProducts');
