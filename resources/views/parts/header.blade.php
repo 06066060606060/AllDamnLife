@@ -1,15 +1,5 @@
 <div class="p-4 text-gray-100">
     <div class="flex items-center justify-between h-16 max-w-screen-xl px-4 mx-auto">
-        <!-- <div class="flex flex-1 w-0 lg:hidden">
-            <button class="p-2 text-gray-600 bg-gray-100 rounded-full" type="button">
-                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewbox="0 0 24 24"
-                    xmlns="http://www.w3.org/2000/svg">
-                    <path d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" stroke-linecap="round"
-                        stroke-linejoin="round" stroke-width="2"></path>
-                </svg>
-            </button>
-        </div> -->
-
         <div class="flex items-center pb-4 mx-auto space-x-4 md:mx-0 lg:mx-0">
             <a href="/"><img src="/img/logo.png" alt="logo" class="w-auto h-12 "></a>
         </div>
