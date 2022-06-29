@@ -2,7 +2,7 @@
     <div class="flex items-center justify-center">
         <div class="container">
             <table
-                class="flex flex-row flex-no-wrap justify-center w-full overflow-hidden bg-gray-600 rounded-lg sm:shadow-lg btnmenu mt-5">
+                class="flex flex-row flex-no-wrap justify-center w-full mt-5 overflow-hidden bg-gray-600 rounded-lg sm:shadow-lg btnmenu">
                 <thead class="text-white">
                     @foreach ($cards as $card)
                         <tr class="flex flex-col rounded-l-lg bg-emerald-500 flex-no wrap sm:table-row ">
@@ -31,7 +31,7 @@
                             <td class="p-3 clampdeux">{{ $card->description }}</td>
                             <td class="p-3 text-green-400 cursor-pointer hover:text-green-600 hover:font-medium"><a
                                     href="/card/{{ $card->id }}">
-                                    <i class="fa-solid fa-eye"></i></a></td>2
+                                    <i class="fa-solid fa-eye"></i></a></td>
                             <td> @include('parts.updateProduct')</td>
                              <td>
                                 @include('parts.activeProduct')
