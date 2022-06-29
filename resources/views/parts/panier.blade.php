@@ -15,7 +15,7 @@
                     </div>
                     @php($totalcost = 0)
                     <div class="mt-4">
-                        <p class="text-gray-200 ">Contenu du panier</p>
+                        <p class="text-gray-200">Contenu du panier</p>
                     </div>
                     <div class="mt-12">
                         <div class="flow-root">

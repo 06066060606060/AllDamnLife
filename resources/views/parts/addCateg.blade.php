@@ -33,34 +33,21 @@
                 x-transition:leave-end="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
                 class="inline-block pt-8 overflow-hidden transition-all transform rounded-lg 2xl:max-w-2xl">
                 <section class="">
-
                     {{-- @click="modelOpen = false" --}}
                     <div class="w-full max-w-md p-8 space-y-3 text-gray-100 bg-gray-600 rounded-xl">
-                        
-                    
-
-                        <form action="/categories" class="space-y-6" method="post">
+                        <form action="/Addcategorie" class="space-y-6" method="post">
                             @csrf
-                            
                             <div class="space-y-1 text-sm">
                                 <label for="Label" class="block text-gray-400">Label</label>
                                 <input value="" 
                                 class="w-full px-4 py-3 text-gray-100 bg-gray-900 border-gray-700 rounded-md focus:border-teal-400"
-                                type="text" name="label" placeholder="180" />
-                               
+                                type="text" name="label" placeholder="Nom de la catégorie" />
                             </div>
-                      
-                            
                             <button type="submit"
                                 class="block w-full p-3 text-center text-gray-900 transition-colors duration-200 bg-teal-400 rounded hover:bg-teal-200 focus:bg-teal-200">Ajouter</button>
                         </form>
-                       
-                     
-                      
                     </div>
-
                 </section>
-
             </div>
         </div>
     </div>

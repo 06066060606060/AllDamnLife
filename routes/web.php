@@ -46,13 +46,18 @@ Route::post('/actif/{id}', [UsersController::class,'activisor'])->whereNumber('i
 Route::get('/',[ProductController::class,'getProduct']);
 Route::post('/filter',[ProductController::class,'getProduct']);
 route::get('/card/{id}',[ProductController::class,'getOneProduct'])->whereNumber('id')->name('getCard');;
-
+Route::post('/giftCards',[ProductController::class,'addProduct']);
+Route::get('/giftCards',[ProductController::class,'getAllProducts'])->name('getAllProducts');
+Route::post('/active/{id}', [ProductController::class,'activeur'])->whereNumber('id');
+Route::post('/giftCards/{id}',[ProductController::class, 'updateProduct'])->whereNumber('id')->name('updateProduct');
+route::delete('/deleteCard/{id}', [ProductController::class, 'deleteCard'])->name('delete');
 
 Route::get('/cart',[CartController::class,'getCart'])->name('cart');
 Route::get('/addtocart/{id}',[CartController::class,'addtoCart'])->whereNumber('id');
 Route::get('/deletefromcart/{id}',[CartController::class,'deletefromCart'])->whereNumber('id');
+Route::post('/comm/{id}', [ProductController::class, 'addComm'])->name('addComm');
 
-route::get('/categories', [CategoriesController::class, 'getCateg'])->name('getCateg');
-route::post('categories/{id}', [CategoriesController::class, 'update'])->whereNumber('id')->name('updateC');
-route::post('/categories', [CategoriesController::class, 'addCateg']);
-route::delete('/delete/{id}', [CategoriesController::class, 'destroy'])->name('delete');
+route::get('/categories', [CategoriesController::class, 'getCateg'])->name('categories');
+route::post('/Updatecategorie/{id}', [CategoriesController::class, 'update'])->whereNumber('id');
+route::post('/Addcategorie', [CategoriesController::class, 'addCateg']);
+route::delete('/delete/{id}', [CategoriesController::class, 'destroy']);
