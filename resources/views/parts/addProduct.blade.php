@@ -1,6 +1,6 @@
 <div x-data="{ modelOpen: false }">
     <button @click="modelOpen =!modelOpen"
-    class="bg-blue-600 p-3 pl-4 pr-4 rounded-lg font-bold transition duration-500 ease-in-out hover:ring-2 ring-offset-2 ring-blue-400 text-white mt-4">Ajouter une carte cadeau</button>
+    class="p-3 pl-4 pr-4 mt-4 font-bold text-white transition duration-500 ease-in-out bg-blue-600 rounded-lg hover:ring-2 ring-offset-2 ring-blue-400">Ajouter une carte cadeau</button>
   </button>
 
     <div x-cloak x-show="modelOpen" class="fixed inset-0 z-50 overflow-y-auto" aria-labelledby="modal-title" role="dialog"
@@ -47,7 +47,7 @@
                             <div class="space-y-1 text-sm">
                                 <label class="">
                                   
-                                    <span class="mt-2 text-base leading-normal">Select a file</span>
+                                    <span class="px-4 py-3 mt-2 leading-tight text-gray-100 bg-gray-900 border border-gray-700 rounded-md shadow appearance-none hover:bg-gray-700 focus:outline-none focus:shadow-outline">Selectionner une image</span>
                                     <input type="file" name="images" class="hidden" />
                                 </label>
                             </div>
