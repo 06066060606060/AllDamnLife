@@ -11,7 +11,7 @@
                         <th class="p-3 text-center ">Nom</th>
                         <th class="p-3 text-center">Prénom</th>
                         <th class="p-3 text-center">Email</th>
-                        <th class="p-3 text-center">Role</th>
+                        <th class="p-3 text-center">Rôle</th>
                         <th class="p-3 text-center " width="110px">Profil</th>
                         <th class="p-3 text-center" width="110px">Modifier</th>
                         <th class="p-3 text-center" width="110px">Activé</th>
@@ -29,7 +29,7 @@
                         </td>
                         <td
                             class="p-3 text-green-400 cursor-pointer hover:text-green-600 hover:font-medium">
-                           <a href="/user/{{ $user->id }}"> <i class="fa-solid fa-eye"></i> </a>
+                           <a href="/user/{{ $user->id }}"> <i class="fa-solid fa-eye "></i> </a>
                         </td>
                         <td>
                         @include('parts.updateUser')

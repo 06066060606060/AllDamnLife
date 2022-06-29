@@ -21,8 +21,8 @@
 					<input id="firstname" type="text" placeholder="Nom" class="w-full pl-2 text-gray-900 border-gray-700 rounded-md focus:ring focus:ring-opacity-60 " value="{{Auth::user()->nom }}">
 				</div>
 				<div class="col-span-full sm:col-span-3">
-					<label for="lastname" class="text-sm">Prenom</label>
-					<input id="lastname" type="text" placeholder="Prenom" class="w-full pl-2 text-gray-900 border-gray-700 rounded-md focus:ring focus:ring-opacity-60 " value="{{Auth::user()->prenom }}">
+					<label for="prenom" class="text-sm">Prénom</label>
+					<input required id="prenom" name="prenom" type="text" placeholder="Prenom" class="w-full pl-2 text-gray-900 border-gray-700 rounded-md focus:ring focus:ring-opacity-60 " value="{{Auth::user()->prenom }}">
 				</div>
                 <div class="col-span-full sm:col-span-3">
 					<label for="pseudo" class="text-sm">Pseudo</label>
@@ -33,12 +33,12 @@
 					<input id="email" type="email" placeholder="Email" class="w-full pl-2 text-gray-900 border-gray-700 rounded-md focus:ring focus:ring-opacity-60 " value="{{Auth::user()->email }}">
 				</div>
 				<div class="col-span-full">
-					<label for="address" class="text-sm">Address</label>
-					<input id="address" type="text" placeholder="" class="w-full pl-2 text-gray-900 border-gray-700 rounded-md focus:ring focus:ring-opacity-60 " >
+					<label for="address" class="text-sm">Adresse</label>
+					<input  required id="address" name="address" type="text" placeholder="" class="w-full pl-2 text-gray-900 border-gray-700 rounded-md focus:ring focus:ring-opacity-60 "value="{{Auth::user()->address }}" >
 				</div>
                 <div class="col-span-full sm:col-span-2">
-					<label for="phone" class="text-sm">Numéro de télephone</label>
-					<input id="phone" type="text" placeholder="" class="w-full pl-2 text-gray-900 border-gray-700 rounded-md focus:ring focus:ring-opacity-60 " >
+					<label for="phone" class="text-sm">Numéro de téléphone</label>
+					<input required id="phone" name="phone" type="text" placeholder="" class="w-full pl-2 text-gray-900 border-gray-700 rounded-md focus:ring focus:ring-opacity-60 " value="{{Auth::user()->numero_telephone}}">
 				</div>
 				<div class="col-span-full sm:col-span-2">
 					<label for="ville" class="text-sm">Ville</label>

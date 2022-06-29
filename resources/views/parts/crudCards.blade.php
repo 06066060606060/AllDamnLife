@@ -1,8 +1,8 @@
 <div class="max-w-screen-xl mx-auto ">
     <div class="flex items-center justify-center">
         <div class="container">
-            
-            <table class="flex flex-row flex-no-wrap justify-center w-full overflow-hidden bg-gray-600 rounded-lg sm:shadow-lg btnmenu">
+            <table
+                class="flex flex-row flex-no-wrap justify-center w-full overflow-hidden bg-gray-600 rounded-lg sm:shadow-lg btnmenu mt-5">
                 <thead class="text-white">
                     @foreach ($cards as $card)
                         <tr class="flex flex-col rounded-l-lg bg-emerald-500 flex-no wrap sm:table-row ">
