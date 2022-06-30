@@ -52,6 +52,7 @@ class ProductController extends Controller
         $timer = Carbon::now();
         $produit = Produits::find($id);
         $comments = Comments::where('product_id', $id)->inRandomOrder()->limit(2)->get();
+        
         return view('card', [
             'produit' => $produit,
             'comments' => $comments,
@@ -100,11 +101,12 @@ class ProductController extends Controller
 
     public function updateProduct(Request $request, $id)
     {
-        if ($request->hasFile('files')) {
-            $path = '/storage/' . Storage::disk('public')->put('img', $request->file('files'));
-        } else {
+        if ($request->hasFile('images')){
+            $path = '/storage/' . Storage::disk('public')->put('img', $request->file('images'));
+            } else {
             $path = '/img/avatar.png';
-        }
+            }
+            
         $cards = Produits::where('id', '=', $id)->get();
         $cards = Produits::find($id);
         $cards->titre = $request->titre;

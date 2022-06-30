@@ -33,8 +33,6 @@
                     @include('parts.register')
                 </div>
             @endguest
-
-
             @auth
 
                 <div class="items-center hidden space-x-2 md:flex lg:flex">
@@ -52,6 +50,8 @@
                         class="flex items-center justify-center h-8 px-4 pt-1 pb-1 mx-1 space-x-2 tracking-wide text-white transition-colors duration-200 transform rounded-md tooltip btnmenu bg-emerald-500 hover:bg-emerald-300 focus:outline-none focus:bg-emerald-500">
                         <i class="fa-solid fa-basket-shopping"></i>
                         <span class="px-4 tooltiptext">Mon Panier</span>
+                        <span class="articles">2</span>
+                      
                     </a>
                     <a href="/logout"
                         class="flex items-center justify-center h-8 px-4 pt-1 pb-1 mx-1 space-x-2 tracking-wide text-white transition-colors duration-200 transform bg-gray-600 rounded-md tooltip btnmenu hover:bg-gray-400 focus:outline-none focus:bg-gray-500">
@@ -61,8 +61,10 @@
                 </div>
             @endauth
         </div>
-
     </div>
+
+  
+
 
     <div class="flex flex-row pb-2 border-b border-gray-100 lg:hidden md:hidden">
         @guest
@@ -71,6 +73,7 @@
                 @include('parts.register')
             </div>
         @endguest
+
 
 
         @auth
@@ -87,6 +90,7 @@
                 <a href="/cart"
                     class="flex items-center justify-center h-8 px-4 pt-1 pb-1 mx-1 space-x-2 tracking-wide text-white transition-colors duration-200 transform rounded-md btnmenu bg-emerald-500 hover:bg-emerald-300 focus:outline-none focus:bg-emerald-500">
                     <i class="fa-solid fa-basket-shopping"></i>
+                   
                 </a>
                 <a href="/logout"
                     class="flex items-center justify-center h-8 px-4 pt-1 pb-1 mx-1 space-x-2 tracking-wide text-white transition-colors duration-200 transform bg-gray-600 rounded-md btnmenu hover:bg-gray-400 focus:outline-none focus:bg-gray-500">
