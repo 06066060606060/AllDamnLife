@@ -29,20 +29,16 @@ class ProductController extends Controller
             $produits = Produits::where('cat_id', '=', $categories)->get();
         } elseif ($request->filled('prix')) {
             $prix = $request->prix;
-            $produits = Produits::where('prix', '<=', $prix)->OrderBy('prix', 'ASC')->get();
+            $produits = Produits::where('prix', '<=', $prix)->get();
         } else {
             $produits = Produits::inRandomOrder()->get();
         }
 
-        $categories = Categories::all();  // A FAIRE NOTE FROM COMM
+        $categories = Categories::all(); 
 
         return view('index', [
             'produits' => $produits,
             'categories' => $categories,
-           
-
-
-
         ]);
     }
 
