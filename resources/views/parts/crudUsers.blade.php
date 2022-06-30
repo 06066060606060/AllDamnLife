@@ -4,7 +4,7 @@
         <div class="container">
             <table
             
-                class="flex flex-row flex-no-wrap justify-center w-full my-5 overflow-hidden bg-gray-600 rounded-lg sm:shadow-lg btnmenu">
+                class="flex flex-row flex-no-wrap justify-center w-full my-5  overflow-hidden bg-gray-600 rounded-lg sm:shadow-lg btnmenu">
                 <thead class="text-white">
                     @foreach ($users as $user)
                     <tr class="flex flex-col rounded-l-lg bg-emerald-500 flex-no wrap sm:table-row ">
