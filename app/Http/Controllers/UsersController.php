@@ -48,16 +48,19 @@ class UsersController extends Controller
         $path = '/img/avatar.png';
         }
         
+        
         $users=User::where('id','=',$id)->get();
         $users=User::find($id);
+        
+        
         $users->nom = $request['nom'];
         $users->prenom = $request['prenom'];
         $users->username = $request['pseudo'];
         $users->email = $request['email'];
         $users->address = $request['address'];
         $users->numero_telephone = $request['phone'];
-        $users->city = $request['ville'];
-        $users->country = $request['pays'];
+        $users->city = $request['city'];
+        $users->country = $request['country'];
         $users->zipCode = $request['zip'];
        // $users->password = $request['password'];
         $users->photo = $path;
