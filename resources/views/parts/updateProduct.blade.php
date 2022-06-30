@@ -46,7 +46,7 @@
                             </div>
                             <div class="space-y-1 text-sm">
                                 <label class="">
-                                    <span class="mt-2 text-base leading-normal">Select a file</span>
+                                    <span class="px-4 py-3 mt-2 leading-tight text-gray-100 bg-gray-900 border border-gray-700 hover:bg-gray-700 rounded-md shadow appearance-none focus:outline-none focus:shadow-outline">Changer d'image</span>
                                     <input type="file" name="images" class="hidden" />
                                 </label>
                             </div>

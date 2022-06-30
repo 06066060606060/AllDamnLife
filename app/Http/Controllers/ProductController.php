@@ -29,8 +29,7 @@ class ProductController extends Controller
             $produits = Produits::inRandomOrder()->get();
         }
 
-
-        $categories = Categories::all();
+        $categories = Categories::all();  // A FAIRE NOTE FROM COMM
 
         return view('index', [
              'produits' => $produits,
@@ -40,13 +39,11 @@ class ProductController extends Controller
         
     }
 
-
     public function getOneProduct($id)
     {
         $timer = Carbon::now();
         $produit = Produits::find($id);
         $comments = Comments::where('product_id', $id)->inRandomOrder()->limit(2)->get();
-        //dd($produit);
         return view('card', [
             'produit' => $produit,
             'comments' => $comments,

@@ -1,5 +1,5 @@
 <div class="max-w-screen-xl mx-auto">
-    <div class="flex items-center pb-2 text-gray-100 text-sm">
+    <div class="flex items-center pb-2 text-sm text-gray-100">
         <a rel="noopener noreferrer" href="/"
             class="px-5 py-1 border-b-2 border-gray-700 hover:border-blue-400 hover:text-blue-400">Retour</a>
     </div>
@@ -14,12 +14,12 @@
                     <div class="flex items-end">
                         <div class="card">
                             <div class="front2">
-                                <img class="icon" src=" {{ $cards->image }}">
+                                <img class="icon" src=" {{ $produit->image }}">
                             </div>
                             <div class="flex flex-col items-center w-full">
                                 <div class="flex flex-col items-center py-6 space-y-3">
                                     <div class="flex space-x-3">
-                                        @for ($i = 0; $i < $cards->note; $i++)
+                                        @for ($i = 0; $i < $produit->note; $i++)
                                             <i class="text-yellow-500 fa-solid fa-star"></i>
                                         @endfor
 
@@ -38,17 +38,17 @@
             </div>
             <div class="relative p-6 pt-16 md:p-8 md:pl-12 md:rounded-r-2xl lg:pl-20 lg:p-16">
                 <div class="flex flex-col justify-center">
-                    <h1 class="text-white">{{ $cards->titre }}</h1>
+                    <h1 class="text-white">{{ $produit->titre }}</h1>
                     <span class="px-6 py-4 text-sm font-light text-white">
-                        {{ $cards->description }}
+                        {{ $produit->description }}
                     </span>
                     <a
                         class="flex items-center justify-center h-8 px-4 pt-1 pb-1 mx-1 mb-2 space-x-2 tracking-wide text-white bg-blue-400 rounded-md">
-                        {{ $cards->prix }} €
+                        {{ $produit->prix }} €
                     </a>
 
                    {{-- putain pas mal ce petit truc merci copilot! --}}
-                    <a @auth href="/addtocart/{{ $cards->id }}" @else href="/" @endauth    
+                    <a @auth href="/addtocart/{{ $produit->id }}" @else href="/" @endauth    
                         class="flex items-center justify-center h-8 px-4 pt-1 pb-1 mx-1 space-x-2 tracking-wide text-white transition-colors duration-200 transform rounded-md btnmenu bg-emerald-500 hover:bg-emerald-300 focus:outline-none focus:bg-emerald-700">
                         Ajouter au panier
                     </a>
