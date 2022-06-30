@@ -18,7 +18,9 @@ class ProductController extends Controller
 {
    
     public function getProduct(Request $request)
-    {
+    {   
+
+      
 
         if ($request->filled('categories')) {
             $categories = $request->categories;
@@ -27,12 +29,15 @@ class ProductController extends Controller
             $produits = Produits::inRandomOrder()->get();
         }
 
+
         $categories = Categories::all();
 
         return view('index', [
              'produits' => $produits,
              'categories' => $categories,
              ]);
+
+        
     }
 
 
