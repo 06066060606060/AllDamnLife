@@ -15,9 +15,8 @@
           <form action="/filter" method="post">
             @csrf
             <select name="note"
-                class="w-full px-4 py-3 text-sm text-white bg-gray-600 border-transparent rounded-md focus:border-gray-500 focus:ring-0" onChange="this.form.submit()">
+                class="w-full h-[43.99px] px-4 py-3 text-sm text-white bg-gray-600 border-transparent rounded-md focus:border-gray-500 focus:ring-0" onChange="this.form.submit()">
                 <option value="" class="">Notes</option>
-                <option value="0" class="text-yellow-500">0★</option>
                 <option value="1" class="text-yellow-500">1★</option>
                 <option value="2" class="text-yellow-500">2★★</option>
                 <option value="3" class="text-yellow-500">3★★★</option>
@@ -28,7 +27,7 @@
             <form action="/filter" method="post">
                 @csrf
             <select name="prix"
-                class="w-full px-4 py-3 text-sm text-white bg-gray-600 border-transparent rounded-md focus:border-gray-500 focus:ring-0 "  onChange="this.form.submit()">
+                class="w-full h-[43.99px] px-4 py-3 text-sm text-white bg-gray-600 border-transparent rounded-md focus:border-gray-500 focus:ring-0 "  onChange="this.form.submit()">
                 
                 <option value="">Gamme de prix</option>
                
