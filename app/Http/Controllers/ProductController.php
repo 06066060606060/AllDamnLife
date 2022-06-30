@@ -40,6 +40,7 @@ class ProductController extends Controller
         $timer = Carbon::now();
         $produit = Produits::find($id);
         $comments = Comments::where('product_id', $id)->inRandomOrder()->limit(2)->get();
+        
         return view('card', [
             'produit' => $produit,
             'comments' => $comments,
