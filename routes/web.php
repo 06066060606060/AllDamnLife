@@ -58,3 +58,5 @@ route::get('/categories', [CategoriesController::class, 'getCateg'])->name('cate
 route::post('/Updatecategorie/{id}', [CategoriesController::class, 'update'])->whereNumber('id');
 route::post('/Addcategorie', [CategoriesController::class, 'addCateg']);
 route::delete('/delete/{id}', [CategoriesController::class, 'destroy']);
+
+

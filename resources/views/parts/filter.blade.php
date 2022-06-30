@@ -12,7 +12,9 @@
             @endforeach
             </select>
           </form>
-            <select
+          <form action="/filter" method="post">
+            <select name="note" class="w-full h-[43.99px] px-4 py-3 text-sm text-white bg-gray-600 border-transparent rounded-md focus:border-gray-500 focus:ring-0" onChange="this.form.submit()"
+            @csrf
                 class="w-full px-4 py-3 text-sm text-white bg-gray-600 border-transparent rounded-md focus:border-gray-500 focus:ring-0" onChange="this.form.submit()">
                 <option value="" class="">Notes</option>
                 <option value="1" class="text-yellow-500">★</option>
@@ -21,7 +23,7 @@
                 <option value="4" class="text-yellow-500">★★★★</option>
                 <option value="5" class="text-yellow-500">★★★★★</option>
             </select>
-
+          </form>
             <select
                 class="w-full px-4 py-3 text-sm text-white bg-gray-600 border-transparent rounded-md focus:border-gray-500 focus:ring-0">
                 <option value="">Gamme de prix</option>

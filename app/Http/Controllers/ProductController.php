@@ -19,6 +19,13 @@ class ProductController extends Controller
    
     public function getProduct(Request $request)
     {   
+        $note = Produits::query();
+        if ($request->filled('note')) {
+            list($min, $max) = explode(",", $request->note);
+
+            $note->where('note', '>=', $min)
+                  ->where('note', '<=', $max);
+        }
 
       
 
