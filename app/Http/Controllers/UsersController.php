@@ -22,7 +22,7 @@ class UsersController extends Controller
     
     public function activisor(Request $request, $id)
     {
-        
+     
         $user = User::find($id);
 
         if($request->actif){
