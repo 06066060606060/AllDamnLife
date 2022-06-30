@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Storage;
 
 
@@ -55,7 +57,7 @@ class UsersController extends Controller
         $users->city = $request['city'];
         $users->country = $request['country'];
         $users->zipCode = $request['zip'];
-       // $users->password = $request['password'];
+       $users->password =Hash::make( $request['password']);
         $users->photo = $path;
         $users->update();
         return redirect('/');
