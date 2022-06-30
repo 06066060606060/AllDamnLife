@@ -9,6 +9,18 @@ class Produits extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'id',
+        'titre',
+        'description',
+        'prix',
+        'image',
+        'note',
+        'actif',
+        'cat_id',
+        
+    ];
+    
     public function produit()
     {
         return $this;
@@ -23,6 +35,13 @@ class Produits extends Model
     {
         return $this->hasOne(Categories::class);
     }
+
+    public function categ()
+    {
+
+        return $this->belongsTo(Categories::class, 'cat_id');
+  
+      }
   
 
 }

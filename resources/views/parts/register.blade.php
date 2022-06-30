@@ -36,7 +36,7 @@
                                     class="w-full px-4 py-3 text-gray-100 bg-gray-900 border-gray-700 rounded-md focus:border-emerald-400">
                             </div>
                             <div class="space-y-1 text-sm">
-                                <label for="prenom" class="block text-gray-400">Prenom</label>
+                                <label for="prenom" class="block text-gray-400">Prénom</label>
                                 <input type="text" name="prenom" id="prenom" placeholder="prenom"
                                     class="w-full px-4 py-3 text-gray-100 bg-gray-900 border-gray-700 rounded-md focus:border-emerald-400">
                             </div>

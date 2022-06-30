@@ -1,5 +1,5 @@
 <div class="max-w-screen-xl mx-auto">
-    <div class="flex items-center pb-2 text-gray-100 text-sm">
+    <div class="flex items-center pb-2 text-sm text-gray-100">
         <a rel="noopener noreferrer" href="/"
             class="px-5 py-1 border-b-2 border-gray-700 hover:border-blue-400 hover:text-blue-400">Retour</a>
     </div>
@@ -15,7 +15,7 @@
                     </div>
                     @php($totalcost = 0)
                     <div class="mt-4">
-                        <p class=" text-gray-200">Contenu du panier</p>
+                        <p class="text-gray-200">Contenu du panier</p>
                     </div>
                     <div class="mt-12">
                         <div class="flow-root">
@@ -30,7 +30,7 @@
                                                         src="{{ $produit->image }}" alt="" />
 
                                                     <div class="ml-4">
-                                                        <p class="pl-4 pt-5 text-sm text-white">{{ $produit->titre }}
+                                                        <p class="pt-5 pl-4 text-sm text-white">{{ $produit->titre }}
                                                         </p>
                                                     </div>
                                                 </div>
@@ -60,7 +60,7 @@
 
                     <div class="mt-8">
                         <p class="text-sm text-gray-200">Total</p>
-                        <p class="text-2xl pl-1 font-medium tracking-tight text-emerald-500">{{ $totalcost }} €</p>
+                        <p class="pl-1 text-2xl font-medium tracking-tight text-emerald-500">{{ $totalcost }} €</p>
                     </div>
 
 
