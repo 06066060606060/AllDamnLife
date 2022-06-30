@@ -5,47 +5,59 @@ namespace App\Http\Controllers;
 use Carbon\Carbon;
 use App\Models\Produits;
 use App\Models\Comments;
-use App\Models\Categories;
+
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Storage;
 use App\Http\Controllers\Controller;
-
-
+use App\Models\Categories;
 
 class ProductController extends Controller
 {
+    
+
+
+
    
     public function getProduct(Request $request)
-    {   
-        $note = Produits::query();
-        if ($request->filled('note')) {
-            list($min, $max) = explode(",", $request->note);
+        
+ {
+            if ($request->filled('note')) {
+                $note = $request->note;
+                $produits = Produits::where('note', '=', $note)->get();
+            } 
+            elseif ($request->filled('prix')) {
+            $prix = $request->prix;
+            $produits = Produits::where('prix', '<=', $prix)->OrderBy('prix','ASC')->get();  }
 
-            $note->where('note', '>=', $min)
-                  ->where('note', '<=', $max);
-        }
 
-      
 
-        if ($request->filled('categories')) {
+            elseif ($request->filled('categories')) {
             $categories = $request->categories;
-            $produits = Produits::where('cat_id', '=', $categories)->get();
-        } else {
+            $produits = Produits::where('cat_id', '=', $categories)->get();}
+
+            
+            else {
             $produits = Produits::inRandomOrder()->get();
-        }
+             }
 
-        $categories = Categories::all();  // A FAIRE NOTE FROM COMM
-
+               $categories = Categories::all();  
         return view('index', [
-             'produits' => $produits,
-             'categories' => $categories,
-             ]);
+
+            'produits' => $produits,
+            'categories' => $categories,
+        
+        
+        ]);
+}
+
+
+
+
 
         
-    }
-
+       
     public function getOneProduct($id)
     {
         $timer = Carbon::now();
@@ -89,29 +101,28 @@ class ProductController extends Controller
 
         $card = new Produits();
         $card->titre =  $request->titre;
-        $card->prix = $request->prix;
+        $card->note = $request->note;
         $card->description = $request->description;
         $card->image = '/storage/' . $path;
-        $card->cat_id =  $request->categories;
+        $card->cat_id =  $request->produits;
         $card->save();
         return redirect()->route('getAllProducts');
     }
 
     public function updateProduct(Request $request, $id)
     {
-        if ($request->hasFile('images')){
-            $path = '/storage/' . Storage::disk('public')->put('img', $request->file('images'));
+        if ($request->hasFile('files')){
+            $path = '/storage/' . Storage::disk('public')->put('img', $request->file('files'));
             } else {
             $path = '/img/avatar.png';
             }
-            
         $cards = Produits::where('id', '=', $id)->get();
         $cards = Produits::find($id);
         $cards->titre = $request->titre;
-        $cards->prix = $request->prix;
+        $cards->note = $request->note;
         $cards->description = $request->description;
         $cards->image = $path;
-        $cards->cat_id = $request->categories;
+        $cards->cat_id = $request->produits;
         $cards->update();
         return redirect()->route('getAllProducts');
     }
