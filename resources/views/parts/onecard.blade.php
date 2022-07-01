@@ -19,7 +19,7 @@
                             <div class="flex flex-col items-center w-full">
                                 <div class="flex flex-col items-center py-6 space-y-3">
                                     <div class="flex space-x-3">
-                                        @for ($i = 0; $i < $produit->note; $i++)
+                                        @for ($i = 0; $i < $note; $i++)
                                             <i class="text-yellow-500 fa-solid fa-star"></i>
                                         @endfor
 

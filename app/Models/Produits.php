@@ -28,7 +28,7 @@ class Produits extends Model
 
     public function comment()
     {
-        return $this->hasMany(Comments::class, 'id_comm', 'user_id', 'product_id', 'contenu' )->orderBy('created_at', 'DESC');
+        return $this->hasMany(Comments::class, 'id_comm', 'user_id','note', 'product_id', 'contenu' )->orderBy('created_at', 'DESC');
     }
 
     public function categorie()
