@@ -17,7 +17,7 @@
                 </thead>
                 <tbody class="flex-1 sm:flex-none">
                     @forelse ($categories as $categorie)
-                        <tr class="flex flex-col flex-no-wrap sm:table-row mb-2 bg-gray-700  sm:mb-0 btnmenu">
+                        <tr class="flex flex-col flex-no-wrap sm:table-row mb-2 bg-gray-700  sm:mb-0">
                             <td class="text-white p-3 h-12">{{ $categorie->label }}</td>
                             <td class="hover:text-blue-900 h-12">
                                 @include('parts.updateCateg')

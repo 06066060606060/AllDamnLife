@@ -5,7 +5,7 @@
                 <thead class="text-white">
                     @foreach ($users as $user)
                         <tr
-                            class="bg-emerald-500 flex flex-col flex-no-wrap  sm:table-row rounded-l-lg sm:rounded-none mb-2 sm:mb-0 btnmenu">
+                            class="bg-emerald-500 flex flex-col flex-no-wrap  sm:table-row rounded-l-lg sm:rounded-none mb-2 sm:mb-0">
                             <th class="p-3 h-12 text-center ">Nom</th>
                             <th class="p-3 h-12 text-center">Prénom</th>
                             <th class="p-3 h-12 text-center">Email</th>
@@ -19,7 +19,7 @@
                 <tbody class="flex-1 sm:flex-none">
 
                     @foreach ($users as $user)
-                        <tr class="flex flex-col flex-no-wrap sm:table-row mb-2 bg-gray-700 sm:mb-0 btnmenu">
+                        <tr class="flex flex-col flex-no-wrap sm:table-row mb-2 bg-gray-700 sm:mb-0">
                             <td class="text-white p-3 h-12">{{ $user->nom }}</td>
                             <td class="text-white p-3 h-12">{{ $user->prenom }}</td>
                             <td class=" truncate text-white p-3 h-12">{{ $user->email }}

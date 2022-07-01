@@ -21,7 +21,7 @@
                 </thead>
                 <tbody class="flex-1 sm:flex-none">
                     @forelse ($cards as $card)
-                        <tr class="flex flex-col flex-no-wrap sm:table-row mb-2 -p-2 bg-gray-700 sm:mb-0 btnmenu">
+                        <tr class="flex flex-col flex-no-wrap sm:table-row mb-2 -p-2 bg-gray-700 sm:mb-0">
                             <td class=" text-white p-3 h-12">{{ $card->titre }}</td>
                             <td class=" h-12 truncate"><img
                                     class="w-10 h-10 mx-auto sm:w-14 sm:h-14" src="{{ $card->image }}" alt="">
