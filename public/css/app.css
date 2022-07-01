@@ -8427,9 +8427,6 @@ video {
 .mb-4 {
   margin-bottom: 1rem;
 }
-.mb-12 {
-  margin-bottom: 3rem;
-}
 .block {
   display: block;
 }
@@ -8528,9 +8525,6 @@ video {
 }
 .max-w-lg {
   max-width: 32rem;
-}
-.max-w-full {
-  max-width: 100%;
 }
 .max-w-xl {
   max-width: 36rem;

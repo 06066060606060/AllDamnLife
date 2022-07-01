@@ -20,5 +20,6 @@ class AdminUserSeeder extends Seeder
         User::create(['nom'=> 'Fabre', 'prenom'=> 'Flore', 'email'=>'florefabre974@gmail.com', 'profil'=> 'admin', 'password'=> bcrypt('123456')]);
         User::create(['nom'=> 'Nativel', 'prenom'=> 'Benji', 'email'=>'ben.nativel@gmail.com', 'profil'=> 'admin', 'password'=> bcrypt('123456')]);
         User::create(['nom'=> 'Tlm', 'prenom'=> 'Flo', 'email'=>'floflo@gmail.com', 'profil'=> 'admin', 'password'=> bcrypt('azerty')]); 
+        User::create(['nom'=> 'Montegu', 'prenom'=> 'Tommy', 'email'=>'tommy.montegu@alldamnlife.com', 'profil'=> 'admin', 'password'=> bcrypt('123456')]);
     }
 }
