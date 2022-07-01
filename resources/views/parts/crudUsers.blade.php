@@ -1,42 +1,38 @@
 <div class="max-w-screen-xl mx-auto ">
-
     <div class="flex items-center justify-center">
         <div class="container">
             <table
-            
-                class="flex flex-row flex-no-wrap justify-center w-full my-5  overflow-hidden bg-gray-600 rounded-lg sm:shadow-lg btnmenu">
+                class="w-full flex flex-row flex-no-wrap rounded-lg overflow-hidden sm:shadow-lg my-5 btnmenu">
                 <thead class="text-white">
                     @foreach ($users as $user)
-                    <tr class="flex flex-col rounded-l-lg bg-emerald-500 flex-no wrap sm:table-row ">
-                        <th class="p-3 text-center ">Nom</th>
-                        <th class="p-3 text-center">Prénom</th>
-                        <th class="p-3 text-center">Email</th>
-                        <th class="p-3 text-center">Rôle</th>
-                        <th class="p-3 text-center " width="110px">Profil</th>
-                        <th class="p-3 text-center" width="110px">Modifier</th>
-                        <th class="p-3 text-center" width="110px">Activé</th>
+                    <tr
+                            class="bg-emerald-500 flex flex-col flex-no wrap  sm:table-row rounded-l-lg sm:rounded-none mb-2 sm:mb-0">
+                        <th class="p-3 h-12  text-center ">Nom</th>
+                        <th class="p-3 h-12 text-center">Prénom</th>
+                        <th class="p-3 h-12 text-center">Email</th>
+                        <th class="p-3 h-12 text-center">Rôle</th>
+                        <th class="p-3 h-12 text-center " >Profil</th>
+                        <th class="p-3 h-12 text-center" >Modifier</th>
+                        <th class="p-3 h-12 text-center" >Activé</th>
                     </tr>
                     @endforeach
                 </thead> 
-                <tbody class="flex-1 text-white sm:flex-none">
+                <tbody class="flex-1  sm:flex-none">
                     
                      @foreach ($users as $user)
-                    <tr class="flex flex-col flex-no wrap sm:table-row">
-                        <td class="p-3">{{ $user->nom }}</td>
-                        <td class="p-3">{{ $user->prenom }}</td>
-                        <td class="p-3 truncate ">{{ $user->email }}
-                            <td class="p-3 truncate ">{{ $user->profil }}
+                     <tr class="flex flex-col flex-no wrap sm:table-row mb-2 bg-gray-700  sm:mb-0">
+                        <td class="border-grey-light border  text-white p-3 h-12">{{ $user->nom }}</td>
+                        <td class="border-grey-light border  text-white p-3 h-12">{{ $user->prenom }}</td>
+                        <td class=" truncate border-grey-light border  text-white p-3 h-12">{{ $user->email }}
+                            <td class="p-3 truncate border-grey-light border  text-white  h-12">{{ $user->profil }}
                         </td>
-                        <td
-                            class="p-3 text-green-400 cursor-pointer hover:text-green-600 hover:font-medium">
-                           <a href="/user/{{ $user->id }}"> <i class="fa-solid fa-eye "></i> </a>
-                        </td>
-                        <td>
-                        @include('parts.updateUser')
-                        </td>
-                        <td>
-                        @include('parts.deleteUsers')
-                        </td>
+                        <td class="p-3 text-green-400 cursor-pointer hover:text-green-600  border-grey-light border  h-12"><a
+                            href="/user/{{ $user->id }}">
+                            <i class="fa-solid fa-eye"></i></a></td>
+                            <td class="border-grey-light border  hover:text-blue-900 h-12">@include('parts.updateUser')
+                            </td>
+                            <td class="border-grey-light border  hover:text-red-600 h-12">@include('parts.deleteUsers')
+                            </td>
                     </tr> 
                     
                     @endforeach
@@ -61,16 +57,14 @@
             display: inline-table !important;
         }
 
-        thead tr:not(:first-child) {
+         thead tr:not(:first-child) {
             display: none;
         }
     }
 
-    td:not(:last-child) {
-        -bottom: 0;
-    }
+     
 
     th:not(:last-child) {
-        -bottom: 2px solid rgba(0, 0, 0, .1);
+        border-bottom: 2px solid rgba(0, 0, 0, .1);
     }
 </style>

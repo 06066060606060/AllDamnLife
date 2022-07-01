@@ -8356,6 +8356,9 @@ video {
 .m-auto {
   margin: auto;
 }
+.m-3 {
+  margin: 0.75rem;
+}
 .mx-auto {
   margin-left: auto;
   margin-right: auto;
@@ -8426,6 +8429,9 @@ video {
 }
 .mb-4 {
   margin-bottom: 1rem;
+}
+.-mb-2 {
+  margin-bottom: -0.5rem;
 }
 .block {
   display: block;
@@ -8996,6 +9002,9 @@ video {
 .pl-1 {
   padding-left: 0.25rem;
 }
+.text-left {
+  text-align: left;
+}
 .text-center {
   text-align: center;
 }
@@ -9143,6 +9152,15 @@ video {
 }
 .opacity-100 {
   opacity: 1;
+}
+.opacity-25 {
+  opacity: 0.25;
+}
+.opacity-5 {
+  opacity: 0.05;
+}
+.opacity-75 {
+  opacity: 0.75;
 }
 .shadow-sm {
   --tw-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
@@ -9547,6 +9565,11 @@ h1 {
   background-color: rgb(107 114 128 / var(--tw-bg-opacity));
 }
 
+  .hover\:bg-gray-100:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(243 244 246 / var(--tw-bg-opacity));
+}
+
   .hover\:font-medium:hover {
   font-weight: 500;
 }
@@ -9584,6 +9607,16 @@ h1 {
   .hover\:text-blue-600:hover {
   --tw-text-opacity: 1;
   color: rgb(37 99 235 / var(--tw-text-opacity));
+}
+
+  .hover\:text-blue-800:hover {
+  --tw-text-opacity: 1;
+  color: rgb(30 64 175 / var(--tw-text-opacity));
+}
+
+  .hover\:text-blue-900:hover {
+  --tw-text-opacity: 1;
+  color: rgb(30 58 138 / var(--tw-text-opacity));
 }
 
   .hover\:ring-2:hover {
@@ -9707,14 +9740,8 @@ h1 {
     margin-right: auto;
   }
 
-  .sm\:mx-4 {
-    margin-left: 1rem;
-    margin-right: 1rem;
-  }
-
-  .sm\:mx-2 {
-    margin-left: 0.5rem;
-    margin-right: 0.5rem;
+  .sm\:mb-0 {
+    margin-bottom: 0px;
   }
 
   .sm\:block {
@@ -9788,6 +9815,10 @@ h1 {
     margin-left: calc(2rem * calc(1 - var(--tw-space-x-reverse)));
   }
 
+  .sm\:rounded-none {
+    border-radius: 0px;
+  }
+
   .sm\:rounded-l-lg {
     border-top-left-radius: 0.5rem;
     border-bottom-left-radius: 0.5rem;
@@ -9796,6 +9827,16 @@ h1 {
   .sm\:rounded-r-lg {
     border-top-right-radius: 0.5rem;
     border-bottom-right-radius: 0.5rem;
+  }
+
+  .sm\:bg-white {
+    --tw-bg-opacity: 1;
+    background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+  }
+
+  .sm\:bg-gray-600 {
+    --tw-bg-opacity: 1;
+    background-color: rgb(75 85 99 / var(--tw-bg-opacity));
   }
 
   .sm\:p-0 {
@@ -9819,6 +9860,11 @@ h1 {
   .md\:mx-0 {
     margin-left: 0px;
     margin-right: 0px;
+  }
+
+  .md\:mx-4 {
+    margin-left: 1rem;
+    margin-right: 1rem;
   }
 
   .md\:flex {
@@ -9971,6 +10017,11 @@ h1 {
   .lg\:rounded-r-lg {
     border-top-right-radius: 0.5rem;
     border-bottom-right-radius: 0.5rem;
+  }
+
+  .lg\:bg-gray-600 {
+    --tw-bg-opacity: 1;
+    background-color: rgb(75 85 99 / var(--tw-bg-opacity));
   }
 
   .lg\:p-12 {
