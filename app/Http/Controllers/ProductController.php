@@ -48,7 +48,7 @@ class ProductController extends Controller
         $timer = Carbon::now();
         $produit = Produits::find($id);
         $note = Comments::where('product_id', '=', $id)->avg('note');
-        $notearrondi = round($note * 2) / 2;
+        $notearrondi = floor($note * 2) / 2;
         $comments = Comments::where('product_id', $id)->inRandomOrder()->limit(2)->get();
         
         return view('card', [
@@ -136,15 +136,19 @@ class ProductController extends Controller
    
          $commcount = (Comments::where('product_id', '=', $id)->count()) ;
           $oldnote = $produit->note;
+       
           
           if ($commcount == 0) {
        
                 $produit->note = $request->note;
+            
                       
             } else {
-            $note = Comments::where('product_id', '=', $id)->avg('note');
-            $produit->note =  $note / $commcount;
-         }
+
+                $produit->note = ($oldnote + $request->note) / ($commcount + 1);
+            }
+           
+         
             
        
         $comm->contenu = $request->contenu;
