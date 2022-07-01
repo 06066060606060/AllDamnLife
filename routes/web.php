@@ -32,6 +32,8 @@ Route::get('user/{id}', [UsersController::class, 'showUsers'])->whereNumber('id'
 Route::post('/actif/{id}', [UsersController::class,'activisor'])->whereNumber('id');
 Route::get('/allusers', [AuthController::class, 'Allusers']);
 Route::post('/comm/{id}', [ProductController::class, 'addComm'])->name('addComm');
+Route::get('/deleteComm/{id}', [ProductController::class, 'deleteComm'])->name('deleteComm');
+
 
 
 Route::get('/',[ProductController::class,'getProduct']);

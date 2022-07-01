@@ -9019,6 +9019,9 @@ video {
 .pl-8 {
   padding-left: 2rem;
 }
+.pl-2 {
+  padding-left: 0.5rem;
+}
 .text-center {
   text-align: center;
 }

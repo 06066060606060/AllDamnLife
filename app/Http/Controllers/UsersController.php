@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use App\Models\Paniers;
+use App\Models\Comments;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
@@ -83,17 +84,20 @@ class UsersController extends Controller
             'paniers' => $paniers,
         ]);
     }
+
+
     public function userprofil($id)
     {
-
         if (Auth::check()) {
             $paniers = Paniers::where('user_id', '=',  Auth::user()->id)->get();
         } else {
             $paniers = null;
         }
+        $comments = Comments::where('user_id', '=', $id)->limit(3)->get();
         $user = User::where('id', '=', $id)->get();
         $user = User::find($id);
         return view('userAccount', [
+            'comments' => $comments,
             'user' => $user,
             'paniers' => $paniers,
         ]);
