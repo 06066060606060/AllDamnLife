@@ -58,21 +58,21 @@
     </div>
 </div>
 
-<div class="flex flex-col justify-center mx-auto mt-10 md:flex-row">
+<div class="flex flex-col justify-center mx-auto  mt-10 md:flex-row">
     @foreach ($comments as $comment)
          <div
-        class="container flex flex-col w-full max-w-lg p-6 mx-4 mt-4 text-gray-100 transition duration-500 bg-gray-900 divide-y divide-gray-700 rounded-md btnmenu hover:scale-105">
+        class="container flex flex-col w-full max-w-lg p-6 mx-auto sm:mx-4 mt-4 text-gray-100 transition duration-500 bg-gray-900 divide-y divide-gray-700 rounded-md btnmenu hover:scale-105">
         <div class="flex justify-between p-4">
             <div class="flex space-x-4">
                 <div>
-                    <img src="/img/avatar.png" alt="" class="object-cover w-12 h-12 bg-gray-500 rounded-full">
+                    <img src="{{$comment->user->photo}}" alt="" class="object-cover w-12 h-12 bg-gray-500 rounded-full">
                 </div>
                 <div>
                     <h4 class="font-bold">{{$comment->user->prenom}} {{$comment->user->nom}}</h4>
                     <span class="text-sm text-gray-400">{{ $comment->created_at->diffForHumans() }} </span>
                 </div>
             </div>
-            <div class="flex flex-row items-center space-x-2 text-yellow-500">
+            <div class="flex flex-row items-center  space-x-2 text-yellow-500">
                 @for ($i = 0; $i < $comment->note; $i++)
                 <i class="text-yellow-500 fa-solid fa-star"></i>
             @endfor
@@ -80,8 +80,8 @@
             </div>
             
         </div>
-        <div class="p-4 space-y-2 text-xl text-gray-400">
-            <p>{{$comment->contenu}}</p>
+        <div class="p-4 space-y-2 text-xl  max-w-xl text-gray-400">
+            <span class="break-words">{{$comment->contenu}}</span>
 
             
         </div>

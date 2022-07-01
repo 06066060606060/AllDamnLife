@@ -28,7 +28,7 @@ class Produits extends Model
 
     public function comment()
     {
-        return $this->hasMany(Comments::class, 'id_comm', 'user_id','note', 'product_id', 'contenu' )->orderBy('created_at', 'DESC');
+        return $this->hasMany(Comments::class, 'id_comm', 'user_id', 'product_id', 'contenu', 'note' )->orderBy('created_at', 'DESC');
     }
 
     public function categorie()
@@ -36,12 +36,16 @@ class Produits extends Model
         return $this->hasOne(Categories::class);
     }
 
+  
+
     public function categ()
     {
 
         return $this->belongsTo(Categories::class, 'cat_id');
   
       }
+
+      
   
 
 }

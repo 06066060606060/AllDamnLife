@@ -5,9 +5,9 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Storage;
 
-use function PHPSTORM_META\registerArgumentsSet;
 
 class UsersController extends Controller
 {
@@ -24,17 +24,12 @@ class UsersController extends Controller
     {
      
         $user = User::find($id);
-
         if($request->actif){
             $user->actif = 1;
-
         }else if ($request->desactif)
         {
-        
             $user->actif = 0;
         }
-
-        
         $user->update();
         return redirect()->route('getUsers');
     }
@@ -48,24 +43,24 @@ class UsersController extends Controller
         $path = '/img/avatar.png';
         }
         
+        
         $users=User::where('id','=',$id)->get();
         $users=User::find($id);
+        
+        
         $users->nom = $request['nom'];
         $users->prenom = $request['prenom'];
         $users->username = $request['pseudo'];
         $users->email = $request['email'];
         $users->address = $request['address'];
         $users->numero_telephone = $request['phone'];
-        $users->city = $request['ville'];
-        $users->country = $request['pays'];
+        $users->city = $request['city'];
+        $users->country = $request['country'];
         $users->zipCode = $request['zip'];
-       // $users->password = $request['password'];
+       $users->password =Hash::make( $request['password']);
         $users->photo = $path;
         $users->update();
-       
-    
         return redirect('/');
-    
     }
   
     public function showUsers($id)
@@ -86,7 +81,6 @@ class UsersController extends Controller
         ]);
         $users = User::where('id', '=', $id)->get();
         $users = User::find($id);
-
         $users->nom = $validate['nom'];
         $users->prenom = $validate['prenom'];
         $users->email = $validate['email'];
@@ -94,6 +88,4 @@ class UsersController extends Controller
         return redirect()->route('getUsers');
     }
 
-    
-    
 }

@@ -20,24 +20,28 @@ class ProductController extends Controller
     public function getProduct(Request $request)
     {
 
+        if ($request->filled('note')) {
+            $note = $request->note;
 
-
-        if ($request->filled('categories')) {
+            $produits = Produits::where('note', '=', $note)->get();
+        } elseif ($request->filled('categories')) {
             $categories = $request->categories;
             $produits = Produits::where('cat_id', '=', $categories)->get();
+        } elseif ($request->filled('prix')) {
+            $prix = $request->prix;
+            $produits = Produits::where('prix', '<=', $prix)->get();
         } else {
             $produits = Produits::inRandomOrder()->get();
         }
 
-
-        $categories = Categories::all();  // A FAIRE NOTE FROM COMM
+        $categories = Categories::all(); 
 
         return view('index', [
             'produits' => $produits,
             'categories' => $categories,
-
         ]);
     }
+
 
     public function getOneProduct($id)
     {
@@ -46,6 +50,7 @@ class ProductController extends Controller
         $note = Comments::where('product_id', '=', $id)->avg('note');
         $notearrondi = round($note * 2) / 2;
         $comments = Comments::where('product_id', $id)->inRandomOrder()->limit(2)->get();
+        
         return view('card', [
             'produit' => $produit,
             'comments' => $comments,
@@ -97,17 +102,18 @@ class ProductController extends Controller
 
     public function updateProduct(Request $request, $id)
     {
-        if ($request->hasFile('files')) {
-            $path = '/storage/' . Storage::disk('public')->put('img', $request->file('files'));
-        } else {
+        if ($request->hasFile('images')){
+            $path = '/storage/' . Storage::disk('public')->put('img', $request->file('images'));
+            } else {
             $path = '/img/avatar.png';
-        }
+            }
+            
         $cards = Produits::where('id', '=', $id)->get();
         $cards = Produits::find($id);
         $cards->titre = $request->titre;
         $cards->prix = $request->prix;
         $cards->description = $request->description;
-        $cards->image = $path;
+        $cards->image = '/storage/' . $path;
         $cards->cat_id = $request->categories;
         $cards->update();
         return redirect()->route('getAllProducts');
