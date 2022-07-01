@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use App\Models\Paniers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
@@ -13,8 +14,15 @@ class UsersController extends Controller
 {
     public function getUsers()
     {
+        if (Auth::check()){
+            $paniers = Paniers::where('user_id', '=',  Auth::user()->id)->get();        
+        } else {
+            $paniers = null;
+        }
+     
         $users = User::all();
         return view('users', [
+            'paniers' => $paniers,
             'users' => $users,
         ]);
     }

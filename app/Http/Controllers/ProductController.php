@@ -3,14 +3,15 @@
 namespace App\Http\Controllers;
 
 use Carbon\Carbon;
-use App\Models\Produits;
+use App\Models\Paniers;
 use App\Models\Comments;
+use App\Models\Produits;
 use App\Models\Categories;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Storage;
-use App\Http\Controllers\Controller;
 
 
 
@@ -19,6 +20,13 @@ class ProductController extends Controller
 
     public function getProduct(Request $request)
     {
+        if (Auth::check()){
+            $paniers = Paniers::where('user_id', '=',  Auth::user()->id)->get();        
+        } else {
+            $paniers = null;
+        }
+     
+
 
         if ($request->filled('note')) {
             $note = $request->note;
@@ -37,6 +45,7 @@ class ProductController extends Controller
         $categories = Categories::all(); 
 
         return view('index', [
+            'paniers' => $paniers,
             'produits' => $produits,
             'categories' => $categories,
         ]);
@@ -45,11 +54,18 @@ class ProductController extends Controller
 
     public function getOneProduct($id)
     {
+        if (Auth::check()){
+            $paniers = Paniers::where('user_id', '=',  Auth::user()->id)->get();        
+        } else {
+            $paniers = null;
+        }
+     
         $timer = Carbon::now();
         $produit = Produits::find($id);
         $comments = Comments::where('product_id', $id)->inRandomOrder()->limit(2)->get();
         
         return view('card', [
+            'paniers' => $paniers,
             'produit' => $produit,
             'comments' => $comments,
             'timer' => $timer,
@@ -58,9 +74,16 @@ class ProductController extends Controller
 
     public function getAllProducts()
     {
+        if (Auth::check()){
+            $paniers = Paniers::where('user_id', '=',  Auth::user()->id)->get();        
+        } else {
+            $paniers = null;
+        }
+     
         $cards = Produits::All();
         $categories = Categories::all();
         return view('giftCards', [
+            'paniers' => $paniers,
             'cards' => $cards,
             'categories' => $categories
         ]);
