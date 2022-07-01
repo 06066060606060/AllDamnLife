@@ -17,15 +17,15 @@
             @endif
 
             @if (session('cart_ok'))
-            <div x-data="{ show: true }" x-show="show" x-init="setTimeout(() => show = false, 3000)" class="pt-1 pr-4">
-                <span class='text-green-500 text-bold'>Article ajouté au panier</span>
-            </div>
-        @endif
-        @if (session('cart_delete'))
-            <div x-data="{ show: true }" x-show="show" x-init="setTimeout(() => show = false, 3000)" class="pt-2 pr-4">
-                <span class='text-red-600 text-bold'>Article supprimé du panier</span>
-            </div>
-        @endif
+                <div x-data="{ show: true }" x-show="show" x-init="setTimeout(() => show = false, 3000)" class="pt-1 pr-4">
+                    <span class='text-green-500 text-bold'>Article ajouté au panier</span>
+                </div>
+            @endif
+            @if (session('cart_delete'))
+                <div x-data="{ show: true }" x-show="show" x-init="setTimeout(() => show = false, 3000)" class="pt-2 pr-4">
+                    <span class='text-red-600 text-bold'>Article supprimé du panier</span>
+                </div>
+            @endif
 
             @guest
                 <div class="items-center hidden space-x-4 md:flex lg:flex">
@@ -36,11 +36,13 @@
             @auth
 
                 <div class="items-center hidden space-x-2 md:flex lg:flex">
-                    <a href="/users"
-                        class="flex items-center justify-center h-8 px-4 pt-1 pb-1 mx-1 space-x-2 tracking-wide text-white transition-colors duration-200 transform bg-blue-600 rounded-md tooltip btnmenu hover:bg-blue-400 focus:outline-none focus:bg-blue-500">
-                        <i class="fa-solid fa-gear"></i>
-                        <span class="px-4 tooltiptext">Gestion</span>
-                    </a>
+                    @if (Auth::user()->profil == 'admin')
+                        <a href="/users"
+                            class="flex items-center justify-center h-8 px-4 pt-1 pb-1 mx-1 space-x-2 tracking-wide text-white transition-colors duration-200 transform bg-blue-600 rounded-md tooltip btnmenu hover:bg-blue-400 focus:outline-none focus:bg-blue-500">
+                            <i class="fa-solid fa-gear"></i>
+                            <span class="px-4 tooltiptext">Gestion</span>
+                        </a>
+                    @endif
                     <a href="/account"
                         class="flex items-center justify-center h-8 px-4 pt-1 pb-1 mx-1 space-x-2 tracking-wide text-white transition-colors duration-200 transform rounded-md tooltip btnmenu bg-violet-600 hover:bg-violet-400 focus:outline-none focus:bg-violet-500">
                         <i class="fa-solid fa-user"></i>
@@ -49,7 +51,7 @@
                     <a href="/cart"
                         class="flex items-center justify-center h-8 px-4 pt-1 pb-1 mx-1 space-x-2 tracking-wide text-white transition-colors duration-200 transform rounded-md tooltip btnmenu bg-emerald-500 hover:bg-emerald-300 focus:outline-none focus:bg-emerald-500">
                         <i class="fa-solid fa-basket-shopping"></i>
-                        <span class="px-4 tooltiptext">Mon Panier</span>
+                        <span class="px-4 ml-2 tooltiptext"> Mon Panier</span>
                         <span class="articles">{{ $paniers->count() }}</span>
                     </a>
                     <a href="/logout"
@@ -94,8 +96,6 @@
 </div>
 
 <style>
-
-
     /* ANIMATION SURVOL MENU FULL CSS AU TOP */
     .tooltip {
         position: relative;

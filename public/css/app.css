@@ -8434,6 +8434,9 @@ video {
 .mb-10 {
   margin-bottom: 2.5rem;
 }
+.ml-2 {
+  margin-left: 0.5rem;
+}
 .block {
   display: block;
 }
@@ -9012,6 +9015,9 @@ video {
 }
 .pl-24 {
   padding-left: 6rem;
+}
+.pl-8 {
+  padding-left: 2rem;
 }
 .text-center {
   text-align: center;
