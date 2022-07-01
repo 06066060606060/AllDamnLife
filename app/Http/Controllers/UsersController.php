@@ -51,7 +51,6 @@ class UsersController extends Controller
         $path = '/img/avatar.png';
         }
         
-        
         $users=User::where('id','=',$id)->get();
         $users=User::find($id);
         
@@ -70,11 +69,43 @@ class UsersController extends Controller
         $users->update();
         return redirect('/');
     }
+
+    public function profil(){
+
+        if (Auth::check()){
+            $paniers = Paniers::where('user_id', '=',  Auth::user()->id)->get();        
+        } else {
+            $paniers = null;
+        }
+    
+        return view('account', [
+            'paniers' => $paniers,
+        ]);
+    }
+
+    public function Allusers(){
+
+        if (Auth::check()){
+            $paniers = Paniers::where('user_id', '=',  Auth::user()->id)->get();        
+        } else {
+            $paniers = null;
+        }
+    
+        return view('account', [
+            'paniers' => $paniers,
+        ]);
+    }
   
     public function showUsers($id)
     {
+        if (Auth::check()){
+            $paniers = Paniers::where('user_id', '=',  Auth::user()->id)->get();        
+        } else {
+            $paniers = null;
+        }
         $users = User::find($id);
         return view('user', [
+            'paniers' => $paniers,
             'users' => $users,
         ]);
     }

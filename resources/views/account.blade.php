@@ -2,6 +2,6 @@
 
 @section('main')
 
-@include('parts.compte')
+@include('parts.profile')
 
 @endsection

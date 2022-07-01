@@ -19,14 +19,15 @@ Route::get('/giveCards', function () {
     return view('giveCards');
 });
 
-Route::get('/account', function () {
-    return view('account');
-});
+Route::get('/account' ,[UsersController::class, 'profil']);
+
 route::post('account/{id}',[UsersController::class, 'updateProfil'])->whereNumber('id')->name('updateprofil');
 
 Route::post('/register', [AuthController::class, 'register'])->name('register');
 
 Route::post('/login', [AuthController::class, 'login'])->name('login');
+
+Route::get('/allusers', [AuthController::class, 'Allusers']);
 
 Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
 
