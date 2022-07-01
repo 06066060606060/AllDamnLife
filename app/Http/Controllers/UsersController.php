@@ -14,12 +14,12 @@ class UsersController extends Controller
 {
     public function getUsers()
     {
-        if (Auth::check()){
-            $paniers = Paniers::where('user_id', '=',  Auth::user()->id)->get();        
+        if (Auth::check()) {
+            $paniers = Paniers::where('user_id', '=',  Auth::user()->id)->get();
         } else {
             $paniers = null;
         }
-     
+
         $users = User::all();
         return view('users', [
             'paniers' => $paniers,
@@ -27,79 +27,96 @@ class UsersController extends Controller
         ]);
     }
 
-    
+
     public function activisor(Request $request, $id)
     {
-     
+
         $user = User::find($id);
-        if($request->actif){
+        if ($request->actif) {
             $user->actif = 1;
-        }else if ($request->desactif)
-        {
+        } else if ($request->desactif) {
             $user->actif = 0;
         }
         $user->update();
         return redirect()->route('getUsers');
     }
 
-    public function updateProfil(Request $request,$id){
+    public function updateProfil(Request $request, $id)
+    {
 
-        if($request->file('photo')!=null){
-        $img = Storage::disk('public')->put('img', $request->file('photo'));
-        $path = '/storage/' . $img;
+        if ($request->file('photo') != null) {
+            $img = Storage::disk('public')->put('img', $request->file('photo'));
+            $path = '/storage/' . $img;
         } else {
-        $path = '/img/avatar.png';
+            $path = '/img/avatar.png';
         }
-        
-        $users=User::where('id','=',$id)->get();
-        $users=User::find($id);
-        
-        
+
+        $users = User::where('id', '=', $id)->get();
+        $users = User::find($id);
+
+
         $users->nom = $request['nom'];
         $users->prenom = $request['prenom'];
         $users->username = $request['pseudo'];
-        
+
         $users->address = $request['address'];
         $users->numero_telephone = $request['phone'];
         $users->city = $request['city'];
         $users->country = $request['country'];
         $users->zipCode = $request['zip'];
-       
+
         $users->photo = $path;
         $users->update();
         return redirect('/');
     }
 
-    public function profil(){
+    public function profil()
+    {
 
-        if (Auth::check()){
-            $paniers = Paniers::where('user_id', '=',  Auth::user()->id)->get();        
+        if (Auth::check()) {
+            $paniers = Paniers::where('user_id', '=',  Auth::user()->id)->get();
         } else {
             $paniers = null;
         }
-    
+
+        return view('account', [
+            'paniers' => $paniers,
+        ]);
+    }
+    public function userprofil($id)
+    {
+
+        if (Auth::check()) {
+            $paniers = Paniers::where('user_id', '=',  Auth::user()->id)->get();
+        } else {
+            $paniers = null;
+        }
+        $user = User::where('id', '=', $id)->get();
+        $user = User::find($id);
+        return view('userAccount', [
+            'user' => $user,
+            'paniers' => $paniers,
+        ]);
+    }
+
+    public function Allusers()
+    {
+
+        if (Auth::check()) {
+            $paniers = Paniers::where('user_id', '=',  Auth::user()->id)->get();
+        } else {
+            $paniers = null;
+        }
+
         return view('account', [
             'paniers' => $paniers,
         ]);
     }
 
-    public function Allusers(){
-
-        if (Auth::check()){
-            $paniers = Paniers::where('user_id', '=',  Auth::user()->id)->get();        
-        } else {
-            $paniers = null;
-        }
-    
-        return view('account', [
-            'paniers' => $paniers,
-        ]);
-    }
-  
     public function showUsers($id)
     {
-        if (Auth::check()){
-            $paniers = Paniers::where('user_id', '=',  Auth::user()->id)->get();        
+        if (Auth::check()) {
+            $paniers = Paniers::where('user_id', '=',  Auth::user()->id)->get();
         } else {
             $paniers = null;
         }
@@ -126,5 +143,4 @@ class UsersController extends Controller
         $users->update();
         return redirect()->route('getUsers');
     }
-
 }
