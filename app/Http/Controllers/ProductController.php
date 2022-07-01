@@ -26,8 +26,6 @@ class ProductController extends Controller
             $paniers = null;
         }
 
-
-
         if ($request->filled('note')) {
             $note = $request->note;
 
@@ -43,7 +41,6 @@ class ProductController extends Controller
         }
 
         $categories = Categories::all();
-
         return view('index', [
             'paniers' => $paniers,
             'produits' => $produits,
@@ -59,11 +56,9 @@ class ProductController extends Controller
         } else {
             $paniers = null;
         }
-
         $timer = Carbon::now();
         $produit = Produits::find($id);
         $comments = Comments::where('product_id', $id)->inRandomOrder()->limit(2)->get();
-
         return view('card', [
             'paniers' => $paniers,
             'produit' => $produit,
@@ -79,7 +74,6 @@ class ProductController extends Controller
         } else {
             $paniers = null;
         }
-
         $cards = Produits::All();
         $categories = Categories::all();
         return view('giftCards', [
@@ -99,7 +93,7 @@ class ProductController extends Controller
             $card->actif = 0;
         }
         $card->update();
-        return redirect()->route('getAllProducts');
+        return redirect()->back();
     }
 
     public function addProduct(Request $request)
@@ -107,7 +101,6 @@ class ProductController extends Controller
         if ($request->hasFile('images')) {
             $path = Storage::disk('public')->put('img', $request->file('images'));
         }
-
         $card = new Produits();
         $card->titre =  $request->titre;
         $card->prix = $request->prix;
@@ -115,25 +108,21 @@ class ProductController extends Controller
         $card->image = '/storage/' . $path;
         $card->cat_id =  $request->categories;
         $card->save();
-        return redirect()->route('getAllProducts');
+        return redirect()->back();
     }
 
     public function updateProduct(Request $request, $id)
     {
-       
-
         $cards = Produits::where('id', '=', $id)->get();
         $cards = Produits::find($id);
         $cards->titre = $request->titre;
         $cards->prix = $request->prix;
         $cards->description = $request->description;
-
         if ($request->hasFile('images')) {
             $cards->image = '/storage/' . Storage::disk('public')->put('img', $request->file('images'));
         } else {
             $cards->image = $cards->image;
         }
-        
         $cards->cat_id = $request->categories;
         $cards->update();
         return redirect()->back();
@@ -155,7 +144,6 @@ class ProductController extends Controller
         $comm->product_id = $id;
         $comm->note = $request->note;
         $comm->save();
-
         return redirect()->route('getCard', ['id' => $id]);
     }
 
