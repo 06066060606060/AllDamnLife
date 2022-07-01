@@ -19,12 +19,15 @@ Route::get('/giveCards', function () {
     return view('giveCards');
 });
 
-Route::get('/account' ,[UsersController::class, 'profil']);
-Route::post('account/{id}',[UsersController::class, 'updateProfil'])->whereNumber('id')->name('updateprofil');
-Route::get('user/account/{id}',[UsersController::class, 'userProfil'])->whereNumber('id');
+
+
 Route::post('/register', [AuthController::class, 'register'])->name('register');
 Route::post('/login', [AuthController::class, 'login'])->name('login');
 Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
+
+Route::get('/account' ,[UsersController::class, 'profil']);
+Route::post('account/{id}',[UsersController::class, 'updateProfil'])->whereNumber('id')->name('updateprofil');
+Route::get('user/account/{id}',[UsersController::class, 'userProfil'])->whereNumber('id');
 Route::get('/users', [UsersController::class, 'getUsers'])->name('getUsers');
 Route::post('users/{id}', [UsersController::class, 'update'])->whereNumber('id')->name('updateUsers');
 Route::delete('delete/{id}', [UsersController::class, 'destroy'])->name('delete');
@@ -33,8 +36,6 @@ Route::post('/actif/{id}', [UsersController::class,'activisor'])->whereNumber('i
 Route::get('/allusers', [AuthController::class, 'Allusers']);
 Route::post('/comm/{id}', [ProductController::class, 'addComm'])->name('addComm');
 Route::get('/deleteComm/{id}', [ProductController::class, 'deleteComm'])->name('deleteComm');
-
-
 
 Route::get('/',[ProductController::class,'getProduct']);
 Route::post('/filter',[ProductController::class,'getProduct']);
