@@ -51,13 +51,13 @@ class UsersController extends Controller
         $users->nom = $request['nom'];
         $users->prenom = $request['prenom'];
         $users->username = $request['pseudo'];
-        $users->email = $request['email'];
+        
         $users->address = $request['address'];
         $users->numero_telephone = $request['phone'];
         $users->city = $request['city'];
         $users->country = $request['country'];
         $users->zipCode = $request['zip'];
-       $users->password =Hash::make( $request['password']);
+       
         $users->photo = $path;
         $users->update();
         return redirect('/');

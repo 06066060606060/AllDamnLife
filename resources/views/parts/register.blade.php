@@ -24,7 +24,7 @@
                 <section class="">
 
                     {{-- @click="modelOpen = false" --}}
-                    <div class="w-full max-w-md p-8 space-y-3 text-gray-100 bg-gray-600 rounded-xl">
+                    <div class="w-full max-w-md py-8 px-20 space-y-3 text-gray-100 bg-gray-600 rounded-xl">
                         <img class="p-2 bg-gray-900 rounded" src="/img/logo.png" alt="logo">
                     
 
