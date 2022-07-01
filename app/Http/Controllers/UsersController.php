@@ -137,14 +137,21 @@ class UsersController extends Controller
         $validate = $request->validate([
             'nom' => 'required',
             'prenom' => 'required',
-            'email' => 'required'
+            'email' => 'required',
+            'role' => 'required'
         ]);
         $users = User::where('id', '=', $id)->get();
         $users = User::find($id);
         $users->nom = $validate['nom'];
         $users->prenom = $validate['prenom'];
         $users->email = $validate['email'];
+        $users->address = $request->address;
+        $users->zipCode = $request->zip;
+        $users->city = $request->city;
+        $users->numero_telephone = $request->phone;
+        $users->username = $request->username;
+        $users->profil = $validate['role'];
         $users->update();
-        return redirect()->route('getUsers');
+        return redirect()->back();
     }
 }

@@ -18,25 +18,25 @@
                 x-transition:leave-start="opacity-100 translate-y-0 sm:scale-100"
                 x-transition:leave-end="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
                 class="inline-block pt-8 overflow-hidden transition-all transform rounded-lg 2xl:max-w-2xl">
-                <section class="">
+                <section>
                     {{-- @click="modelOpen = false" --}}
-                    <div class="w-full max-w-md py-8 px-20 space-y-3 text-gray-100 bg-gray-600 rounded-xl">
+                    <div class="w-full max-w-xl py-8 px-20 space-y-3 text-gray-100 bg-gray-600 rounded-xl">
                         <form action="/giftCards/{{ $card->id }}" method="post" enctype="multipart/form-data"
                             class="space-y-6">
                             @csrf
                             <div class="space-y-1 text-sm">
-                                <label for="titre" class="block text-gray-400">Titre</label>
+                                <label for="titre" class="block text-white text-xs font-bold">Titre</label>
                                 <input value="{{ $card->titre }}"
                                     class="w-full px-4 py-3 text-gray-100 bg-gray-900 border-gray-700 rounded-md focus:border-teal-400"
                                     type="text" name="titre" placeholder="180" />
                             </div>
                             <div class="space-y-1 text-sm">
-                                <label for="description" class="block text-gray-400">Détails</label>
+                                <label for="description" class="block text-white text-xs font-bold">Détails</label>
                                 <textarea type="description" name="description" id="description" rows="5"
                                     class="w-full px-4 py-3 text-gray-100 bg-gray-900 border-gray-700 rounded-md focus:border-teal-400">{{ $card->description }}</textarea>
                             </div>
                             <div class="space-y-1 text-sm">
-                                <label for="prix" class="block text-gray-400">Prix</label>
+                                <label for="prix" class="block text-white text-xs font-bold">Prix</label>
                                 <input value="{{ $card->prix }}" type="prix" name="prix" id="prix"
                                     placeholder="prix"
                                     class="w-full px-4 py-3 text-gray-100 bg-gray-900 border-gray-700 rounded-md focus:border-teal-400">
@@ -51,7 +51,7 @@
                                 </label>
                             </div>
                             <div class="relative inline-block w-64">
-                                <label for="prix" class="block text-gray-400">Catégories</label>
+                                <label for="prix" class="block text-white text-xs font-bold">Catégories</label>
                                 <select name="categories"
                                     class="block w-full px-4 py-2 pr-8 leading-tight text-gray-100 bg-gray-900 border border-gray-700 rounded-md shadow appearance-none focus:outline-none focus:shadow-outline">
                                     @foreach ($categories as $categorie)

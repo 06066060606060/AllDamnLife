@@ -8863,6 +8863,9 @@ video {
 .bg-opacity-70 {
   --tw-bg-opacity: 0.7;
 }
+.bg-opacity-80 {
+  --tw-bg-opacity: 0.8;
+}
 .object-cover {
   -o-object-fit: cover;
      object-fit: cover;
@@ -8958,6 +8961,10 @@ video {
 .py-16 {
   padding-top: 4rem;
   padding-bottom: 4rem;
+}
+.px-10 {
+  padding-left: 2.5rem;
+  padding-right: 2.5rem;
 }
 .pl-4 {
   padding-left: 1rem;
@@ -9175,6 +9182,12 @@ video {
 }
 .opacity-100 {
   opacity: 1;
+}
+.opacity-60 {
+  opacity: 0.6;
+}
+.opacity-80 {
+  opacity: 0.8;
 }
 .shadow-sm {
   --tw-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
@@ -9870,6 +9883,10 @@ h1 {
 
   .md\:w-5\/12 {
     width: 41.666667%;
+  }
+
+  .md\:w-2\/3 {
+    width: 66.666667%;
   }
 
   .md\:grid-cols-3 {
