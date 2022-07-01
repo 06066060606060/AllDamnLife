@@ -8373,6 +8373,10 @@ video {
   margin-left: 1rem;
   margin-right: 1rem;
 }
+.my-4 {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
 .mx-6 {
   margin-left: 1.5rem;
   margin-right: 1.5rem;
@@ -8407,8 +8411,8 @@ video {
 .mb-3 {
   margin-bottom: 0.75rem;
 }
-.mt-6 {
-  margin-top: 1.5rem;
+.ml-2 {
+  margin-left: 0.5rem;
 }
 .mb-8 {
   margin-bottom: 2rem;
@@ -8430,12 +8434,6 @@ video {
 }
 .mb-4 {
   margin-bottom: 1rem;
-}
-.mb-10 {
-  margin-bottom: 2.5rem;
-}
-.ml-2 {
-  margin-left: 0.5rem;
 }
 .block {
   display: block;
@@ -8485,14 +8483,11 @@ video {
 .h-full {
   height: 100%;
 }
-.h-24 {
-  height: 6rem;
+.h-48 {
+  height: 12rem;
 }
 .h-40 {
   height: 10rem;
-}
-.h-48 {
-  height: 12rem;
 }
 .min-h-screen {
   min-height: 100vh;
@@ -8530,9 +8525,6 @@ video {
 .w-16 {
   width: 4rem;
 }
-.w-5\/6 {
-  width: 83.333333%;
-}
 .w-24 {
   width: 6rem;
 }
@@ -8542,11 +8534,11 @@ video {
 .max-w-md {
   max-width: 28rem;
 }
-.max-w-lg {
-  max-width: 32rem;
-}
 .max-w-xl {
   max-width: 36rem;
+}
+.max-w-lg {
+  max-width: 32rem;
 }
 .flex-1 {
   flex: 1 1 0%;
@@ -8860,14 +8852,14 @@ video {
 .bg-opacity-60 {
   --tw-bg-opacity: 0.6;
 }
+.bg-opacity-90 {
+  --tw-bg-opacity: 0.9;
+}
 .bg-opacity-70 {
   --tw-bg-opacity: 0.7;
 }
 .bg-opacity-80 {
   --tw-bg-opacity: 0.8;
-}
-.bg-opacity-90 {
-  --tw-bg-opacity: 0.9;
 }
 .object-cover {
   -o-object-fit: cover;
@@ -8897,9 +8889,6 @@ video {
 }
 .p-5 {
   padding: 1.25rem;
-}
-.p-24 {
-  padding: 6rem;
 }
 .px-4 {
   padding-left: 1rem;
@@ -8933,6 +8922,10 @@ video {
   padding-left: 0.75rem;
   padding-right: 0.75rem;
 }
+.px-6 {
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
 .py-20 {
   padding-top: 5rem;
   padding-bottom: 5rem;
@@ -8940,10 +8933,6 @@ video {
 .py-6 {
   padding-top: 1.5rem;
   padding-bottom: 1.5rem;
-}
-.px-6 {
-  padding-left: 1.5rem;
-  padding-right: 1.5rem;
 }
 .py-4 {
   padding-top: 1rem;
@@ -8965,10 +8954,6 @@ video {
   padding-top: 4rem;
   padding-bottom: 4rem;
 }
-.px-10 {
-  padding-left: 2.5rem;
-  padding-right: 2.5rem;
-}
 .pl-4 {
   padding-left: 1rem;
 }
@@ -8984,14 +8969,14 @@ video {
 .pb-2 {
   padding-bottom: 0.5rem;
 }
+.pb-4 {
+  padding-bottom: 1rem;
+}
 .pr-3 {
   padding-right: 0.75rem;
 }
 .pl-3 {
   padding-left: 0.75rem;
-}
-.pb-4 {
-  padding-bottom: 1rem;
 }
 .pt-1 {
   padding-top: 0.25rem;
@@ -9022,12 +9007,6 @@ video {
 }
 .pl-1 {
   padding-left: 0.25rem;
-}
-.pl-24 {
-  padding-left: 6rem;
-}
-.pl-8 {
-  padding-left: 2rem;
 }
 .pl-2 {
   padding-left: 0.5rem;
@@ -9120,10 +9099,6 @@ video {
   --tw-text-opacity: 1;
   color: rgb(74 222 128 / var(--tw-text-opacity));
 }
-.text-red-400 {
-  --tw-text-opacity: 1;
-  color: rgb(248 113 113 / var(--tw-text-opacity));
-}
 .text-yellow-500 {
   --tw-text-opacity: 1;
   color: rgb(234 179 8 / var(--tw-text-opacity));
@@ -9185,12 +9160,6 @@ video {
 }
 .opacity-100 {
   opacity: 1;
-}
-.opacity-60 {
-  opacity: 0.6;
-}
-.opacity-80 {
-  opacity: 0.8;
 }
 .shadow-sm {
   --tw-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
@@ -9624,6 +9593,11 @@ h1 {
   color: rgb(37 99 235 / var(--tw-text-opacity));
 }
 
+  .hover\:text-gray-200:hover {
+  --tw-text-opacity: 1;
+  color: rgb(229 231 235 / var(--tw-text-opacity));
+}
+
   .hover\:text-red-500:hover {
   --tw-text-opacity: 1;
   color: rgb(239 68 68 / var(--tw-text-opacity));
@@ -9880,16 +9854,16 @@ h1 {
     width: 33.333333%;
   }
 
+  .md\:w-2\/3 {
+    width: 66.666667%;
+  }
+
   .md\:w-6\/12 {
     width: 50%;
   }
 
   .md\:w-5\/12 {
     width: 41.666667%;
-  }
-
-  .md\:w-2\/3 {
-    width: 66.666667%;
   }
 
   .md\:grid-cols-3 {
@@ -9973,10 +9947,6 @@ h1 {
     padding-left: 3rem;
   }
 
-  .md\:pl-16 {
-    padding-left: 4rem;
-  }
-
   .md\:pl-24 {
     padding-left: 6rem;
   }
@@ -9987,10 +9957,6 @@ h1 {
 }
 
   @media (min-width: 1024px) {
-
-  .lg\:visible {
-    visibility: visible;
-  }
 
   .lg\:mx-0 {
     margin-left: 0px;
@@ -10019,14 +9985,6 @@ h1 {
 
   .lg\:w-6\/12 {
     width: 50%;
-  }
-
-  .lg\:w-full {
-    width: 100%;
-  }
-
-  .lg\:max-w-lg {
-    max-width: 32rem;
   }
 
   .lg\:flex-grow {
@@ -10066,10 +10024,6 @@ h1 {
 
   .lg\:pl-20 {
     padding-left: 5rem;
-  }
-
-  .lg\:pl-24 {
-    padding-left: 6rem;
   }
 
   .lg\:pl-32 {
