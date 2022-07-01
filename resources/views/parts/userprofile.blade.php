@@ -21,10 +21,6 @@
           class="container flex flex-col w-full max-w-lg p-6 mx-auto md:mx-4 mt-4 text-gray-100 transition duration-500 bg-gray-900 divide-y divide-gray-700 rounded-md btnmenu hover:scale-105">
           <div class="flex justify-between p-4">
               <div class="flex space-x-4">
-               
-                  <div>
-                      <img src="{{$comment->user->photo}}" alt="" class="object-cover w-12 h-12 bg-gray-500 rounded-full">
-                  </div>
                   <div>
                       <h4 class="font-bold">{{$comment->user->prenom}} {{$comment->user->nom}}</h4>
                       <span class="text-sm text-gray-400">{{ $comment->created_at->diffForHumans() }} </span>

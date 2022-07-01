@@ -1,5 +1,5 @@
 <section class="max-w-screen-xl pt-4 mx-auto">
-  <div class="text-gray-400 bg-gray-900 body-font rounded-lg bg-opacity-80 shadow-sm">
+  <div class="text-gray-400 bg-gray-700 body-font rounded-lg bg-opacity-90 shadow-sm">
       <div class="lg:pl-32 container mx-auto flex px-5 py-24 md:flex-row flex-col items-center justify-center">
           <img class="object-cover object-center rounded h-48 w-auto p-8" alt="hero" src="{{ Auth::user()->photo }}">
           <div

@@ -8866,6 +8866,9 @@ video {
 .bg-opacity-80 {
   --tw-bg-opacity: 0.8;
 }
+.bg-opacity-90 {
+  --tw-bg-opacity: 0.9;
+}
 .object-cover {
   -o-object-fit: cover;
      object-fit: cover;
@@ -9984,6 +9987,10 @@ h1 {
 }
 
   @media (min-width: 1024px) {
+
+  .lg\:visible {
+    visibility: visible;
+  }
 
   .lg\:mx-0 {
     margin-left: 0px;
