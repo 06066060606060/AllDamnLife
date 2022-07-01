@@ -36,9 +36,11 @@
                                                 </div>
                                             </a>
                                             <div>
+                                                <p class="text-sm text-white">x {{$panier->quantite }}</p>
                                                 <p class="text-sm text-emerald-300">
                                                     {{ $produit->prix }} €
-                                                    @php($totalcost += $produit->prix)
+                                                    @php($prixtotal = $produit->prix * $panier->quantite)
+                                                    @php($totalcost += $prixtotal)
                                                     <a href="/deletefromcart/{{ $panier->prod_id }}">
                                                     <small class="pl-1 ml-4 text-white">
                                                         <i

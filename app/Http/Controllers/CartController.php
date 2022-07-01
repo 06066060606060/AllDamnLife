@@ -24,17 +24,31 @@ class CartController extends Controller
 
     public function addtoCart($id)
     {
-        $Panier = new Paniers();
-        $Panier->user_id = Auth::user()->id;
-        $Panier->prod_id = $id;
-        $Panier->save();
+
+           $Panier = Paniers::where('user_id',Auth::id())->where('prod_id',$id)->first();
+        if($Panier){
+            $Panier = Paniers::where('user_id',Auth::id());
+            $Panier->increment('quantite');
+        }else{
+            $Panier = new Paniers();
+            $Panier->user_id = Auth::user()->id;
+            $Panier->prod_id = $id;
+            $Panier->save();
+        }
+       
         return redirect()->route('getCard', $id)->with('cart_ok', 'ajouté');
     }
     
     public function deletefromCart($id)
     {
-        // A fixer si plusieurs fois meme produit tous sont supprimmé
-        Paniers::where('user_id', '=',  Auth::user()->id)->where('prod_id', '=', $id)->delete();
+       
+        $Panier = Paniers::where('user_id',Auth::id())->where('prod_id',$id)->first();
+        if($Panier){
+            $Panier = Paniers::where('user_id',Auth::id())->where('prod_id',$id);
+            $Panier->decrement('quantite');
+        }else{
+        $Panier->delete();
+        }
         return redirect()->route('cart')->with('cart_delete', 'ajouté');
     }
     
