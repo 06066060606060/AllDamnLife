@@ -2,6 +2,7 @@
     <div class="flex items-center bg-gray-800 text-gray-100 text-sm">
         <a rel="noopener noreferrer" href="/"
             class="px-5 py-1 border-b-2 border-gray-700 hover:border-blue-400 hover:text-blue-400">Accueil</a>
+            @if (Auth::user()->profil == 'admin')
         <a rel="noopener noreferrer" href="/users"
             class="px-5 py-1 border-b-2 border-gray-700 hover:border-blue-400 hover:text-blue-400">Liste des
             utilisateurs</a>
@@ -10,6 +11,6 @@
             articles</a>
         <a rel="noopener noreferrer" href="/categories"
             class="px-5 py-1 border-b-2 border-gray-700 hover:border-blue-400 hover:text-blue-400">Catégories</a>
-           
+           @endif
     </div>
 </div>
