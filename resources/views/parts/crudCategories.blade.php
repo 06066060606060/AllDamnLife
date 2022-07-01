@@ -1,12 +1,11 @@
 <div class="max-w-screen-xl mx-auto ">
     <div class="flex items-center justify-center">
         <div class="container">
-            <table class="w-full flex flex-row flex-no-wrap rounded-lg overflow-hidden sm:shadow-lg my-5 btnmenu">
+            <table class="w-full flex flex-row flex-no-wrap rounded-lg overflow-hidden my-5">
                 <thead class="text-white">
-
                     @foreach ($categories as $categorie)
                         <tr
-                            class="bg-emerald-500 flex flex-col flex-no wrap  sm:table-row rounded-l-lg sm:rounded-none mb-2 sm:mb-0">
+                            class="bg-emerald-500 flex flex-col flex-no-wrap sm:table-row rounded-l-lg sm:rounded-none mb-2 sm:mb-0">
 
                             <th class="p-3 h-12 text-center ">Catégories</th>
                             <th class="p-3 h-12 text-center">Modifier</th>
@@ -18,11 +17,11 @@
                 </thead>
                 <tbody class="flex-1 sm:flex-none">
                     @forelse ($categories as $categorie)
-                        <tr class="flex flex-col flex-no wrap sm:table-row mb-2 bg-gray-700  sm:mb-0">
-                            <td class="border-grey-light border  text-white p-3 h-12">{{ $categorie->label }}</td>
-                            <td class="border-grey-light border  hover:text-blue-900 h-12">
+                        <tr class="flex flex-col flex-no-wrap sm:table-row mb-2 bg-gray-700  sm:mb-0 btnmenu">
+                            <td class="text-white p-3 h-12">{{ $categorie->label }}</td>
+                            <td class="hover:text-blue-900 h-12">
                                 @include('parts.updateCateg')
-                            <td class="border-grey-light border  hover:text-red-600 h-12">
+                            <td class="hover:text-red-600 h-12">
                                 @include('parts.deleteCateg')
                             </td>
                         </tr>
