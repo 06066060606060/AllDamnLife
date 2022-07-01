@@ -28,7 +28,7 @@
                                 <label for="titre" class="block text-gray-400">Titre</label>
                                 <input value=""
                                     class="w-full px-4 py-3 text-gray-100 bg-gray-900 border-gray-700 rounded-md focus:border-teal-400"
-                                    type="text" name="titre" />
+                                    type="text" name="titre" required/>
 
                             </div>
                             <div class="space-y-1 text-sm">
@@ -37,18 +37,18 @@
                                 </label>
                                 <textarea name="description"
                                     class="block w-full px-4 py-3 mt-1 text-gray-100 bg-gray-900 border-gray-700 rounded-md shadow-sm placeholder:text-right focus:border-teal-400"
-                                    rows="4"></textarea>
+                                    rows="4" required></textarea>
                             </div>
                             <div class="space-y-1 text-sm">
                                 <label for="prix" class="block text-gray-400">Prix</label>
                                 <input type="prix" name="prix" id="prix"
-                                    class="w-full px-4 py-3 text-gray-100 bg-gray-900 border-gray-700 rounded-md focus:border-teal-400">
+                                    class="w-full px-4 py-3 text-gray-100 bg-gray-900 border-gray-700 rounded-md focus:border-teal-400" required>
                             </div>
                             <div class="space-y-1 text-sm">
                                 <label class="">
                                   
                                     <span class="px-4 py-3 mt-2 leading-tight text-gray-100 bg-gray-900 border border-gray-700 rounded-md shadow appearance-none hover:bg-gray-700 focus:outline-none focus:shadow-outline">Selectionner une image</span>
-                                    <input type="file" name="images" class="hidden" />
+                                    <input type="file" name="images" class="hidden" required/>
                                 </label>
                             </div>
                             <div class="relative inline-block w-64">

@@ -20,13 +20,11 @@ class ProductController extends Controller
 
     public function getProduct(Request $request)
     {
-        if (Auth::check()){
-            $paniers = Paniers::where('user_id', '=',  Auth::user()->id)->get();        
+        if (Auth::check()) {
+            $paniers = Paniers::where('user_id', '=',  Auth::user()->id)->get();
         } else {
             $paniers = null;
         }
-     
-
 
         if ($request->filled('note')) {
             $note = $request->note;
@@ -42,8 +40,7 @@ class ProductController extends Controller
             $produits = Produits::inRandomOrder()->get();
         }
 
-        $categories = Categories::all(); 
-
+        $categories = Categories::all();
         return view('index', [
             'paniers' => $paniers,
             'produits' => $produits,
@@ -54,16 +51,14 @@ class ProductController extends Controller
 
     public function getOneProduct($id)
     {
-        if (Auth::check()){
-            $paniers = Paniers::where('user_id', '=',  Auth::user()->id)->get();        
+        if (Auth::check()) {
+            $paniers = Paniers::where('user_id', '=',  Auth::user()->id)->get();
         } else {
             $paniers = null;
         }
-     
         $timer = Carbon::now();
         $produit = Produits::find($id);
         $comments = Comments::where('product_id', $id)->inRandomOrder()->limit(2)->get();
-        
         return view('card', [
             'paniers' => $paniers,
             'produit' => $produit,
@@ -74,12 +69,11 @@ class ProductController extends Controller
 
     public function getAllProducts()
     {
-        if (Auth::check()){
-            $paniers = Paniers::where('user_id', '=',  Auth::user()->id)->get();        
+        if (Auth::check()) {
+            $paniers = Paniers::where('user_id', '=',  Auth::user()->id)->get();
         } else {
             $paniers = null;
         }
-     
         $cards = Produits::All();
         $categories = Categories::all();
         return view('giftCards', [
@@ -99,7 +93,7 @@ class ProductController extends Controller
             $card->actif = 0;
         }
         $card->update();
-        return redirect()->route('getAllProducts');
+        return redirect()->back();
     }
 
     public function addProduct(Request $request)
@@ -107,7 +101,6 @@ class ProductController extends Controller
         if ($request->hasFile('images')) {
             $path = Storage::disk('public')->put('img', $request->file('images'));
         }
-
         $card = new Produits();
         $card->titre =  $request->titre;
         $card->prix = $request->prix;
@@ -115,33 +108,31 @@ class ProductController extends Controller
         $card->image = '/storage/' . $path;
         $card->cat_id =  $request->categories;
         $card->save();
-        return redirect()->route('getAllProducts');
+        return redirect()->back();
     }
 
     public function updateProduct(Request $request, $id)
     {
-        if ($request->hasFile('images')){
-            $path = '/storage/' . Storage::disk('public')->put('img', $request->file('images'));
-            } else {
-            $path = '/img/avatar.png';
-            }
-            
         $cards = Produits::where('id', '=', $id)->get();
         $cards = Produits::find($id);
         $cards->titre = $request->titre;
         $cards->prix = $request->prix;
         $cards->description = $request->description;
-        $cards->image = '/storage/' . $path;
+        if ($request->hasFile('images')) {
+            $cards->image = '/storage/' . Storage::disk('public')->put('img', $request->file('images'));
+        } else {
+            $cards->image = $cards->image;
+        }
         $cards->cat_id = $request->categories;
         $cards->update();
-        return redirect()->route('getAllProducts');
+        return redirect()->back();
     }
 
     public function deleteCard($id)
     {
         $delete = Produits::find($id);
         $delete->delete();
-        return redirect()->route('getAllProducts');
+        return redirect()->back();
     }
 
     public function addComm(Request $request, $id)
@@ -153,7 +144,13 @@ class ProductController extends Controller
         $comm->product_id = $id;
         $comm->note = $request->note;
         $comm->save();
-
         return redirect()->route('getCard', ['id' => $id]);
+    }
+
+    public function deleteComm($id)
+    {
+        $delete = Comments::find($id);
+        $delete->delete();
+        return redirect()->back();
     }
 }
