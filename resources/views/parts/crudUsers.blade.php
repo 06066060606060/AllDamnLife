@@ -27,7 +27,7 @@
                             <td class="p-3 truncate border-grey-light border  text-white  h-12">{{ $user->profil }}
                         </td>
                         <td class="p-3 text-green-400 cursor-pointer hover:text-green-600  border-grey-light border  h-12"><a
-                            href="/user/{{ $user->id }}">
+                            href="user/account/{{ $user->id }}">
                             <i class="fa-solid fa-eye"></i></a></td>
                             <td class="border-grey-light border  hover:text-blue-900 h-12">@include('parts.updateUser')
                             </td>
