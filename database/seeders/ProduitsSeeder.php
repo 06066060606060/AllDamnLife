@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 use App\Models\Produits;
 use App\Models\Categories;
+use App\Models\Comments;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
@@ -29,5 +30,21 @@ class ProduitsSeeder extends Seeder
         Produits::create(['titre'=> 'Carte App Store & iTunes', 'description'=> 'Valable uniquement pour les achats sur les Services Apple Media effectués en France. Nécessite un identifiant Apple et l’acceptation préalable des Conditions de licence et d’utilisation. Non monnayable, revente interdite, non utilisable en dehors de la France, non remboursable et non échangeable (sauf si requis par la loi). La collecte et l’utilisation des données sont sujettes à l Engagement de confidentialité d’Apple ;', 'prix'=>'30',  'image'=> '/img/itunes.png', 'cat_id'=>'5', 'note'=>'1']);
         Produits::create(['titre'=> 'Carte Cadeau Playstation+', 'description'=> 'Achetez une carte cadeau PlayStation Store chez un revendeur en ligne. Vous recevrez alors un code par e-mail, que vous pourrez utiliser dans la boutique numérique de votre console PlayStation ou via votre navigateur web.', 'prix'=>'50',  'image'=> '/img/psn.png', 'cat_id'=>'1', 'note'=>'1']);
         Produits::create(['titre'=> 'Carte Google Play', 'description'=> 'Un code, Des possibilités de jeu infinies, Trouvez votre bonheur parmi des millions d applis, de jeux et d autres produits Grâce à des millions d applis, de jeux et d autres produits, chacun peut trouver son bonheur sur Google Play. Utilisez une e-carte Google Play pour explorer un monde de divertissement infini, incluant vos jeux préférés et les applications dont vous ne pouvez plus vous passer. Il n y a pas de frais ni de date d expiration et aucune carte de crédit n est nécessaire pour commencer à jouer', 'prix'=>'8',  'image'=> '/img/google.png', 'cat_id'=>'1', 'note'=>'1']);
+  
+        Comments::create(['user_id'=> '6', 'product_id'=>'1', 'contenu'=>'Ce cadeau est super !', 'note'=>'5']);
+        Comments::create(['user_id'=> '7', 'product_id'=>'2', 'contenu'=>'Ce cadeau est super !', 'note'=>'2']);
+        Comments::create(['user_id'=> '8', 'product_id'=>'3', 'contenu'=>'Ce cadeau est super !', 'note'=>'2']);
+        Comments::create(['user_id'=> '9', 'product_id'=>'4', 'contenu'=>'Ce cadeau est super !', 'note'=>'1']);
+        Comments::create(['user_id'=> '2', 'product_id'=>'5', 'contenu'=>'Ce cadeau est super !', 'note'=>'3']);
+        Comments::create(['user_id'=> '4', 'product_id'=>'6', 'contenu'=>'Ce cadeau est super !', 'note'=>'5']);
+        Comments::create(['user_id'=> '1', 'product_id'=>'7', 'contenu'=>'Ce cadeau est super !', 'note'=>'1']);
+
+        Comments::create(['user_id'=> '6', 'product_id'=>'1', 'contenu'=>'cool !', 'note'=>'4']);
+        Comments::create(['user_id'=> '7', 'product_id'=>'2', 'contenu'=>'adore !', 'note'=>'2']);
+        Comments::create(['user_id'=> '8', 'product_id'=>'3', 'contenu'=>'bof !', 'note'=>'2']);
+        Comments::create(['user_id'=> '9', 'product_id'=>'4', 'contenu'=>'super !', 'note'=>'3']);
+        Comments::create(['user_id'=> '2', 'product_id'=>'5', 'contenu'=>'cadeau super !', 'note'=>'1']);
+        Comments::create(['user_id'=> '4', 'product_id'=>'6', 'contenu'=>'Ce cadeau est super !', 'note'=>'2']);
+        Comments::create(['user_id'=> '1', 'product_id'=>'7', 'contenu'=>'pas mal !', 'note'=>'4']);
     }
 }
