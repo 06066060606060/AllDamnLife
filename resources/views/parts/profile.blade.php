@@ -10,7 +10,7 @@
         <p class="mb-2 leading-relaxed">97410</p>
         <p class="mb-2 leading-relaxed">Saint-Pierre</p>
         <div class="flex justify-center">
-          <button class="p-2 mb-4 inline-flex text-white bg-blue-600 border-0 py-2 px-6 focus:outline-none hover:bg-gray-700 hover:text-white rounded text-lg">Editer</button>
+         @include('parts.compte')
         </div>
       </div>
     </div>
