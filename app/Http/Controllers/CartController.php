@@ -24,6 +24,10 @@ class CartController extends Controller
         ]);
     }
 
+// fonction statique affichage nombres articles dans le panier
+// utilisable dans toutes les vues en declarant @php  use \App\Http\Controllers\CartController; @endphp
+// et {{ CartController::MonPanier() }} pour afficher le resultat ++++
+
     public static function MonPanier(){
         if (Auth::check()) {
             return  $paniers = Paniers::where('user_id', Auth::id())->sum('quantite'); 
