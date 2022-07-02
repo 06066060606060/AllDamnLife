@@ -12,15 +12,8 @@ class CategoriesController extends Controller
 
     public function getCateg()
     {
-        if (Auth::check()){
-            $paniers = Paniers::where('user_id', '=',  Auth::user()->id)->get();        
-        } else {
-            $paniers = null;
-        }
-     
         $categories = Categories::all();
         return view('categories', [
-            'paniers' => $paniers,
             'categories' => $categories,
         ]);
     }

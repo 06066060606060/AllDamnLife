@@ -1,3 +1,4 @@
+<?php   use \App\Http\Controllers\CartController; ?>
 <div class="p-4 text-gray-100">
     <div class="flex items-center justify-between h-16 max-w-screen-xl px-4 mx-auto">
         <div class="flex items-center pb-4 mx-auto space-x-4 md:mx-0 lg:mx-0">
@@ -35,6 +36,8 @@
             @endguest
             @auth
 
+
+      
                 <div class="items-center hidden space-x-2 md:flex lg:flex">
                     @if (Auth::user()->profil == 'admin')
                         <a href="/users"
@@ -52,7 +55,7 @@
                         class="flex items-center justify-center h-8 px-4 pt-1 pb-1 mx-1 space-x-2 tracking-wide text-white transition-colors duration-200 transform rounded-md tooltip btnmenu bg-emerald-500 hover:bg-emerald-300 focus:outline-none focus:bg-emerald-500">
                         <i class="fa-solid fa-basket-shopping"></i>
                         <span class="px-4 ml-2 tooltiptext"> Mon Panier</span>
-                        <span class="articles">{{ $paniers->count() }}</span>
+                        <span class="articles">{{ CartController::MonPanier() }}</span>
                     </a>
                     <a href="/logout"
                         class="flex items-center justify-center h-8 px-4 pt-1 pb-1 mx-1 space-x-2 tracking-wide text-white transition-colors duration-200 transform bg-gray-600 rounded-md tooltip btnmenu hover:bg-gray-400 focus:outline-none focus:bg-gray-500">

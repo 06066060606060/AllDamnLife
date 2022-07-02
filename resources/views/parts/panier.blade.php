@@ -21,7 +21,7 @@
                         <div class="flow-root">
                             <ul class="-my-4 divide-y divide-gray-100">
                                 {{-- @forelse comme @foreach mais affiche un truc si c'est vide avec le @empty --}}
-                                @forelse ($paniers as $panier)
+                                @forelse ($mycart as $panier)
                                     @foreach ($produits->where('id', '=', $panier->prod_id) as $produit)
                                         <li class="flex items-center justify-between py-4">
                                             <a href="/card/{{ $panier->prod_id }}">
