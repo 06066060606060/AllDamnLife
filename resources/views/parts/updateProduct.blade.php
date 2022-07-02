@@ -51,8 +51,8 @@
                                 </label>
                             </div>
                             <div class="relative inline-block w-64">
-                                <label for="prix" class="block text-xs font-bold text-white">Catégories</label>
-                                <select name="categories"
+                                <label for="categories" class="block text-xs font-bold text-white">Catégories</label>
+                                <select name="categories[]" multiple
                                     class="block w-full px-4 py-2 pr-8 leading-tight text-gray-100 bg-gray-900 border border-gray-700 rounded-md shadow appearance-none focus:outline-none focus:shadow-outline">
                                     @foreach ($categories as $categorie)
                                         <option value="{{ $categorie->id_cat }}"> {{ $categorie->label }}</option>
