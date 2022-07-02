@@ -22,6 +22,7 @@
                 <section class="">
                     {{-- @click="modelOpen = false" --}}
                     <div class="w-full px-20 py-8 space-y-3 text-gray-100 bg-gray-600 rounded-xl">
+                        <h1 class="text-md">Ajouter une carte</h1>
                         <form action="{{ route('addProduct') }}" method="POST" enctype="multipart/form-data" class="space-y-6">
                             @csrf
                             <div class="space-y-1 text-sm">
@@ -42,15 +43,17 @@
                             <div class="space-y-1 text-sm">
                                 <label for="prix" class="block text-gray-400">Prix</label>
                                 <input type="prix" name="prix" id="prix"
-                                    class="w-full px-4 py-3 text-gray-100 bg-gray-900 border-gray-700 rounded-md focus:border-teal-400" required>
+                                    class="w-1/5 px-3 py-3 text-gray-100 bg-gray-900 border-gray-700 rounded-md focus:border-teal-400" required>
                             </div>
-                            <div class="space-y-1 text-sm">
+                            <div class="space-y-1 text-sm tooltip1">
                                 <label class="">
-                                  
                                     <span class="px-4 py-3 mt-2 leading-tight text-gray-100 bg-gray-900 border border-gray-700 rounded-md shadow appearance-none hover:bg-gray-700 focus:outline-none focus:shadow-outline">Selectionner une image</span>
                                     <input type="file" name="images" class="hidden" required/>
+                                    <p class="tooltiptext1">Png 256 x 269 recommandé</p>
                                 </label>
+                               
                             </div>
+                            
                             <div class="relative inline-block w-64">
                                 <select name="categories[]" multiple
                                     class="block w-full px-4 py-2 pr-8 leading-tight text-gray-100 bg-gray-900 border border-gray-700 rounded-md shadow appearance-none focus:outline-none focus:shadow-outline">
@@ -70,3 +73,36 @@
         </div>
     </div>
 </div>
+<style>
+    /* ANIMATION SURVOL MENU FULL CSS AU TOP */
+    .tooltip1 {
+        position: relative;
+        display: inline-block;
+    }
+
+    /* Tooltip text */
+    .tooltip1 .tooltiptext1 {
+        visibility: hidden;
+        top: 15px;
+        width: 130px;
+        color: rgba(255, 255, 255, 0.534);
+        text-alrgba(255, 255, 255, 0.459) center;
+        padding: 4px 4px;
+        border-radius: 6px;
+        position: relative;
+        z-index: 1;
+    }
+
+    .tooltip1:hover .tooltiptext1 {
+        visibility: visible;
+    }
+
+    .tooltip1 .tooltiptext1 {
+        opacity: 0;
+        transition: opacity 0.2s;
+    }
+
+    .tooltip1:hover .tooltiptext1 {
+        opacity: 1;
+    }
+</style>

@@ -21,6 +21,7 @@
                 <section>
                     {{-- @click="modelOpen = false" --}}
                     <div class="w-full max-w-xl px-20 py-8 space-y-3 text-gray-100 bg-gray-600 rounded-xl">
+                        <h1 class="text-md">Editer une carte</h1>
                         <form action="/giftCards/{{ $card->id }}" method="post" enctype="multipart/form-data"
                             class="space-y-6">
                             @csrf
@@ -39,15 +40,16 @@
                                 <label for="prix" class="block text-xs font-bold text-white">Prix</label>
                                 <input value="{{ $card->prix }}" type="prix" name="prix" id="prix"
                                     placeholder="prix"
-                                    class="w-full px-4 py-3 text-gray-100 bg-gray-900 border-gray-700 rounded-md focus:border-teal-400">
+                                    class="w-1/5 px-4 py-3 text-gray-100 bg-gray-900 border-gray-700 rounded-md focus:border-teal-400">
                             </div>
                             <div class="space-y-1 text-sm">
                                 <img class="w-auto h-40 mx-auto" src="{{ $card->image }}">
                             </div>
-                            <div class="space-y-1 text-sm">
+                            <div class="space-y-1 text-sm tooltip1">
                                 <label class="">
                                     <span class="px-4 py-3 mt-2 leading-tight text-gray-100 bg-gray-900 border border-gray-700 rounded-md shadow appearance-none hover:bg-gray-700 focus:outline-none focus:shadow-outline">Changer d'image</span>
                                     <input type="file" name="images" class="hidden" />
+                                    <p class="tooltiptext1">Png 256 x 269 recommandé</p>
                                 </label>
                             </div>
                             <div class="relative inline-block w-64">
