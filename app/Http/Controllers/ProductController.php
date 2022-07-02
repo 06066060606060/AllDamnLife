@@ -24,16 +24,17 @@ class ProductController extends Controller
 
         if ($request->filled('note')) {
             $note = $request->note;
-
             $produits = Produits::where('note', '=', $note)->get();
         } elseif ($request->filled('categories')) {
             $categories = $request->categories;
             $produits = Produits::where('cat_id', '=', $categories)->get();
         } elseif ($request->filled('prix')) {
+
             $prix = $request->prix;
             $produits = Produits::where('prix', '<=', $prix)->get();
+            
         } else {
-            $produits = Produits::inRandomOrder()->get();
+            $produits = Produits::All();
         }
 
         $categories = Categories::all();
@@ -117,6 +118,8 @@ class ProductController extends Controller
         $delete->delete();
         return redirect()->back();
     }
+
+//_____________________Commentaires______________________________________
 
     public function addComm(Request $request, $id)
     {
