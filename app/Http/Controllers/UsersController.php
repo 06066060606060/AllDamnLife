@@ -24,7 +24,6 @@ class UsersController extends Controller
 
     public function activisor(Request $request, $id)
     {
-
         $user = User::find($id);
         if ($request->actif) {
             $user->actif = 1;
@@ -47,18 +46,14 @@ class UsersController extends Controller
 
         $users = User::where('id', '=', $id)->get();
         $users = User::find($id);
-
-
         $users->nom = $request['nom'];
         $users->prenom = $request['prenom'];
         $users->username = $request['pseudo'];
-
         $users->address = $request['address'];
         $users->numero_telephone = $request['phone'];
         $users->city = $request['city'];
         $users->country = $request['country'];
         $users->zipCode = $request['zip'];
-
         $users->photo = $path;
         $users->update();
         return redirect('/');

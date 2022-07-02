@@ -30,13 +30,12 @@
                 class="btnmenu w-full h-[43.99px] px-4 py-3 text-sm text-white bg-gray-600 border-transparent rounded-md focus:border-gray-500 focus:ring-0 "  onChange="this.form.submit()">
                 
                 <option value="">Gamme de prix</option>
-               
-                <option value="25">0-25</option>
-               
-                <option value="100">25-100</option>
-              
-              
-           
+                <option value="10"> < 10€</option> 10€</option>
+                <option value="20"> < 20€</option>
+                <option value="30"> < 30€</option>
+                <option value="40"> < 40€</option>
+                <option value="50"> < 50€</option>
+                <option value="">Toutes</option>
             </select>
         </form>
             <a href="/" class="btnmenu px-4 py-3 text-sm text-white bg-gray-600 border-transparent rounded-md focus:border-gray-500 focus:ring-0">Effacer les filtres</a>
