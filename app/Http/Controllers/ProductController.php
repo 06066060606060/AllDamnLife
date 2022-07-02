@@ -90,8 +90,8 @@ class ProductController extends Controller
         $card->prix = $request->prix;
         $card->description = $request->description;
         $card->image = '/storage/' . $path;
-        $card->cat_id =  $request->categories;
         $card->save();
+        $card->categorie()->attach($request->categories);
         return redirect()->back();
     }
 
@@ -107,8 +107,9 @@ class ProductController extends Controller
         } else {
             $cards->image = $cards->image;
         }
-        $cards->cat_id = $request->categories;
+        $cards->categorie()->sync($request->categories);
         $cards->update();
+
         return redirect()->back();
     }
 

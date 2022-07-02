@@ -21,7 +21,7 @@
                 class="inline-block pt-8 overflow-hidden transition-all transform rounded-lg 2xl:max-w-2xl">
                 <section class="">
                     {{-- @click="modelOpen = false" --}}
-                    <div class="w-full  py-8 px-20 space-y-3 text-gray-100 bg-gray-600 rounded-xl">
+                    <div class="w-full px-20 py-8 space-y-3 text-gray-100 bg-gray-600 rounded-xl">
                         <form action="{{ route('addProduct') }}" method="POST" enctype="multipart/form-data" class="space-y-6">
                             @csrf
                             <div class="space-y-1 text-sm">
@@ -52,11 +52,10 @@
                                 </label>
                             </div>
                             <div class="relative inline-block w-64">
-                                <select name="categories"
+                                <select name="categories[]" multiple
                                     class="block w-full px-4 py-2 pr-8 leading-tight text-gray-100 bg-gray-900 border border-gray-700 rounded-md shadow appearance-none focus:outline-none focus:shadow-outline">
                                     @foreach ($categories as $categorie)
-                                        <option value="{{ $categorie->id_cat }}">
-                                            {{ $categorie->label }}
+                                        <option value="{{ $categorie->id_cat }}">{{ $categorie->label }}
                                         </option>
                                     @endforeach
                                 </select>
