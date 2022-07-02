@@ -15,15 +15,8 @@ class UsersController extends Controller
 {
     public function getUsers()
     {
-        if (Auth::check()) {
-            $paniers = Paniers::where('user_id', '=',  Auth::user()->id)->get();
-        } else {
-            $paniers = null;
-        }
-
         $users = User::all();
         return view('users', [
-            'paniers' => $paniers,
             'users' => $users,
         ]);
     }
@@ -73,60 +66,31 @@ class UsersController extends Controller
 
     public function profil()
     {
-
-        if (Auth::check()) {
-            $paniers = Paniers::where('user_id', '=',  Auth::user()->id)->get();
-        } else {
-            $paniers = null;
-        }
-
         return view('account', [
-            'paniers' => $paniers,
         ]);
     }
 
-
     public function userprofil($id)
     {
-        if (Auth::check()) {
-            $paniers = Paniers::where('user_id', '=',  Auth::user()->id)->get();
-        } else {
-            $paniers = null;
-        }
         $comments = Comments::where('user_id', '=', $id)->limit(3)->get();
         $user = User::where('id', '=', $id)->get();
         $user = User::find($id);
         return view('userAccount', [
             'comments' => $comments,
             'user' => $user,
-            'paniers' => $paniers,
         ]);
     }
 
     public function Allusers()
     {
-
-        if (Auth::check()) {
-            $paniers = Paniers::where('user_id', '=',  Auth::user()->id)->get();
-        } else {
-            $paniers = null;
-        }
-
         return view('account', [
-            'paniers' => $paniers,
         ]);
     }
 
     public function showUsers($id)
     {
-        if (Auth::check()) {
-            $paniers = Paniers::where('user_id', '=',  Auth::user()->id)->get();
-        } else {
-            $paniers = null;
-        }
         $users = User::find($id);
         return view('user', [
-            'paniers' => $paniers,
             'users' => $users,
         ]);
     }

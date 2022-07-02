@@ -13,13 +13,24 @@ class CartController extends Controller
 {
     public function getCart()
     {
-        $paniers = Paniers::where('user_id', '=',  Auth::user()->id)->get();
+        $paniers = Paniers::where('user_id', Auth::id())->sum('quantite');     
+        $mycart =  Paniers::where('user_id', '=',  Auth::user()->id)->get();
         $produits = Produits::All();
         return view('/cart', [
+            'mycart' => $mycart,
             'paniers' => $paniers,
             'produits' => $produits,
          
         ]);
+    }
+
+    public static function MonPanier(){
+        if (Auth::check()) {
+            return  $paniers = Paniers::where('user_id', Auth::id())->sum('quantite'); 
+        } else {
+            return  $paniers = null;
+        }
+
     }
 
     public function addtoCart($id)
