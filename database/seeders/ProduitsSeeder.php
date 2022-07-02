@@ -32,6 +32,19 @@ class ProduitsSeeder extends Seeder
         Produits::create(['titre'=> 'Carte Cadeau Playstation+', 'description'=> 'Achetez une carte cadeau PlayStation Store chez un revendeur en ligne. Vous recevrez alors un code par e-mail, que vous pourrez utiliser dans la boutique numérique de votre console PlayStation ou via votre navigateur web.', 'prix'=>'50',  'image'=> '/img/psn.png', 'note'=>'1']);
         Produits::create(['titre'=> 'Carte Google Play', 'description'=> 'Un code, Des possibilités de jeu infinies, Trouvez votre bonheur parmi des millions d applis, de jeux et d autres produits Grâce à des millions d applis, de jeux et d autres produits, chacun peut trouver son bonheur sur Google Play. Utilisez une e-carte Google Play pour explorer un monde de divertissement infini, incluant vos jeux préférés et les applications dont vous ne pouvez plus vous passer. Il n y a pas de frais ni de date d expiration et aucune carte de crédit n est nécessaire pour commencer à jouer', 'prix'=>'8',  'image'=> '/img/google.png', 'note'=>'1']);
   
+//ajout pour test paginations
+        Produits::create(['titre'=> 'test card 1', 'description'=> '  on ne peut pas s ennuyer avec un abonnement Disney+. Des productions originales en mmmmm quelque chose de nouveau à découvrir !', 'prix'=>'10',  'image'=> '', 'note'=>'1']);
+        Produits::create(['titre'=> 'test card 2', 'description'=> 'ns le Microsoft Store en ligne, sur Windows et Xbox. * Vous recevrez un e-mail avesions, des packs de cartes et bien plus encore.', 'prix'=>'25',  'image'=> '', 'note'=>'1']);
+        Produits::create(['titre'=> 'test card 3', 'description'=> 'ntenant ajouter des fonds au portemonnaie Steam d un proche en lui envoyant des une carte cadeau numérique. Envoyer une hhhhhhhh.', 'prix'=>'10',  'image'=> '', 'note'=>'1']);
+        Produits::create(['titre'=> 'test card 4', 'description'=> 'Le ca choisir ce dont ils ont envie. Echangeable contre des millionrtes cadeaux Amazon.fr sont uniquement valables sur Amazon.fr.', 'prix'=>'15',  'image'=> '', 'note'=>'1']);
+        Produits::create(['titre'=> 'test card 5', 'description'=> 'Valable . Nécessite un identifiant Apple et l’acceptation préalable d, non remboursable et non échangeabconfidentialité d’Apple ;', 'prix'=>'30',  'image'=> '', 'note'=>'1']);
+        Produits::create(['titre'=> 'test card 6', 'description'=> 'Achetez ucevrez alors un code par e-mail, que vous pourrez utiliser dans la boutique numérique de votre via votre navigateur web.', 'prix'=>'50',  'image'=> '', 'note'=>'1']);
+        Produits::create(['titre'=> 'test card 7', 'description'=> 'Un code, Des es millions d applis, de jeux et d autres proe-carte Google Play pour explorer vez plusssaire pour commencer à jouer', 'prix'=>'8',  'image'=> '', 'note'=>'1']);
+  //
+
+
+
+
         produits_categories::create(['prod_id'=> 1, 'categorie_id'=> 2]);
         produits_categories::create(['prod_id'=> 2, 'categorie_id'=> 2]);
         produits_categories::create(['prod_id'=> 3, 'categorie_id'=> 1]);

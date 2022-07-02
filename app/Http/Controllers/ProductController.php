@@ -24,17 +24,17 @@ class ProductController extends Controller
 
         if ($request->filled('note')) {
             $note = $request->note;
-            $produits = Produits::where('note', '=', $note)->get();
+            $produits = Produits::where('note', '=', $note)->where('actif', '=', 1)->get();
         } elseif ($request->filled('categories')) {
             $categories = $request->categories;
-            $produits = Produits::where('cat_id', '=', $categories)->get();
+            $produits = Produits::where('cat_id', '=', $categories)->where('actif', '=', 1)->get();
         } elseif ($request->filled('prix')) {
 
             $prix = $request->prix;
-            $produits = Produits::where('prix', '<=', $prix)->get();
+            $produits = Produits::where('prix', '<=', $prix)->where('actif', '=', 1)->get();
             
         } else {
-            $produits = Produits::All();
+            $produits = Produits::where('actif', '=', 1)->get();
         }
 
         $categories = Categories::all();
