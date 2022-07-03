@@ -12,10 +12,7 @@ return new class extends Migration
         Schema::create('categories', function (Blueprint $table) {
             $table->id('id_cat');
             $table->longText('label');
-            $table->timestamp('updated_at')->useCurrent()->on('update')->useCurrent();
-            $table->timestamp('created_at')->useCurrent()->on('update')->useCurrent();
             $table->tinyInteger('actif')->default(1);
-            $table->timestamp('deleted_at')->nullable();
         });
     }
 

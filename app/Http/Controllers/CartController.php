@@ -26,7 +26,7 @@ class CartController extends Controller
 
 // fonction statique affichage nombres articles dans le panier
 // utilisable dans toutes les vues en declarant @php  use \App\Http\Controllers\CartController; @endphp
-// et {{ CartController::MonPanier() }} pour afficher le resultat ++++
+// et {{ CartController::MonPanier() }} pour afficher le resultat super pratique!
 
     public static function MonPanier(){
         if (Auth::check()) {

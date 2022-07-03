@@ -20,8 +20,5 @@
 			<li>
 				<a rel="noopener noreferrer" href="#">Facebook</a>
 			</li>
-			<li>
-				<a rel="noopener noreferrer" href="#">Twitter</a>
-			</li>
 		</ul>
 	</div>
