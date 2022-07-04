@@ -51,7 +51,7 @@ class CartController extends Controller
             $Panier->save();
         }
        
-        return redirect()->route('getCard', $id)->with('cart_ok', 'ajouté');
+        return redirect()->back()->with('cart_ok', 'ajouté');
     }
     
     public function deletefromCart($id)
