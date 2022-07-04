@@ -21,7 +21,7 @@
                         <div class="flow-root">
                             <ul class="-my-4 divide-y divide-gray-100">
                                 {{-- @forelse comme @foreach mais affiche un truc si c'est vide avec le @empty --}}
-                                @forelse ($paniers as $panier)
+                                @forelse ($mycart as $panier)
                                     @foreach ($produits->where('id', '=', $panier->prod_id) as $produit)
                                         <li class="flex items-center justify-between py-4">
                                             <a href="/card/{{ $panier->prod_id }}">
@@ -36,9 +36,11 @@
                                                 </div>
                                             </a>
                                             <div>
+                                                <p class="text-sm text-white">x {{$panier->quantite }}</p>
                                                 <p class="text-sm text-emerald-300">
                                                     {{ $produit->prix }} €
-                                                    @php($totalcost += $produit->prix)
+                                                    @php($prixtotal = $produit->prix * $panier->quantite)
+                                                    @php($totalcost += $prixtotal)
                                                     <a href="/deletefromcart/{{ $panier->prod_id }}">
                                                     <small class="pl-1 ml-4 text-white">
                                                         <i

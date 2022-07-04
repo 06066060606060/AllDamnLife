@@ -19,8 +19,6 @@ return new class extends Migration
             $table->tinyInteger('actif')->default(1);
             $table->timestamp('updated_at')->useCurrent()->on('update')->useCurrent();
             $table->timestamp('created_at')->useCurrent()->on('update')->useCurrent();
-            $table->unsignedBigInteger('cat_id');
-            $table->foreign('cat_id')->references('id_cat')->on('categories')->onDelete('cascade');
         });
     }
 
