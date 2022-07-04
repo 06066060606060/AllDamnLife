@@ -8397,6 +8397,10 @@ video {
   margin-top: 0.75rem;
   margin-bottom: 0.75rem;
 }
+.mx-2 {
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+}
 .mt-4 {
   margin-top: 1rem;
 }
@@ -8540,6 +8544,9 @@ video {
 }
 .w-24 {
   width: 6rem;
+}
+.w-36 {
+  width: 9rem;
 }
 .max-w-screen-xl {
   max-width: 1280px;
@@ -8970,6 +8977,10 @@ video {
 .py-16 {
   padding-top: 4rem;
   padding-bottom: 4rem;
+}
+.px-2 {
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
 }
 .pl-4 {
   padding-left: 1rem;
