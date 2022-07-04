@@ -14,31 +14,31 @@
           </form>
           <form action="/filter" method="post">
             @csrf
-            <select name="note" 
-            class="w-full h-[43.99px] px-4 py-3 text-sm text-white bg-gray-600 border-transparent rounded-md focus:border-gray-500 focus:ring-0" onChange="this.form.submit()"
-            
-                class="w-full px-4 py-3 text-sm text-white bg-gray-600 border-transparent rounded-md focus:border-gray-500 focus:ring-0" onChange="this.form.submit()">
+            <select name="note"
+                class="w-full h-[43.99px] px-4 py-3 text-sm text-white bg-gray-600 border-transparent rounded-md focus:border-gray-500 focus:ring-0" onChange="this.form.submit()">
                 <option value="" class="">Notes</option>
-                <option value="0" class="text-yellow-500">0 étoile</option>
-                <option value="1" class="text-yellow-500">★</option>
-                <option value="2" class="text-yellow-500">★★</option>
-                <option value="3" class="text-yellow-500">★★★</option>
-                <option value="4" class="text-yellow-500">★★★★</option>
-                <option value="5" class="text-yellow-500">★★★★★</option>
-              
-               
-               
+                <option value="1" class="text-yellow-500">1★</option>
+                <option value="2" class="text-yellow-500">2★★</option>
+                <option value="3" class="text-yellow-500">3★★★</option>
+                <option value="4" class="text-yellow-500">4★★★★</option>
+                <option value="5" class="text-yellow-500">5★★★★★</option>
             </select>
-          </form>
-          <form>
-            <select name="prix" 
-                class="w-full px-4 py-3 text-sm text-white bg-gray-600 border-transparent rounded-md focus:border-gray-500 focus:ring-0">
+        </form>
+            <form action="/filter" method="post">
+                @csrf
+            <select name="prix"
+                class="w-full h-[43.99px] px-4 py-3 text-sm text-white bg-gray-600 border-transparent rounded-md focus:border-gray-500 focus:ring-0 "  onChange="this.form.submit()">
+                
                 <option value="">Gamme de prix</option>
-                <option value="101">More than 100€</option>
-                <option value="100">Between 50€ & 100€</option>
-                <option value="50">Between 25€ & 50€</option>
-                <option value="25">Less than 25€</option>
-            </select></form>
+               
+                <option value="25">0-25</option>
+               
+                <option value="100">25-100</option>
+              
+              
+           
+            </select>
+        </form>
             <a href="/" class="px-4 py-3 text-sm text-white bg-gray-600 border-transparent rounded-md focus:border-gray-500 focus:ring-0">Effacer les filtres</a>
   
         </div>

@@ -15,49 +15,36 @@ use App\Models\Categories;
 
 class ProductController extends Controller
 {
-    
-
-
-
-   
     public function getProduct(Request $request)
         
  {
-            if ($request->filled('note')) {
-                $note = $request->note;
-                $produits = Produits::where('note', '=', $note)->get();
-            } 
-            elseif ($request->filled('prix')) {
-            $prix = $request->prix;
-            $produits = Produits::where('prix', '<=', $prix)->OrderBy('prix','ASC')->get();  }
+       
 
 
+        if ($request->filled('note')) {
+            $note = $request->note;
 
-            elseif ($request->filled('categories')) {
+            $produits = Produits::where('note', '=', $note)->get();
+        } elseif ($request->filled('categories')) {
             $categories = $request->categories;
-            $produits = Produits::where('cat_id', '=', $categories)->get();}
-
-            
-            else {
+            $produits = Produits::where('cat_id', '=', $categories)->get();
+        } elseif ($request->filled('prix')) {
+            $prix = $request->prix;
+            $produits = Produits::where('prix', '<=', $prix)->get();
+        } else {
             $produits = Produits::inRandomOrder()->get();
-             }
+        }
+
+        $categories = Categories::all(); 
 
                $categories = Categories::all();  
         return view('index', [
-
             'produits' => $produits,
             'categories' => $categories,
-        
-        
         ]);
-}
+    }
 
 
-
-
-
-        
-       
     public function getOneProduct($id)
     {
         $timer = Carbon::now();
@@ -96,7 +83,7 @@ class ProductController extends Controller
 
     public function addProduct(Request $request)
     {
-        if ($request->hasFile('images')){
+        if ($request->hasFile('images')) {
             $path = Storage::disk('public')->put('img', $request->file('images'));
         }
 
@@ -122,8 +109,8 @@ class ProductController extends Controller
         $cards->titre = $request->titre;
         $cards->note = $request->note;
         $cards->description = $request->description;
-        $cards->image = $path;
-        $cards->cat_id = $request->produits;
+        $cards->image = '/storage/' . $path;
+        $cards->cat_id = $request->categories;
         $cards->update();
         return redirect()->route('getAllProducts');
     }
@@ -137,7 +124,7 @@ class ProductController extends Controller
 
     public function addComm(Request $request, $id)
     {
-    
+
         $comm = new Comments();
         $comm->contenu = $request->contenu;
         $comm->user_id = Auth::user()->id;
@@ -147,5 +134,4 @@ class ProductController extends Controller
 
         return redirect()->route('getCard', ['id' => $id]);
     }
-
 }
