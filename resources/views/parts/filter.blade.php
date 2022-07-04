@@ -9,7 +9,7 @@
                     </div>
                 
                 </form>  
-            {{-- <form action="/filter" method="get">
+             <form action="/filter" method="get">
                 @csrf
             <select name="categories"
              class="btnmenu w-full h-[43.99px] px-4 py-3 text-sm text-white bg-gray-600 border-transparent rounded-md focus:border-gray-500 focus:ring-0" onChange="this.form.submit()">
