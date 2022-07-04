@@ -16,7 +16,9 @@
     </div>
 
     <div class="flex flex-col justify-center mx-auto  mt-10 md:flex-row">
+        
       @foreach ($comments as $comment)
+      
            <div
           class="container flex flex-col w-full max-w-lg p-6 mx-auto md:mx-4 mt-4 text-gray-100 transition duration-500 bg-gray-900 divide-y divide-gray-700 rounded-md btnmenu hover:scale-105">
           <div class="flex justify-between p-4">
