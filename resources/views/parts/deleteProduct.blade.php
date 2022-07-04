@@ -25,21 +25,26 @@
                 <section>
                     {{-- @click="modelOpen = false" --}}
                     <div class="w-full max-w-xl px-20 py-8 space-y-3 text-gray-100 bg-gray-600 rounded-xl">
-                        <div class="flex flex-row">
+
+<div class="flex flex-col">
+    <label class="text-center mb-4">êtes vous sur de vouloir supprimer l'article :</label> 
+        <span class="mb-8"> {{$card->titre}} de {{$card->prix}} ?</span>
+    <div class="flex flex-row">
                             <button @click="modelOpen = false"
-                                class="h-12 px-6 mx-4 my-4 text-gray-100 bg-gray-700 rounded-lg focus:outline-none hover:text-gray-200">
-                                Annuler
-                            </button>
-                            <form action="/deleteCard/{{ $card->id }}" method="post">
-                                @csrf
-                                @method('delete')
-                                <button type="submit"
-                                    class="h-12 px-6 mx-4 my-4 text-gray-100 bg-gray-700 rounded-lg focus:outline-none hover:text-gray-200">
-                                    Confirmer
-                                </button>
-                            </form>
-                        </div>
-                    </div>
+                            class="h-12 px-6 mx-4 my-4 text-gray-100 bg-gray-700 rounded-lg focus:outline-none hover:text-gray-200">
+                            Annuler
+                        </button>
+                        <form action="/deleteCard/{{ $card->id }}" method="post">
+                            @csrf
+                            @method('delete')
+                            <button type="submit"
+                            class="h-12 px-6 mx-4 my-4 text-gray-100 bg-red-700 rounded-lg focus:outline-none hover:text-gray-200">
+                            Confirmer
+                        </button>
+                    </form>
+               </div>
+            </div>
+            </div>
                 </section>
             </div>
         </div>
