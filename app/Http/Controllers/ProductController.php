@@ -17,7 +17,6 @@ use Illuminate\Support\Facades\Storage;
 
 class ProductController extends Controller
 {
-
     public function getProduct(Request $request)
     {
     
@@ -41,8 +40,59 @@ class ProductController extends Controller
         return view('index', [
             'produits' => $produits,
             'categories' => $categories,
+        ]);}
+    
+       
+      
+        
+       
+    public function search()
+    {  
+        
+    //    $categories=Categories::all(); 
+
+        request()->validate([
+            'q' => 'required|min:3'
         ]);
+
+        $q = request()->input('q');
+       
+        $produits = Produits::where('titre', '=',"$q")->get();
+                
+
+         return view('index', [
+            'produits' => $produits,
+            // 'categories' => $categories,
+
+                'q' => $q,
+            
+]);
+            
+         
     }
+
+
+    public function indexSearch()
+    {
+        $categories=Categories::all(); 
+
+                request()->validate([
+                    'q' => 'required|min:3'
+                ]);
+        
+                $q = request()->input('q');
+        //    dd($q);
+                $produits = Produits::where('titre', '=', $q)->get();
+                        
+                        // dd($produits);
+                 return view('giftCards', [
+            'cards' => $produits,
+            'categories' => $categories,
+        ]);
+    
+    }
+
+
 
 
     public function getOneProduct($id)
@@ -87,7 +137,7 @@ class ProductController extends Controller
         }
         $card = new Produits();
         $card->titre =  $request->titre;
-        $card->prix = $request->prix;
+        $card->note = $request->note;
         $card->description = $request->description;
         $card->image = '/storage/' . $path;
         $card->save();
@@ -100,7 +150,7 @@ class ProductController extends Controller
         $cards = Produits::where('id', '=', $id)->get();
         $cards = Produits::find($id);
         $cards->titre = $request->titre;
-        $cards->prix = $request->prix;
+        $cards->note = $request->note;
         $cards->description = $request->description;
         if ($request->hasFile('images')) {
             $cards->image = '/storage/' . Storage::disk('public')->put('img', $request->file('images'));
