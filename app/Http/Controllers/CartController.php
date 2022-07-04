@@ -42,7 +42,7 @@ class CartController extends Controller
 
            $Panier = Paniers::where('user_id',Auth::id())->where('prod_id',$id)->first();
         if($Panier){
-            $Panier = Paniers::where('user_id',Auth::id())->where('prod_id',$id)->first();
+            $Panier = Paniers::where('user_id',Auth::id())->where('prod_id',$id);
             $Panier->increment('quantite',1);
         }else{
             $Panier = new Paniers();
