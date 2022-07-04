@@ -42,8 +42,8 @@ class CartController extends Controller
 
            $Panier = Paniers::where('user_id',Auth::id())->where('prod_id',$id)->first();
         if($Panier){
-            $Panier = Paniers::where('user_id',Auth::id());
-            $Panier->increment('quantite');
+            $Panier = Paniers::where('user_id',Auth::id())->where('prod_id',$id)->first();
+            $Panier->increment('quantite',1);
         }else{
             $Panier = new Paniers();
             $Panier->user_id = Auth::user()->id;
@@ -58,12 +58,14 @@ class CartController extends Controller
     {
        
         $Panier = Paniers::where('user_id',Auth::id())->where('prod_id',$id)->first();
-        if($Panier){
-            $Panier = Paniers::where('user_id',Auth::id())->where('prod_id',$id);
-            $Panier->decrement('quantite');
-        }else{
-        $Panier->delete();
-        }
+            if ($Panier->quantite == 1)
+            {
+                $Panier->where('prod_id',$id)->delete();
+            }
+            else
+            {
+                $Panier->where('prod_id',$id)->decrement('quantite');
+            }      
         return redirect()->route('cart')->with('cart_delete', 'ajouté');
     }
     
