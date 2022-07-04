@@ -1,4 +1,4 @@
-<div x-data="{ modelOpen: false }">
+<div  x-data="{ modelOpen: false }">
 
     <button @click="modelOpen =!modelOpen"
         class="flex items-center justify-center px-4 py-2 mx-1 space-x-2 text-sm tracking-wide text-white capitalize transition-colors duration-200 transform rounded-md bg-emerald-500 hover:bg-gray-600 focus:outline-none focus:bg-gray-500 focus:ring focus:ring-gray-300 focus:ring-opacity-50">
@@ -24,7 +24,7 @@
                 <section class="">
 
                     {{-- @click="modelOpen = false" --}}
-                    <div class="w-full max-w-md p-8 space-y-3 text-gray-100 bg-gray-600 rounded-xl">
+                    <div class="w-full max-w-md py-8 px-20 space-y-3 text-gray-100 bg-gray-600 rounded-xl">
                         <img class="p-2 bg-gray-900 rounded" src="/img/logo.png" alt="logo">
                     
 

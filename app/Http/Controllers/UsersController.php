@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use App\Models\Paniers;
+use App\Models\Comments;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
@@ -19,50 +21,67 @@ class UsersController extends Controller
         ]);
     }
 
-    
+
     public function activisor(Request $request, $id)
     {
-     
         $user = User::find($id);
-        if($request->actif){
+        if ($request->actif) {
             $user->actif = 1;
-        }else if ($request->desactif)
-        {
+        } else if ($request->desactif) {
             $user->actif = 0;
         }
         $user->update();
         return redirect()->route('getUsers');
     }
 
-    public function updateProfil(Request $request,$id){
+    public function updateProfil(Request $request, $id)
+    {
 
-        if($request->file('photo')!=null){
-        $img = Storage::disk('public')->put('img', $request->file('photo'));
-        $path = '/storage/' . $img;
+        if ($request->file('photo') != null) {
+            $img = Storage::disk('public')->put('img', $request->file('photo'));
+            $path = '/storage/' . $img;
         } else {
-        $path = '/img/avatar.png';
+            $path = '/img/avatar.png';
         }
-        
-        
-        $users=User::where('id','=',$id)->get();
-        $users=User::find($id);
-        
-        
+
+        $users = User::where('id', '=', $id)->get();
+        $users = User::find($id);
         $users->nom = $request['nom'];
         $users->prenom = $request['prenom'];
         $users->username = $request['pseudo'];
-        $users->email = $request['email'];
         $users->address = $request['address'];
         $users->numero_telephone = $request['phone'];
         $users->city = $request['city'];
         $users->country = $request['country'];
         $users->zipCode = $request['zip'];
-       $users->password =Hash::make( $request['password']);
         $users->photo = $path;
         $users->update();
         return redirect('/');
     }
-  
+
+    public function profil()
+    {
+        return view('account', [
+        ]);
+    }
+
+    public function userprofil($id)
+    {
+        $comments = Comments::where('user_id', '=', $id)->limit(3)->get();
+        $user = User::where('id', '=', $id)->get();
+        $user = User::find($id);
+        return view('userAccount', [
+            'comments' => $comments,
+            'user' => $user,
+        ]);
+    }
+
+    public function Allusers()
+    {
+        return view('account', [
+        ]);
+    }
+
     public function showUsers($id)
     {
         $users = User::find($id);
@@ -77,15 +96,21 @@ class UsersController extends Controller
         $validate = $request->validate([
             'nom' => 'required',
             'prenom' => 'required',
-            'email' => 'required'
+            'email' => 'required',
+            'role' => 'required'
         ]);
         $users = User::where('id', '=', $id)->get();
         $users = User::find($id);
         $users->nom = $validate['nom'];
         $users->prenom = $validate['prenom'];
         $users->email = $validate['email'];
+        $users->address = $request->address;
+        $users->zipCode = $request->zip;
+        $users->city = $request->city;
+        $users->numero_telephone = $request->phone;
+        $users->username = $request->username;
+        $users->profil = $validate['role'];
         $users->update();
-        return redirect()->route('getUsers');
+        return redirect()->back();
     }
-
 }

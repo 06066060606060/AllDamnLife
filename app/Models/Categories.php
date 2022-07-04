@@ -9,6 +9,7 @@ class Categories extends Model
 {
     use HasFactory;
 
+    public $timestamps = false;
     protected $primaryKey = 'id_cat';
     protected $fillable = [
         'id_cat',
@@ -16,6 +17,10 @@ class Categories extends Model
         
     ];
 
-//yfiltruglgl
+    public function produit()
+    {
+       return $this->belongsToMany(Produits::class);
+    }
+
 
 }
