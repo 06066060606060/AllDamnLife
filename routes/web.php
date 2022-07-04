@@ -40,7 +40,11 @@ route::get('user/{id}', [UsersController::class, 'showUsers'])->whereNumber('id'
 Route::post('/actif/{id}', [UsersController::class,'activisor'])->whereNumber('id');
 
 Route::get('/',[ProductController::class,'getProduct']);
-Route::post('/filter',[ProductController::class,'getProduct']);
+Route::get('/filter',[ProductController::class,'getProduct']);
+Route::get('/filter/search',[ProductController::class,'search'])->name('searchcard');
+
+Route::get('/giftCards/search',[ProductController::class,'indexSearch'])->name('searchItem');
+
 
 route::get('/card/{id}',[ProductController::class,'getOneProduct'])->whereNumber('id')->name('getCard');
 Route::post('/giftCards',[ProductController::class,'addProduct'])->name('addProduct');

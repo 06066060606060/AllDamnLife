@@ -17,32 +17,80 @@ class ProductController extends Controller
 {
     public function getProduct(Request $request)
         
- {
-       
-
-
-        if ($request->filled('note')) {
+ {     
+     
+        if ($request->filled('categories')) {
+            $categories = $request->categories;
+            $produits = Produits::where('cat_id', '=', $categories)->get();
+        }
+        elseif ($request->filled('note')) {
             $note = $request->note;
 
             $produits = Produits::where('note', '=', $note)->get();
-        } elseif ($request->filled('categories')) {
-            $categories = $request->categories;
-            $produits = Produits::where('cat_id', '=', $categories)->get();
-        } elseif ($request->filled('prix')) {
+        }elseif ($request->filled('prix')) {
             $prix = $request->prix;
             $produits = Produits::where('prix', '<=', $prix)->get();
-        } else {
+        }  else {
             $produits = Produits::inRandomOrder()->get();
         }
+$categories=Categories::all(); 
 
-        $categories = Categories::all(); 
-
-               $categories = Categories::all();  
         return view('index', [
             'produits' => $produits,
             'categories' => $categories,
+        ]);}
+    
+       
+      
+        
+       
+    public function search()
+    {  
+        
+    //    $categories=Categories::all(); 
+
+        request()->validate([
+            'q' => 'required|min:3'
         ]);
+
+        $q = request()->input('q');
+       
+        $produits = Produits::where('titre', '=',"$q")->get();
+                
+
+         return view('index', [
+            'produits' => $produits,
+            // 'categories' => $categories,
+
+                'q' => $q,
+            
+]);
+            
+         
     }
+
+
+    public function indexSearch()
+    {
+        $categories=Categories::all(); 
+
+                request()->validate([
+                    'q' => 'required|min:3'
+                ]);
+        
+                $q = request()->input('q');
+        //    dd($q);
+                $produits = Produits::where('titre', '=', $q)->get();
+                        
+                        // dd($produits);
+                 return view('giftCards', [
+            'cards' => $produits,
+            'categories' => $categories,
+        ]);
+    
+    }
+
+
 
 
     public function getOneProduct($id)
