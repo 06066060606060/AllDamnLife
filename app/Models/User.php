@@ -9,7 +9,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
-
+use Illuminate\Validation\Rules\Enum;
 
 class User extends Authenticatable
 {
@@ -40,8 +40,9 @@ class User extends Authenticatable
     {
         return $this->belongsTo(Paniers::class, 'prod_id', 'user_id', 'quantite');
     }
-
+    
 }
+
 
 
    

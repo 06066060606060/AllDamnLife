@@ -96,6 +96,7 @@ class UsersController extends Controller
     public function update(Request $request, $id)
 
     {
+      
         $validate = $request->validate([
             'nom' => 'required',
             'prenom' => 'required',
@@ -114,6 +115,6 @@ class UsersController extends Controller
         $users->username = $request->username;
         $users->profil = $validate['role'];
         $users->update();
-        return redirect()->back();
+        return redirect()->route('getUsers');
     }
 }
