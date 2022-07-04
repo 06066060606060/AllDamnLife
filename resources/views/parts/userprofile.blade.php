@@ -18,11 +18,14 @@
     <div class="flex flex-col justify-center mx-auto mt-10 md:flex-row">
         
         @foreach ($comments as $comment)
-        <h2>{{ $produits->where('id', '=', $comment->id_comm) }}</h2>
+
       
+
            <div
           class="container flex flex-col w-full max-w-lg p-6 mx-auto mt-4 text-gray-100 transition duration-500 bg-gray-900 divide-y divide-gray-700 rounded-md md:mx-4 btnmenu hover:scale-105">
+          <h2 class="pb-2 text-white">{{ $produits->where('id', '=', $comment->product_id)->first()->titre }}</h2>
           <div class="flex justify-between p-4">
+              
               <div class="flex space-x-4">
                   <div>
                       <h4 class="font-bold">{{$comment->user->prenom}} {{$comment->user->nom}}</h4>
