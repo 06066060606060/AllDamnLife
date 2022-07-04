@@ -17,7 +17,7 @@
                     </div>
 
                     <a @auth href="/addtocart/{{ $produit->id }}" @else href="/" @endauth
-                        class="w-24 mb-2 bg-blue-600 rounded hover:bg-blue-400 hover:text-gray-800">Ajouter au panier</a>
+                        class="w-32 mt-1 mb-3 rounded bg-emerald-500 hover:bg-emerald-300 hover:text-gray-800">Ajouter au panier</a>
                     <a href="/card/{{ $produit->id }}"
                         class="w-24 bg-blue-600 rounded hover:bg-blue-400 hover:text-gray-800">Plus d'info</a>
                 </div>
