@@ -12,12 +12,13 @@ class Comments extends Model
     protected $primaryKey = 'id_comm';
     protected $fillable = [
         'contenu',
+        'titre',
         
     ];
 
     public function produit()
     {
-        return $this->belongsTo(Produits::class, 'id');
+        return $this->belongsTo(Produits::class, 'id', 'titre');
     }
 
     public function user()

@@ -16,6 +16,7 @@ class UsersController extends Controller
 {
     public function getUsers()
     {
+     
         $users = User::all();
         return view('users', [
             'users' => $users,
@@ -57,7 +58,7 @@ class UsersController extends Controller
         $users->zipCode = $request['zip'];
         $users->photo = $path;
         $users->update();
-        return redirect('/');
+        return redirect()->back();
     }
 
     public function profil()
@@ -69,10 +70,12 @@ class UsersController extends Controller
     public function userprofil($id)
     {
         $comments = Comments::where('user_id', '=', $id)->limit(3)->get();
+        $produits = Produits::all();
         $user = User::where('id', '=', $id)->get();
         $user = User::find($id);
        
         return view('userAccount', [
+            'produits' => $produits,
             'comments' => $comments,
             'user' => $user,
             
