@@ -7,8 +7,9 @@
                 <p class="mt-12">{{ $produit->titre }}</p>
             </div>
             <div class="back">
-                <div class="flex flex-col items-center content-center py-16">
-                    <img class="w-auto h-16 icon" src="{{ $produit->image }}">
+                <div class="flex flex-col items-center content-center pt-6">
+                    <img class="w-auto h-20 icon" src="{{ $produit->image }}">
+                    <span class="px-4 bg-blue-800 rounded-md">{{ (int) $produit->prix }} €</span>
                     <span class="p-2 clamp">{{ $produit->description }}</span>
                     <div class="flex items-center justify-center p-2 flex-rows">
                         @for ($i = 0; $i < $produit->note; $i++)
