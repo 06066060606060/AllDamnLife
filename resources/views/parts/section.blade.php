@@ -20,4 +20,10 @@
             </div>
         </div>
     @endforeach
+        {{-- <a href="{{$produits->links()}}" class="inline-flex items-center justify-center w-8 h-8 text-sm font-semibold text-teal-400 bg-gray-900 border border-teal-400 rounded shadow-md" title="Page 1"></a> --}}
+
+
+
+       {{$produits->links()}}
+    
 </div>

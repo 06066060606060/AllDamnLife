@@ -6,7 +6,7 @@
 </div>
 @include('parts.new')
 @include('parts.section')
-@include('parts.pagination')
+{{-- @include('parts.pagination') --}}
 
 @endsection
 

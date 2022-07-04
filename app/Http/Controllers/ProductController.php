@@ -37,6 +37,7 @@ class ProductController extends Controller
         }
 
         $categories = Categories::all();
+        $produits= Produits::paginate(5);
         return view('index', [
             'produits' => $produits,
             'categories' => $categories,
@@ -49,7 +50,7 @@ class ProductController extends Controller
     public function search()
     {  
         
-    //    $categories=Categories::all(); 
+       $categories=Categories::all(); 
 
         request()->validate([
             'q' => 'required|min:3'
@@ -57,41 +58,19 @@ class ProductController extends Controller
 
         $q = request()->input('q');
        
-        $produits = Produits::where('titre', '=',"$q")->get();
+        $produits = Produits::where('titre', 'like','%'.$q.'%')->get();
                 
 
          return view('index', [
             'produits' => $produits,
-            // 'categories' => $categories,
+            'categories' => $categories,
 
                 'q' => $q,
             
-]);
-            
-         
+]);         
     }
 
-
-    public function indexSearch()
-    {
-        $categories=Categories::all(); 
-
-                request()->validate([
-                    'q' => 'required|min:3'
-                ]);
-        
-                $q = request()->input('q');
-        //    dd($q);
-                $produits = Produits::where('titre', '=', $q)->get();
-                        
-                        // dd($produits);
-                 return view('giftCards', [
-            'cards' => $produits,
-            'categories' => $categories,
-        ]);
-    
-    }
-
+   
 
 
 
@@ -111,11 +90,14 @@ class ProductController extends Controller
     {
         $cards = Produits::All();
         $categories = Categories::all();
+        
         return view('giftCards', [
             'cards' => $cards,
             'categories' => $categories
+            
         ]);
     }
+   
 
     public function activeur(Request $request, $id)
     {
