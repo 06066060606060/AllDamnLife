@@ -29,7 +29,7 @@ Route::get('/account' ,[UsersController::class, 'profil']);
 Route::post('account/{id}',[UsersController::class, 'updateProfil'])->whereNumber('id')->name('updateprofil');
 Route::get('user/account/{id}',[UsersController::class, 'userProfil'])->whereNumber('id');
 Route::get('/users', [UsersController::class, 'getUsers'])->name('getUsers');
-Route::post('users/{id}', [UsersController::class, 'update'])->whereNumber('id')->name('updateUsers');
+
 Route::delete('delete/{id}', [UsersController::class, 'destroy'])->name('delete');
 Route::get('user/{id}', [UsersController::class, 'showUsers'])->whereNumber('id')->name('readUsers');
 Route::post('/actif/{id}', [UsersController::class,'activisor'])->whereNumber('id');
@@ -53,7 +53,7 @@ Route::delete('/deleteCard/{id}', [ProductController::class, 'deleteCard'])->nam
 
 
 Route::get('/cart',[CartController::class,'getCart'])->name('cart');
-Route::get('/addtocart/{id}',[CartController::class,'addtoCart'])->whereNumber('id');
+Route::post('/addtocart/{id}',[CartController::class,'addtoCart'])->whereNumber('id');
 Route::get('/deletefromcart/{id}',[CartController::class,'deletefromCart'])->whereNumber('id');
 
 route::get('/categories', [CategoriesController::class, 'getCateg'])->name('categories');

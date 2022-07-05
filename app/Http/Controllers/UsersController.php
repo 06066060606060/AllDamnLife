@@ -38,16 +38,19 @@ class UsersController extends Controller
 
     public function updateProfil(Request $request, $id)
     {
-
+$users = User::where('id', '=', $id)->get();
+        $users = User::find($id);
         if ($request->file('photo') != null) {
             $img = Storage::disk('public')->put('img', $request->file('photo'));
             $path = '/storage/' . $img;
-        } else {
-            $path = '/img/avatar.png';
+        } elseif($request->file('photo') == null) {
+           $path=$users->photo;
+            
+        }else{
+             $path = 'img/avatar.png' ;
         }
 
-        $users = User::where('id', '=', $id)->get();
-        $users = User::find($id);
+        
         $users->nom = $request['nom'];
         $users->prenom = $request['prenom'];
         $users->username = $request['username'];
@@ -57,6 +60,11 @@ class UsersController extends Controller
         $users->country = $request['country'];
         $users->zipCode = $request['zip'];
         $users->photo = $path;
+        if ($request->filled('role')) {
+            $users->profil = $request['role']; }
+            else {
+                $users->profil = $users->profil;
+            }
         $users->update();
         return redirect()->back();
     }
@@ -96,27 +104,5 @@ class UsersController extends Controller
         ]);
     }
 
-    public function update(Request $request, $id)
-
-    {
-        $validate = $request->validate([
-            'nom' => 'required',
-            'prenom' => 'required',
-            'email' => 'required',
-            'role' => 'required'
-        ]);
-        $users = User::where('id', '=', $id)->get();
-        $users = User::find($id);
-        $users->nom = $validate['nom'];
-        $users->prenom = $validate['prenom'];
-        $users->email = $validate['email'];
-        $users->address = $request->address;
-        $users->zipCode = $request->zip;
-        $users->city = $request->city;
-        $users->numero_telephone = $request->phone;
-        $users->username = $request->username;
-        $users->profil = $validate['role'];
-        $users->update();
-        return redirect()->back();
-    }
+    
 }
