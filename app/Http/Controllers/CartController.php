@@ -38,13 +38,13 @@ class CartController extends Controller
 
     }
 
-    public function addtoCart(Request $request, $id)
+    public function addtoCart(Request $request,$id)
     {
-        
+
            $Panier = Paniers::where('user_id',Auth::id())->where('prod_id',$id)->first();
         if($Panier){
             $Panier = Paniers::where('user_id',Auth::id())->where('prod_id',$id);
-            $Panier->quantite = $request->quantite;
+            $Panier->increment('quantite',$request->quantite) ;
         }else{
             $Panier = new Paniers();
             $Panier->user_id = Auth::user()->id;
