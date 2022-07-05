@@ -210,9 +210,16 @@ class ProductController extends Controller
         } else {
             $average = 0;
         }
+
+
+          // (nbnote/nbnoteall)x100
+            
+          
       
         return $noteProduct;
     }
+
+
 
     public function addComm(Request $request, $id)
     {
