@@ -42,15 +42,17 @@ class AuthController extends Controller
 
         $credentials = $request->only('email', 'password');
         if (Auth::attempt($credentials, $remember = true)) {
-            $request->session()->regenerate();
-            if(Auth::user()->actif == 1){
-                
-            return redirect('/')->with('success', 'log ok');
-        }else{
-            return redirect('/')->with('desactivate', 'Votre compte est désactivé');
-        }}
-
-        else
+            if (Auth::user()->actif == '1') {
+                $request->session()->regenerate();
+                return redirect('/')->with('success', 'log ok');
+            } else {
+                Session::flush();
+                Auth::logout();
+                $request->session()->invalidate();
+                return redirect('/')->with('desactivate', 'log');
+            }
+           
+        }
         return redirect('/')->with('error', 'log');
     }
 

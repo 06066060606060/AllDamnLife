@@ -42,13 +42,13 @@
                             </div>
                             <div class="space-y-1 text-sm">
                                 <label for="prix" class="block text-gray-400">Prix</label>
-                                <input type="prix" name="prix" id="prix"
+                                <input type="number" name="prix" id="prix" min="0"
                                     class="w-1/5 px-3 py-3 text-gray-100 bg-gray-900 border-gray-700 rounded-md focus:border-teal-400" required>
                             </div>
                             <div class="space-y-1 text-sm tooltip1">
                                 <label class="">
                                     <span class="px-4 py-3 mt-2 leading-tight text-gray-100 bg-gray-900 border border-gray-700 rounded-md shadow appearance-none hover:bg-gray-700 focus:outline-none focus:shadow-outline">Selectionner une image</span>
-                                    <input type="file" name="images" class="hidden" required/>
+                                    <input type="file" name="images" class="hidden"  required/>
                                     <p class="tooltiptext1">Png 256 x 269 recommandé</p>
                                 </label>
                                
