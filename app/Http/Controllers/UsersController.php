@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use App\Models\Paniers;
 use App\Models\Comments;
+use App\Models\Produits;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
@@ -15,6 +16,7 @@ class UsersController extends Controller
 {
     public function getUsers()
     {
+     
         $users = User::all();
         return view('users', [
             'users' => $users,
@@ -48,7 +50,7 @@ class UsersController extends Controller
         $users = User::find($id);
         $users->nom = $request['nom'];
         $users->prenom = $request['prenom'];
-        $users->username = $request['pseudo'];
+        $users->username = $request['username'];
         $users->address = $request['address'];
         $users->numero_telephone = $request['phone'];
         $users->city = $request['city'];
@@ -56,7 +58,7 @@ class UsersController extends Controller
         $users->zipCode = $request['zip'];
         $users->photo = $path;
         $users->update();
-        return redirect('/');
+        return redirect()->back();
     }
 
     public function profil()
@@ -68,11 +70,15 @@ class UsersController extends Controller
     public function userprofil($id)
     {
         $comments = Comments::where('user_id', '=', $id)->limit(3)->get();
+        $produits = Produits::all();
         $user = User::where('id', '=', $id)->get();
         $user = User::find($id);
+       
         return view('userAccount', [
+            'produits' => $produits,
             'comments' => $comments,
             'user' => $user,
+            
         ]);
     }
 

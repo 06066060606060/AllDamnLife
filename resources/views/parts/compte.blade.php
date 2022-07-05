@@ -29,6 +29,15 @@
                         <form action="{{ route('updateprofil', $user->id) }}" enctype="multipart/form-data"
                             method="POST" class="w-full max-w-lg">
                             @csrf
+                            <span>Modifier mon Profil</span>
+                            <div class="space-y-1 my-8 text-sm ">
+                                <label class="">
+                                    <span class="px-4 py-3 mt-2  leading-tight text-gray-100 bg-gray-900 border border-gray-700 rounded-md shadow appearance-none hover:bg-gray-700 focus:outline-none focus:shadow-outline">Selectionner une image</span>
+                                    <input type="file" name="photo" class="hidden" required/>
+                                    
+                                </label>
+                               
+                            </div>
                             <div class="flex flex-wrap -mx-3 mb-6">
                                 <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
                                     <label class="block uppercase tracking-wide text-white text-xs font-bold mb-2"
