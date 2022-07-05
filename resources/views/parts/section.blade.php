@@ -23,6 +23,6 @@
     
 
         
-       {{$produits->links()}}
+       {{$produits->links('pagination::tailwind')}}
         
 </div>
