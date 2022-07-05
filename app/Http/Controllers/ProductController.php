@@ -37,7 +37,7 @@ class ProductController extends Controller
         }
 
         $categories = Categories::all();
-        $produits = Produits::where('actif', '=', 1)->paginate(3);;
+        $produits = Produits::where('actif', '=', 1)->paginate(3);
       
         return view('index', [
             'produits' => $produits,
@@ -189,7 +189,7 @@ class ProductController extends Controller
             $average = 0;
         }
 
-
+        //  ($note/$total)*100;
           // (nbnote/nbnoteall)x100
             
           
