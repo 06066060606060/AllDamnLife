@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Paniers;
 use App\Models\Produits;
+use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
@@ -37,17 +38,18 @@ class CartController extends Controller
 
     }
 
-    public function addtoCart($id)
+    public function addtoCart(Request $request, $id)
     {
-
+        
            $Panier = Paniers::where('user_id',Auth::id())->where('prod_id',$id)->first();
         if($Panier){
             $Panier = Paniers::where('user_id',Auth::id())->where('prod_id',$id);
-            $Panier->increment('quantite',1);
+            $Panier->quantite = $request->quantite;
         }else{
             $Panier = new Paniers();
             $Panier->user_id = Auth::user()->id;
             $Panier->prod_id = $id;
+            $Panier->quantite = $request->quantite;
             $Panier->save();
         }
        

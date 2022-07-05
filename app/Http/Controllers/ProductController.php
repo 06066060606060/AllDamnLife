@@ -76,11 +76,18 @@ class ProductController extends Controller
     {
         $timer = Carbon::now();
         $produit = Produits::find($id);
+        $note = Comments::where('product_id', '=', $id)->avg('note');
+        $notearrondi = floor($note * 2) / 2;
         $comments = Comments::where('product_id', $id)->inRandomOrder()->limit(2)->get();
+        $noteProduct = self::getStars($id);
         return view('card', [
             'produit' => $produit,
             'comments' => $comments,
             'timer' => $timer,
+            'note' => $note,
+            'notearrondi' => $notearrondi,
+            'noteProduct' => $noteProduct,
+
         ]);
     }
 
@@ -152,16 +159,72 @@ class ProductController extends Controller
         return redirect()->back();
     }
 
-//_____________________Commentaires______________________________________
+    private function getStars($noteProduct)
+    {
+        $note = Comments::where('product_id', '=', $noteProduct)->avg('note');
+
+        // ['note' =>  'lanote']
+
+
+
+        $noteProduct = Comments::groupBy('note')
+            ->select('note', Comments::raw('count(*) as total'))
+            ->where('product_id', '=', $noteProduct)
+            ->get();
+        $out = [];
+        $total = 0;
+        $average = 0;
+        for ($i = 5; $i > 0; $i--) {
+            foreach ($noteProduct as $note) {
+                if ($note->note == $i) {
+                    $out[$i] = $note->total;
+                    $total += $note->total;
+                    $average += $note->total * $i;
+                    break;
+                }
+            }
+            if (!isset($out[$i])) {
+                $out[$i] = 0;
+            }
+        }
+        $average = $average / $total;
+
+
+        // tableau -> chaque note = pourcentage  et nb de note
+        // fonction doit retrouner un tableau déjà trié
+        // rajouter un If si le total pas egal a 0
+
+        return $noteProduct;
+    }
 
     public function addComm(Request $request, $id)
     {
 
         $comm = new Comments();
+        $produit = Produits::where('id', '=', $id)->get();
+        $produit = Produits::find($id);
+
+
+        $commcount = (Comments::where('product_id', '=', $id)->count());
+        $oldnote = $produit->note;
+
+
+        if ($commcount == 0) {
+
+            $produit->note = $request->note;
+        } else {
+
+            $produit->note = ($oldnote + $request->note) / ($commcount + 1);
+        }
+
+
+
+
         $comm->contenu = $request->contenu;
         $comm->user_id = Auth::user()->id;
         $comm->product_id = $id;
         $comm->note = $request->note;
+
         $comm->save();
         return redirect()->route('getCard', ['id' => $id]);
     }

@@ -46,7 +46,7 @@
                 <option value="">Toutes</option>
             </select>
         </form>
-            <a href="/" class="btnmenu px-4 py-3 text-sm text-white bg-gray-600 border-transparent rounded-md focus:border-gray-500 focus:ring-0">Effacer les filtres</a>
+            <a href="/" class="px-4 py-3 text-sm text-white bg-gray-600 border-transparent rounded-md btnmenu focus:border-gray-500 focus:ring-0">Effacer les filtres</a>
   
         </div>
         

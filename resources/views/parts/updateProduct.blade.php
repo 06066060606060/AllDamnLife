@@ -38,7 +38,7 @@
                             </div>
                             <div class="space-y-1 text-sm">
                                 <label for="prix" class="block text-xs font-bold text-white">Prix</label>
-                                <input value="{{ $card->prix }}" type="prix" name="prix" id="prix"
+                                <input value="{{ $card->prix }}" type="number" min="0" name="prix" id="prix"
                                     placeholder="prix"
                                     class="w-1/5 px-4 py-3 text-gray-100 bg-gray-900 border-gray-700 rounded-md focus:border-teal-400">
                             </div>
