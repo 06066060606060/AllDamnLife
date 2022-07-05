@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Paniers;
 use App\Models\Categories;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class CategoriesController extends Controller
 {

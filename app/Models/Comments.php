@@ -10,15 +10,15 @@ class Comments extends Model
     use HasFactory;
 
     protected $primaryKey = 'id_comm';
-
     protected $fillable = [
         'contenu',
+        'titre',
         
     ];
 
     public function produit()
     {
-        return $this->belongsTo(Produits::class, 'id');
+        return $this->belongsTo(Produits::class, 'id', 'titre');
     }
 
     public function user()
@@ -27,4 +27,5 @@ class Comments extends Model
     }
 }
 
+//comment
 

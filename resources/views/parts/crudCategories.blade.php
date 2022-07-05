@@ -1,30 +1,27 @@
 <div class="max-w-screen-xl mx-auto ">
     <div class="flex items-center justify-center">
         <div class="container">
-
-            <table
-                class="flex flex-row flex-no-wrap justify-center w-full my-5 overflow-hidden bg-gray-600 rounded-lg sm:shadow-lg btnmenu">
-               
+            <table class="w-full flex flex-row flex-no-wrap rounded-lg overflow-hidden my-5">
                 <thead class="text-white">
-
                     @foreach ($categories as $categorie)
-                        <tr class="flex flex-col rounded-l-lg bg-emerald-500 flex-no wrap sm:table-row ">
+                        <tr
+                            class="bg-emerald-500 flex flex-col flex-no-wrap sm:table-row rounded-l-lg sm:rounded-none mb-2 sm:mb-0">
 
-                            <th class="p-3 text-center ">Catégories</th>
-                            <th class="p-3 text-center" width="110px">Modifier</th>
-                            <th class="p-3 text-center" width="110px">Supprimer</th>
+                            <th class="p-3 h-12 text-center ">Catégories</th>
+                            <th class="p-3 h-12 text-center">Modifier</th>
+                            <th class="p-3 h-12 text-center">Supprimer</th>
 
                         </tr>
                     @endforeach
                     </tr>
                 </thead>
-                <tbody class="flex-1 text-white sm:flex-none">
+                <tbody class="flex-1 sm:flex-none">
                     @forelse ($categories as $categorie)
-                        <tr class="flex flex-col flex-no wrap sm:table-row ">
-                            <td class="p-3 ">{{ $categorie->label }}</td>
-                            <td>
+                        <tr class="flex flex-col flex-no-wrap sm:table-row mb-2 bg-gray-700  sm:mb-0">
+                            <td class="text-white p-3 h-12">{{ $categorie->label }}</td>
+                            <td class="hover:text-blue-900 h-12">
                                 @include('parts.updateCateg')
-                            <td>
+                            <td class="hover:text-red-600 h-12">
                                 @include('parts.deleteCateg')
                             </td>
                         </tr>
@@ -34,12 +31,13 @@
                         </div>
                     @endforelse
                 </tbody>
-               
+
             </table>
-         
+
         </div>
     </div>
 </div>
+
 @include('parts.addCateg')
 <style>
     @media (min-width: 640px) {
@@ -52,11 +50,9 @@
         }
     }
 
-    td:not(:last-child) {
-        -bottom: 0;
-    }
+
 
     th:not(:last-child) {
-        -bottom: 2px solid rgba(0, 0, 0, .1);
+        border-bottom: 2px solid rgba(0, 0, 0, .1);
     }
 </style>

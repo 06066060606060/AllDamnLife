@@ -22,7 +22,7 @@
                 class="inline-block pt-8 overflow-hidden transition-all transform rounded-lg 2xl:max-w-2xl">
                 <section class="">
                     {{-- @click="modelOpen = false" --}}
-                    <div class="w-full max-w-md p-4 space-y-3 text-gray-100 bg-gray-600 rounded-xl">
+                    <div class="w-full max-w-md py-8 px-20 space-y-3 text-gray-100 bg-gray-600 rounded-xl">
                         <form action="/comm/{{ $produit->id }}" class="space-y-6 ng-untouched ng-pristine ng-valid"
                             method="post">
                             @csrf
