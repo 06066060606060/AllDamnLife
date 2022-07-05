@@ -102,6 +102,7 @@ class ProductController extends Controller
         $note = Comments::where('product_id', '=', $id)->avg('note');
         $notearrondi = floor($note * 2) / 2;
         $comments = Comments::where('product_id', $id)->inRandomOrder()->limit(2)->get();
+        $noteProduct = self::getStars($id);
         return view('card', [
             'produit' => $produit,
             'comments' => $comments,
