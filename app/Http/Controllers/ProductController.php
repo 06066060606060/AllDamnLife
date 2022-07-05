@@ -205,13 +205,12 @@ class ProductController extends Controller
                 $out[$i] = 0;
             }
         }
-        $average = $average / $total;
-
-
-        // tableau -> chaque note = pourcentage  et nb de note
-        // fonction doit retrouner un tableau déjà trié
-        // rajouter un If si le total pas egal a 0
-
+        if ($total > 0) {
+            $average = $average / $total;
+        } else {
+            $average = 0;
+        }
+      
         return $noteProduct;
     }
 
