@@ -49,7 +49,7 @@
                                         id="grid-last-name" type="text" placeholder="" value="{{ $user->prenom }}">
                                 </div>
                                 <div>
-                                <select class="text-black" name="role">
+                                <select  class=" w-full h-[43.99px] px-4 py-3 text-sm  bg-gray-600 border-transparent rounded-md focus:border-gray-500 focus:ring-0" name="role">
                                     <option value="{{ $user->profil }}" selected>{{ $user->profil }}</option>
                                     <option value="abonne">abonne</option>
                                     <option value="client">client</option>
