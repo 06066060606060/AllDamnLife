@@ -3,7 +3,8 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Model; 
+
 
 class Produits extends Model
 {
@@ -19,6 +20,8 @@ class Produits extends Model
         'cat_id',
         
     ];
+   
+
     
     public function produit()
     {
@@ -44,7 +47,7 @@ class Produits extends Model
   
       }
 
-      
+        
   
 
 }

@@ -44,10 +44,15 @@
                     </a>
 
                     {{-- putain pas mal ce petit truc merci copilot! --}}
-                    <a @auth href="/addtocart/{{ $produit->id }}" @else href="/" @endauth
-                        class="flex items-center justify-center h-8 px-4 pt-1 pb-1 mx-1 space-x-2 tracking-wide text-white transition-colors duration-200 transform rounded-md btnmenu bg-emerald-500 hover:bg-emerald-300 focus:outline-none focus:bg-emerald-700">
-                        Ajouter au panier
-                    </a>
+                    <form @auth action="/addtocart/{{ $produit->id }}" @else action="/" @endauth method="post">
+                     @csrf
+                     <div class="flex flex-row justify-center">
+                        <label for="quantite" class="px-2 text-gray-100 ">Quantité:</label>
+                            <input type="number" class="w-16 px-2 my-2 text-white bg-blue-800" name="quantite" value="1" min="1" max="9">
+                        </div>
+                     <input type="submit" value="Ajouter au panier" class="flex items-center justify-center w-full h-8 px-4 pt-1 pb-1 mx-1 mt-2 space-x-2 tracking-wide text-white transition-colors duration-200 transform rounded-md btnmenu bg-emerald-500 hover:bg-emerald-300 focus:outline-none focus:bg-emerald-700">
+                    </form>
+            
                 </div>
             </div>
         </div>
@@ -56,14 +61,14 @@
 
 
 
-<div class="flex flex-col justify-center mx-auto  mt-10 md:flex-row">
+<div class="flex flex-col justify-center mx-auto mt-10 md:flex-row">
     <div
-        class="container flex flex-col w-full max-w-lg p-6 mx-auto sm:mx-4 mt-4 text-gray-100   divide-y divide-gray-700 rounded-md ">
+        class="container flex flex-col w-full max-w-lg p-6 mx-auto mt-4 text-gray-100 divide-y divide-gray-700 rounded-md sm:mx-4 ">
 
         {{-- COMMENTAIRES --}}
 
         @foreach ($comments as $comment)
-            <div class="mb-4 btnmenu bg-gray-900   transition duration-500 hover:scale-105 rounded-lg">
+            <div class="mb-4 transition duration-500 bg-gray-900 rounded-lg btnmenu hover:scale-105">
                 <div class="flex justify-between p-4 ">
                     <div class="flex space-x-4">
                         <div>
@@ -75,13 +80,13 @@
                             <span class="text-sm text-gray-400">{{ $comment->created_at->diffForHumans() }} </span>
                         </div>
                     </div>
-                    <div class="flex flex-row items-center  space-x-2 text-yellow-500">
+                    <div class="flex flex-row items-center space-x-2 text-yellow-500">
                         @for ($i = 0; $i < $comment->note; $i++)
                             <i class="text-yellow-500 fa-solid fa-star"></i>
                         @endfor
                     </div>
                 </div>
-                <div class="p-4 space-y-2 text-xl  max-w-xl text-gray-400 ">
+                <div class="max-w-xl p-4 space-y-2 text-xl text-gray-400 ">
                     <span class="break-words">{{ $comment->contenu }}</span>
                 </div>
             </div>
@@ -91,12 +96,11 @@
 
     {{-- New Notation Étoiles --}}
 
-
     <div
-        class="container2 flex flex-col w-full max-w-lg p-6 mx-auto sm:mx-4 mt-4 text-gray-100 transition duration-500 bg-gray-900 divide-y divide-gray-700 rounded-md btnmenu hover:scale-105">
+        class="flex flex-col w-full max-w-lg p-6 mx-auto mt-4 text-gray-100 transition duration-500 bg-gray-900 divide-y divide-gray-700 rounded-md container2 sm:mx-4 btnmenu hover:scale-105">
         <div class="flex flex-col w-full">
             <div class="flex flex-wrap items-center mt-2 mb-1 space-x-2">
-                <div class="flex flex-row items-center  space-x-2 text-yellow-500">
+                <div class="flex flex-row items-center space-x-2 text-yellow-500">
 
                     @for ($i = 0; $i < $note; $i++)
                         <i class="text-yellow-500 fa-solid fa-star"></i>
@@ -109,8 +113,8 @@
 @foreach ($noteProduct as $noteP )
                 <div class="flex items-center space-x-1">
                     <span class="flex-shrink-0 w-12 text-sm">{{$noteP->note}}</span>
-                    <div class="flex-1 h-4 overflow-hidden rounded-sm bg-gray-700">
-                        <div class="bg-orange-300 h-4 w-5/6"></div>
+                    <div class="flex-1 h-4 overflow-hidden bg-gray-700 rounded-sm">
+                        <div class="w-5/6 h-4 bg-orange-300"></div>
                         {{-- pourcentage par rapport nb total de noteP
                         pour chaque colonne, un pourcentage note --}}
                     </div>

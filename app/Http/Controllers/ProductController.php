@@ -37,19 +37,18 @@ class ProductController extends Controller
         }
 
         $categories = Categories::all();
+        $produits = Produits::where('actif', '=', 1)->paginate(3);;
+      
         return view('index', [
             'produits' => $produits,
             'categories' => $categories,
         ]);}
     
        
-      
-        
-       
     public function search()
     {  
         
-    //    $categories=Categories::all(); 
+       $categories=Categories::all(); 
 
         request()->validate([
             'q' => 'required|min:3'
@@ -57,41 +56,15 @@ class ProductController extends Controller
 
         $q = request()->input('q');
        
-        $produits = Produits::where('titre', '=',"$q")->get();
-                
-
+        $produits = Produits::where('titre', 'like','%'.$q.'%')->paginate(3);
+        
          return view('index', [
             'produits' => $produits,
-            // 'categories' => $categories,
-
-                'q' => $q,
-            
-]);
-            
-         
-    }
-
-
-    public function indexSearch()
-    {
-        $categories=Categories::all(); 
-
-                request()->validate([
-                    'q' => 'required|min:3'
-                ]);
-        
-                $q = request()->input('q');
-        //    dd($q);
-                $produits = Produits::where('titre', '=', $q)->get();
-                        
-                        // dd($produits);
-                 return view('giftCards', [
-            'cards' => $produits,
             'categories' => $categories,
-        ]);
-    
+            'q' => $q,]);         
     }
-
+    
+   
 
 
 
@@ -118,11 +91,14 @@ class ProductController extends Controller
     {
         $cards = Produits::All();
         $categories = Categories::all();
+        
         return view('giftCards', [
             'cards' => $cards,
             'categories' => $categories
+            
         ]);
     }
+   
 
     public function activeur(Request $request, $id)
     {
@@ -146,6 +122,7 @@ class ProductController extends Controller
         $card->titre =  $request->titre;
         $card->note = $request->note;
         $card->description = $request->description;
+        $card->prix = $request->prix;
         $card->image = '/storage/' . $path;
         $card->save();
         $card->categorie()->attach($request->categories);
@@ -159,6 +136,7 @@ class ProductController extends Controller
         $cards->titre = $request->titre;
         $cards->note = $request->note;
         $cards->description = $request->description;
+        $cards->prix = $request->prix;
         if ($request->hasFile('images')) {
             $cards->image = '/storage/' . Storage::disk('public')->put('img', $request->file('images'));
         } else {

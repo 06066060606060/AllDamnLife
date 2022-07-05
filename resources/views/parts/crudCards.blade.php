@@ -3,14 +3,7 @@
 <div class="max-w-screen-xl mx-auto ">
     <div class="flex items-center justify-center">
         <div class="container">
-            <form action="{{ route('searchItem') }}"  method="get">
-         
-                <div class="mb-0 mr-1 form-group">
-                    <input type="text" name="q" placeholder="Recherche..." class="w-full px-4 py-3 text-sm text-white bg-gray-600 border-transparent rounded-md focus:border-gray-500 focus:ring-0 form-control" value="{{ request()->q ?? '' }}"> 
-             
-                </div>
             
-            </form>  
             <table
                 class="w-full flex flex-row flex-no-wrap rounded-lg overflow-hidden my-5">
                 <thead class="text-white">
