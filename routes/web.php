@@ -29,7 +29,7 @@ Route::get('/account' ,[UsersController::class, 'profil']);
 Route::post('account/{id}',[UsersController::class, 'updateProfil'])->whereNumber('id')->name('updateprofil');
 Route::get('user/account/{id}',[UsersController::class, 'userProfil'])->whereNumber('id');
 Route::get('/users', [UsersController::class, 'getUsers'])->name('getUsers');
-Route::post('users/{id}', [UsersController::class, 'update'])->whereNumber('id')->name('updateUsers');
+
 Route::delete('delete/{id}', [UsersController::class, 'destroy'])->name('delete');
 Route::get('user/{id}', [UsersController::class, 'showUsers'])->whereNumber('id')->name('readUsers');
 Route::post('/actif/{id}', [UsersController::class,'activisor'])->whereNumber('id');

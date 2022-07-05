@@ -25,7 +25,7 @@
                 <section class="">
                     {{-- @click="modelOpen = false" --}}
                     <div class="w-full max-w-xl py-8 px-20 space-y-3 text-gray-100 bg-gray-600 rounded-xl">
-                        <form action="{{ route('updateUsers', $user->id) }}" enctype="multipart/form-data"
+                        <form action="{{ route('updateprofil', $user->id) }}" enctype="multipart/form-data"
                             method="POST" class="w-full max-w-lg">
                             @csrf
                             <div class="flex flex-wrap -mx-3 mb-6">

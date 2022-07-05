@@ -33,7 +33,7 @@
                             <div class="space-y-1 my-8 text-sm ">
                                 <label class="">
                                     <span class="px-4 py-3 mt-2  leading-tight text-gray-100 bg-gray-900 border border-gray-700 rounded-md shadow appearance-none hover:bg-gray-700 focus:outline-none focus:shadow-outline">Selectionner une image</span>
-                                    <input type="file" name="photo" class="hidden" required/>
+                                    <input type="file" name="photo" class="hidden" value="" />
                                     
                                 </label>
                                
