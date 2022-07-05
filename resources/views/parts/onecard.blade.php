@@ -43,16 +43,21 @@
                         {{ $produit->prix }} €
                     </a>
 
-                    {{-- putain pas mal ce petit truc merci copilot! --}}
-                    <form @auth action="/addtocart/{{ $produit->id }}" @else action="/" @endauth method="post">
-                     @csrf
-                     <div class="flex flex-row justify-center">
-                        <label for="quantite" class="px-2 text-gray-100 ">Quantité:
+                    <form
+                     @auth action="/addtocart/{{ $produit->id }}" 
+                     method="post"
+                     @else action="/"
+                     method="get" @endauth >
+           
+                        @csrf
+                        <div class="flex flex-row justify-center">
+                            <label for="quantite" class="px-2 text-gray-100 ">Quantité:
                             <input type="number" class="w-16 px-2 my-2 text-white bg-blue-800" name="quantite" value="1" min="1" max="9"></label>
                         </div>
-                     <input type="submit" value="Ajouter au panier" class="flex items-center justify-center w-full h-8 px-4 pt-1 pb-1 mx-1 mt-2 space-x-2 tracking-wide text-white transition-colors duration-200 transform rounded-md btnmenu bg-emerald-500 hover:bg-emerald-300 focus:outline-none focus:bg-emerald-700">
+                            <input type="submit" value="Ajouter au panier"
+                            class="flex items-center justify-center w-full h-8 px-4 py-1 mx-1 space-x-2 tracking-wide text-white transition-colors duration-200 transform rounded-md btnmenu bg-emerald-500 hover:bg-emerald-300 focus:outline-none focus:bg-emerald-700">
                     </form>
-            
+
                 </div>
             </div>
         </div>
@@ -110,17 +115,17 @@
             </div>
             <p class="text-sm text-gray-400">861 global ratings</p>
             <div class="flex flex-col mt-4">
-@foreach ($noteProduct as $noteP )
-                <div class="flex items-center space-x-1">
-                    <span class="flex-shrink-0 w-12 text-sm">{{$noteP->note}}</span>
-                    <div class="flex-1 h-4 overflow-hidden bg-gray-700 rounded-sm">
-                        <div class="w-5/6 h-4 bg-orange-300"></div>
-                        {{-- pourcentage par rapport nb total de noteP
+                @foreach ($noteProduct as $noteP)
+                    <div class="flex items-center space-x-1">
+                        <span class="flex-shrink-0 w-12 text-sm">{{ $noteP->note }}</span>
+                        <div class="flex-1 h-4 overflow-hidden bg-gray-700 rounded-sm">
+                            <div class="w-5/6 h-4 bg-orange-300"></div>
+                            {{-- pourcentage par rapport nb total de noteP
                         pour chaque colonne, un pourcentage note --}}
+                        </div>
+                        <span class="flex-shrink-0 w-12 text-sm text-right"> {{ $noteP->total }}</span>
                     </div>
-                    <span class="flex-shrink-0 w-12 text-sm text-right"> {{$noteP->total}}</span>
-                </div>
-              @endforeach
+                @endforeach
             </div>
         </div>
     </div>
