@@ -1,8 +1,7 @@
 <div x-data="{ modelOpen: false }">
 
-    <button @click="modelOpen =!modelOpen"
-    class="p-3 text-blue-400 cursor-pointer hover:text-blue-600 hover:font-medium">
-    <i class="fa-solid fa-pen-to-square"></i>
+    <button @click="modelOpen =!modelOpen" class="p-3 text-blue-400 cursor-pointer hover:text-blue-600 hover:font-medium">
+        <i class="fa-solid fa-pen-to-square"></i>
     </button>
 
 
@@ -37,7 +36,7 @@
                                     </label>
                                     <input name="nom"
                                         class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-500 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
-                                        id="grid-first-name" type="text" placeholder="" value="{{  $user->nom }}">
+                                        id="grid-first-name" type="text" placeholder="" value="{{ $user->nom }}">
 
                                 </div>
                                 <div class="w-full md:w-1/2 px-3">
@@ -47,8 +46,16 @@
                                     </label>
                                     <input name="prenom"
                                         class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-                                        id="grid-last-name" type="text" placeholder="" value="{{  $user->prenom }}">
+                                        id="grid-last-name" type="text" placeholder="" value="{{ $user->prenom }}">
                                 </div>
+                                <div>
+                                <select  class=" w-full h-[43.99px] px-4 py-3 text-sm  bg-gray-600 border-transparent rounded-md focus:border-gray-500 focus:ring-0" name="role">
+                                    <option value="{{ $user->profil }}" selected>{{ $user->profil }}</option>
+                                    <option value="abonne">abonne</option>
+                                    <option value="client">client</option>
+                                    <option value="admin">admin</option>
+                                </select>
+                            </div>
                             </div>
                             <div class="flex flex-wrap -mx-3 mb-6">
                                 <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
@@ -64,11 +71,12 @@
                                 <div class="w-full md:w-1/2 px-3">
                                     <label class="block uppercase tracking-wide text-white text-xs font-bold mb-2"
                                         for="grid-last-name">
-                                    Telephone
+                                        Telephone
                                     </label>
                                     <input name="phone"
                                         class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-                                        id="grid-last-name" type="text" placeholder="" value="{{ $user->numero_telephone }}">
+                                        id="grid-last-name" type="text" placeholder=""
+                                        value="{{ $user->numero_telephone }}">
                                 </div>
                             </div>
                             <div class="flex flex-wrap -mx-3 mb-6">
@@ -79,7 +87,7 @@
                                     </label>
                                     <input name="address"
                                         class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-                                        placeholder="" value=" {{  $user->address }}">
+                                        placeholder="" value=" {{ $user->address }}">
                                 </div>
                             </div>
                             <div class="flex flex-wrap -mx-3 mb-2">
@@ -90,7 +98,8 @@
                                     </label>
                                     <input name="zip"
                                         class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-                                        id="grid-zip" type="text" placeholder="90210" value=" {{  $user->zipCode }}">
+                                        id="grid-zip" type="text" placeholder="90210"
+                                        value=" {{ $user->zipCode }}">
                                 </div>
                                 <div class="w-full md:w-2/3 px-3 mb-6 md:mb-0 pb-4">
                                     <label class="block uppercase tracking-wide text-white text-xs font-bold mb-2"
@@ -102,7 +111,7 @@
                                         id="grid-city" type="text" placeholder="" value=" {{ $user->city }}">
                                 </div>
                                 <button
-                                class="block w-full p-3 text-center text-gray-900 transition-colors duration-200 bg-teal-400 rounded hover:bg-teal-200 focus:bg-teal-200">Valider</button>
+                                    class="block w-full p-3 text-center text-gray-900 transition-colors duration-200 bg-teal-400 rounded hover:bg-teal-200 focus:bg-teal-200">Valider</button>
                             </div>
                     </div>
                     </form>
