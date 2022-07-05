@@ -37,17 +37,14 @@ class ProductController extends Controller
         }
 
         $categories = Categories::all();
-        $produits= Produits::paginate(5);
+        $produits= Produits::paginate(4);
         return view('index', [
             'produits' => $produits,
             'categories' => $categories,
-        ]);}
+        ]);
     
        
-      
-        
        
-    public function search()
     {  
         
        $categories=Categories::all(); 
@@ -65,11 +62,9 @@ class ProductController extends Controller
             'produits' => $produits,
             'categories' => $categories,
 
-                'q' => $q,
-            
-]);         
+                'q' => $q,]);         
     }
-
+    }
    
 
 
