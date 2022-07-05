@@ -45,14 +45,16 @@
 
                     {{-- putain pas mal ce petit truc merci copilot! --}}
                     <form @auth action="/addtocart/{{ $produit->id }}" @else action="/" @endauth method="post">
-                     @csrf
-                     <div class="flex flex-row justify-center">
-                        <label for="quantite" class="px-2 text-gray-100 ">Quantité:</label>
-                            <input type="number" class="w-16 px-2 my-2 text-white bg-blue-800" name="quantite" value="1" min="1" max="9">
+                        @csrf
+                        <div class="flex flex-row justify-center">
+                            <label for="quantite" class="px-2 text-gray-100 ">Quantité:</label>
+                            <input type="number" class="w-16 px-2 my-2 text-white bg-blue-800" name="quantite"
+                                value="1" min="1" max="9">
                         </div>
-                     <input type="submit" value="Ajouter au panier" class="flex items-center justify-center w-full h-8 px-4 pt-1 pb-1 mx-1 mt-2 space-x-2 tracking-wide text-white transition-colors duration-200 transform rounded-md btnmenu bg-emerald-500 hover:bg-emerald-300 focus:outline-none focus:bg-emerald-700">
+                        <input type="submit" value="Ajouter au panier"
+                            class="flex items-center justify-center w-full h-8 px-4 pt-1 pb-1 mx-1 mt-2 space-x-2 tracking-wide text-white transition-colors duration-200 transform rounded-md btnmenu bg-emerald-500 hover:bg-emerald-300 focus:outline-none focus:bg-emerald-700">
                     </form>
-            
+
                 </div>
             </div>
         </div>
@@ -106,21 +108,20 @@
                         <i class="text-yellow-500 fa-solid fa-star"></i>
                     @endfor
                 </div>
-                <span class="text-gray-400">3 sur 5</span>
+                <span class="text-gray-400"> {{ $noteProduct['average'] }} sur 5</span>
             </div>
-            <p class="text-sm text-gray-400">861 global ratings</p>
+            <p class="text-sm text-gray-400"> {{ $noteProduct['total'] }} global ratings</p>
             <div class="flex flex-col mt-4">
-@foreach ($noteProduct as $noteP )
-                <div class="flex items-center space-x-1">
-                    <span class="flex-shrink-0 w-12 text-sm">{{$noteP->note}}</span>
-                    <div class="flex-1 h-4 overflow-hidden bg-gray-700 rounded-sm">
-                        <div class="w-5/6 h-4 bg-orange-300"></div>
-                        {{-- pourcentage par rapport nb total de noteP
-                        pour chaque colonne, un pourcentage note --}}
+
+                @for ($i = 5; $i > 0; $i--)
+                    <div class="flex items-center space-x-1">
+                        <span class="flex-shrink-0 w-12 text-sm">{{ $i }}</span>
+                        <div class="flex-1 h-4 overflow-hidden bg-gray-700 rounded-sm">
+                            <div class=" h-4 bg-orange-300" style="width:{{ $noteProduct['prct'][$i] }}%;"></div>
+                        </div>
+                        <span class="flex-shrink-0 w-12 text-sm text-right"> {{ $noteProduct['note'][$i] }}</span>
                     </div>
-                    <span class="flex-shrink-0 w-12 text-sm text-right"> {{$noteP->total}}</span>
-                </div>
-              @endforeach
+                @endfor
             </div>
         </div>
     </div>

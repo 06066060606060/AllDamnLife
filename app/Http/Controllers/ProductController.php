@@ -12,14 +12,13 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Storage;
-
-
+use SebastianBergmann\CodeCoverage\Util\Percentage;
 
 class ProductController extends Controller
 {
     public function getProduct(Request $request)
     {
-    
+
 
         if ($request->filled('note')) {
             $note = $request->note;
@@ -31,40 +30,41 @@ class ProductController extends Controller
 
             $prix = $request->prix;
             $produits = Produits::where('prix', '<=', $prix)->where('actif', '=', 1)->get();
-            
         } else {
             $produits = Produits::where('actif', '=', 1)->get();
         }
 
         $categories = Categories::all();
         $produits = Produits::where('actif', '=', 1)->paginate(3);
-      
+
         return view('index', [
             'produits' => $produits,
             'categories' => $categories,
-        ]);}
-    
-       
+        ]);
+    }
+
+
     public function search()
-    {  
-        
-       $categories=Categories::all(); 
+    {
+
+        $categories = Categories::all();
 
         request()->validate([
             'q' => 'required|min:3'
         ]);
 
         $q = request()->input('q');
-       
-        $produits = Produits::where('titre', 'like','%'.$q.'%')->paginate(3);
-        
-         return view('index', [
+
+        $produits = Produits::where('titre', 'like', '%' . $q . '%')->paginate(3);
+
+        return view('index', [
             'produits' => $produits,
             'categories' => $categories,
-            'q' => $q,]);         
+            'q' => $q,
+        ]);
     }
-    
-   
+
+
 
 
 
@@ -91,14 +91,14 @@ class ProductController extends Controller
     {
         $cards = Produits::All();
         $categories = Categories::all();
-        
+
         return view('giftCards', [
             'cards' => $cards,
             'categories' => $categories
-            
+
         ]);
     }
-   
+
 
     public function activeur(Request $request, $id)
     {
@@ -159,42 +159,52 @@ class ProductController extends Controller
     {
         $note = Comments::where('product_id', '=', $noteProduct)->avg('note');
 
-        // ['note' =>  'lanote']
-
-
-
         $noteProduct = Comments::groupBy('note')
             ->select('note', Comments::raw('count(*) as total'))
             ->where('product_id', '=', $noteProduct)
             ->get();
-        $out = [];
-        $total = 0;
+        $res = array(
+            'note' =>  [],
+            'prct' => [],
+            'total' => 0,
+            'average' => 0
+        );
+
+
         $average = 0;
+
+        // calcul du nombre de note total + nombre de note par etoile
         for ($i = 5; $i > 0; $i--) {
             foreach ($noteProduct as $note) {
                 if ($note->note == $i) {
-                    $out[$i] = $note->total;
-                    $total += $note->total;
+                    $res['note'][$i] = $note->total;
+                    $res['total'] += $note->total;
                     $average += $note->total * $i;
                     break;
                 }
             }
-            if (!isset($out[$i])) {
-                $out[$i] = 0;
+            if (!isset($res['note'][$i])) {
+                $res['note'][$i] = 0;
             }
         }
-        if ($total > 0) {
-            $average = $average / $total;
-        } else {
-            $average = 0;
+        // calcul du pourcentage de chaque note
+        for ($i = 5; $i > 0; $i--) {
+            if ($res['note'][$i] == 0) {
+                $res['prct'][$i] = 0;
+            } else {
+                $res['prct'][$i] = round(($res['note'][$i] / $res['total']) * 100, 2);
+            }
         }
 
-        //  ($note/$total)*100;
-          // (nbnote/nbnoteall)x100
-            
-          
-      
-        return $noteProduct;
+        // calcul de la moyenne globale
+        if ($res['total'] > 0) {
+            $res['average'] = round($average / $res['total'], 1);
+        } else {
+            $res['average']  = 0;
+        }
+
+        return $res;
+        
     }
 
 
@@ -208,28 +218,27 @@ class ProductController extends Controller
 
 
         $commcount = (Comments::where('product_id', '=', $id)->count());
-        $oldnote = $produit->note;
+        
 
 
         if ($commcount == 0) {
 
             $produit->note = $request->note;
         } else {
+          
+            $thisnote = self::getStars($id);
 
-            $produit->note = ($oldnote + $request->note) / ($commcount + 1);
+            $produit->note = $thisnote['average'];
         }
-
-
-
-
         $comm->contenu = $request->contenu;
         $comm->user_id = Auth::user()->id;
         $comm->product_id = $id;
         $comm->note = $request->note;
-
+        
         $comm->save();
         return redirect()->route('getCard', ['id' => $id]);
     }
+
 
     public function deleteComm($id)
     {
