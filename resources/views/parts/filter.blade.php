@@ -7,6 +7,7 @@
                         <input type="text" name="q" placeholder="Recherche..." class="w-full px-4 py-3 text-sm text-white bg-gray-600 border-transparent rounded-md focus:border-gray-500 focus:ring-0 form-control" value="{{ request()->q ?? '' }}"> 
                  
                     </div>
+                    
                 
                 </form>  
              <form action="/filter" method="get">
@@ -48,8 +49,9 @@
             <a href="/" class="px-4 py-3 text-sm text-white bg-gray-600 border-transparent rounded-md btnmenu focus:border-gray-500 focus:ring-0">Effacer les filtres</a>
   
         </div>
-
+        
 </div>
+        
 
 
 

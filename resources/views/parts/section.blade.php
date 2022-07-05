@@ -25,4 +25,9 @@
             </div>
         </div>
     @endforeach
+    
+
+        
+       {{-- {{$produits->links('pagination::tailwind')}} --}}
+        
 </div>
