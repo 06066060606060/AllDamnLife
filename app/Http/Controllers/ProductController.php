@@ -9,6 +9,7 @@ use App\Models\Produits;
 use App\Models\Categories;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Contracts\Pagination\Paginator;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Storage;
@@ -23,25 +24,28 @@ class ProductController extends Controller
 
         if ($request->filled('note')) {
             $note = $request->note;
-            $produits = Produits::where('note', '=', $note)->where('actif', '=', 1)->get();
+            $produits = Produits::where('note', '=', $note)->where('actif', '=', 1)->paginate(3);
+            // dd($produits);
         } elseif ($request->filled('categories')) {
             $categories = $request->categories;
-            $produits = Produits::where('cat_id', '=', $categories)->where('actif', '=', 1)->get();
+            $produits = Produits::where('cat_id', '=', $categories)->where('actif', '=', 1)->paginate(3);
         } elseif ($request->filled('prix')) {
 
             $prix = $request->prix;
-            $produits = Produits::where('prix', '<=', $prix)->where('actif', '=', 1)->get();
+            $produits = Produits::where('prix', '<=', $prix)->where('actif', '=', 1)->paginate(3);
             
         } else {
-            $produits = Produits::where('actif', '=', 1)->get();
+            $produits = Produits::where('actif', '=', 1)->paginate(3);
         }
-
+       
         $categories = Categories::all();
-        $produits = Produits::where('actif', '=', 1)->paginate(3);;
+        // $produits = Produits::where('actif', '=', 1)->get();
+        // $produits = Produits::paginate(3);
       
         return view('index', [
             'produits' => $produits,
             'categories' => $categories,
+            
         ]);}
     
        

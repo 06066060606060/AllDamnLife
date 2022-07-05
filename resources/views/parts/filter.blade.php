@@ -11,7 +11,7 @@
                 
                 </form>  
              <form action="/filter" method="get">
-                @csrf
+              
             <select name="categories"
              class="btnmenu w-full h-[43.99px] px-4 py-3 text-sm text-white bg-gray-600 border-transparent rounded-md focus:border-gray-500 focus:ring-0" onChange="this.form.submit()">
              <option value="">Catégories</option>
@@ -21,7 +21,7 @@
             </select>
           </form>
           <form action="/filter" method="get">
-            @csrf
+          
             <select name="note"
                 class="btnmenu w-full h-[43.99px] px-4 py-3 text-sm text-white bg-gray-600 border-transparent rounded-md focus:border-gray-500 focus:ring-0" onChange="this.form.submit()">
                 <option value="" class="">Notes</option>
@@ -33,7 +33,7 @@
             </select>
         </form>
             <form action="/filter" method="get">
-                @csrf
+              
             <select name="prix"
                 class="btnmenu w-full h-[43.99px] px-4 py-3 text-sm text-white bg-gray-600 border-transparent rounded-md focus:border-gray-500 focus:ring-0 "  onChange="this.form.submit()">
                 

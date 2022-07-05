@@ -8,7 +8,7 @@
 @include('parts.new')
 @include('parts.section')
 {{$produits->links('pagination::tailwind')}}
-{{-- @include('parts.pagination') --}}
+
 
 @endsection
 
