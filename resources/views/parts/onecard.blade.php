@@ -47,8 +47,8 @@
                     <form @auth action="/addtocart/{{ $produit->id }}" @else action="/" @endauth method="post">
                      @csrf
                      <div class="flex flex-row justify-center">
-                        <label for="quantite" class="px-2 text-gray-100 ">Quantité:</label>
-                            <input type="number" class="w-16 px-2 my-2 text-white bg-blue-800" name="quantite" value="1" min="1" max="9">
+                        <label for="quantite" class="px-2 text-gray-100 ">Quantité:
+                            <input type="number" class="w-16 px-2 my-2 text-white bg-blue-800" name="quantite" value="1" min="1" max="9"></label>
                         </div>
                      <input type="submit" value="Ajouter au panier" class="flex items-center justify-center w-full h-8 px-4 pt-1 pb-1 mx-1 mt-2 space-x-2 tracking-wide text-white transition-colors duration-200 transform rounded-md btnmenu bg-emerald-500 hover:bg-emerald-300 focus:outline-none focus:bg-emerald-700">
                     </form>
