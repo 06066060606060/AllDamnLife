@@ -19,14 +19,14 @@
 
                     <form
                      @auth action="/addtocart/{{ $produit->id }}" method="post" @else onclick="document.getElementById('primaryButton').click()" onsubmit="return false" @endauth 
-                        class="px-2 mt-1 mb-3 rounded w-36 bg-emerald-500 hover:bg-emerald-300 hover:text-gray-800">
+                        class="px-2 mt-1 mb-3 rounded w-36 bg-emerald-500 hover:bg-emerald-300 transition-colors duration-150 hover:text-gray-800">
                         @csrf
                         <input type="hidden" name="quantite" value="1">
                         <button type="submit">Ajouter au panier</button>
                         </form>
 
                     <a href="/card/{{ $produit->id }}"
-                        class="w-24 bg-blue-600 rounded hover:bg-blue-400 hover:text-gray-800">Plus d'info</a>
+                        class="w-24 bg-blue-600 rounded transition-colors duration-150 hover:bg-blue-400 hover:text-gray-800">Plus d'info</a>
                 </div>
             </div>
         </div>
