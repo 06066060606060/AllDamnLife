@@ -72,11 +72,17 @@ class ProductController extends Controller
     {
         $timer = Carbon::now();
         $produit = Produits::find($id);
+        $note = Comments::where('product_id', '=', $id)->avg('note');
+        $notearrondi = floor($note * 2) / 2;
         $comments = Comments::where('product_id', $id)->inRandomOrder()->limit(2)->get();
+        $noteProduct = self::getStars($id);
         return view('card', [
             'produit' => $produit,
             'comments' => $comments,
             'timer' => $timer,
+            'note' => $note,
+            'notearrondi' => $notearrondi,
+            'noteProduct' => $noteProduct,
         ]);
     }
 
@@ -151,10 +157,8 @@ class ProductController extends Controller
     private function getStars($noteProduct)
     {
         $note = Comments::where('product_id', '=', $noteProduct)->avg('note');
-
+        
         // ['note' =>  'lanote']
-
-
 
         $noteProduct = Comments::groupBy('note')
             ->select('note', Comments::raw('count(*) as total'))
@@ -201,6 +205,7 @@ class ProductController extends Controller
         $comm->product_id = $id;
         $comm->note = $request->note;
         $comm->save();
+
         return redirect()->route('getCard', ['id' => $id]);
     }
 
