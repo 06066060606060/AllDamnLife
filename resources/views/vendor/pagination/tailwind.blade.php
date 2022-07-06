@@ -1,11 +1,11 @@
 @if ($paginator->hasPages())
-    <nav role="Page navigation" aria-label="{{ __('Pagination Navigation') }}" class="flex items-center justify-between ">
-        <div class="hidden sm:flex-1 sm:flex sm:items-center sm:justify-center">
+    <nav role="Page navigation" aria-label="{{ __('Pagination Navigation') }}" class="justify-center flex items-center ">
+        <div class=" sm:flex-1 sm:flex sm:items-center justify-center ">
             
               
 
             <div>
-                <span class="relative z-0 inline-flex shadow-sm rounded-md space-x-1 text-white ">
+                <span class="relative z-0 inline-flex shadow-sm rounded-md space-x-1 text-white justify-center">
                     {{-- Previous Page Link --}}
                     @if ($paginator->onFirstPage())
                         <button class="  bg-gray-900 hover:bg-gray-600 flex items-center justify-center w-10 h-10 duration-150 rounded-md shadow-md focus:shadow-outline ">
