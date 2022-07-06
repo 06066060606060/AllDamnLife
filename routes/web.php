@@ -15,12 +15,6 @@ Route::get('/categories', function () {
     return view('categories');
 });
 
-Route::get('/giveCards', function () {
-    return view('giveCards');
-});
-
-
-
 Route::post('/register', [AuthController::class, 'register'])->name('register');
 Route::post('/login', [AuthController::class, 'login'])->name('login');
 Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
@@ -38,11 +32,8 @@ Route::post('/comm/{id}', [ProductController::class, 'addComm'])->name('addComm'
 Route::get('/deleteComm/{id}', [ProductController::class, 'deleteComm'])->name('deleteComm');
 
 Route::get('/',[ProductController::class,'getProduct']);
-Route::get('/filter',[ProductController::class,'getProduct']);
+Route::get('/filter',[ProductController::class,'getProduct'])->name('searchfilter');
 Route::get('/filter/search',[ProductController::class,'search'])->name('searchcard');
-
-
-
 
 Route::get('/card/{id}',[ProductController::class,'getOneProduct'])->whereNumber('id')->name('getCard');
 Route::post('/giftCards',[ProductController::class,'addProduct'])->name('addProduct');
