@@ -24,22 +24,27 @@
                 <section>
                     {{-- @click="modelOpen = false" --}}
                     <div class="w-full max-w-xl px-20 py-8 space-y-3 text-gray-100 bg-gray-600 rounded-xl">
-                        <div class="flex flex-row">
-                            <button @click="modelOpen = false"
-                                class="h-12 px-6 mx-4 my-4 text-gray-100 bg-gray-700 rounded-lg focus:outline-none hover:text-gray-200">
-                                Annuler
-                            </button>
-                            <form action="/delete/{{ $categorie->id_cat }}" method="post">
-                                @csrf
-                                @method('delete')
-                                <button type="submit"
+                        <div class="flex flex-col ">
+                            <label class="text-center mb-4">êtes vous sur de vouloir supprimer la catégorie :</label>
+                            <span class="mb-8"> {{ $categorie->label }} ?</span>
+                            <div class="flex flex-row justify-center">
+                                <button @click="modelOpen = false"
                                     class="h-12 px-6 mx-4 my-4 text-gray-100 bg-gray-700 rounded-lg focus:outline-none hover:text-gray-200">
-                                    Confirmer
+                                    Annuler
                                 </button>
-                            </form>
+                                <form action="/delete/{{ $categorie->id_cat }}" method="post">
+                                    @csrf
+                                    @method('delete')
+                                    <button type="submit"
+                                        class="h-12 px-6 mx-4 my-4 text-gray-100 bg-red-700 rounded-lg focus:outline-none hover:text-gray-200">
+                                        Confirmer
+                                    </button>
+                                </form>
+                            </div>
                         </div>
                     </div>
                 </section>
             </div>
         </div>
     </div>
+</div>

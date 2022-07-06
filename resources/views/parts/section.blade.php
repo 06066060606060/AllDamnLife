@@ -18,7 +18,7 @@
                     </div>
 
                     <form
-                     @auth action="/addtocart/{{ $produit->id }}" @else action="/" @endauth method="post"
+                     @auth action="/addtocart/{{ $produit->id }}" method="post" @else onclick="document.getElementById('primaryButton').click()" onsubmit="return false" @endauth 
                         class="px-2 mt-1 mb-3 rounded w-36 bg-emerald-500 hover:bg-emerald-300 hover:text-gray-800">
                         @csrf
                         <input type="hidden" name="quantite" value="1">
