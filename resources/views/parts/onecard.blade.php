@@ -43,8 +43,7 @@
                         {{ $produit->prix }} €
                     </a>
 
-                <form @auth action="/addtocart/{{ $produit->id }}" method="post" @else action="/"
-                    method="get" @endauth>
+                <form @auth action="/addtocart/{{ $produit->id }}" method="post" @else onclick="document.getElementById('primaryButton').click()" onsubmit="return false" @endauth
 
                     @csrf
                     <div class="flex flex-col  items-center justify-center">

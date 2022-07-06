@@ -60,7 +60,7 @@
                             </button>
                         </div>
                         <p class="text-xs text-center text-gray-400 sm:px-6">Vous n'avez pas encore de compte? &zwnj;
-                            <a rel="noopener noreferrer" href="#"  @click="modelOpen = true" class="text-gray-100 underline"> Inscrivez-vous</a>
+                            <a rel="noopener noreferrer" href="#"  @click="modelOpen = false" onclick="document.getElementById('secondaryButton').click()" class="text-gray-100 underline"> Inscrivez-vous</a>
                         </p>
                     </div>
 
