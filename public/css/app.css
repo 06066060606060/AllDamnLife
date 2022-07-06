@@ -8404,6 +8404,10 @@ video {
   margin-top: -1rem;
   margin-bottom: -1rem;
 }
+.mx-2 {
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+}
 .mt-4 {
   margin-top: 1rem;
 }
@@ -8451,6 +8455,12 @@ video {
 }
 .ml-3 {
   margin-left: 0.75rem;
+}
+.mb-0 {
+  margin-bottom: 0px;
+}
+.mr-1 {
+  margin-right: 0.25rem;
 }
 .block {
   display: block;
@@ -8515,6 +8525,9 @@ video {
 .h-5 {
   height: 1.25rem;
 }
+.h-auto {
+  height: auto;
+}
 .min-h-screen {
   min-height: 100vh;
 }
@@ -8568,6 +8581,15 @@ video {
 }
 .w-5 {
   width: 1.25rem;
+}
+.w-\[256px\] {
+  width: 256px;
+}
+.w-1\/6 {
+  width: 16.666667%;
+}
+.w-48 {
+  width: 12rem;
 }
 .max-w-screen-xl {
   max-width: 1280px;
@@ -8859,6 +8881,10 @@ video {
   --tw-border-opacity: 1;
   border-color: rgb(22 163 74 / var(--tw-border-opacity));
 }
+.border-emerald-400 {
+  --tw-border-opacity: 1;
+  border-color: rgb(52 211 153 / var(--tw-border-opacity));
+}
 .bg-blue-600 {
   --tw-bg-opacity: 1;
   background-color: rgb(37 99 235 / var(--tw-bg-opacity));
@@ -9117,9 +9143,6 @@ video {
 .text-center {
   text-align: center;
 }
-.text-right {
-  text-align: right;
-}
 .text-sm {
   font-size: 0.875rem;
   line-height: 1.25rem;
@@ -9254,6 +9277,10 @@ video {
 .text-gray-500 {
   --tw-text-opacity: 1;
   color: rgb(107 114 128 / var(--tw-text-opacity));
+}
+.text-emerald-400 {
+  --tw-text-opacity: 1;
+  color: rgb(52 211 153 / var(--tw-text-opacity));
 }
 .underline {
   -webkit-text-decoration-line: underline;
@@ -9550,7 +9577,7 @@ h1 {
 
 .clamp {
     display: -webkit-box;
-    -webkit-line-clamp: 5;
+    -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
     overflow: hidden;
     padding-bottom: 5px;
@@ -9640,6 +9667,18 @@ h1 {
   
 #place-holder-center::placeholder {
     text-align: center;
+}
+  
+.first-letter\:w-auto::first-letter {
+  width: auto;
+}
+  
+.marker\:text-white *::marker {
+  color: rgb(255 255 255 );
+}
+  
+.marker\:text-white::marker {
+  color: rgb(255 255 255 );
 }
   
 .placeholder\:text-right::-moz-placeholder {
@@ -9812,6 +9851,11 @@ h1 {
 .focus\:border-emerald-400:focus {
   --tw-border-opacity: 1;
   border-color: rgb(52 211 153 / var(--tw-border-opacity));
+}
+  
+.focus\:border-emerald-300:focus {
+  --tw-border-opacity: 1;
+  border-color: rgb(110 231 183 / var(--tw-border-opacity));
 }
   
 .focus\:border-blue-300:focus {
@@ -10273,6 +10317,10 @@ h1 {
 
   .xl\:grid-cols-5 {
     grid-template-columns: repeat(5, minmax(0, 1fr));
+  }
+
+  .xl\:grid-cols-6 {
+    grid-template-columns: repeat(6, minmax(0, 1fr));
   }
 }
   

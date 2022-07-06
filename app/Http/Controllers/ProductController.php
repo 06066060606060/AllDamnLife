@@ -9,6 +9,7 @@ use App\Models\Produits;
 use App\Models\Categories;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Models\produits_categories;
 use Illuminate\Contracts\Pagination\Paginator;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
@@ -16,58 +17,54 @@ use Illuminate\Support\Facades\Storage;
 use SebastianBergmann\CodeCoverage\Util\Percentage;
 
 
-
 class ProductController extends Controller
 
-{   
+{
     public function getProduct(Request $request)
     {
-    
-
+        $produits = Produits::where('actif', '=', 1);
+        $q = request()->input('q');
+        if ($request->filled('q')) {
+            $produits->where('titre', '=', "$q");
+        }
         if ($request->filled('note')) {
             $note = $request->note;
-            $produits = Produits::where('note', '=', $note)->where('actif', '=', 1)->paginate(3);
-            // dd($produits);
-        } elseif ($request->filled('categories')) {
+            $produits->where('note', '=', $note);
+        }
+        if ($request->filled('categories')) {
             $categories = $request->categories;
-            $produits = Produits::where('cat_id', '=', $categories)->where('actif', '=', 1)->paginate(3);
-        } elseif ($request->filled('prix')) {
+            $produits->whereHas('produit_categorie', function ($q) use ($categories) {
+
+                $q->where('categorie_id', '=', $categories);
+            });
+        }
+        if ($request->filled('prix')) {
 
             $prix = $request->prix;
-            $produits = Produits::where('prix', '<=', $prix)->where('actif', '=', 1)->paginate(3);
-            
-        } else {
-            $produits = Produits::where('actif', '=', 1)->paginate(10);
+            $produits->where('prix', '<=', $prix);
         }
-       
         $categories = Categories::all();
-    
-        return view('index', [
-            'produits' => $produits,
-            'categories' => $categories,
-            
-        ]);}
-    
-       
-    public function search()
-    {  
-        
-       $categories=Categories::all(); 
 
+        return view('index', [
+            'produits' => $produits->paginate(6),  //a la place d'un get me demande pas pourquoi!
+            'categories' => $categories,
+            'q' => $q,
+        ]);
+    }
+
+
+    public function search()
+    {
+
+        $categories = Categories::all();
         request()->validate([
             'q' => 'required|min:3'
         ]);
 
         $q = request()->input('q');
-       
-        $produits = Produits::where('titre', 'like','%'.$q.'%')->paginate(2);
-       
-        
-         return view('index', compact('produits','categories'));        
+        $produits = Produits::where('titre', 'like', '%' . $q . '%')->paginate(2);
+        return view('index', compact('produits', 'categories'));
     }
-    
-   
-
 
 
     public function getOneProduct($id)
@@ -92,14 +89,14 @@ class ProductController extends Controller
     {
         $cards = Produits::All();
         $categories = Categories::all();
-        
+
         return view('giftCards', [
             'cards' => $cards,
             'categories' => $categories
-            
+
         ]);
     }
-   
+
 
     public function activeur(Request $request, $id)
     {
@@ -205,7 +202,6 @@ class ProductController extends Controller
         }
 
         return $res;
-        
     }
 
     public function addComm(Request $request, $id)
@@ -215,7 +211,7 @@ class ProductController extends Controller
         $produit = Produits::where('id', '=', $id)->get();
         $produit = Produits::find($id);
         $commcount = (Comments::where('product_id', '=', $id)->count());
-        
+
         if ($commcount == 0) {
             $produit->note = $request->note;
         } else {
@@ -226,7 +222,7 @@ class ProductController extends Controller
         $comm->user_id = Auth::user()->id;
         $comm->product_id = $id;
         $comm->note = $request->note;
-        
+
         $comm->save();
         $produit->update();
         return redirect()->route('getCard', ['id' => $id]);

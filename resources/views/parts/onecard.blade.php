@@ -14,7 +14,7 @@
                     <div class="flex items-end">
                         <div class="card">
                             <div class="front2">
-                                <img class="icon" src=" {{ $produit->image }}">
+                                <img class="icon w-[256px] h-auto" src=" {{ $produit->image }}">
                             </div>
                             <div class="flex flex-col items-center w-full">
                                 <div class="flex flex-col items-center py-6 space-y-3">
