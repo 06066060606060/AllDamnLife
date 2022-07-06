@@ -35,7 +35,7 @@ class ProductController extends Controller
             $produits = Produits::where('prix', '<=', $prix)->where('actif', '=', 1)->paginate(3);
             
         } else {
-            $produits = Produits::where('actif', '=', 1)->paginate(3);
+            $produits = Produits::where('actif', '=', 1)->paginate(16);
         }
        
         $categories = Categories::all();
