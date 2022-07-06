@@ -72,11 +72,17 @@ class ProductController extends Controller
     {
         $timer = Carbon::now();
         $produit = Produits::find($id);
+        $note = Comments::where('product_id', '=', $id)->avg('note');
+        $notearrondi = floor($note * 2) / 2;
         $comments = Comments::where('product_id', $id)->inRandomOrder()->limit(2)->get();
+        $noteProduct = self::getStars($id);
         return view('card', [
             'produit' => $produit,
             'comments' => $comments,
             'timer' => $timer,
+            'note' => $note,
+            'notearrondi' => $notearrondi,
+            'noteProduct' => $noteProduct,
         ]);
     }
 

@@ -118,11 +118,11 @@
                 @for ($i = 0; $i < $note; $i++)
                     <i class="text-yellow-500 fa-solid fa-star"></i>
                 @endfor
-                <span class="text-gray-400">{{ round($note) }} sur 5</span>
+                <span class="text-gray-400"> sur 5</span>
             </div>
 
         </div>
-        <p class="text-gray-400">Sur un total de {{ $noteProduct->count() }} Notes</p>
+        <p class="text-gray-400">Sur un total de Notes</p>
         <div class="flex flex-col mt-4">
             @foreach ($noteProduct as $noteP)
                 <div class="flex items-center space-x-1 py-1">
