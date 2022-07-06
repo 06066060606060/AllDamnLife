@@ -17,7 +17,8 @@ use Illuminate\Support\Facades\Storage;
 
 
 class ProductController extends Controller
-{
+
+{   
     public function getProduct(Request $request)
     {
     
@@ -35,7 +36,7 @@ class ProductController extends Controller
             $produits = Produits::where('prix', '<=', $prix)->where('actif', '=', 1)->paginate(3);
             
         } else {
-            $produits = Produits::where('actif', '=', 1)->paginate(3);
+            $produits = Produits::where('actif', '=', 1)->paginate(10);
         }
        
         $categories = Categories::all();
