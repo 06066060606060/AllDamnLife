@@ -9,6 +9,7 @@ use App\Models\Produits;
 use App\Models\Categories;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Contracts\Pagination\Paginator;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Storage;
@@ -23,25 +24,26 @@ class ProductController extends Controller
 
         if ($request->filled('note')) {
             $note = $request->note;
-            $produits = Produits::where('note', '=', $note)->where('actif', '=', 1)->get();
+            $produits = Produits::where('note', '=', $note)->where('actif', '=', 1)->paginate(3);
+            // dd($produits);
         } elseif ($request->filled('categories')) {
             $categories = $request->categories;
-            $produits = Produits::where('cat_id', '=', $categories)->where('actif', '=', 1)->get();
+            $produits = Produits::where('cat_id', '=', $categories)->where('actif', '=', 1)->paginate(3);
         } elseif ($request->filled('prix')) {
 
             $prix = $request->prix;
-            $produits = Produits::where('prix', '<=', $prix)->where('actif', '=', 1)->get();
+            $produits = Produits::where('prix', '<=', $prix)->where('actif', '=', 1)->paginate(3);
             
         } else {
-            $produits = Produits::where('actif', '=', 1)->get();
+            $produits = Produits::where('actif', '=', 1)->paginate(3);
         }
-
+       
         $categories = Categories::all();
-        $produits = Produits::where('actif', '=', 1)->paginate(3);
-      
+    
         return view('index', [
             'produits' => $produits,
             'categories' => $categories,
+            
         ]);}
     
        
@@ -56,12 +58,10 @@ class ProductController extends Controller
 
         $q = request()->input('q');
        
-        $produits = Produits::where('titre', 'like','%'.$q.'%')->paginate(3);
+        $produits = Produits::where('titre', 'like','%'.$q.'%')->paginate(2);
+       
         
-         return view('index', [
-            'produits' => $produits,
-            'categories' => $categories,
-            'q' => $q,]);         
+         return view('index', compact('produits','categories'));        
     }
     
    
@@ -72,18 +72,11 @@ class ProductController extends Controller
     {
         $timer = Carbon::now();
         $produit = Produits::find($id);
-        $note = Comments::where('product_id', '=', $id)->avg('note');
-        $notearrondi = floor($note * 2) / 2;
         $comments = Comments::where('product_id', $id)->inRandomOrder()->limit(2)->get();
-        $noteProduct = self::getStars($id);
         return view('card', [
             'produit' => $produit,
             'comments' => $comments,
             'timer' => $timer,
-            'note' => $note,
-            'notearrondi' => $notearrondi,
-            'noteProduct' => $noteProduct,
-
         ]);
     }
 
@@ -203,30 +196,10 @@ class ProductController extends Controller
     {
 
         $comm = new Comments();
-        $produit = Produits::where('id', '=', $id)->get();
-        $produit = Produits::find($id);
-
-
-        $commcount = (Comments::where('product_id', '=', $id)->count());
-        $oldnote = $produit->note;
-
-
-        if ($commcount == 0) {
-
-            $produit->note = $request->note;
-        } else {
-
-            $produit->note = ($oldnote + $request->note) / ($commcount + 1);
-        }
-
-
-
-
         $comm->contenu = $request->contenu;
         $comm->user_id = Auth::user()->id;
         $comm->product_id = $id;
         $comm->note = $request->note;
-
         $comm->save();
         return redirect()->route('getCard', ['id' => $id]);
     }
