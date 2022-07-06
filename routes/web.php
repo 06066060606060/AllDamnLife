@@ -38,10 +38,10 @@ Route::post('/comm/{id}', [ProductController::class, 'addComm'])->name('addComm'
 Route::get('/deleteComm/{id}', [ProductController::class, 'deleteComm'])->name('deleteComm');
 
 Route::get('/',[ProductController::class,'getProduct']);
-Route::get('/filter',[ProductController::class,'getProduct']);
-Route::get('/filter/search',[ProductController::class,'search'])->name('searchcard');
+Route::get('/filter',[ProductController::class,'getProduct'])->name('searchfilter');
 
-Route::get('/giftCards/search',[ProductController::class,'indexSearch'])->name('searchItem');
+
+
 
 
 Route::get('/card/{id}',[ProductController::class,'getOneProduct'])->whereNumber('id')->name('getCard');
