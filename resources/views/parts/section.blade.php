@@ -17,8 +17,14 @@
                         @endfor
                     </div>
 
-                    <a @auth href="/addtocart/{{ $produit->id }}" @else href="/" @endauth
-                        class="px-2 mt-1 mb-3 rounded w-36 bg-emerald-500 hover:bg-emerald-300 hover:text-gray-800">Ajouter au panier</a>
+                    <form
+                     @auth action="/addtocart/{{ $produit->id }}" @else action="/" @endauth method="post"
+                        class="px-2 mt-1 mb-3 rounded w-36 bg-emerald-500 hover:bg-emerald-300 hover:text-gray-800">
+                        @csrf
+                        <input type="hidden" name="quantite" value="1">
+                        <button type="submit">Ajouter au panier</button>
+                        </form>
+
                     <a href="/card/{{ $produit->id }}"
                         class="w-24 bg-blue-600 rounded hover:bg-blue-400 hover:text-gray-800">Plus d'info</a>
                 </div>
