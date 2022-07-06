@@ -189,9 +189,6 @@ class ProductController extends Controller
 
         //  ($note/$total)*100;
           // (nbnote/nbnoteall)x100
-            
-          
-      
         return $noteProduct;
     }
 
