@@ -22,14 +22,14 @@
                 class="inline-block pt-8 overflow-hidden transition-all transform rounded-lg 2xl:max-w-2xl">
                 <section class="">
                     {{-- @click="modelOpen = false" --}}
-                    <div class="w-full max-w-md py-8 px-20 space-y-3 text-gray-100 bg-gray-600 rounded-xl">
+                    <div class="w-full max-w-md px-20 py-8 space-y-3 text-gray-100 bg-gray-600 rounded-xl">
                         <form action="/comm/{{ $produit->id }}" class="space-y-6 ng-untouched ng-pristine ng-valid"
                             method="post">
                             @csrf
                             <div class="space-y-1 text-sm">
                                 <label for="comms" class="block pb-2 text-gray-200">Laisser un commentaire</label>
                                 <textarea class="w-full px-4 py-3 text-gray-100 bg-gray-900 border-gray-700 rounded-md focus:border-teal-400"
-                                    rows="5" cols="20" minlength="5" name="contenu" placeholder="commenter..."> </textarea>
+                                    rows="6" cols="30" minlength="5" name="contenu" placeholder="commenter..." required></textarea>
                             </div>
                             @auth
 
