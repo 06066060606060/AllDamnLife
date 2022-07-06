@@ -60,7 +60,7 @@ class ProductController extends Controller
 
         $q = request()->input('q');
        
-        $produits = Produits::where('titre', 'like','%'.$q.'%')->paginate(1);
+        $produits = Produits::where('titre', 'like','%'.$q.'%')->where('actif', '=', 1)->paginate(1);
         
          return view('index', [
             'produits' => $produits,
