@@ -214,19 +214,12 @@ class ProductController extends Controller
         $comm = new Comments();
         $produit = Produits::where('id', '=', $id)->get();
         $produit = Produits::find($id);
-
-
         $commcount = (Comments::where('product_id', '=', $id)->count());
         
-
-
         if ($commcount == 0) {
-
             $produit->note = $request->note;
         } else {
-          
             $thisnote = self::getStars($id);
-
             $produit->note = $thisnote['average'];
         }
         $comm->contenu = $request->contenu;
@@ -235,6 +228,7 @@ class ProductController extends Controller
         $comm->note = $request->note;
         
         $comm->save();
+        $produit->update();
         return redirect()->route('getCard', ['id' => $id]);
     }
 

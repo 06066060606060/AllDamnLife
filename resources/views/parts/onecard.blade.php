@@ -18,7 +18,11 @@
                             </div>
                             <div class="flex flex-col items-center w-full">
                                 <div class="flex flex-col items-center py-6 space-y-3">
-                                    <div class="flex space-x-3"></div>
+                                    <div class="flex space-x-3">
+                                        @for ($i = 0; $i < $note; $i++)
+                                        <i class="text-yellow-500 fa-solid fa-star"></i>
+                                    @endfor
+                                    </div>
                                 </div>
                                 @include('parts.comm')
                             </div>
@@ -108,8 +112,8 @@
     {{-- New Notation Étoiles --}}
 
     <div
-        class="container flex flex-col w-full max-w-lg pt-6 pb-4 mx-auto mt-4 text-gray-100 transition duration-500 bg-gray-900 rounded-lg sm:mx-auto btnmenu hover:scale-105">
-        <h2>Total des notes:</h2>
+        class="container flex flex-col w-full max-w-lg pt-6 pb-4 mx-auto mt-10 mb-8 text-gray-100 transition duration-500 bg-gray-900 rounded-lg sm:mx-auto btnmenu hover:scale-105">
+        <h2>Notes:</h2>
         <div class="flex flex-wrap justify-center mt-2 mb-1 space-x-2">
 
             <div class="flex flex-row space-x-2 text-yellow-500">
@@ -121,7 +125,7 @@
             </div>
 
         </div>
-        <p class="text-sm text-gray-400">Sur un total de {{ $noteProduct['total'] }} notes</p>
+        <p class="text-sm text-gray-400">Sur un total de {{ $noteProduct['total'] }} votes</p>
         <div class="flex flex-col mt-4">
             @for ($i = 5; $i > 0; $i--)
             <div class="flex items-center space-x-1">
