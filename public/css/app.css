@@ -8444,6 +8444,12 @@ video {
 .ml-2 {
   margin-left: 0.5rem;
 }
+.mb-0 {
+  margin-bottom: 0px;
+}
+.mr-1 {
+  margin-right: 0.25rem;
+}
 .block {
   display: block;
 }

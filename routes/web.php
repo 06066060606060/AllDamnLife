@@ -38,7 +38,11 @@ Route::post('/comm/{id}', [ProductController::class, 'addComm'])->name('addComm'
 Route::get('/deleteComm/{id}', [ProductController::class, 'deleteComm'])->name('deleteComm');
 
 Route::get('/',[ProductController::class,'getProduct']);
-Route::post('/filter',[ProductController::class,'getProduct']);
+Route::get('/filter',[ProductController::class,'getProduct']);
+Route::get('/filter/search',[ProductController::class,'search'])->name('searchcard');
+
+Route::get('/giftCards/search',[ProductController::class,'indexSearch'])->name('searchItem');
+
 
 Route::get('/card/{id}',[ProductController::class,'getOneProduct'])->whereNumber('id')->name('getCard');
 Route::post('/giftCards',[ProductController::class,'addProduct'])->name('addProduct');
@@ -52,7 +56,9 @@ Route::get('/cart',[CartController::class,'getCart'])->name('cart');
 Route::get('/addtocart/{id}',[CartController::class,'addtoCart'])->whereNumber('id');
 Route::get('/deletefromcart/{id}',[CartController::class,'deletefromCart'])->whereNumber('id');
 
-Route::get('/categories', [CategoriesController::class, 'getCateg'])->name('categories');
-Route::post('/Updatecategorie/{id}', [CategoriesController::class, 'update'])->whereNumber('id');
-Route::post('/Addcategorie', [CategoriesController::class, 'addCateg']);
-Route::delete('/delete/{id}', [CategoriesController::class, 'destroy']);
+route::get('/categories', [CategoriesController::class, 'getCateg'])->name('categories');
+route::post('/Updatecategorie/{id}', [CategoriesController::class, 'update'])->whereNumber('id');
+route::post('/Addcategorie', [CategoriesController::class, 'addCateg']);
+route::delete('/delete/{id}', [CategoriesController::class, 'destroy']);
+
+
