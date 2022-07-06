@@ -103,9 +103,9 @@
 
     <div
         class="flex flex-col w-full max-w-lg p-6 mx-auto mt-4 text-gray-100 transition duration-500 bg-gray-900 divide-y divide-gray-700 rounded-md container2 sm:mx-4 btnmenu hover:scale-105">
-        <div class="flex flex-col w-full">
+        {{-- <div class="flex flex-col w-full">
             <div class="flex flex-wrap items-center mt-2 mb-1 space-x-2">
-                <div class="flex flex-row items-center space-x-2 text-yellow-500">
+                 <div class="flex flex-row items-center space-x-2 text-yellow-500">
 
                     @for ($i = 0; $i < $note; $i++)
                         <i class="text-yellow-500 fa-solid fa-star"></i>
@@ -123,10 +123,10 @@
                             {{-- pourcentage par rapport nb total de noteP
                         pour chaque colonne, un pourcentage note --}}
                         </div>
-                        <span class="flex-shrink-0 w-12 text-sm text-right"> {{ $noteP->total }}</span>
+                        {{-- <span class="flex-shrink-0 w-12 text-sm text-right"> {{ $noteP->total }}</span>
                     </div>
-                @endforeach
-            </div>
-        </div>
+                @endforeach --}}
+            </div> 
+        </div>  
     </div>
 </div>
