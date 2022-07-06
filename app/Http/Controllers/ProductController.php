@@ -39,8 +39,7 @@ class ProductController extends Controller
         }
        
         $categories = Categories::all();
-        // $produits = Produits::where('actif', '=', 1)->get();
-        // $produits = Produits::paginate(3);
+        $produits = Produits::where('actif', '=', 1)->paginate(3);
       
         return view('index', [
             'produits' => $produits,
@@ -152,7 +151,49 @@ class ProductController extends Controller
         return redirect()->back();
     }
 
-//_____________________Commentaires______________________________________
+    private function getStars($noteProduct)
+    {
+        $note = Comments::where('product_id', '=', $noteProduct)->avg('note');
+
+        // ['note' =>  'lanote']
+
+
+
+        $noteProduct = Comments::groupBy('note')
+            ->select('note', Comments::raw('count(*) as total'))
+            ->where('product_id', '=', $noteProduct)
+            ->get();
+        $out = [];
+        $total = 0;
+        $average = 0;
+        for ($i = 5; $i > 0; $i--) {
+            foreach ($noteProduct as $note) {
+                if ($note->note == $i) {
+                    $out[$i] = $note->total;
+                    $total += $note->total;
+                    $average += $note->total * $i;
+                    break;
+                }
+            }
+            if (!isset($out[$i])) {
+                $out[$i] = 0;
+            }
+        }
+        if ($total > 0) {
+            $average = $average / $total;
+        } else {
+            $average = 0;
+        }
+
+        //  ($note/$total)*100;
+          // (nbnote/nbnoteall)x100
+            
+          
+      
+        return $noteProduct;
+    }
+
+
 
     public function addComm(Request $request, $id)
     {

@@ -9952,6 +9952,13 @@ h1 {
     align-items: center;
   }
 
+<<<<<<< HEAD
+=======
+  .sm\:justify-center {
+    justify-content: center;
+  }
+
+>>>>>>> 1b6cf7407fba8d7524b761d11acdc1c019f9fd2c
   .sm\:justify-between {
     justify-content: space-between;
   }
