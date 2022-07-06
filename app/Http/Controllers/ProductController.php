@@ -158,10 +158,8 @@ class ProductController extends Controller
     private function getStars($noteProduct)
     {
         $note = Comments::where('product_id', '=', $noteProduct)->avg('note');
-
+        
         // ['note' =>  'lanote']
-
-
 
         $noteProduct = Comments::groupBy('note')
             ->select('note', Comments::raw('count(*) as total'))
@@ -226,8 +224,9 @@ class ProductController extends Controller
         $comm->user_id = Auth::user()->id;
         $comm->product_id = $id;
         $comm->note = $request->note;
-
+        $produit->note = 
         $comm->save();
+
         return redirect()->route('getCard', ['id' => $id]);
     }
 

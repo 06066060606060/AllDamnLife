@@ -43,38 +43,44 @@
                         {{ $produit->prix }} €
                     </a>
 
-                    <form
-                     @auth action="/addtocart/{{ $produit->id }}" 
-                     method="post"
-                     @else action="/"
-                     method="get" @endauth >
-           
-                        @csrf
-                        <div class="flex flex-row justify-center">
-                            <label for="quantite" class="px-2 text-gray-100 ">Quantité:
-                            <input type="number" class="w-16 px-2 my-2 text-white bg-blue-800" name="quantite" value="1" min="1" max="9"></label>
-                        </div>
-                            <input type="submit" value="Ajouter au panier"
-                            class="flex items-center justify-center w-full h-8 px-4 py-1 mx-1 space-x-2 tracking-wide text-white transition-colors duration-200 transform rounded-md btnmenu bg-emerald-500 hover:bg-emerald-300 focus:outline-none focus:bg-emerald-700">
-                    </form>
+                <form @auth action="/addtocart/{{ $produit->id }}" method="post" @else action="/"
+                    method="get" @endauth>
 
-                </div>
+                    @csrf
+                    <div class="flex flex-col  items-center justify-center">
+                        <label for="quantite" class="px-2 text-gray-100">Quantité:
+                            <div class="flex flex-row h-10 mx-auto w-2/3 rounded-lg bg-transparent my-2">
+                                <button data-action="decrement" onclick="return false;"
+                                    class=" bg-gray-300 text-gray-600 hover:text-gray-700 hover:bg-gray-400 h-full w-20 rounded-l cursor-pointer outline-none">
+                                    <span class="m-auto text-2xl font-thin">−</span>
+                                </button>
+                                <input type="number" name="quantite"
+                                    class="outline focus:outline-none text-center w-full bg-gray-300 font-semibold text-md hover:text-black focus:text-black  md:text-basecursor-default flex items-center text-gray-700  outline-none"
+                                    name="custom-input-number" min="1" value="1"></input>
+                                <button data-action="increment" onclick="return false;"
+                                    class="bg-gray-300 text-gray-600 hover:text-gray-700 hover:bg-gray-400 h-full w-20 rounded-r cursor-pointer">
+                                    <span class="m-auto text-2xl font-thin">+</span>
+                                </button>
+                            </div>
+                        </label>
+                    </div>
+                    <input type="submit" value="Ajouter au panier"
+                        class="flex items-center justify-center w-full h-8 px-4 py-1 mx-1 space-x-2 tracking-wide text-white transition-colors duration-200 transform rounded-md btnmenu bg-emerald-500 hover:bg-emerald-300 focus:outline-none focus:bg-emerald-700">
+                </form>
+
             </div>
         </div>
     </div>
 </div>
 
-
-
-<div class="flex flex-col justify-center mx-auto mt-10 md:flex-row">
-    <div
-        class="container flex flex-col w-full max-w-lg p-6 mx-auto mt-4 text-gray-100 divide-y divide-gray-700 rounded-md sm:mx-4 ">
+<div class="flex flex-col justify-center mx-auto mt-10 md:flex-row ">
+    <div class="container flex flex-col w-full max-w-lg p-6 mx-auto mt-4 text-gray-100 rounded-md sm:mx-auto ">
 
         {{-- COMMENTAIRES --}}
 
         @foreach ($comments as $comment)
             <div class="mb-4 transition duration-500 bg-gray-900 rounded-lg btnmenu hover:scale-105">
-                <div class="flex justify-between p-4 ">
+                <div class="flex justify-between p-4 border-b-2 border-gray-500">
                     <div class="flex space-x-4">
                         <div>
                             <img src="{{ $comment->user->photo }}" alt=""
@@ -82,10 +88,11 @@
                         </div>
                         <div>
                             <h4 class="font-bold">{{ $comment->user->prenom }} {{ $comment->user->nom }}</h4>
-                            <span class="text-sm text-gray-400">{{ $comment->created_at->diffForHumans() }} </span>
+                            <span class="text-sm text-gray-400">{{ $comment->created_at->diffForHumans() }}
+                            </span>
                         </div>
                     </div>
-                    <div class="flex flex-row items-center space-x-2 text-yellow-500">
+                    <div class="flex flex-row items-center space-x-2 text-yellow-500 ">
                         @for ($i = 0; $i < $comment->note; $i++)
                             <i class="text-yellow-500 fa-solid fa-star"></i>
                         @endfor
@@ -102,31 +109,91 @@
     {{-- New Notation Étoiles --}}
 
     <div
-        class="flex flex-col w-full max-w-lg p-6 mx-auto mt-4 text-gray-100 transition duration-500 bg-gray-900 divide-y divide-gray-700 rounded-md container2 sm:mx-4 btnmenu hover:scale-105">
-        <div class="flex flex-col w-full">
-            <div class="flex flex-wrap items-center mt-2 mb-1 space-x-2">
-                <div class="flex flex-row items-center space-x-2 text-yellow-500">
+        class="container flex flex-col w-full max-w-lg pt-6 pb-4 mx-auto mt-4 text-gray-100 sm:mx-auto  transition duration-500 bg-gray-900 rounded-lg btnmenu hover:scale-105">
+        <h2>Total des notes:</h2>
+        <div class="flex flex-wrap mt-2 mb-1 space-x-2  justify-center">
 
-                    @for ($i = 0; $i < $note; $i++)
-                        <i class="text-yellow-500 fa-solid fa-star"></i>
-                    @endfor
-                </div>
-                <span class="text-gray-400">3 sur 5</span>
+            <div class="flex flex-row space-x-2 text-yellow-500">
+
+                @for ($i = 0; $i < $note; $i++)
+                    <i class="text-yellow-500 fa-solid fa-star"></i>
+                @endfor
+                <span class="text-gray-400">{{ round($note) }} sur 5</span>
             </div>
-            <p class="text-sm text-gray-400">861 global ratings</p>
-            <div class="flex flex-col mt-4">
-                @foreach ($noteProduct as $noteP)
-                    <div class="flex items-center space-x-1">
-                        <span class="flex-shrink-0 w-12 text-sm">{{ $noteP->note }}</span>
-                        <div class="flex-1 h-4 overflow-hidden bg-gray-700 rounded-sm">
-                            <div class="w-5/6 h-4 bg-orange-300"></div>
-                            {{-- pourcentage par rapport nb total de noteP
+
+        </div>
+        <p class="text-gray-400">Sur un total de {{ $noteProduct->count() }} Notes</p>
+        <div class="flex flex-col mt-4">
+            @foreach ($noteProduct as $noteP)
+                <div class="flex items-center space-x-1 py-1">
+                    <span class="flex-shrink-0 w-12 text-sm">{{ $noteP->note }}</span>
+                    <div class="flex-1 h-4 overflow-hidden bg-gray-700 rounded-sm">
+                        <div class="w-5/6 h-4 bg-orange-300"></div>
+                        {{-- pourcentage par rapport nb total de noteP
                         pour chaque colonne, un pourcentage note --}}
-                        </div>
-                        <span class="flex-shrink-0 w-12 text-sm text-right"> {{ $noteP->total }}</span>
                     </div>
-                @endforeach
-            </div>
+                    <span class="flex-shrink-0 w-6 pr-6 pl-2 text-sm text-right"> {{ $noteP->total }}</span>
+                </div>
+            @endforeach
         </div>
     </div>
 </div>
+
+<style>
+    input[type='number']::-webkit-inner-spin-button,
+    input[type='number']::-webkit-outer-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }
+
+    .custom-number-input input:focus {
+        outline: none !important;
+    }
+
+    .custom-number-input button:focus {
+        outline: none !important;
+    }
+</style>
+
+<script>
+    function decrement(e) {
+        const btn = e.target.parentNode.parentElement.querySelector(
+            'button[data-action="decrement"]'
+        );
+        const target = btn.nextElementSibling;
+        let value = Number(target.value);
+        value--;
+        if (value < 1) {
+            value = 1;
+        } else {
+            target.value = value;
+        }
+
+    }
+
+    function increment(e) {
+        const btn = e.target.parentNode.parentElement.querySelector(
+            'button[data-action="decrement"]'
+        );
+        const target = btn.nextElementSibling;
+        let value = Number(target.value);
+        value++;
+        target.value = value;
+    }
+
+    const decrementButtons = document.querySelectorAll(
+        `button[data-action="decrement"]`
+    );
+
+    const incrementButtons = document.querySelectorAll(
+        `button[data-action="increment"]`
+    );
+
+    decrementButtons.forEach(btn => {
+        btn.addEventListener("click", decrement);
+    });
+
+    incrementButtons.forEach(btn => {
+        btn.addEventListener("click", increment);
+    });
+</script>
