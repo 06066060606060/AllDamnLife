@@ -257,3 +257,6 @@ h1 {
     padding-bottom: 5px;
 }
   
+#place-holder-center::placeholder {
+    text-align: center;
+}
