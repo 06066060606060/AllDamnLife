@@ -8591,6 +8591,15 @@ video {
 .w-48 {
   width: 12rem;
 }
+.w-\[192px\] {
+  width: 192px;
+}
+.w-\[190px\] {
+  width: 190px;
+}
+.w-\[188px\] {
+  width: 188px;
+}
 .max-w-screen-xl {
   max-width: 1280px;
 }
@@ -8971,6 +8980,10 @@ video {
 .bg-blue-800 {
   --tw-bg-opacity: 1;
   background-color: rgb(30 64 175 / var(--tw-bg-opacity));
+}
+.bg-gray-400 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(156 163 175 / var(--tw-bg-opacity));
 }
 .bg-opacity-60 {
   --tw-bg-opacity: 0.6;
@@ -9759,6 +9772,11 @@ h1 {
   background-color: rgb(220 252 231 / var(--tw-bg-opacity));
 }
   
+.hover\:bg-gray-200:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(229 231 235 / var(--tw-bg-opacity));
+}
+  
 .hover\:font-medium:hover {
   font-weight: 500;
 }
@@ -9901,6 +9919,16 @@ h1 {
 .focus\:bg-emerald-700:focus {
   --tw-bg-opacity: 1;
   background-color: rgb(4 120 87 / var(--tw-bg-opacity));
+}
+  
+.focus\:bg-gray-200:focus {
+  --tw-bg-opacity: 1;
+  background-color: rgb(229 231 235 / var(--tw-bg-opacity));
+}
+  
+.focus\:bg-gray-400:focus {
+  --tw-bg-opacity: 1;
+  background-color: rgb(156 163 175 / var(--tw-bg-opacity));
 }
   
 .focus\:text-black:focus {
@@ -10321,6 +10349,10 @@ h1 {
 
   .xl\:grid-cols-6 {
     grid-template-columns: repeat(6, minmax(0, 1fr));
+  }
+
+  .xl\:grid-cols-2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
   
