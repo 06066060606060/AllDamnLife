@@ -39,8 +39,7 @@ class ProductController extends Controller
         }
        
         $categories = Categories::all();
-        $produits = Produits::where('actif', '=', 1)->paginate(3);
-      
+    
         return view('index', [
             'produits' => $produits,
             'categories' => $categories,
@@ -59,12 +58,10 @@ class ProductController extends Controller
 
         $q = request()->input('q');
        
-        $produits = Produits::where('titre', 'like','%'.$q.'%')->where('actif', '=', 1)->paginate(1);
+        $produits = Produits::where('titre', 'like','%'.$q.'%')->paginate(2);
+       
         
-         return view('index', [
-            'produits' => $produits,
-            'categories' => $categories,
-            'q' => $q,]);         
+         return view('index', compact('produits','categories'));        
     }
     
    

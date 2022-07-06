@@ -7,7 +7,7 @@
 </div>
 @include('parts.new')
 @include('parts.section')
-{{$produits->links('pagination::tailwind')}}
+{{$produits->appends(Request::all())->links('pagination::tailwind')}}
 
 
 @endsection
