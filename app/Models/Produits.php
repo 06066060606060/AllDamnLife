@@ -33,19 +33,13 @@ class Produits extends Model
         return $this->hasMany(Comments::class, 'id_comm', 'user_id', 'product_id', 'contenu', 'note' )->orderBy('created_at', 'DESC');
     }
 
-    public function categorie()
+    public function produit_categorie()
     {
-        return $this->belongsToMany(Categories::class, 'produits_categories', 'prod_id', 'categorie_id');
+        return $this->belongsToMany(Categories::class,'produits_categories','prod_id','categorie_id');
     }
 
-  
+    
 
-    public function categ()
-    {
-
-        return $this->belongsTo(Categories::class, 'cat_id');
-  
-      }
 
         
   

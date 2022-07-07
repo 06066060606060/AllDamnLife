@@ -6,11 +6,13 @@ use Carbon\Carbon;
 use App\Models\Paniers;
 use App\Models\Comments;
 use App\Models\Produits;
+use App\Models\produits_categories;
 use App\Models\Categories;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Contracts\Pagination\Paginator;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Storage;
 
@@ -21,51 +23,100 @@ class ProductController extends Controller
 {   
     public function getProduct(Request $request)
     {
+
+
+
+        $produits = Produits::where('actif', '=', 1);
+
+
+  
+        $q = request()->input('q');
+
+       
+     if($request->filled('q')){
+       
+        
+       
+        $produits->where('titre', '=',"$q");
+                
     
+}
+
+
 
         if ($request->filled('note')) {
             $note = $request->note;
-            $produits = Produits::where('note', '=', $note)->where('actif', '=', 1)->paginate(3);
-            // dd($produits);
-        } elseif ($request->filled('categories')) {
-            $categories = $request->categories;
-            $produits = Produits::where('cat_id', '=', $categories)->where('actif', '=', 1)->paginate(3);
-        } elseif ($request->filled('prix')) {
+            $produits->where('note', '=', $note);
+        
+        }
+        
+        if ($request->filled('categories')) {
+
+             $categories = $request->categories;
+
+
+            $produits->whereHas('produit_categorie', function($q) use ($categories){
+               
+                $q->where('categorie_id','=',$categories);
+            
+        });
+    }
+
+        
+
+        if ($request->filled('prix')) {
 
             $prix = $request->prix;
-            $produits = Produits::where('prix', '<=', $prix)->where('actif', '=', 1)->paginate(3);
+            $produits->where('prix', '<=', $prix);
             
-        } else {
-            $produits = Produits::where('actif', '=', 1)->paginate(10);
-        }
-       
+        } 
+
         $categories = Categories::all();
-    
+       
         return view('index', [
-            'produits' => $produits,
+            'produits' => $produits->get(),
             'categories' => $categories,
-            
-        ]);}
-    
-       
-    public function search()
-    {  
-        
-       $categories=Categories::all(); 
-
-        request()->validate([
-            'q' => 'required|min:3'
+            'q' => $q,
         ]);
-
-        $q = request()->input('q');
-       
-        $produits = Produits::where('titre', 'like','%'.$q.'%')->paginate(2);
-       
         
-         return view('index', compact('produits','categories'));        
-    }
+        
     
-   
+    }
+
+       
+      
+        
+       
+//     public function search()
+//     {  
+        
+//        $categories=Categories::all(); 
+
+       
+
+//         $q = request()->input('q');
+       
+//         $produits = Produits::where('titre', '=',"$q")->get();
+                
+    
+
+
+
+
+//          return view('index', [
+//             'produits' => $produits,
+//             'categories' => $categories,
+
+//                 'q' => $q,
+            
+// ]);
+            
+         
+//     }
+
+
+  
+
 
 
 
