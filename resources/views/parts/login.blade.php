@@ -24,7 +24,7 @@
                 <section class="">
 
                     {{-- @click="modelOpen = false" --}}
-                    <div class="w-full max-w-md py-8 px-20 space-y-3 text-gray-100 bg-gray-600 rounded-xl">
+                    <div class="w-full max-w-md px-20 py-8 space-y-3 text-gray-100 bg-gray-600 rounded-xl">
                         <img class="p-2 bg-gray-900 rounded" src="/img/logo.png" alt="logo">
                     
 
@@ -45,20 +45,7 @@
                             <button
                                 class="block w-full p-3 text-center text-white transition-colors duration-200 rounded bg-emerald-500 hover:bg-emerald-400 focus:bg-emerald-400">Se Connecter</button>
                         </form>
-                        <div class="flex items-center pt-4 space-x-1">
-                            <div class="flex-1 h-px bg-gray-700 sm:w-16"></div>
-                            <p class="px-3 text-sm text-gray-400">S'identifier via un réseu social</p>
-                            <div class="flex-1 h-px bg-gray-700 sm:w-16"></div>
-                        </div>
-                        <div class="flex justify-center space-x-4">
-                            <button aria-label="Log in with Google" class="p-3 rounded-sm">
-                            <i class="fa-brands fa-google"></i>
-                            </button>
-                            
-                            <button aria-label="Log in with GitHub" class="p-3 rounded-sm">
-                            <i class="fa-brands fa-facebook-f"></i>
-                            </button>
-                        </div>
+                       
                         <p class="text-xs text-center text-gray-400 sm:px-6">Vous n'avez pas encore de compte? &zwnj;
                             <a rel="noopener noreferrer" href="#"  @click="modelOpen = false" onclick="document.getElementById('secondaryButton').click()" class="text-gray-100 underline"> Inscrivez-vous</a>
                         </p>
