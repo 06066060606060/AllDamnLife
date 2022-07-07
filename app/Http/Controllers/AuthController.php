@@ -30,7 +30,7 @@ class AuthController extends Controller
         $user->email = $validate['email'];
         $user->password = Hash::make($validate['password']);
         $user->save();
-        return redirect('/');
+        return redirect()->back();
     }
 
     public function login(Request $request)
@@ -44,16 +44,16 @@ class AuthController extends Controller
         if (Auth::attempt($credentials, $remember = true)) {
             if (Auth::user()->actif == '1') {
                 $request->session()->regenerate();
-                return redirect('/')->with('success', 'log ok');
+                return redirect()->back()->with('success', 'log ok');
             } else {
                 Session::flush();
                 Auth::logout();
                 $request->session()->invalidate();
-                return redirect('/')->with('desactivate', 'log');
+                return redirect()->back()->with('desactivate', 'log');
             }
            
         }
-        return redirect('/')->with('error', 'log');
+        return redirect()->back()->with('error', 'log');
     }
 
 
@@ -74,7 +74,7 @@ class AuthController extends Controller
 
         $user = User::where('id', '=', $id);
         $user->delete();
-        return redirect('/');
+        return redirect()->back();
     }
 
 
@@ -94,6 +94,6 @@ class AuthController extends Controller
         $user->prenom = $validate['prenom'];
         $user->email = $validate['email'];
         $user->save();
-        return redirect('/')->with('usermodifié', ' modifié');
+        return redirect()->back()->with('usermodifié', ' modifié');
     }
 }

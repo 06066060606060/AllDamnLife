@@ -1,6 +1,6 @@
 <div x-data="{ modelOpen: false }">
 
-    <button @click="modelOpen =!modelOpen"
+    <button @click="modelOpen =!modelOpen"  id="secondaryButton"
         class="flex items-center justify-center px-4 py-2 mx-1 space-x-2 text-sm tracking-wide text-white capitalize transition-colors duration-200 transform bg-gray-500 rounded-md hover:bg-gray-700 focus:outline-none focus:bg-gray-500 focus:ring focus:ring-gray-300 focus:ring-opacity-50">
         <span>S'inscrire</span>
     </button>

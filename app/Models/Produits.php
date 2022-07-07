@@ -17,7 +17,6 @@ class Produits extends Model
         'image',
         'note',
         'actif',
-        'cat_id',
         
     ];
    
@@ -38,11 +37,6 @@ class Produits extends Model
         return $this->belongsToMany(Categories::class,'produits_categories','prod_id','categorie_id');
     }
 
-    
-
-
-        
-  
 
 }
 
