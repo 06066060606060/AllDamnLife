@@ -214,8 +214,8 @@ class ProductController extends Controller
         if ($commcount == 0) {
             $produit->note = $request->note;
         } else {
-            $thisnote = self::getStars($id);
-            $produit->note = $thisnote['average'];
+           
+            $produit->note = ($produit->note + $request->note) / 2;
         }
         $comm->contenu = $request->contenu;
         $comm->user_id = Auth::user()->id;
