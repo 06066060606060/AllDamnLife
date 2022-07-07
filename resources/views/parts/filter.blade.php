@@ -59,7 +59,7 @@
                         href="/">Effacer les filtres</a>
                 </button>
                 <button
-                    class="mx-1  w-[188px] my-2 btnmenu h-[43.99px] text-sm text-center text-gray-100 transition-colors duration-200 bg-emerald-500 hover:bg-emerald-400 focus:outline-none focus:bg-emerald-500 rounded-md ">valider</button>
+                    class="mx-1  w-[188px] my-2 btnmenu h-[43.99px] text-sm text-center text-gray-100 transition-colors duration-200 bg-emerald-500 hover:bg-emerald-400 focus:outline-none focus:bg-emerald-500 rounded-md ">Valider</button>
 
             </form>
         </li>
