@@ -5,44 +5,24 @@
     @php($urlprix = request()->query('prix'))
     @php($urlsearch = request()->query('q'))
 
-
-
-    @if ($urlcat)
+    @if($urlsearch)
+    <h1 class="mb-8">
+        Résultat pour: {{ $urlsearch }}
+    </h1>
+    @elseif($urlcat)
         @foreach ($categories->where('id_cat', '=', $urlcat) as $categorie)
-            <h1 class="mb-8">Catégorie : {{ $categorie->label }} <br>
-                @if ($urlnote)
-                    notés : @for ($i = 0; $i < $urlnote; $i++)
-                        <i class="text-yellow-500 fa-solid fa-star"></i>
-                    @endfor
-                @elseif($urlprix)
-                    <h1 class="mb-8">
-                        produits d'une valeurs de moins de {{ $urlprix }}€
-                    </h1>
-                @elseif($urlsearch)
-                    <h1 class="mb-8">
-                        Résultat pour: {{ $urlsearch }}
-                    </h1>
-                @endif
-
-            </h1>
+            <h1 class="mb-8">Catégorie : {{ $categorie->label }} </h1>
         @endforeach
     @elseif ($urlnote)
-        <h1 class="mb-8"> Note: :
+        <h1 class="mb-8"> Note:
             @for ($i = 0; $i < $urlnote; $i++)
                 <i class="text-yellow-500 fa-solid fa-star"></i>
             @endfor
         </h1>
     @elseif($urlprix)
         <h1 class="mb-8">
-            produits d'une valeurs de moins de {{ $urlprix }}€
-        </h1>
-    @elseif($urlsearch)
-        <h1 class="mb-8">
-            Résultat pour: {{ $urlsearch }}
-        </h1>
-    @endif
-
-
+            produits d'une valeurs de moins de {{ $urlprix }}€ </h1>
+  @endif
 
     @forelse ($produits as $produit)
         <div class="flip">
@@ -57,7 +37,7 @@
                     <span class="px-4 bg-blue-800 rounded-md">{{ (int) $produit->prix }} €</span>
                     <span class="p-2 clamp">{{ $produit->description }}</span>
                     <div class="flex items-center justify-center p-2 flex-rows">
-                        @for ($i = 0; $i < $produit->note; $i++)
+                        @for ($i = 0; $i < round($produit->note); $i++)
                             <i class="px-1 text-yellow-500 fa-solid fa-star"></i>
                         @endfor
                     </div>
@@ -78,7 +58,7 @@
             </div>
         </div>
     @empty
-        <div class="flip mt-4">
+        <div class="mt-4 flip">
             <div class="front">
                 <h2 class="pt-32 ">Aucun produit trouvé</h2>
             </div>
