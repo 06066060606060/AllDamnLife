@@ -13,7 +13,7 @@
                     <span class="p-2 clamp">{{ $produit->description }}</span>
                     <div class="flex items-center justify-center p-2 flex-rows">
                         @for ($i = 0; $i < $produit->note; $i++)
-                            <i class="text-yellow-500 fa-solid fa-star"></i>
+                            <i class="px-1 text-yellow-500 fa-solid fa-star"></i>
                         @endfor
                     </div>
 
