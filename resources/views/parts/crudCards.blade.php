@@ -1,11 +1,8 @@
-
-
 <div class="max-w-screen-xl mx-auto ">
     <div class="flex items-center justify-center">
         <div class="container">
-            
-            <table
-                class="flex flex-row flex-no-wrap w-full my-5 overflow-hidden rounded-lg">
+
+            <table class="flex flex-row flex-no-wrap w-full my-5 overflow-hidden rounded-lg">
                 <thead class="text-white">
                     @foreach ($cards as $card)
                         <tr
@@ -24,21 +21,20 @@
                     @forelse ($cards as $card)
                         <tr class="flex flex-col flex-no-wrap mb-2 bg-gray-700 sm:table-row -p-2 sm:mb-0">
                             <td class="h-12 p-3 text-white ">{{ $card->titre }}</td>
-                            <td class="h-12 truncate "><img
-                                    class="w-10 h-10 mx-auto sm:w-14 sm:h-14" src="{{ $card->image }}" alt="">
+                            <td class="h-12 truncate "><img class="w-10 h-10 mx-auto sm:w-14 sm:h-14"
+                                    src="{{ $card->image }}" alt="">
                             </td>
-                            <td
-                                class="h-12 p-3 text-white ">
+                            <td class="h-12 p-3 text-white ">
                                 {{ $card->prix }}</td>
-                                <td class="h-12 p-3 text-green-400 cursor-pointer hover:text-green-600"><a
+                            <td class="h-12 p-3 text-green-400 cursor-pointer hover:text-green-600"><a
                                     href="/card/{{ $card->id }}">
                                     <i class="fa-solid fa-eye"></i></a></td>
-                                    <td class="h-12  hover:text-blue-900">@include('parts.updateProduct')
-                                    </td>
-                                    <td class="h-12  hover:text-red-600">@include('parts.deleteProduct')
-                                    </td>
-                                    <td class="h-12  hover:text-blue-600"> @include('parts.activeProduct')
-                                    </td>
+                            <td class="h-12 hover:text-blue-900">@include('parts.updateProduct')
+                            </td>
+                            <td class="h-12 hover:text-red-600">@include('parts.deleteProduct')
+                            </td>
+                            <td class="h-12 hover:text-blue-600"> @include('parts.activeProduct')
+                            </td>
                         </tr>
                     @empty
                         <div class="flex flex-row justify-center">
@@ -53,8 +49,6 @@
 </div>
 
 <style>
-    
-
     @media (min-width: 640px) {
         table {
             display: inline-table !important;
@@ -65,7 +59,7 @@
         }
     }
 
-    
+
 
     th:not(:last-child) {
         border-bottom: 2px solid rgba(0, 0, 0, .1);

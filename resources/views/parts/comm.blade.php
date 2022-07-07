@@ -40,19 +40,19 @@
                             <div class="flex flex-col items-center space-y-3">
                                 <label for="note" class="block text-sm text-gray-200">Noter</label>
                                 <div class="flex space-x-3">
-                                    
+                                    <input type="hidden" name="noteavg" value="{{ $noteProduct['average'] }}">
                                     <input type="hidden" id="note" name="note" value="0">
-                                        <input type="radio" id="nétoile"> <span
-                                            class="etoile" onclick="change(1)">★</span>
-                                            <input type="radio" id="nétoile"> <span
-                                            class="etoile" onclick="change(2)">★</span>
-                                            <input type="radio" id="nétoile"> <span
-                                            class="etoile" onclick="change(3)">★</span>
-                                            <input type="radio" id="nétoile"> <span
-                                            class="etoile" onclick="change(4)">★</span>
-                                            <input type="radio" id="nétoile"> <span
-                                            class="etoile" onclick="change(5)">★</span>
-                                    
+                                    <input type="radio" id="nétoile"> <span class="etoile"
+                                        onclick="change(1)">★</span>
+                                    <input type="radio" id="nétoile"> <span class="etoile"
+                                        onclick="change(2)">★</span>
+                                    <input type="radio" id="nétoile"> <span class="etoile"
+                                        onclick="change(3)">★</span>
+                                    <input type="radio" id="nétoile"> <span class="etoile"
+                                        onclick="change(4)">★</span>
+                                    <input type="radio" id="nétoile"> <span class="etoile"
+                                        onclick="change(5)">★</span>
+
                                 </div>
                             </div>
                             <button
@@ -66,11 +66,11 @@
 </div>
 
 <script>
-function change(lanote){
-         var manote =  document.getElementById("note"); 
+    function change(lanote) {
+        var manote = document.getElementById("note");
         manote.value = lanote;
-          
-}
+
+    }
 
     let note = 0;
     let etoiles = document.querySelectorAll('.etoile');

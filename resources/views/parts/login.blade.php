@@ -1,4 +1,4 @@
-<div  x-data="{ modelOpen: false }">
+<div x-data="{ modelOpen: false }">
 
     <button @click="modelOpen =!modelOpen" id="primaryButton"
         class="flex items-center justify-center px-4 py-2 mx-1 space-x-2 text-sm tracking-wide text-white capitalize transition-colors duration-200 transform rounded-md bg-emerald-500 hover:bg-gray-600 focus:outline-none focus:bg-gray-500 focus:ring focus:ring-gray-300 focus:ring-opacity-50">
@@ -7,7 +7,7 @@
 
     <div x-cloak x-show="modelOpen" class="fixed inset-0 z-50 overflow-y-auto" aria-labelledby="modal-title" role="dialog"
         aria-modal="true">
-        <div class="flex items-end justify-center min-h-screen px-4 text-center md:items-center sm:block sm:p-0">
+        <div class="flex items-end justify-center px-4 text-center md:items-center sm:block sm:p-0">
             <div x-cloak @click="modelOpen = false" x-show="modelOpen"
                 x-transition:enter="transition ease-out duration-300 transform" x-transition:enter-start="opacity-0"
                 x-transition:enter-end="opacity-100" x-transition:leave="transition ease-in duration-200 transform"
@@ -25,12 +25,12 @@
 
                     {{-- @click="modelOpen = false" --}}
                     <div class="w-full max-w-md px-20 py-8 space-y-3 text-gray-100 bg-gray-600 rounded-xl">
-                        <img class="p-2 bg-gray-900 rounded" src="/img/logo.png" alt="logo">
-                    
+                        <img class="p-2 rounded" src="/img/logo.png" alt="logo">
+
 
                         <form action="/login" class="space-y-6 ng-untouched ng-pristine ng-valid" method="post">
                             @csrf
-                            
+
                             <div class="space-y-1 text-sm">
                                 <label for="email" class="block text-gray-400">email</label>
                                 <input type="email" name="email" id="email" placeholder="exemple@mail.com"
@@ -40,14 +40,17 @@
                                 <label for="password" class="block text-gray-400">Mot de passe</label>
                                 <input type="password" name="password" id="password" placeholder="Password"
                                     class="w-full px-4 py-3 text-gray-100 bg-gray-900 border-gray-700 rounded-md focus:border-emerald-400">
-                                
+
                             </div>
                             <button
-                                class="block w-full p-3 text-center text-white transition-colors duration-200 rounded bg-emerald-500 hover:bg-emerald-400 focus:bg-emerald-400">Se Connecter</button>
+                                class="block w-full p-3 text-center text-white transition-colors duration-200 rounded bg-emerald-500 hover:bg-emerald-400 focus:bg-emerald-400">Se
+                                Connecter</button>
                         </form>
-                       
-                        <p class="text-xs text-center text-gray-400 sm:px-6">Vous n'avez pas encore de compte? &zwnj;
-                            <a rel="noopener noreferrer" href="#"  @click="modelOpen = false" onclick="document.getElementById('secondaryButton').click()" class="text-gray-100 underline"> Inscrivez-vous</a>
+
+                        <p class="text-xs text-center text-gray-400 sm:px-6">Pas encore de compte? &zwnj;
+                            <a rel="noopener noreferrer" href="#" @click="modelOpen = false"
+                                onclick="document.getElementById('secondaryButton').click()"
+                                class="text-gray-100 underline"> Inscrivez-vous</a>
                         </p>
                     </div>
 
