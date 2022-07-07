@@ -2,13 +2,11 @@
 
     <div class="flex flex-col md:flex-row">
 
-        <form action="{{ route('searchcard') }}" method="get">
-
+        
+        <form action="{{ route('searchfilter') }}" method="get">
             <input type="text" name="q" placeholder="Recherche..." id="place-holder-center"
                 class="mx-2  w-[188px] my-2 btnmenu h-[43.99px] py-3 px-2 text-sm text-white bg-gray-600 border-transparent rounded-md focus:border-gray-500"
                 value="{{ request()->q ?? '' }}">
-        </form>
-        <form action="{{ route('searchfilter') }}" method="get">
             <select name="categories"
                 class="mx-2  w-[188px] my-2 appearance-none btnmenu h-[43.99px] py-3 text-sm text-white bg-gray-600 border-transparent rounded-md focus:border-gray-500">
                 <option value="" class="text-center">Catégories </option>
