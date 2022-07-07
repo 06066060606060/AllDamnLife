@@ -45,7 +45,7 @@ class ProductController extends Controller
         $categories = Categories::all();
 
         return view('index', [
-            'produits' => $produits->paginate(6),  //a la place d'un get me demande pas pourquoi!
+            'produits' => $produits->paginate(8),  //a la place d'un get me demande pas pourquoi!
             'categories' => $categories,
             'q' => $q,
         ]);
