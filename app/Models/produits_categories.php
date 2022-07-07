@@ -14,4 +14,6 @@ class produits_categories extends Model
     {
         return $this;
     }
+
+    
 }

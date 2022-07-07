@@ -6,12 +6,15 @@ use Carbon\Carbon;
 use App\Models\Paniers;
 use App\Models\Comments;
 use App\Models\Produits;
+use App\Models\produits_categories;
 use App\Models\Categories;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Models\produits_categories;
+
 use Illuminate\Contracts\Pagination\Paginator;
+use Illuminate\Contracts\View\View;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Storage;
 use SebastianBergmann\CodeCoverage\Util\Percentage;
@@ -45,7 +48,7 @@ class ProductController extends Controller
         $categories = Categories::all();
 
         return view('index', [
-            'produits' => $produits->paginate(8),  //a la place d'un get me demande pas pourquoi!
+            'produits' => $produits->paginate(10),  //a la place d'un get me demande pas pourquoi!
             'categories' => $categories,
             'q' => $q,
         ]);

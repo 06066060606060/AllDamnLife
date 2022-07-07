@@ -9,6 +9,5 @@
 @include('parts.section')
 {{$produits->appends(Request::all())->links('pagination::tailwind')}}
 
-
 @endsection
 
