@@ -19,7 +19,6 @@ use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Storage;
 use SebastianBergmann\CodeCoverage\Util\Percentage;
 
-
 class ProductController extends Controller
 
 {
@@ -218,18 +217,19 @@ class ProductController extends Controller
         if ($commcount == 0) {
             $produit->note = $request->note;
         } else {
-            $thisnote = self::getStars($id);
-            $produit->note = $thisnote['average'];
+           
+            $produit->note = ($produit->note + $request->note) / 2;
         }
         $comm->contenu = $request->contenu;
         $comm->user_id = Auth::user()->id;
         $comm->product_id = $id;
         $comm->note = $request->note;
-
+        
         $comm->save();
         $produit->update();
         return redirect()->route('getCard', ['id' => $id]);
     }
+
 
     public function deleteComm($id)
     {

@@ -4,11 +4,11 @@
 			<div class="flex items-center justify-center flex-shrink-0 ">
 				<img src="/img/logo1.png" class="w-12 h-12 mt-8" alt="">
 			</div>
-			<div class=" flex-wrap items-center space-x-4 sm:mt-4 sm:space-x-8 hidden cacher ">
+			<div class=" flex-wrap items-center space-x-4 md:mt-10  sm:mt-6 sm:space-x-8 hidden cacher ">
 				
-				<p>
-					<a rel="noopener noreferrer" href="#">Contactez-nous</a>
-				</p>
+				
+					<a  rel="noopener noreferrer" href="#">Contactez-nous</a>
+				
 			</div>
 		</div>
 		<ul class="flex flex-row mb-4 flex-wrap pl-3 space-x-4 md:space-x-8">

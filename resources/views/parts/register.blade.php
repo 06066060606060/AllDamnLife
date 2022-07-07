@@ -24,7 +24,7 @@
                 <section class="">
 
                     {{-- @click="modelOpen = false" --}}
-                    <div class="w-full max-w-md py-8 px-20 space-y-3 text-gray-100 bg-gray-600 rounded-xl">
+                    <div class="w-full max-w-md px-20 py-8 space-y-3 text-gray-100 bg-gray-600 rounded-xl">
                         <img class="p-2 bg-gray-900 rounded" src="/img/logo.png" alt="logo">
                     
 
@@ -55,21 +55,7 @@
                                 class="block w-full p-3 text-center text-white transition-colors duration-200 rounded bg-emerald-500 hover:bg-emerald-400 focus:bg-emerald-400">S'inscrire
                                 </button>
                         </form>
-                        <div class="flex items-center pt-4 space-x-1">
-                            <div class="flex-1 h-px bg-gray-700 sm:w-16"></div>
-                            <p class="px-3 text-sm text-gray-400">S'inscrire via un réseau social</p>
-                            <div class="flex-1 h-px bg-gray-700 sm:w-16"></div>
-                        </div>
-                        <div class="flex justify-center space-x-4">
-                            <button aria-label="Log in with Google" class="p-3 rounded-sm">
-                            <i class="fa-brands fa-google"></i>
-                            </button>
-                            
-                            <button aria-label="Log in with Facebook" class="p-3 rounded-sm">
-                            <i class="fa-brands fa-facebook-f"></i>
-                            </button>
-                        </div>
-                        
+                       
                     </div>
 
                 </section>

@@ -17,6 +17,13 @@ class CategoriesController extends Controller
             'categories' => $categories,
         ]);
     }
+    public static function categorie($id)
+    {
+        $categories = Categories::find($id);
+        return view('index', [
+            'categories' => $categories,
+        ]);
+    }
 
     public function addCateg(Request $request)
     {

@@ -33,7 +33,6 @@ Route::get('/deleteComm/{id}', [ProductController::class, 'deleteComm'])->name('
 
 Route::get('/',[ProductController::class,'getProduct']);
 Route::get('/filter',[ProductController::class,'getProduct'])->name('searchfilter');
-// Route::get('/filter/search',[ProductController::class,'search'])->name('searchcard');
 
 
 Route::get('/card/{id}',[ProductController::class,'getOneProduct'])->whereNumber('id')->name('getCard');
@@ -46,7 +45,7 @@ Route::delete('/deleteCard/{id}', [ProductController::class, 'deleteCard'])->nam
 
 Route::get('/cart',[CartController::class,'getCart'])->name('cart');
 Route::post('/addtocart/{id}',[CartController::class,'addtoCart'])->whereNumber('id');
-Route::get('/deletefromcart/{id}',[CartController::class,'deletefromCart'])->whereNumber('id');
+Route::delete('/deletefromcart/{id}',[CartController::class,'deletefromCart'])->whereNumber('id');
 
 route::get('/categories', [CategoriesController::class, 'getCateg'])->name('categories');
 route::post('/Updatecategorie/{id}', [CategoriesController::class, 'update'])->whereNumber('id');
