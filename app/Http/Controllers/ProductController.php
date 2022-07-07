@@ -12,6 +12,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
 use Illuminate\Contracts\Pagination\Paginator;
+use Illuminate\Contracts\View\View;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Session;
@@ -48,7 +49,7 @@ class ProductController extends Controller
         $categories = Categories::all();
 
         return view('index', [
-            'produits' => $produits->paginate(6),  //a la place d'un get me demande pas pourquoi!
+            'produits' => $produits->paginate(10),  //a la place d'un get me demande pas pourquoi!
             'categories' => $categories,
             'q' => $q,
         ]);
