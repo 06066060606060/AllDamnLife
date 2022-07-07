@@ -41,7 +41,7 @@
                     class="mx-1  w-[188px] my-2 appearance-none btnmenu h-[43.99px] py-3 text-sm text-white bg-gray-600 border-transparent rounded-md focus:border-gray-500 ">
                     <option value="" class="text-center">Prix</option>
                     <option value="10" class="text-center">
-                        moins de 10€</option> 10€
+                        moins de 10€</option>
                     </option>
                     <option value="20" class="text-center">
                         moins de 20€</option>

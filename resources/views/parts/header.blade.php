@@ -1,7 +1,7 @@
 @php   use \App\Http\Controllers\CartController; @endphp
 
 
-<div class="p-4 text-gray-100">
+<div class="p-4">
     <div class="flex items-center justify-between h-16 max-w-screen-xl px-4 mx-auto">
         <div class="flex items-center pb-4 mx-auto space-x-4 md:mx-0 lg:mx-0">
             <a href="/"><img src="/img/logo.png" alt="logo" class="w-auto h-12 "></a>
@@ -9,13 +9,13 @@
 
         @if (session('cart_ok'))
             <div x-data="{ show: true }" x-show="show" x-init="setTimeout(() => show = false, 3000, PopupUser())" class="pt-1 pr-4">
-                <div id="popmenu" class="px-4 py-2 text-emerald-500 text-bold">Article ajouté au panier</div>
+                <div id="popmenu" class="px-4 py-2 text-xs text-emerald-500"><i class="fa-solid fa-basket-shopping"></i>&zwnj; Article ajouté au panier</div>
             </div>
         @endif
 
         @if (session('success'))
             <div x-data="{ show: true }" x-show="show" x-init="setTimeout(() => show = false, 6000, PopupUser())">
-                <div id="popmenu" class="px-4 py-2">Bienvenue {{ Auth::user()->prenom }}</div>
+                <div id="popmenu" class="px-4 py-2 text-gray-100">Bienvenue {{ Auth::user()->prenom }}</div>
             </div>
         @endif
         @if (session('error'))
@@ -79,7 +79,7 @@
 
         @auth
             <div class="flex flex-row mx-auto space-x-2">
-                <a href="/users"
+                <a href="/giftCards"
                     class="flex items-center justify-center h-8 px-4 pt-1 pb-1 mx-1 space-x-2 tracking-wide text-white transition-colors duration-200 transform bg-blue-600 rounded-md btnmenu hover:bg-blue-400 focus:outline-none focus:bg-blue-500">
                     <i class="fa-solid fa-gear"></i>
                 </a>
@@ -159,7 +159,7 @@
 
     @media (max-width: 640px) {
         #popmenu.active {
-            top: 160px;
+            top: 165px;
             transition: 0.3s;
             transition: 0.25s;
         }

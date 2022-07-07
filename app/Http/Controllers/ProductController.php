@@ -48,7 +48,7 @@ class ProductController extends Controller
         $categories = Categories::all();
 
         return view('index', [
-            'produits' => $produits->paginate(10),  //a la place d'un get me demande pas pourquoi!
+            'produits' => $produits->paginate(8),  //a la place d'un get me demande pas pourquoi!
             'categories' => $categories,
             'q' => $q,
         ]);
@@ -197,13 +197,7 @@ class ProductController extends Controller
         $comm = new Comments();
         $produit = Produits::where('id', '=', $id)->get();
         $produit = Produits::find($id);
-        $commcount = (Comments::where('product_id', '=', $id)->count());
-
-        if ($commcount == 0) {
-            $produit->note = $request->note;
-        } else {
-            $produit->note = ($request->note + $request->avg);
-        }
+        $produit->note = ($request->noteavg + $request->note) / 2;
         $comm->contenu = $request->contenu;
         $comm->user_id = Auth::user()->id;
         $comm->product_id = $id;

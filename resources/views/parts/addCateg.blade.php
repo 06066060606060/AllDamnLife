@@ -17,7 +17,7 @@
 
     <div x-cloak x-show="modelOpen" class="fixed inset-0 z-50 overflow-y-auto" aria-labelledby="modal-title" role="dialog"
         aria-modal="true">
-        <div class="flex items-end justify-center min-h-screen px-4 text-center md:items-center sm:block sm:p-0">
+        <div class="flex items-end justify-center px-4 text-center md:items-center sm:block sm:p-0">
 
 
             <div x-cloak @click="modelOpen = false" x-show="modelOpen"
@@ -42,7 +42,6 @@
                         <form action="/Addcategorie" class="space-y-6" method="post">
                             @csrf
                             <div class="space-y-1 text-sm">
-                                <label for="Label" class="block text-gray-400">Label</label>
                                 <input value=""
                                     class="w-full px-4 py-3 text-gray-100 bg-gray-900 border-gray-700 rounded-md focus:border-teal-400"
                                     type="text" name="label" placeholder="Nom de la catégorie" />

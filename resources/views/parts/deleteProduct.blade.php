@@ -8,7 +8,7 @@
 
     <div x-cloak x-show="modelOpen" class="fixed inset-0 z-50 overflow-y-auto" aria-labelledby="modal-title" role="dialog"
         aria-modal="true">
-        <div class="flex items-end justify-center min-h-screen px-4 text-center md:items-center sm:block sm:p-0">
+        <div class="flex items-end justify-center px-4 text-center md:items-center sm:block sm:p-0">
             <div x-cloak @click="modelOpen = false" x-show="modelOpen"
                 x-transition:enter="transition ease-out duration-300 transform" x-transition:enter-start="opacity-0"
                 x-transition:enter-end="opacity-100" x-transition:leave="transition ease-in duration-200 transform"
@@ -28,7 +28,7 @@
                     <div class="w-full max-w-xl px-20 py-8 space-y-3 text-gray-100 bg-gray-600 rounded-xl">
 
                         <div class="flex flex-col">
-                            <label class="text-center mb-4">êtes vous sur de vouloir supprimer l'article :</label>
+                            <label class="mb-4 text-center">êtes vous sur de vouloir supprimer l'article :</label>
                             <span class="mb-8"> {{ $card->titre }} à {{ $card->prix }} € ?</span>
                             <div class="flex flex-row justify-center">
                                 <button @click="modelOpen = false"
