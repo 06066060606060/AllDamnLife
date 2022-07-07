@@ -9,37 +9,45 @@ use App\Models\Produits;
 use App\Models\Categories;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Models\produits_categories;
+use Illuminate\Contracts\Pagination\Paginator;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Storage;
 use SebastianBergmann\CodeCoverage\Util\Percentage;
 
 class ProductController extends Controller
+
 {
     public function getProduct(Request $request)
     {
-
-
+        $produits = Produits::where('actif', '=', 1);
+        $q = request()->input('q');
+        if ($request->filled('q')) {
+            $produits->where('titre', '=', "$q");
+        }
         if ($request->filled('note')) {
             $note = $request->note;
-            $produits = Produits::where('note', '=', $note)->where('actif', '=', 1)->get();
-        } elseif ($request->filled('categories')) {
+            $produits->where('note', '=', $note);
+        }
+        if ($request->filled('categories')) {
             $categories = $request->categories;
-            $produits = Produits::where('cat_id', '=', $categories)->where('actif', '=', 1)->get();
-        } elseif ($request->filled('prix')) {
+            $produits->whereHas('produit_categorie', function ($q) use ($categories) {
+
+                $q->where('categorie_id', '=', $categories);
+            });
+        }
+        if ($request->filled('prix')) {
 
             $prix = $request->prix;
-            $produits = Produits::where('prix', '<=', $prix)->where('actif', '=', 1)->get();
-        } else {
-            $produits = Produits::where('actif', '=', 1)->get();
+            $produits->where('prix', '<=', $prix);
         }
-
         $categories = Categories::all();
-        $produits = Produits::where('actif', '=', 1)->paginate(3);
 
         return view('index', [
-            'produits' => $produits,
+            'produits' => $produits->paginate(6),  //a la place d'un get me demande pas pourquoi!
             'categories' => $categories,
+            'q' => $q,
         ]);
     }
 
@@ -48,24 +56,14 @@ class ProductController extends Controller
     {
 
         $categories = Categories::all();
-
         request()->validate([
             'q' => 'required|min:3'
         ]);
 
         $q = request()->input('q');
-
-        $produits = Produits::where('titre', 'like', '%' . $q . '%')->paginate(3);
-
-        return view('index', [
-            'produits' => $produits,
-            'categories' => $categories,
-            'q' => $q,
-        ]);
+        $produits = Produits::where('titre', 'like', '%' . $q . '%')->paginate(2);
+        return view('index', compact('produits', 'categories'));
     }
-
-
-
 
 
     public function getOneProduct($id)
@@ -83,7 +81,6 @@ class ProductController extends Controller
             'note' => $note,
             'notearrondi' => $notearrondi,
             'noteProduct' => $noteProduct,
-
         ]);
     }
 
@@ -204,10 +201,7 @@ class ProductController extends Controller
         }
 
         return $res;
-        
     }
-
-
 
     public function addComm(Request $request, $id)
     {
@@ -215,19 +209,12 @@ class ProductController extends Controller
         $comm = new Comments();
         $produit = Produits::where('id', '=', $id)->get();
         $produit = Produits::find($id);
-
-
         $commcount = (Comments::where('product_id', '=', $id)->count());
-        
-
 
         if ($commcount == 0) {
-
             $produit->note = $request->note;
         } else {
-          
             $thisnote = self::getStars($id);
-
             $produit->note = $thisnote['average'];
         }
         $comm->contenu = $request->contenu;
@@ -236,6 +223,7 @@ class ProductController extends Controller
         $comm->note = $request->note;
         
         $comm->save();
+        $produit->update();
         return redirect()->route('getCard', ['id' => $id]);
     }
 

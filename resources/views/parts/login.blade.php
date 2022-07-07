@@ -1,6 +1,6 @@
 <div  x-data="{ modelOpen: false }">
 
-    <button @click="modelOpen =!modelOpen"
+    <button @click="modelOpen =!modelOpen" id="primaryButton"
         class="flex items-center justify-center px-4 py-2 mx-1 space-x-2 text-sm tracking-wide text-white capitalize transition-colors duration-200 transform rounded-md bg-emerald-500 hover:bg-gray-600 focus:outline-none focus:bg-gray-500 focus:ring focus:ring-gray-300 focus:ring-opacity-50">
         <span>Se connecter</span>
     </button>
@@ -60,7 +60,7 @@
                             </button>
                         </div>
                         <p class="text-xs text-center text-gray-400 sm:px-6">Vous n'avez pas encore de compte? &zwnj;
-                            <a rel="noopener noreferrer" href="#"  @click="modelOpen = true" class="text-gray-100 underline"> Inscrivez-vous</a>
+                            <a rel="noopener noreferrer" href="#"  @click="modelOpen = false" onclick="document.getElementById('secondaryButton').click()" class="text-gray-100 underline"> Inscrivez-vous</a>
                         </p>
                     </div>
 
