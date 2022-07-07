@@ -13,7 +13,7 @@
                             <th class="h-12 p-3 text-center ">Consulter</th>
                             <th class="h-12 p-3 text-center ">Modifier</th>
                             <th class="h-12 p-3 text-center ">Supprimer</th>
-                            <th class="h-12 p-3 text-center ">Active</th>
+                            <th class="h-12 p-3 text-center ">Disponible</th>
                         </tr>
                     @endforeach
                 </thead>
