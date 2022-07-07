@@ -1,6 +1,10 @@
 <div class="max-w-screen-xl p-5 mx-auto text-gray-100">
-    @foreach ($produits as $produit)
-        <div class="flip">
+    
+    @if(str_contains(url()->current(), '/filter'))
+    <p>categories</p>
+    @endif
+    @forelse ($produits as $produit)
+    <div class="flip">
             <div class="front">
                 <span class="ribbon cr cr-top cr-right cr-sticky cr-blue">{{ (int) $produit->prix }} €</span>
                 <img class="icon w-[256px] h-auto" src="{{ $produit->image }}">
@@ -30,7 +34,13 @@
                 </div>
             </div>
         </div>
-    @endforeach
+        @empty
+            <div class="text-center">
+                <h1>Aucun produit trouvé</h1>
+            </div>
+            
+        
+    @endforelse
     
 
         
