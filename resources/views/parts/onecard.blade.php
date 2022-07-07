@@ -47,7 +47,7 @@
                         {{ $produit->prix }} €
                     </a>
 
-                <form @auth action="/addtocart/{{ $produit->id }}" method="post" @else onclick="document.getElementById('primaryButton').click()" onsubmit="return false" @endauth>
+                <form @auth action="/addtocart/{{ $produit->id }}" method="post" onsubmit="myButtonAdd.disabled = true; return true;"  @else onclick="document.getElementById('primaryButton').click()" onsubmit="return false" @endauth>
 
                     @csrf
                     <div class="flex flex-col items-center justify-center">
@@ -67,7 +67,7 @@
                             </div>
                         </label>
                     </div>
-                    <input type="submit" value="Ajouter au panier"
+                    <input type="submit" name="myButtonAdd" value="Ajouter au panier"
                         class="flex items-center justify-center w-full h-8 px-4 py-1 mx-1 space-x-2 tracking-wide text-white transition-colors duration-200 transform rounded-md btnmenu bg-emerald-500 hover:bg-emerald-300 focus:outline-none focus:bg-emerald-700">
                 </form>
 
