@@ -27,7 +27,7 @@ class ProductController extends Controller
         $produits = Produits::where('actif', '=', 1);
         $q = request()->input('q');
         if ($request->filled('q')) {
-            $produits->where('titre', '=', "$q");
+            $produits->where('titre', 'like', '%' . $q . '%');
         }
         if ($request->filled('note')) {
             $note = $request->note;
@@ -55,18 +55,18 @@ class ProductController extends Controller
     }
 
 
-    public function search()
-    {
+    // public function search()
+    // {
 
-        $categories = Categories::all();
-        request()->validate([
-            'q' => 'required|min:3'
-        ]);
+    //     $categories = Categories::all();
+    //     request()->validate([
+    //         'q' => 'required|min:3'
+    //     ]);
 
-        $q = request()->input('q');
-        $produits = Produits::where('titre', 'like', '%' . $q . '%')->paginate(2);
-        return view('index', compact('produits', 'categories'));
-    }
+    //     $q = request()->input('q');
+    //     $produits = Produits::where('titre', 'like', '%' . $q . '%')->paginate(2);
+    //     return view('index', compact('produits', 'categories'));
+    // }
 
 
     public function getOneProduct($id)
