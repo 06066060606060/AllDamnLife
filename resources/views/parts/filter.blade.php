@@ -42,7 +42,7 @@
                     < 50€</option>
                 <option value="" class="text-center">Toutes</option>
             </select>
-            <button class="mx-2  w-[188px] my-2 btnmenu h-[43.99px] text-sm text-center text-gray-100 transition-colors duration-200 bg-gray-600 rounded-md hover:bg-gray-500 focus:bg-gray-400">valider</button>
+            <button class="mx-2  w-[188px] my-2 btnmenu h-[43.99px] text-sm text-center text-gray-100 transition-colors duration-200 bg-gray-600 rounded-md hover:bg-gray-500 focus:bg-gray-400">Valider</button>
             <button class="mx-2  w-[188px] my-2 h-[43.99px] text-sm text-center bg-gray-600 text-gray-100 rounded-md btnmenu hover:bg-gray-500 focus:bg-gray-400"><a href="/">Effacer les filtres</a>
             </button>
 

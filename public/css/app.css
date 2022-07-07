@@ -9132,6 +9132,9 @@ video {
 .pl-2 {
   padding-left: 0.5rem;
 }
+.pt-32 {
+  padding-top: 8rem;
+}
 .text-center {
   text-align: center;
 }
@@ -9962,10 +9965,6 @@ h1 {
 
   .sm\:mb-0 {
     margin-bottom: 0px;
-  }
-
-  .sm\:mt-4 {
-    margin-top: 1rem;
   }
 
   .sm\:mt-6 {
