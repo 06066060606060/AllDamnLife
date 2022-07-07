@@ -44,7 +44,7 @@
                             <div class="space-y-1 text-sm">
                                 <input value=""
                                     class="w-full px-4 py-3 text-gray-100 bg-gray-900 border-gray-700 rounded-md focus:border-teal-400"
-                                    type="text" name="label" placeholder="Nom de la catégorie" />
+                                    type="text" name="label" placeholder="Nom de la catégorie" required/>
                             </div>
                             <button type="submit"
                                 class="block w-full p-3 text-center text-gray-900 transition-colors duration-200 bg-teal-400 rounded hover:bg-teal-200 focus:bg-teal-200">Ajouter</button>

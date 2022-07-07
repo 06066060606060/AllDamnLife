@@ -9,23 +9,23 @@
 
         @if (session('cart_ok'))
             <div x-data="{ show: true }" x-show="show" x-init="setTimeout(() => show = false, 3000, PopupUser())" class="pt-1 pr-4">
-                <div id="popmenu" class="px-4 py-2 text-xs text-emerald-500"><i class="fa-solid fa-basket-shopping"></i>&zwnj; Article ajouté au panier</div>
+                <div id="popmenu" class="px-4 py-2 text-xs btnmenu text-emerald-500"><i class="fa-solid fa-basket-shopping"></i>&zwnj; Article ajouté au panier</div>
             </div>
         @endif
 
         @if (session('success'))
             <div x-data="{ show: true }" x-show="show" x-init="setTimeout(() => show = false, 6000, PopupUser())">
-                <div id="popmenu" class="px-4 py-2 text-gray-100">Bienvenue {{ Auth::user()->prenom }}</div>
+                <div id="popmenu" class="px-4 py-2 text-gray-100 btnmenu">Bienvenue {{ Auth::user()->prenom }}</div>
             </div>
         @endif
         @if (session('error'))
             <div x-data="{ show: true }" x-show="show" x-init="setTimeout(() => show = false, 6000, PopupUser())" class="pt-2 pr-4">
-                <div id="popmenu" class="px-4 py-2 text-red-400">Login ou Mots de passe incorrect</div>
+                <div id="popmenu" class="px-4 py-2 text-red-400 btnmenu">Login ou Mots de passe incorrect</div>
             </div>
         @endif
         @if (session('desactivate'))
             <div x-data="{ show: true }" x-show="show" x-init="setTimeout(() => show = false, 6000, PopupUser())" class="pt-2 pr-4">
-                <div id="popmenu" class="px-4 py-2 text-red-400">Connection impossible, Compte désactivé</div>
+                <div id="popmenu" class="px-4 py-2 text-red-400 btnmenu">Connection impossible, Compte désactivé</div>
             </div>
         @endif
 
