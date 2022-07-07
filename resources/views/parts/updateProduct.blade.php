@@ -38,8 +38,8 @@
                             </div>
                             <div class="space-y-1 text-sm">
                                 <label for="prix" class="block text-xs font-bold text-white">Prix</label>
-                                <input value="{{ $card->prix }}" type="number" min="0" name="prix" id="prix"
-                                    placeholder="prix"
+                                <input value="{{ $card->prix }}" type="number" min="0" name="prix"
+                                    id="prix" placeholder="prix"
                                     class="w-1/5 px-4 py-3 text-gray-100 bg-gray-900 border-gray-700 rounded-md focus:border-teal-400">
                             </div>
                             <div class="space-y-1 text-sm">
@@ -47,9 +47,11 @@
                             </div>
                             <div class="space-y-1 text-sm tooltip1">
                                 <label class="">
-                                    <span class="px-4 py-3 mt-2 leading-tight text-gray-100 bg-gray-900 border border-gray-700 rounded-md shadow appearance-none hover:bg-gray-700 focus:outline-none focus:shadow-outline">Changer d'image</span>
+                                    <span
+                                        class="px-4 py-3 mt-2 leading-tight text-gray-100 bg-gray-900 border border-gray-700 rounded-md shadow appearance-none hover:bg-gray-700 focus:outline-none focus:shadow-outline">Changer
+                                        d'image</span>
                                     <input type="file" name="images" class="hidden" />
-                                    <p class="tooltiptext1">Png 256 x 269 recommandé</p>
+                                    <p class="tooltiptext1">Png 256 x 256 recommandé</p>
                                 </label>
                             </div>
                             <div class="relative inline-block w-64">

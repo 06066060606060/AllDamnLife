@@ -34,31 +34,32 @@
                     <option value="3" class="text-center text-yellow-500">★★★</option>
                     <option value="4" class="text-center text-yellow-500">★★★★</option>
                     <option value="5" class="text-center text-yellow-500">★★★★★</option>
+                    <option value="" class="text-center">Toutes les notes</option>
                 </select>
 
                 <select name="prix"
                     class="mx-1  w-[188px] my-2 appearance-none btnmenu h-[43.99px] py-3 text-sm text-white bg-gray-600 border-transparent rounded-md focus:border-gray-500 ">
                     <option value="" class="text-center">Prix</option>
                     <option value="10" class="text-center">
-                        - 10€</option> 10€
+                        moins de 10€</option> 10€
                     </option>
                     <option value="20" class="text-center">
-                        - 20€</option>
+                        moins de 20€</option>
                     <option value="30" class="text-center">
-                        - 30€</option>
+                        moins de 30€</option>
                     <option value="40" class="text-center">
-                        - 40€</option>
+                        moins de 40€</option>
                     <option value="50" class="text-center">
-                        - 50€</option>
-                    <option value="" class="text-center">Toutes</option>
+                        moins de 50€</option>
+                    <option value="" class="text-center">Tous les prix</option>
                 </select>
 
                 <button
-                    class="mx-1  w-[188px] my-2 h-[43.99px] text-sm text-center  text-gray-100 rounded-md btnmenu bg-violet-600 hover:bg-violet-400 focus:outline-none focus:bg-violet-500"><a
+                    class="mx-1  w-[188px] my-2 h-[43.99px] text-sm text-center  text-gray-100 rounded-md btnmenu bg-violet-500 hover:bg-violet-400 focus:outline-none focus:bg-violet-600"><a
                         href="/">Effacer les filtres</a>
                 </button>
                 <button
-                    class="mx-1  w-[188px] my-2 btnmenu h-[43.99px] text-sm text-center text-gray-100 transition-colors duration-200 bg-emerald-500 hover:bg-emerald-300 focus:outline-none focus:bg-emerald-500 rounded-md ">valider</button>
+                    class="mx-1  w-[188px] my-2 btnmenu h-[43.99px] text-sm text-center text-gray-100 transition-colors duration-200 bg-emerald-500 hover:bg-emerald-400 focus:outline-none focus:bg-emerald-500 rounded-md ">valider</button>
 
             </form>
         </li>
@@ -78,8 +79,8 @@
                 menu.classList.toggle('h-screen');
             }
         </script>
-      
-    
-   
+
+
+
     </div>
 </div>

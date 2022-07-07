@@ -5,54 +5,63 @@
     @php($urlprix = request()->query('prix'))
     @php($urlsearch = request()->query('q'))
 
-    @if($urlsearch)
-    <h1 class="mb-8">
-        Résultat pour: {{ $urlsearch }}
-    </h1>
-    @elseif($urlcat)
+    @if ($urlsearch)
+        <p class="mb-4 text-xl">
+            Résultat de la recherche : {{ $urlsearch }}
+        </p>
+    @endif
+    @if ($urlcat)
         @foreach ($categories->where('id_cat', '=', $urlcat) as $categorie)
-            <h1 class="mb-8">Catégorie : {{ $categorie->label }} </h1>
+            <p class="mb-4 text-xl">Catégorie {{ $categorie->label }}</p>
         @endforeach
-    @elseif ($urlnote)
-        <h1 class="mb-8"> Note:
+    @endif
+    @if ($urlnote)
+        <p class="mb-4 text-xl">Cartes avec la note: &zwnj;
             @for ($i = 0; $i < $urlnote; $i++)
                 <i class="text-yellow-500 fa-solid fa-star"></i>
             @endfor
-        </h1>
-    @elseif($urlprix)
-        <h1 class="mb-8">
-            produits d'une valeurs de moins de {{ $urlprix }}€ </h1>
-  @endif
+        </p>
+    @endif
+    @if ($urlprix)
+        <p class="mb-4 text-xl">
+            d'une valeur inférieure à {{ $urlprix }} €
+        </p>
+    @endif
 
     @forelse ($produits as $produit)
         <div class="flip">
             <div class="front">
                 <span class="ribbon cr cr-top cr-right cr-sticky cr-blue">{{ (int) $produit->prix }} €</span>
-                <img class="icon w-[256px] h-auto" src="{{ $produit->image }}">
-                <p class="mt-12">{{ $produit->titre }}</p>
-            </div>
-            <div class="back">
-                <div class="flex flex-col items-center content-center pt-6">
-                    <img class="w-auto h-20 pb-4 icon" src="{{ $produit->image }}">
-                    <span class="px-4 bg-blue-800 rounded-md">{{ (int) $produit->prix }} €</span>
-                    <span class="p-2 clamp">{{ $produit->description }}</span>
-                    <div class="flex items-center justify-center p-2 flex-rows">
+                <img class="icon h-[248px] w-auto" src="{{ $produit->image }}">
+                <div class="flex items-center justify-center p-2 flex-rows">
+                    @if ($produit->note)
                         @for ($i = 0; $i < round($produit->note); $i++)
                             <i class="px-1 text-yellow-500 fa-solid fa-star"></i>
                         @endfor
-                    </div>
+                    @else
+                        <i class="text-gray-200 fa-regular fa-star"></i>
+                    @endif
+                </div>
+                <p class="mt-4 text-xl">{{ $produit->titre }}</p>
+            </div>
+            <div class="back">
+                <div class="flex flex-col items-center content-center pt-6">
+                    <p class="mt-2 text-xl">{{ $produit->titre }}</p>
+                    <img class="w-auto h-20 pb-4 icon" src="{{ $produit->image }}">
+                    <span class="px-6 bg-blue-800">{{ (int) $produit->prix }} €</span>
+                    <span class="p-2 clamp">{{ $produit->description }}</span>
 
                     <form @auth action="/addtocart/{{ $produit->id }}" method="post"
                         onsubmit="myButton.disabled = true; return true;" @else
                         onclick="document.getElementById('primaryButton').click()" onsubmit="return false" @endauth
-                        class="px-2 py-1 mt-1 mb-3 transition-colors duration-150 rounded w-36 bg-emerald-500 hover:bg-emerald-300 hover:text-gray-800">
+                        class="px-2 py-2 mt-4 mb-3 transition-colors duration-150 rounded w-36 bg-emerald-500 hover:bg-emerald-300 hover:text-gray-800">
                         @csrf
                         <input type="hidden" name="quantite" value="1">
                         <button name="myButton" type="submit">Ajouter au panier</button>
                     </form>
 
                     <a href="/card/{{ $produit->id }}"
-                        class="w-24 transition-colors duration-150 bg-blue-600 rounded hover:bg-blue-400 hover:text-gray-800">Plus
+                        class="transition-colors duration-150 bg-blue-600 rounded w-36 hover:bg-blue-400 hover:text-gray-800">Plus
                         d'info</a>
                 </div>
             </div>
@@ -60,10 +69,12 @@
     @empty
         <div class="mt-4 flip">
             <div class="front">
-                <h2 class="pt-32 ">Aucun produit trouvé</h2>
+                <i class="pt-20 fa-solid fa-ban fa-6x"></i>
+                <h2 class="pt-4 text-xl ">Aucun produit trouvé</h2>
             </div>
             <div class="back">
-                <h2 class="pt-32 ">Aucun produit trouvé</h2>
+                <i class="pt-20 fa-solid fa-ban fa-6x"></i>
+                <h2 class="pt-4 text-xl ">Aucun produit trouvé</h2>
             </div>
         </div>
 

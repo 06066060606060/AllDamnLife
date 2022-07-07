@@ -1,6 +1,6 @@
 <div x-data="{ modelOpen: false }">
 
-    <button @click="modelOpen =!modelOpen"  id="secondaryButton"
+    <button @click="modelOpen =!modelOpen" id="secondaryButton"
         class="flex items-center justify-center px-4 py-2 mx-1 space-x-2 text-sm tracking-wide text-white capitalize transition-colors duration-200 transform bg-gray-500 rounded-md hover:bg-gray-700 focus:outline-none focus:bg-gray-500 focus:ring focus:ring-gray-300 focus:ring-opacity-50">
         <span>S'inscrire</span>
     </button>
@@ -26,9 +26,9 @@
                     {{-- @click="modelOpen = false" --}}
                     <div class="w-full max-w-md px-20 py-8 space-y-3 text-gray-100 bg-gray-600 rounded-xl">
                         <img class="p-2 bg-gray-900 rounded" src="/img/logo.png" alt="logo">
-                    
 
-                        <form action="/register" class="space-y-6 ng-untouched ng-pristine ng-valid"  method="post">
+
+                        <form action="/register" class="space-y-6 ng-untouched ng-pristine ng-valid" method="post">
                             @csrf
                             <div class="space-y-1 text-sm">
                                 <label for="nom" class="block text-gray-400">Nom</label>
@@ -49,13 +49,13 @@
                                 <label for="password" class="block text-gray-400">Mot de passe</label>
                                 <input type="password" name="password" id="password" placeholder="Password"
                                     class="w-full px-4 py-3 text-gray-100 bg-gray-900 border-gray-700 rounded-md focus:border-emerald-400">
-                                
+
                             </div>
                             <button
                                 class="block w-full p-3 text-center text-white transition-colors duration-200 rounded bg-emerald-500 hover:bg-emerald-400 focus:bg-emerald-400">S'inscrire
-                                </button>
+                            </button>
                         </form>
-                       
+
                     </div>
 
                 </section>
