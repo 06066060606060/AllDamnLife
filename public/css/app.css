@@ -9125,6 +9125,10 @@ video {
   font-size: 0.75rem;
   line-height: 1rem;
 }
+.text-2xl {
+  font-size: 1.5rem;
+  line-height: 2rem;
+}
 .text-4xl {
   font-size: 2.25rem;
   line-height: 2.5rem;
@@ -9137,9 +9141,9 @@ video {
   font-size: 1.25rem;
   line-height: 1.75rem;
 }
-.text-2xl {
-  font-size: 1.5rem;
-  line-height: 2rem;
+.text-3xl {
+  font-size: 1.875rem;
+  line-height: 2.25rem;
 }
 .text-3xl {
   font-size: 1.875rem;
@@ -9169,6 +9173,9 @@ video {
 .leading-tight {
   line-height: 1.25;
 }
+.leading-snug {
+  line-height: 1.375;
+}
 .leading-none {
   line-height: 1;
 }
@@ -9180,6 +9187,9 @@ video {
 }
 .tracking-wide {
   letter-spacing: 0.025em;
+}
+.tracking-wider {
+  letter-spacing: 0.05em;
 }
 .tracking-tight {
   letter-spacing: -0.025em;
@@ -9212,6 +9222,10 @@ video {
   --tw-text-opacity: 1;
   color: rgb(74 222 128 / var(--tw-text-opacity));
 }
+.text-violet-400 {
+  --tw-text-opacity: 1;
+  color: rgb(167 139 250 / var(--tw-text-opacity));
+}
 .text-yellow-500 {
   --tw-text-opacity: 1;
   color: rgb(234 179 8 / var(--tw-text-opacity));
@@ -9236,10 +9250,13 @@ video {
   --tw-text-opacity: 1;
   color: rgb(110 231 183 / var(--tw-text-opacity));
 }
+<<<<<<< HEAD
+=======
 .text-violet-400 {
   --tw-text-opacity: 1;
   color: rgb(167 139 250 / var(--tw-text-opacity));
 }
+>>>>>>> 653e5b44326e99bac4e0ce95a34dd826896adc08
 .text-blue-400 {
   --tw-text-opacity: 1;
   color: rgb(96 165 250 / var(--tw-text-opacity));
@@ -10159,6 +10176,18 @@ h1 {
 
   .md\:p-10 {
     padding: 2.5rem;
+<<<<<<< HEAD
+  }
+
+  .md\:p-8 {
+    padding: 2rem;
+  }
+
+  .md\:px-10 {
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
+=======
+>>>>>>> 653e5b44326e99bac4e0ce95a34dd826896adc08
   }
 
   .md\:p-8 {
@@ -10178,6 +10207,10 @@ h1 {
   .md\:py-24 {
     padding-top: 6rem;
     padding-bottom: 6rem;
+  }
+
+  .md\:pb-14 {
+    padding-bottom: 3.5rem;
   }
 
   .md\:pl-12 {
@@ -10233,6 +10266,11 @@ h1 {
     padding: 4rem;
   }
 
+  .lg\:px-32 {
+    padding-left: 8rem;
+    padding-right: 8rem;
+  }
+
   .lg\:px-8 {
     padding-left: 2rem;
     padding-right: 2rem;
@@ -10250,6 +10288,13 @@ h1 {
     --tw-scale-x: 1.1;
     --tw-scale-y: 1.1;
     transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+  }
+}
+  
+@media (min-width: 1280px) {
+
+  .xl\:max-w-3xl {
+    max-width: 48rem;
   }
 }
   
