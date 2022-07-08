@@ -22,14 +22,14 @@
                 class="inline-block pt-8 overflow-hidden transition-all transform rounded-lg 2xl:max-w-2xl">
                 <section class="">
                     {{-- @click="modelOpen = false" --}}
-                    <div class="w-full max-w-md py-8 px-20 space-y-3 text-gray-100 bg-gray-600 rounded-xl">
+                    <div class="w-full max-w-md px-20 py-8 space-y-3 text-gray-100 bg-gray-600 rounded-xl">
                         <form action="/comm/{{ $produit->id }}" class="space-y-6 ng-untouched ng-pristine ng-valid"
                             method="post">
                             @csrf
                             <div class="space-y-1 text-sm">
                                 <label for="comms" class="block pb-2 text-gray-200">Laisser un commentaire</label>
                                 <textarea class="w-full px-4 py-3 text-gray-100 bg-gray-900 border-gray-700 rounded-md focus:border-teal-400"
-                                    rows="5" cols="20" minlength="5" name="contenu" placeholder="commenter..."> </textarea>
+                                    rows="6" cols="30" minlength="5" name="contenu" placeholder="commenter..." required></textarea>
                             </div>
                             @auth
 
@@ -40,19 +40,19 @@
                             <div class="flex flex-col items-center space-y-3">
                                 <label for="note" class="block text-sm text-gray-200">Noter</label>
                                 <div class="flex space-x-3">
-                                    
+                                    <input type="hidden" name="noteavg" value="{{ $noteProduct['average'] }}">
                                     <input type="hidden" id="note" name="note" value="0">
-                                        <input type="radio" id="nétoile"> <span
-                                            class="etoile" onclick="change(1)">★</span>
-                                            <input type="radio" id="nétoile"> <span
-                                            class="etoile" onclick="change(2)">★</span>
-                                            <input type="radio" id="nétoile"> <span
-                                            class="etoile" onclick="change(3)">★</span>
-                                            <input type="radio" id="nétoile"> <span
-                                            class="etoile" onclick="change(4)">★</span>
-                                            <input type="radio" id="nétoile"> <span
-                                            class="etoile" onclick="change(5)">★</span>
-                                    
+                                    <input type="radio" id="nétoile"> <span class="etoile"
+                                        onclick="change(1)">★</span>
+                                    <input type="radio" id="nétoile"> <span class="etoile"
+                                        onclick="change(2)">★</span>
+                                    <input type="radio" id="nétoile"> <span class="etoile"
+                                        onclick="change(3)">★</span>
+                                    <input type="radio" id="nétoile"> <span class="etoile"
+                                        onclick="change(4)">★</span>
+                                    <input type="radio" id="nétoile"> <span class="etoile"
+                                        onclick="change(5)">★</span>
+
                                 </div>
                             </div>
                             <button
@@ -66,11 +66,11 @@
 </div>
 
 <script>
-function change(lanote){
-         var manote =  document.getElementById("note"); 
+    function change(lanote) {
+        var manote = document.getElementById("note");
         manote.value = lanote;
-          
-}
+
+    }
 
     let note = 0;
     let etoiles = document.querySelectorAll('.etoile');

@@ -7,7 +7,7 @@
 
     <div x-cloak x-show="modelOpen" class="fixed inset-0 z-50 overflow-y-auto" aria-labelledby="modal-title" role="dialog"
         aria-modal="true">
-        <div class="flex items-end justify-center min-h-screen px-4 text-center md:items-center sm:block sm:p-0">
+        <div class="flex items-end justify-center px-4 text-center md:items-center sm:block sm:p-0">
             <div x-cloak @click="modelOpen = false" x-show="modelOpen"
                 x-transition:enter="transition ease-out duration-300 transform" x-transition:enter-start="opacity-0"
                 x-transition:enter-end="opacity-100" x-transition:leave="transition ease-in duration-200 transform"
@@ -24,22 +24,27 @@
                 <section>
                     {{-- @click="modelOpen = false" --}}
                     <div class="w-full max-w-xl px-20 py-8 space-y-3 text-gray-100 bg-gray-600 rounded-xl">
-                        <div class="flex flex-row">
-                            <button @click="modelOpen = false"
-                                class="h-12 px-6 mx-4 my-4 text-gray-100 bg-gray-700 rounded-lg focus:outline-none hover:text-gray-200">
-                                Annuler
-                            </button>
-                            <form action="/delete/{{ $categorie->id_cat }}" method="post">
-                                @csrf
-                                @method('delete')
-                                <button type="submit"
+                        <div class="flex flex-col ">
+                            <label class="mb-4 text-center">êtes vous sur de vouloir supprimer la catégorie :</label>
+                            <span class="mb-8"> {{ $categorie->label }} ?</span>
+                            <div class="flex flex-row justify-center">
+                                <button @click="modelOpen = false"
                                     class="h-12 px-6 mx-4 my-4 text-gray-100 bg-gray-700 rounded-lg focus:outline-none hover:text-gray-200">
-                                    Confirmer
+                                    Annuler
                                 </button>
-                            </form>
+                                <form action="/delete/{{ $categorie->id_cat }}" method="post">
+                                    @csrf
+                                    @method('delete')
+                                    <button type="submit"
+                                        class="h-12 px-6 mx-4 my-4 text-gray-100 bg-red-700 rounded-lg focus:outline-none hover:text-gray-200">
+                                        Confirmer
+                                    </button>
+                                </form>
+                            </div>
                         </div>
                     </div>
                 </section>
             </div>
         </div>
     </div>
+</div>

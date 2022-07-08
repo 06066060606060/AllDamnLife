@@ -6,12 +6,13 @@
 @import "~@fortawesome/fontawesome-free/css/solid";
 @import "~@fortawesome/fontawesome-free/css/brands";
 
-@import url("https://fonts.googleapis.com/css2?family=Lato&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
 
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    font-family: "Lato", sans-serif;
 }
 
 *::selection {
@@ -177,7 +178,7 @@ h1 {
 
 .clamp {
     display: -webkit-box;
-    -webkit-line-clamp: 5;
+    -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
     overflow: hidden;
     padding-bottom: 5px;
@@ -257,3 +258,7 @@ h1 {
     padding-bottom: 5px;
 }
   
+#place-holder-center::placeholder {
+    text-align: center;
+}
+

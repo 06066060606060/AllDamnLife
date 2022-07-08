@@ -4,7 +4,7 @@
     </button>
     <div x-cloak x-show="modelOpen" class="fixed inset-0 z-50 overflow-y-auto" aria-labelledby="modal-title" role="dialog"
         aria-modal="true">
-        <div class="flex items-end justify-center min-h-screen px-4 text-center md:items-center sm:block sm:p-0">
+        <div class="flex items-end justify-center px-4 text-center md:items-center sm:block sm:p-0">
             <div x-cloak @click="modelOpen = false" x-show="modelOpen"
                 x-transition:enter="transition ease-out duration-300 transform" x-transition:enter-start="opacity-0"
                 x-transition:enter-end="opacity-100" x-transition:leave="transition ease-in duration-200 transform"
@@ -38,8 +38,8 @@
                             </div>
                             <div class="space-y-1 text-sm">
                                 <label for="prix" class="block text-xs font-bold text-white">Prix</label>
-                                <input value="{{ $card->prix }}" type="number" min="0" name="prix" id="prix"
-                                    placeholder="prix"
+                                <input value="{{ $card->prix }}" type="number" min="0" name="prix"
+                                    id="prix" placeholder="prix"
                                     class="w-1/5 px-4 py-3 text-gray-100 bg-gray-900 border-gray-700 rounded-md focus:border-teal-400">
                             </div>
                             <div class="space-y-1 text-sm">
@@ -47,9 +47,11 @@
                             </div>
                             <div class="space-y-1 text-sm tooltip1">
                                 <label class="">
-                                    <span class="px-4 py-3 mt-2 leading-tight text-gray-100 bg-gray-900 border border-gray-700 rounded-md shadow appearance-none hover:bg-gray-700 focus:outline-none focus:shadow-outline">Changer d'image</span>
+                                    <span
+                                        class="px-4 py-3 mt-2 leading-tight text-gray-100 bg-gray-900 border border-gray-700 rounded-md shadow appearance-none hover:bg-gray-700 focus:outline-none focus:shadow-outline">Changer
+                                        d'image</span>
                                     <input type="file" name="images" class="hidden" />
-                                    <p class="tooltiptext1">Png 256 x 269 recommandé</p>
+                                    <p class="tooltiptext1">Png 256 x 256 recommandé</p>
                                 </label>
                             </div>
                             <div class="relative inline-block w-64">

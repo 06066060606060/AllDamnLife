@@ -5,10 +5,8 @@
     @include('parts.filter')
     
 </div>
-@include('parts.new')
 @include('parts.section')
 {{$produits->appends(Request::all())->links('pagination::tailwind')}}
-
 
 @endsection
 

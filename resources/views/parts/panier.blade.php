@@ -16,6 +16,11 @@
                     @php($totalcost = 0)
                     <div class="mt-4">
                         <p class="text-gray-200">Contenu du panier</p>
+                        @if (session('cart_delete'))
+                            <div x-data="{ show: true }" x-show="show" x-init="setTimeout(() => show = false, 3000)" class="pt-2 pr-4">
+                                <span class='text-red-500 text-bold'>Article supprimé du panier</span>
+                            </div>
+                        @endif
                     </div>
                     <div class="mt-12">
                         <div class="flow-root">
@@ -36,17 +41,21 @@
                                                 </div>
                                             </a>
                                             <div>
-                                                <p class="text-sm text-white">x {{$panier->quantite }}</p>
+                                                <p class="text-sm text-white">x {{ $panier->quantite }}</p>
                                                 <p class="text-sm text-emerald-300">
                                                     {{ $produit->prix }} €
                                                     @php($prixtotal = $produit->prix * $panier->quantite)
                                                     @php($totalcost += $prixtotal)
-                                                    <a href="/deletefromcart/{{ $panier->prod_id }}">
-                                                    <small class="pl-1 ml-4 text-white">
+                                                <p>
+                                                <form action="/deletefromcart/{{ $panier->prod_id }}" method="post"
+                                                    onsubmit="myButtonDel.disabled = true; return true;">
+                                                    @csrf
+                                                    @method('delete')
+                                                    <button name="myButtonDel" type="submit">
                                                         <i
-                                                            class="fa-solid fa-trash-can hover:text-red-500 focus:text-red-300"></i>
-                                                    </small>
-                                                    </a>
+                                                            class="text-gray-100 fa-solid fa-trash-can hover:text-red-500 focus:text-red-300"></i>
+                                                    </button>
+                                                </form>
                                                 </p>
                                             </div>
                                         </li>

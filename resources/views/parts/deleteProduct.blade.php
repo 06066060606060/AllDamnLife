@@ -8,12 +8,13 @@
 
     <div x-cloak x-show="modelOpen" class="fixed inset-0 z-50 overflow-y-auto" aria-labelledby="modal-title" role="dialog"
         aria-modal="true">
-        <div class="flex items-end justify-center min-h-screen px-4 text-center md:items-center sm:block sm:p-0">
+        <div class="flex items-end justify-center px-4 text-center md:items-center sm:block sm:p-0">
             <div x-cloak @click="modelOpen = false" x-show="modelOpen"
                 x-transition:enter="transition ease-out duration-300 transform" x-transition:enter-start="opacity-0"
                 x-transition:enter-end="opacity-100" x-transition:leave="transition ease-in duration-200 transform"
                 x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0"
-                class="fixed inset-0 transition-opacity bg-gray-900 bg-opacity-60" aria-hidden="true"></div>
+                class="fixed inset-0 transition-opacity bg-gray-900 bg-opacity-60" aria-hidden="true">
+            </div>
 
             <div x-cloak x-show="modelOpen" x-transition:enter="transition ease-out duration-300 transform"
                 x-transition:enter-start="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
@@ -26,26 +27,27 @@
                     {{-- @click="modelOpen = false" --}}
                     <div class="w-full max-w-xl px-20 py-8 space-y-3 text-gray-100 bg-gray-600 rounded-xl">
 
-<div class="flex flex-col">
-    <label class="text-center mb-4">êtes vous sur de vouloir supprimer l'article :</label> 
-        <span class="mb-8"> {{$card->titre}} de {{$card->prix}} ?</span>
-    <div class="flex flex-row">
-                            <button @click="modelOpen = false"
-                            class="h-12 px-6 mx-4 my-4 text-gray-100 bg-gray-700 rounded-lg focus:outline-none hover:text-gray-200">
-                            Annuler
-                        </button>
-                        <form action="/deleteCard/{{ $card->id }}" method="post">
-                            @csrf
-                            @method('delete')
-                            <button type="submit"
-                            class="h-12 px-6 mx-4 my-4 text-gray-100 bg-red-700 rounded-lg focus:outline-none hover:text-gray-200">
-                            Confirmer
-                        </button>
-                    </form>
-               </div>
-            </div>
-            </div>
+                        <div class="flex flex-col">
+                            <label class="mb-4 text-center">êtes vous sur de vouloir supprimer l'article :</label>
+                            <span class="mb-8"> {{ $card->titre }} à {{ $card->prix }} € ?</span>
+                            <div class="flex flex-row justify-center">
+                                <button @click="modelOpen = false"
+                                    class="h-12 px-6 mx-4 my-4 text-gray-100 bg-gray-700 rounded-lg focus:outline-none hover:text-gray-200">
+                                    Annuler
+                                </button>
+                                <form action="/deleteCard/{{ $card->id }}" method="post">
+                                    @csrf
+                                    @method('delete')
+                                    <button type="submit"
+                                        class="h-12 px-6 mx-4 my-4 text-gray-100 bg-red-700 rounded-lg focus:outline-none hover:text-gray-200">
+                                        Confirmer
+                                    </button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
                 </section>
             </div>
         </div>
     </div>
+</div>

@@ -15,12 +15,6 @@ Route::get('/categories', function () {
     return view('categories');
 });
 
-Route::get('/giveCards', function () {
-    return view('giveCards');
-});
-
-
-
 Route::post('/register', [AuthController::class, 'register'])->name('register');
 Route::post('/login', [AuthController::class, 'login'])->name('login');
 Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
@@ -38,10 +32,7 @@ Route::post('/comm/{id}', [ProductController::class, 'addComm'])->name('addComm'
 Route::get('/deleteComm/{id}', [ProductController::class, 'deleteComm'])->name('deleteComm');
 
 Route::get('/',[ProductController::class,'getProduct']);
-Route::get('/filter',[ProductController::class,'getProduct']);
-Route::get('/filter/search',[ProductController::class,'search'])->name('searchcard');
-
-
+Route::get('/filter',[ProductController::class,'getProduct'])->name('searchfilter');
 
 
 Route::get('/card/{id}',[ProductController::class,'getOneProduct'])->whereNumber('id')->name('getCard');
@@ -54,7 +45,7 @@ Route::delete('/deleteCard/{id}', [ProductController::class, 'deleteCard'])->nam
 
 Route::get('/cart',[CartController::class,'getCart'])->name('cart');
 Route::post('/addtocart/{id}',[CartController::class,'addtoCart'])->whereNumber('id');
-Route::get('/deletefromcart/{id}',[CartController::class,'deletefromCart'])->whereNumber('id');
+Route::delete('/deletefromcart/{id}',[CartController::class,'deletefromCart'])->whereNumber('id');
 
 route::get('/categories', [CategoriesController::class, 'getCateg'])->name('categories');
 route::post('/Updatecategorie/{id}', [CategoriesController::class, 'update'])->whereNumber('id');
