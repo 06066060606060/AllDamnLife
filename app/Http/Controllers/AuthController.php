@@ -22,8 +22,9 @@ class AuthController extends Controller
             'prenom' => 'required',
             'email' => 'required|unique:users,email|max:255',
             'password' => 'required',
+            'password' => 'required|confirmed|min:6'
         ]);
-
+        
         $user = new User();
         $user->nom = $validate['nom'];
         $user->prenom = $validate['prenom'];
@@ -31,6 +32,8 @@ class AuthController extends Controller
         $user->password = Hash::make($validate['password']);
         $user->save();
         return redirect()->back();
+
+
     }
 
     public function login(Request $request)
