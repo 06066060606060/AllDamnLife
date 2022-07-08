@@ -39,7 +39,6 @@
                     <option value="3" {{ $urlnote == 3 ? 'selected' : '' }}  class="text-center text-yellow-500">★★★</option>
                     <option value="4" {{ $urlnote == 4 ? 'selected' : '' }}  class="text-center text-yellow-500">★★★★</option>
                     <option value="5" {{ $urlnote == 5 ? 'selected' : '' }}  class="text-center text-yellow-500">★★★★★</option>
-                    <option value="0"  {{ $urlnote == '0' ? 'selected' : '' }}  class="text-center">Toutes les notes</option>
                 </select>
 
                 <select name="prix"
