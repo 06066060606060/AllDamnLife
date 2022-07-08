@@ -16,6 +16,11 @@
                     @php($totalcost = 0)
                     <div class="mt-4">
                         <p class="text-gray-200">Contenu du panier</p>
+                        @if (session('cart_delete'))
+                            <div x-data="{ show: true }" x-show="show" x-init="setTimeout(() => show = false, 3000)" class="pt-2 pr-4">
+                                <span class='text-red-500 text-bold'>Article supprimé du panier</span>
+                            </div>
+                        @endif
                     </div>
                     <div class="mt-12">
                         <div class="flow-root">

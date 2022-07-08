@@ -25,93 +25,98 @@
                 class="inline-block pt-8 overflow-hidden transition-all transform rounded-lg 2xl:max-w-2xl">
                 <section class="">
                     {{-- @click="modelOpen = false" --}}
-                    <div class="w-full max-w-xl py-8 px-20 space-y-3 text-gray-100 bg-gray-600 rounded-xl">
+                    <div class="w-full max-w-xl px-20 py-8 space-y-3 text-gray-100 bg-gray-600 rounded-xl">
                         <form action="{{ route('updateprofil', $user->id) }}" enctype="multipart/form-data"
                             method="POST" class="w-full max-w-lg">
                             @csrf
                             <span>Modifier mon Profil</span>
-                            <div class="space-y-1 my-8 text-sm ">
+                            <div class="my-8 space-y-1 text-sm ">
                                 <label class="">
-                                    <span class="px-4 py-3 mt-2  leading-tight text-gray-100 bg-gray-900 border border-gray-700 rounded-md shadow appearance-none hover:bg-gray-700 focus:outline-none focus:shadow-outline">Selectionner une image</span>
+                                    <span
+                                        class="px-4 py-3 mt-2 leading-tight text-gray-100 bg-gray-900 border border-gray-700 rounded-md shadow appearance-none hover:bg-gray-700 focus:outline-none focus:shadow-outline">Selectionner
+                                        une image</span>
                                     <input type="file" name="photo" class="hidden" value="" />
-                                    
+
                                 </label>
-                               
+
                             </div>
-                            <div class="flex flex-wrap -mx-3 mb-6">
-                                <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
-                                    <label class="block uppercase tracking-wide text-white text-xs font-bold mb-2"
+                            <div class="flex flex-wrap mb-6 -mx-3">
+                                <div class="w-full px-3 mb-6 md:w-1/2 md:mb-0">
+                                    <label class="block mb-2 text-xs font-bold tracking-wide text-white uppercase"
                                         for="grid-first-name">
                                         Nom
                                     </label>
                                     <input name="nom"
-                                        class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-500 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
-                                        id="grid-first-name" type="text" placeholder="" value="{{  $user->nom }}">
+                                        class="block w-full px-4 py-3 mb-3 leading-tight text-gray-700 bg-gray-200 border border-gray-500 rounded appearance-none focus:outline-none focus:bg-white"
+                                        id="grid-first-name" type="text" placeholder="" value="{{ $user->nom }}">
 
                                 </div>
-                                <div class="w-full md:w-1/2 px-3">
-                                    <label class="block uppercase tracking-wide text-white text-xs font-bold mb-2"
+                                <div class="w-full px-3 md:w-1/2">
+                                    <label class="block mb-2 text-xs font-bold tracking-wide text-white uppercase"
                                         for="grid-last-name">
                                         Prenom
                                     </label>
                                     <input name="prenom"
-                                        class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-                                        id="grid-last-name" type="text" placeholder="" value="{{  $user->prenom }}">
+                                        class="block w-full px-4 py-3 leading-tight text-gray-700 bg-gray-200 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500"
+                                        id="grid-last-name" type="text" placeholder=""
+                                        value="{{ $user->prenom }}">
                                 </div>
                             </div>
-                            <div class="flex flex-wrap -mx-3 mb-6">
-                                <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
-                                    <label class="block uppercase tracking-wide text-white text-xs font-bold mb-2"
+                            <div class="flex flex-wrap mb-6 -mx-3">
+                                <div class="w-full px-3 mb-6 md:w-1/2 md:mb-0">
+                                    <label class="block mb-2 text-xs font-bold tracking-wide text-white uppercase"
                                         for="username">
                                         Pseudo
                                     </label>
                                     <input name="username"
-                                        class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-500 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+                                        class="block w-full px-4 py-3 mb-3 leading-tight text-gray-700 bg-gray-200 border border-gray-500 rounded appearance-none focus:outline-none focus:bg-white"
                                         type="text" placeholder="" value="{{ $user->username }}">
 
                                 </div>
-                                <div class="w-full md:w-1/2 px-3">
-                                    <label class="block uppercase tracking-wide text-white text-xs font-bold mb-2"
+                                <div class="w-full px-3 md:w-1/2">
+                                    <label class="block mb-2 text-xs font-bold tracking-wide text-white uppercase"
                                         for="grid-last-name">
-                                    Telephone
+                                        Telephone
                                     </label>
                                     <input name="phone"
-                                        class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-                                        id="grid-last-name" type="text" placeholder="" value="{{ $user->numero_telephone }}">
+                                        class="block w-full px-4 py-3 leading-tight text-gray-700 bg-gray-200 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500"
+                                        id="grid-last-name" type="text" placeholder=""
+                                        value="{{ $user->numero_telephone }}">
                                 </div>
                             </div>
-                            <div class="flex flex-wrap -mx-3 mb-6">
+                            <div class="flex flex-wrap mb-6 -mx-3">
                                 <div class="w-full px-3">
-                                    <label class="block uppercase tracking-wide text-white text-xs font-bold mb-2"
+                                    <label class="block mb-2 text-xs font-bold tracking-wide text-white uppercase"
                                         for="grid-password">
                                         Addresse
                                     </label>
                                     <input name="address"
-                                        class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-                                        placeholder="" value=" {{  $user->address }}">
+                                        class="block w-full px-4 py-3 mb-3 leading-tight text-gray-700 bg-gray-200 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500"
+                                        placeholder="" value=" {{ $user->address }}">
                                 </div>
                             </div>
-                            <div class="flex flex-wrap -mx-3 mb-2">
-                                <div class="w-full md:w-1/3 px-3 mb-6 md:mb-0">
-                                    <label class="block uppercase tracking-wide text-white text-xs font-bold mb-2"
+                            <div class="flex flex-wrap mb-2 -mx-3">
+                                <div class="w-full px-3 mb-6 md:w-1/3 md:mb-0">
+                                    <label class="block mb-2 text-xs font-bold tracking-wide text-white uppercase"
                                         for="grid-zip">
                                         Code-Postal
                                     </label>
                                     <input name="zip"
-                                        class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-                                        id="grid-zip" type="text" placeholder="90210" value=" {{  $user->zipCode }}">
+                                        class="block w-full px-4 py-3 leading-tight text-gray-700 bg-gray-200 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500"
+                                        id="grid-zip" type="text" placeholder="90210"
+                                        value=" {{ $user->zipCode }}">
                                 </div>
-                                <div class="w-full md:w-2/3 px-3 mb-6 md:mb-0 pb-4">
-                                    <label class="block uppercase tracking-wide text-white text-xs font-bold mb-2"
+                                <div class="w-full px-3 pb-4 mb-6 md:w-2/3 md:mb-0">
+                                    <label class="block mb-2 text-xs font-bold tracking-wide text-white uppercase"
                                         for="grid-city">
                                         Ville
                                     </label>
                                     <input name="city"
-                                        class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+                                        class="block w-full px-4 py-3 leading-tight text-gray-700 bg-gray-200 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500"
                                         id="grid-city" type="text" placeholder="" value=" {{ $user->city }}">
                                 </div>
                                 <button
-                                class="block w-full p-3 text-center text-gray-900 transition-colors duration-200 bg-teal-400 rounded hover:bg-teal-200 focus:bg-teal-200">Valider</button>
+                                    class="block w-full p-3 text-center text-gray-900 transition-colors duration-200 bg-teal-400 rounded hover:bg-teal-200 focus:bg-teal-200">Valider</button>
                             </div>
                     </div>
                     </form>

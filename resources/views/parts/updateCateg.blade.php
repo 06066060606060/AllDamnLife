@@ -1,13 +1,13 @@
 <div x-data="{ modelOpen: false }">
 
     <button @click="modelOpen =!modelOpen"
-        class="p-3 text-violet-400 cursor-pointer hover:text-violet-600 hover:font-medium">
+        class="p-3 cursor-pointer text-violet-400 hover:text-violet-600 hover:font-medium">
         <i class="fa-solid fa-pen-to-square "></i>
     </button>
 
     <div x-cloak x-show="modelOpen" class="fixed inset-0 z-50 overflow-y-auto" aria-labelledby="modal-title" role="dialog"
         aria-modal="true">
-        <div class="flex items-end justify-center min-h-screen px-4 text-center md:items-center sm:block sm:p-0">
+        <div class="flex items-end justify-center px-4 text-center md:items-center sm:block sm:p-0">
             <div x-cloak @click="modelOpen = false" x-show="modelOpen"
                 x-transition:enter="transition ease-out duration-300 transform" x-transition:enter-start="opacity-0"
                 x-transition:enter-end="opacity-100" x-transition:leave="transition ease-in duration-200 transform"
@@ -22,7 +22,7 @@
                 class="inline-block pt-8 overflow-hidden transition-all transform rounded-lg 2xl:max-w-2xl">
                 <section class="">
                     {{-- @click="modelOpen = false" --}}
-                    <div class="w-full max-w-md py-8 px-20 space-y-3 text-gray-100 bg-gray-600 rounded-xl">
+                    <div class="w-full max-w-md px-20 py-8 space-y-3 text-gray-100 bg-gray-600 rounded-xl">
                         <form action="/Updatecategorie/{{ $categorie['id_cat'] }}" class="space-y-6" method="post">
                             @csrf
                             <div class="space-y-1 text-sm">
