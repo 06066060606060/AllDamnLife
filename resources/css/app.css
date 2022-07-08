@@ -299,3 +299,8 @@ h1 {
     direction: rtl;
 }
 
+#place-holder-center{
+    text-align: center;
+    direction: rtl;
+}
+
