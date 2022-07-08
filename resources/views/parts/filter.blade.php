@@ -1,3 +1,6 @@
+@php($urlcat = request()->query('categories'))
+@php($urlnote = request()->query('note'))
+@php($urlprix = request()->query('prix'))
 <div class="w-full px-4 rounded-lg">
     <!-- mobile menu -->
 
@@ -16,42 +19,44 @@
                     value="{{ request()->q ?? '' }}">
 
 
-                <select name="categories"
+                <select name="categories"  
                     class="mx-1  w-[188px] my-2 appearance-none btnmenu h-[43.99px] py-3 text-sm text-white bg-gray-600 border-transparent rounded-md focus:border-gray-500">
                     <option value="" class="text-center">Catégories </option>
 
                     @foreach ($categories as $categorie)
-                        <option value="{{ $categorie->id_cat }}" class="text-center">{{ $categorie->label }}
+                  
+                    <option value="{{ $categorie->id_cat }}" {{ $urlcat == $categorie->id_cat ? 'selected' : '' }} class="text-center">{{ $categorie->label }}
                         </option>
+              
                     @endforeach
                 </select>
 
                 <select name="note"
                     class="mx-1  w-[188px] my-2 appearance-none btnmenu  h-[43.99px] py-3 text-sm text-white bg-gray-600 border-transparent rounded-md focus:border-gray-500">
                     <option value="" class="text-center">Notes</option>
-                    <option value="1" class="text-center text-yellow-500">★</option>
-                    <option value="2" class="text-center text-yellow-500">★★</option>
-                    <option value="3" class="text-center text-yellow-500">★★★</option>
-                    <option value="4" class="text-center text-yellow-500">★★★★</option>
-                    <option value="5" class="text-center text-yellow-500">★★★★★</option>
-                    <option value="" class="text-center">Toutes les notes</option>
+                    <option value="1" {{ $urlnote == 1 ? 'selected' : '' }}  class="text-center text-yellow-500">★</option>
+                    <option value="2" {{ $urlnote == 2 ? 'selected' : '' }}  class="text-center text-yellow-500">★★</option>
+                    <option value="3" {{ $urlnote == 3 ? 'selected' : '' }}  class="text-center text-yellow-500">★★★</option>
+                    <option value="4" {{ $urlnote == 4 ? 'selected' : '' }}  class="text-center text-yellow-500">★★★★</option>
+                    <option value="5" {{ $urlnote == 5 ? 'selected' : '' }}  class="text-center text-yellow-500">★★★★★</option>
+                    <option value="0"  {{ $urlnote == '0' ? 'selected' : '' }}  class="text-center">Toutes les notes</option>
                 </select>
 
                 <select name="prix"
                     class="mx-1  w-[188px] my-2 appearance-none btnmenu h-[43.99px] py-3 text-sm text-white bg-gray-600 border-transparent rounded-md focus:border-gray-500 ">
                     <option value="" class="text-center">Prix</option>
-                    <option value="10" class="text-center">
+                    <option value="10" {{ $urlprix == 10 ? 'selected' : '' }} class="text-center">
                         moins de 10€</option>
                     </option>
-                    <option value="20" class="text-center">
+                    <option value="20" {{ $urlprix == 20 ? 'selected' : '' }} class="text-center">
                         moins de 20€</option>
-                    <option value="30" class="text-center">
+                    <option value="30" {{ $urlprix == 30 ? 'selected' : '' }} class="text-center">
                         moins de 30€</option>
-                    <option value="40" class="text-center">
+                    <option value="40" {{ $urlprix == 40 ? 'selected' : '' }} class="text-center">
                         moins de 40€</option>
-                    <option value="50" class="text-center">
+                    <option value="50" {{ $urlprix == 50 ? 'selected' : '' }} class="text-center">
                         moins de 50€</option>
-                    <option value="" class="text-center">Tous les prix</option>
+                     <option value="200" {{ $urlprix == 200 ? 'selected' : '' }} class="text-center">Tous les prix</option>
                 </select>
 
                 <button
