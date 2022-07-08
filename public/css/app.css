@@ -9684,6 +9684,14 @@ h1 {
     text-align: -webkit-center;
 }
 
+select {
+    text-align: center;
+    text-align: -webkit-center;
+    -webkit-appearance: none; /* turn off drop-down arrow*/
+    -moz-appearance: none;
+    text-align:-moz-center;
+}
+
 .placeholder\:text-right::-moz-placeholder {
   text-align: right;
 }
@@ -10326,5 +10334,3 @@ h1 {
     max-width: 42rem;
   }
 }
-
-
