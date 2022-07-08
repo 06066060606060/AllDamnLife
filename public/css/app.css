@@ -9399,25 +9399,13 @@ video {
     margin: 0;
     padding: 0;
     font-family: "Lato", sans-serif;
-
-    
 }
 
 *::-moz-selection {
     background-color: rgb(4, 0, 66);
     color: white;
 }
-select{
-    
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-    
-}
-*::-moz-selection {
-    background-color: rgb(4, 0, 66);
-    color: white;
-}
+
 *::selection {
     background-color: rgb(4, 0, 66);
     color: white;
@@ -9640,6 +9628,7 @@ select {
     -webkit-appearance: none; /* turn off drop-down arrow*/
     -moz-appearance: none;
     text-align:-moz-center;
+    appearance: none;
 }
 
 .placeholder\:text-right::-moz-placeholder {
