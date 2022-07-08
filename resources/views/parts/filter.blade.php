@@ -57,12 +57,12 @@
                         moins de 50€</option>
                      <option value="200" {{ $urlprix == 200 ? 'selected' : '' }} class="text-center">Tous les prix</option>
                 </select>
-<a href="/">
-                <button
-                    class="mx-1  w-[188px] my-2 h-[43.99px] text-sm text-center  text-gray-100 rounded-md btnmenu bg-violet-500 hover:bg-violet-400 focus:outline-none focus:bg-violet-600" id="place-holder-center">
-                    Effacer les filtres</button></a>
+
+              <a href="/">  <input type="button" 
+                    class="mx-1  w-[188px] my-2 h-[43.99px] text-sm text-center  text-gray-100 rounded-md btnmenu bg-violet-500 hover:bg-violet-400 focus:outline-none focus:bg-violet-600" id="place-holder-center" value="Effacer les filtres">
+                    
                        
-                
+              </input></a>
                 <button
                     class="mx-1  w-[188px] my-2 btnmenu h-[43.99px] text-sm text-center text-gray-100 transition-colors duration-200 bg-emerald-500 hover:bg-emerald-400 focus:outline-none focus:bg-emerald-500 rounded-md" id="place-holder-center">Valider</button>
 
