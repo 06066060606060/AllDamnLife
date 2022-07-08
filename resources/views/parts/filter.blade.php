@@ -20,7 +20,7 @@
 
 
                 <select name="categories"  
-                    class="mx-1  w-[188px] text-center my-2 appearance-none btnmenu h-[43.99px] py-3 text-sm text-white bg-gray-600 border-transparent rounded-md focus:border-gray-500">
+                    class="mx-1  w-[188px] text-center my-2 appearance-none btnmenu h-[43.99px] py-3 text-sm text-white bg-gray-600 border-transparent rounded-md focus:border-gray-500" id="place-holder-center">
                     <option value="" class="text-center">Catégories </option>
 
                     @foreach ($categories as $categorie)
@@ -32,18 +32,17 @@
                 </select>
 
                 <select name="note"
-                    class="mx-1  w-[188px] my-2 appearance-none btnmenu  h-[43.99px] py-3 text-center text-sm text-white bg-gray-600 border-transparent rounded-md focus:border-gray-500">
+                    class="mx-1  w-[188px] my-2 appearance-none btnmenu  h-[43.99px] py-3 text-center text-sm text-white bg-gray-600 border-transparent rounded-md focus:border-gray-500" id="place-holder-center">
                     <option value="" class="text-center">Notes</option>
                     <option value="1" {{ $urlnote == 1 ? 'selected' : '' }}  class="text-center text-yellow-500">★</option>
                     <option value="2" {{ $urlnote == 2 ? 'selected' : '' }}  class="text-center text-yellow-500">★★</option>
                     <option value="3" {{ $urlnote == 3 ? 'selected' : '' }}  class="text-center text-yellow-500">★★★</option>
                     <option value="4" {{ $urlnote == 4 ? 'selected' : '' }}  class="text-center text-yellow-500">★★★★</option>
                     <option value="5" {{ $urlnote == 5 ? 'selected' : '' }}  class="text-center text-yellow-500">★★★★★</option>
-                    <option value="0"  {{ $urlnote == '0' ? 'selected' : '' }}  class="text-center">Toutes les notes</option>
                 </select>
 
                 <select name="prix"
-                    class="mx-1  w-[188px] my-2 appearance-none btnmenu h-[43.99px] text-center py-3 text-sm text-white bg-gray-600 border-transparent rounded-md focus:border-gray-500 ">
+                    class="#place-holder-cente mx-1  w-[188px] my-2 appearance-none btnmenu h-[43.99px] text-center py-3 text-sm text-white bg-gray-600 border-transparent rounded-md focus:border-gray-500 " id="place-holder-center">
                     <option value="" class="text-center">Prix</option>
                     <option value="10" {{ $urlprix == 10 ? 'selected' : '' }} class="text-center">
                         moins de 10€</option>
@@ -60,11 +59,11 @@
                 </select>
 
                 <button
-                    class="mx-1  w-[188px] my-2 h-[43.99px] text-sm text-center  text-gray-100 rounded-md btnmenu bg-violet-500 hover:bg-violet-400 focus:outline-none focus:bg-violet-600"><a
+                    class="mx-1  w-[188px] my-2 h-[43.99px] text-sm text-center  text-gray-100 rounded-md btnmenu bg-violet-500 hover:bg-violet-400 focus:outline-none focus:bg-violet-600" id="place-holder-center"><a
                         href="/">Effacer les filtres</a>
                 </button>
                 <button
-                    class="mx-1  w-[188px] my-2 btnmenu h-[43.99px] text-sm text-center text-gray-100 transition-colors duration-200 bg-emerald-500 hover:bg-emerald-400 focus:outline-none focus:bg-emerald-500 rounded-md ">Valider</button>
+                    class="mx-1  w-[188px] my-2 btnmenu h-[43.99px] text-sm text-center text-gray-100 transition-colors duration-200 bg-emerald-500 hover:bg-emerald-400 focus:outline-none focus:bg-emerald-500 rounded-md" id="place-holder-center">Valider</button>
 
             </form>
         </li>

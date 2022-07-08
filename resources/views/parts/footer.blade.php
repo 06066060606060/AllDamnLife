@@ -5,9 +5,14 @@
             <a href="/mentions">Mentions Légales</a>
     </div>
    
-    <div class="flex flex-row flex-wrap space-x-4 md:space-x-2 	">
-            <a href="https://www.instagram.com/alldamnlife/?hl=fr">Instagram</a>
-            <a href="https://www.facebook.com/alldamnlife">Facebook</a>
+   
+        
+        <div class="flex flex-row flex-wrap space-x-4 md:space-x-8 	">
+            <div class="mx-4">
+                    <a class="mx-8 items-end" href="https://www.instagram.com/alldamnlife/?hl=fr">Instagram</a>
+                    <a href="https://www.facebook.com/alldamnlife">Facebook</a>
+
+            </div>
     </div> 
    
 </div>
