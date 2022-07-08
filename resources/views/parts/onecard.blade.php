@@ -19,7 +19,7 @@
                             <div class="flex flex-col items-center w-full">
                                 <div class="flex flex-col items-center py-6 space-y-3">
                                     <div class="flex space-x-3">
-                                        @for ($i = 0; $i < round($note); $i++)
+                                        @for ($i = 0; $i < round($noteProduct['average'] ); $i++)
                                             <i class="text-yellow-500 fa-solid fa-star"></i>
                                         @endfor
                                     </div>
@@ -120,7 +120,7 @@
 
                 <div class="flex flex-row space-x-2 text-yellow-500">
 
-                    @for ($i = 0; $i < round($note); $i++)
+                    @for ($i = 0; $i < round($noteProduct['average'] ); $i++)
                         <i class="text-yellow-500 fa-solid fa-star"></i>
                     @endfor
                     <span class="text-gray-400"> {{ $noteProduct['average'] }} sur 5</span>
