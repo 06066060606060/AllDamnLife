@@ -9057,6 +9057,34 @@ video {
   padding-left: 0.25rem;
   padding-right: 0.25rem;
 }
+.px-7 {
+  padding-left: 1.75rem;
+  padding-right: 1.75rem;
+}
+.py-7 {
+  padding-top: 1.75rem;
+  padding-bottom: 1.75rem;
+}
+.py-36 {
+  padding-top: 9rem;
+  padding-bottom: 9rem;
+}
+.py-32 {
+  padding-top: 8rem;
+  padding-bottom: 8rem;
+}
+.px-12 {
+  padding-left: 3rem;
+  padding-right: 3rem;
+}
+.px-24 {
+  padding-left: 6rem;
+  padding-right: 6rem;
+}
+.px-8 {
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
 .pl-4 {
   padding-left: 1rem;
 }
@@ -9110,6 +9138,33 @@ video {
 }
 .pl-2 {
   padding-left: 0.5rem;
+}
+.pl-3 {
+  padding-left: 0.75rem;
+}
+.pl-96 {
+  padding-left: 24rem;
+}
+.pl-72 {
+  padding-left: 18rem;
+}
+.pl-80 {
+  padding-left: 20rem;
+}
+.pt-80 {
+  padding-top: 20rem;
+}
+.pt-12 {
+  padding-top: 3rem;
+}
+.pt-3 {
+  padding-top: 0.75rem;
+}
+.pr-80 {
+  padding-right: 20rem;
+}
+.text-left {
+  text-align: left;
 }
 .text-center {
   text-align: center;
@@ -10020,6 +10075,19 @@ h1 {
     padding-right: 1.5rem;
   }
 
+  .sm\:px-12 {
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+
+  .sm\:pl-12 {
+    padding-left: 3rem;
+  }
+
+  .sm\:pl-24 {
+    padding-left: 6rem;
+  }
+
   .sm\:text-4xl {
     font-size: 2.25rem;
     line-height: 2.5rem;
@@ -10180,6 +10248,11 @@ h1 {
     padding-bottom: 6rem;
   }
 
+  .md\:px-24 {
+    padding-left: 6rem;
+    padding-right: 6rem;
+  }
+
   .md\:pl-12 {
     padding-left: 3rem;
   }
@@ -10236,6 +10309,11 @@ h1 {
   .lg\:px-8 {
     padding-left: 2rem;
     padding-right: 2rem;
+  }
+
+  .lg\:px-24 {
+    padding-left: 6rem;
+    padding-right: 6rem;
   }
 
   .lg\:pl-20 {

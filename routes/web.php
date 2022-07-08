@@ -15,6 +15,10 @@ Route::get('/categories', function () {
     return view('categories');
 });
 
+Route::get('/mentions', function () {
+    return view('mentions');
+});
+
 Route::post('/register', [AuthController::class, 'register'])->name('register');
 Route::post('/login', [AuthController::class, 'login'])->name('login');
 Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
