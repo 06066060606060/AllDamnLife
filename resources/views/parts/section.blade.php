@@ -1,32 +1,6 @@
 @php   use \App\Http\Controllers\CategoriesController; @endphp
 <div class="max-w-screen-xl p-5 mx-auto text-gray-100">
-    @php($urlcat = request()->query('categories'))
-    @php($urlnote = request()->query('note'))
-    @php($urlprix = request()->query('prix'))
-    @php($urlsearch = request()->query('q'))
-
-    @if ($urlsearch)
-        <p class="mb-4 text-xl">
-            Résultat de la recherche : {{ $urlsearch }}
-        </p>
-    @endif
-    @if ($urlcat)
-        @foreach ($categories->where('id_cat', '=', $urlcat) as $categorie)
-            <p class="mb-4 text-xl">Catégorie {{ $categorie->label }}</p>
-        @endforeach
-    @endif
-    @if ($urlnote)
-        <p class="mb-4 text-xl">Cartes avec la note: &zwnj;
-            @for ($i = 0; $i < $urlnote; $i++)
-                <i class="text-yellow-500 fa-solid fa-star"></i>
-            @endfor
-        </p>
-    @endif
-    @if ($urlprix)
-        <p class="mb-4 text-xl">
-            d'une valeur inférieure à {{ $urlprix }} €
-        </p>
-    @endif
+    
 
     @forelse ($produits as $produit)
         <div class="flip">

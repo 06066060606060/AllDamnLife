@@ -54,6 +54,6 @@ Route::delete('/deletefromcart/{id}',[CartController::class,'deletefromCart'])->
 route::get('/categories', [CategoriesController::class, 'getCateg'])->name('categories');
 route::post('/Updatecategorie/{id}', [CategoriesController::class, 'update'])->whereNumber('id');
 route::post('/Addcategorie', [CategoriesController::class, 'addCateg']);
-route::delete('/delete/{id}', [CategoriesController::class, 'destroy']);
+
 
 

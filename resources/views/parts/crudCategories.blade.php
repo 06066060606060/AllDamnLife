@@ -9,7 +9,7 @@
 
                             <th class="p-3 h-12 text-center ">Catégories</th>
                             <th class="p-3 h-12 text-center">Modifier</th>
-                            <th class="p-3 h-12 text-center">Supprimer</th>
+                            
 
                         </tr>
                     @endforeach
@@ -21,9 +21,7 @@
                             <td class="text-white p-3 h-12">{{ $categorie->label }}</td>
                             <td class="hover:text-blue-900 h-12">
                                 @include('parts.updateCateg')
-                            <td class="hover:text-red-600 h-12">
-                                @include('parts.deleteCateg')
-                            </td>
+                          
                         </tr>
                     @empty
                         <div class="flex flex-row justify-center">
