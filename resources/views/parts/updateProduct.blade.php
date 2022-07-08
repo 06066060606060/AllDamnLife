@@ -1,5 +1,5 @@
 <div x-data="{ modelOpen: false }">
-    <button @click="modelOpen =!modelOpen" class="p-3 text-blue-400 cursor-pointer hover:blue-red-600 hover:font-medium">
+    <button @click="modelOpen =!modelOpen" class="p-3 text-blue-200 cursor-pointer hover:text-blue-600 hover:font-medium">
         <i class="fa-solid fa-pen-to-square"></i>
     </button>
     <div x-cloak x-show="modelOpen" class="fixed inset-0 z-50 overflow-y-auto" aria-labelledby="modal-title" role="dialog"

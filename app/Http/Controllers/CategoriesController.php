@@ -48,10 +48,5 @@ class CategoriesController extends Controller
     }
 
 
-    public function destroy($id_cat)
-    {
-        $delete = Categories::find($id_cat);
-        $delete->delete();
-        return redirect()->route('categories');
-    }
+
 }
