@@ -2,7 +2,12 @@
 
 @section('main')
 <div class="max-w-screen-xl mx-auto ">
+    <div class="flex items-center pb-8 text-sm text-gray-100">
+        <a rel="noopener noreferrer" href="/"
+            class="px-5 py-1 border-b-2 border-gray-700 hover:border-blue-400 hover:text-blue-400">Retour</a>
+    </div>
 <div class="bg-gray-700 rounded-2xl px-12 md:px-24 tracking-wide text-left py-32  text-gray-100">
+    
     <h1>Mentions légales:</h1> <br> <br> 
     <p>
 
