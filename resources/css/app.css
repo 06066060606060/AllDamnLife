@@ -276,31 +276,32 @@ h1 {
   
 #place-holder-center::-webkit-input-placeholder {
     text-align: center;
-    direction: rtl;
+    text-align: -webkit-center;
+  
 }
   
 #place-holder-center::-moz-placeholder {
     text-align: center;
-    direction: rtl;
+    text-align: -webkit-center;
 }
   
 #place-holder-center:-ms-input-placeholder {
     text-align: center;
-    direction: rtl;
+    text-align: -webkit-center;
 }
   
 #place-holder-center::-ms-input-placeholder {
     text-align: center;
-    direction: rtl;
+    text-align: -webkit-center;
 }
   
 #place-holder-center::placeholder {
     text-align: center;
-    direction: rtl;
+    text-align: -webkit-center;
 }
 
 #place-holder-center{
     text-align: center;
-    direction: rtl;
+    text-align: -webkit-center;
 }
 
