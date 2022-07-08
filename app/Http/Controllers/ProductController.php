@@ -31,7 +31,7 @@ class ProductController extends Controller
         }
         if ($request->filled('note')) {
             $note = $request->note;
-            $produits->where('note', '=', $note);
+            $produits->where('note', '>=', $note);
         }
         if ($request->filled('categories')) {
             $categories = $request->categories;
