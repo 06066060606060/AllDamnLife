@@ -2,6 +2,7 @@
     <div class="flex flex-row items-center pr-3 space-x-4 sm:space-x-8">
             <img src="/img/logo1.png" class="w-12 h-12 " alt="">
             <a href="mailto:Contact@alldamnlife.net">Contactez-nous</a>
+            <a href="/mentions">Mentions Légales</a>
     </div>
    
     <div class="flex flex-row flex-wrap space-x-4 md:space-x-8 	">
@@ -10,6 +11,3 @@
     </div> 
    
 </div>
- <div class="flex flex-row pl-80 pt-3 space-x-4 sm:space-x-8 text-xs">
-        <a href="/mentions">Mentions Légales</a>
-    </div>
