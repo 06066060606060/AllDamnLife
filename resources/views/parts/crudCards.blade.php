@@ -7,12 +7,12 @@
                     @foreach ($cards as $card)
                         <tr
                             class="flex flex-col mb-2 rounded-l-lg bg-emerald-500 flex-no wrap sm:table-row sm:rounded-none sm:mb-0 ">
+                           
+                            <th class="h-12 p-3 text-center "></th>
                             <th class="h-12 p-3 text-center ">Titre</th>
-                            <th class="h-12 p-3 text-center ">Image</th>
                             <th class="h-12 p-3 text-center ">Prix</th>
                             <th class="h-12 p-3 text-center ">Consulter</th>
                             <th class="h-12 p-3 text-center ">Modifier</th>
-                            <th class="h-12 p-3 text-center ">Supprimer</th>
                             <th class="h-12 p-3 text-center ">Disponible</th>
                         </tr>
                     @endforeach
@@ -20,10 +20,11 @@
                 <tbody class="flex-1 sm:flex-none">
                     @forelse ($cards as $card)
                         <tr class="flex flex-col flex-no-wrap mb-2 bg-gray-700 sm:table-row -p-2 sm:mb-0">
-                            <td class="h-12 p-3 text-white ">{{ $card->titre }}</td>
-                            <td class="h-12 truncate "><img class="w-10 h-10 mx-auto sm:w-14 sm:h-14"
+                             <td class="h-12 truncate "><img class="w-10 h-10 mx-auto sm:w-14 sm:h-14"
                                     src="{{ $card->image }}" alt="">
-                            </td>
+                            </td>  
+                            <td class="h-12 p-3 text-white ">{{ $card->titre }}</td>
+                         
                             <td class="h-12 p-3 text-white ">
                                 {{ $card->prix }}</td>
                             <td class="h-12 p-3 text-green-400 cursor-pointer hover:text-green-600"><a
@@ -31,8 +32,7 @@
                                     <i class="fa-solid fa-eye"></i></a></td>
                             <td class="h-12 hover:text-blue-900">@include('parts.updateProduct')
                             </td>
-                            <td class="h-12 hover:text-red-600">@include('parts.deleteProduct')
-                            </td>
+                          
                             <td class="h-12 hover:text-blue-600"> @include('parts.activeProduct')
                             </td>
                         </tr>
