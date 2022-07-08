@@ -20,7 +20,7 @@
             </div>
             <div class="back">
                 <div class="flex flex-col items-center content-center pt-6">
-                    <p class="mt-2 text-xl">{{ $produit->titre }}</p>
+                    <p class="mt-4 text-xl">{{ $produit->titre }}</p>
                     <img class="w-auto h-20 pb-4 icon" src="{{ $produit->image }}">
                     <span class="px-6 bg-blue-800">{{ (int) $produit->prix }} €</span>
                     <span class="p-2 clamp">{{ $produit->description }}</span>

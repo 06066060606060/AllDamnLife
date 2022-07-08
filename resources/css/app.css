@@ -1,12 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+@import "@fortawesome/fontawesome-free/css/fontawesome";
+@import "@fortawesome/fontawesome-free/css/regular";
+@import "@fortawesome/fontawesome-free/css/solid";
+@import "@fortawesome/fontawesome-free/css/brands";
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-@import "~@fortawesome/fontawesome-free/css/fontawesome";
-@import "~@fortawesome/fontawesome-free/css/regular";
-@import "~@fortawesome/fontawesome-free/css/solid";
-@import "~@fortawesome/fontawesome-free/css/brands";
 
-@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
 
 * {
     box-sizing: border-box;
