@@ -9666,14 +9666,17 @@ h1 {
   
 #place-holder-center::-moz-placeholder {
     text-align: center;
+    direction: rtl;
 }
   
 #place-holder-center:-ms-input-placeholder {
     text-align: center;
+    direction: rtl;
 }
   
 #place-holder-center::placeholder {
     text-align: center;
+    direction: rtl;
 }
   
 .placeholder\:text-right::-moz-placeholder {
