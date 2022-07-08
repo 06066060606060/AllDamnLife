@@ -15,6 +15,11 @@
     font-family: "Lato", sans-serif;
 }
 
+*::-moz-selection {
+    background-color: rgb(4, 0, 66);
+    color: white;
+}
+
 *::selection {
     background-color: rgb(4, 0, 66);
     color: white;
@@ -25,7 +30,10 @@
 }
 
 img {
-    user-select: none;
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
 }
 
 body {
@@ -256,6 +264,22 @@ h1 {
     -webkit-box-orient: vertical;
     overflow: hidden;
     padding-bottom: 5px;
+}
+  
+#place-holder-center::-webkit-input-placeholder {
+    text-align: center;
+}
+  
+#place-holder-center::-moz-placeholder {
+    text-align: center;
+}
+  
+#place-holder-center:-ms-input-placeholder {
+    text-align: center;
+}
+  
+#place-holder-center::-ms-input-placeholder {
+    text-align: center;
 }
   
 #place-holder-center::placeholder {
