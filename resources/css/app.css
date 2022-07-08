@@ -70,6 +70,7 @@ h1 {
     transition-duration: 1s;
     transition-property: transform, opacity;
     margin-bottom: 10px;
+    will-change: transform, opacity; /* Prevents flicker in Safari */
 }
 .flip > .front {
     transform: rotateY(0deg);
@@ -126,6 +127,7 @@ h1 {
     transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
     transition-duration: 1s;
     transition-property: transform, opacity;
+    will-change: transform, opacity; /* Prevents flicker in Safari */
     margin-bottom: 10px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
