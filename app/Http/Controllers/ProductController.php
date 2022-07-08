@@ -6,12 +6,15 @@ use Carbon\Carbon;
 use App\Models\Paniers;
 use App\Models\Comments;
 use App\Models\Produits;
+use App\Models\produits_categories;
 use App\Models\Categories;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Models\produits_categories;
+
 use Illuminate\Contracts\Pagination\Paginator;
+use Illuminate\Contracts\View\View;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Storage;
 use SebastianBergmann\CodeCoverage\Util\Percentage;
@@ -51,27 +54,12 @@ class ProductController extends Controller
         ]);
     }
 
-
-    // public function search()
-    // {
-
-    //     $categories = Categories::all();
-    //     request()->validate([
-    //         'q' => 'required|min:3'
-    //     ]);
-
-    //     $q = request()->input('q');
-    //     $produits = Produits::where('titre', 'like', '%' . $q . '%')->paginate(2);
-    //     return view('index', compact('produits', 'categories'));
-    // }
-
-
     public function getOneProduct($id)
     {
         $timer = Carbon::now();
         $produit = Produits::find($id);
         $note = Comments::where('product_id', '=', $id)->avg('note');
-        $notearrondi = floor($note * 2) / 2;
+        $notearrondi = (floor($note * 2) / 2);
         $comments = Comments::where('product_id', $id)->inRandomOrder()->limit(2)->get();
         $noteProduct = self::getStars($id);
         return view('card', [
@@ -209,14 +197,7 @@ class ProductController extends Controller
         $comm = new Comments();
         $produit = Produits::where('id', '=', $id)->get();
         $produit = Produits::find($id);
-        $commcount = (Comments::where('product_id', '=', $id)->count());
-
-        if ($commcount == 0) {
-            $produit->note = $request->note;
-        } else {
-           
-            $produit->note = ($produit->note + $request->note) / 2;
-        }
+        $produit->note = ($request->noteavg + $request->note) / 2;
         $comm->contenu = $request->contenu;
         $comm->user_id = Auth::user()->id;
         $comm->product_id = $id;

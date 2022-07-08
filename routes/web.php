@@ -33,7 +33,7 @@ Route::get('/deleteComm/{id}', [ProductController::class, 'deleteComm'])->name('
 
 Route::get('/',[ProductController::class,'getProduct']);
 Route::get('/filter',[ProductController::class,'getProduct'])->name('searchfilter');
-// Route::get('/filter/search',[ProductController::class,'search'])->name('searchcard');
+
 
 Route::get('/card/{id}',[ProductController::class,'getOneProduct'])->whereNumber('id')->name('getCard');
 Route::post('/giftCards',[ProductController::class,'addProduct'])->name('addProduct');

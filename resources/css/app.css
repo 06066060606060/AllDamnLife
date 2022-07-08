@@ -6,12 +6,13 @@
 @import "~@fortawesome/fontawesome-free/css/solid";
 @import "~@fortawesome/fontawesome-free/css/brands";
 
-@import url("https://fonts.googleapis.com/css2?family=Lato&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
 
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    font-family: "Lato", sans-serif;
 }
 
 *::selection {
@@ -260,3 +261,4 @@ h1 {
 #place-holder-center::placeholder {
     text-align: center;
 }
+
