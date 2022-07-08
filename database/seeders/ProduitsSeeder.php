@@ -39,8 +39,7 @@ class ProduitsSeeder extends Seeder
         Produits::create(['titre'=> 'Carte achat Zalando ', 'description'=> 'Le ca choisir ce dont ils ont envie. Echangeable contre des millionrtes cadeaux Amazon.fr sont uniquement valables sur Amazon.fr.', 'prix'=>'15',  'image'=> '/img/zalando.png', 'note'=>'2']);
         Produits::create(['titre'=> 'Carte abonnement Spotify', 'description'=> 'Valable . Nécessite un identifiant Apple et l’acceptation préalable d, non remboursable et non échangeabconfidentialité d’Apple ;', 'prix'=>'30',  'image'=> '/img/spotifi.png', 'note'=>'1']);
         Produits::create(['titre'=> 'Carte EA play', 'description'=> 'Achetez ucevrez alors un code par e-mail, que vous pourrez utiliser dans la boutique numérique de votre via votre navigateur web.', 'prix'=>'50',  'image'=> '/img/eaplay.png', 'note'=>'0']);
-        Produits::create(['titre'=> 'Carte Abonnement PornHub', 'description'=> 'Un code, Des es millions d applis, de jeux et d autres proe-carte Google Play pour explorer vez plusssaire pour commencer à jouer', 'prix'=>'40',  'image'=> '/img/pornhub.png', 'note'=>'0']);
-  //
+        
 
         produits_categories::create(['prod_id'=> 1, 'categorie_id'=> 2]);
         produits_categories::create(['prod_id'=> 2, 'categorie_id'=> 2]);
@@ -59,7 +58,6 @@ class ProduitsSeeder extends Seeder
         produits_categories::create(['prod_id'=> 12, 'categorie_id'=> 4]);
         produits_categories::create(['prod_id'=> 13, 'categorie_id'=> 3]);
         produits_categories::create(['prod_id'=> 14, 'categorie_id'=> 1]);
-        produits_categories::create(['prod_id'=> 15, 'categorie_id'=> 2]);
 
         Comments::create(['user_id'=> '6', 'product_id'=>'1', 'contenu'=>'Ce cadeau est super !', 'note'=>'5']);
         Comments::create(['user_id'=> '7', 'product_id'=>'2', 'contenu'=>'Ce cadeau est super !', 'note'=>'2']);
