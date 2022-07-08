@@ -6,8 +6,8 @@
     </div>
    
     <div class="flex flex-row flex-wrap space-x-4 md:space-x-8 	">
-            <a href="https://www.instagram.com/">Instagram</a>
-            <a href="https://www.facebook.com/">Facebook</a>
+            <a href="https://www.instagram.com/alldamnlife/?hl=fr">Instagram</a>
+            <a href="https://www.facebook.com/alldamnlife">Facebook</a>
     </div> 
    
 </div>
