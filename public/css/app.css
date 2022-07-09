@@ -9635,6 +9635,7 @@ h1 {
 }
 
 select {
+    text-indent: 33% hanging;   /* FIX POUR CENTRER SELECT  TEXT DANS SAFARI */
     text-align: center;
     text-align: -webkit-center;
     -webkit-appearance: none; /* turn off drop-down arrow*/
