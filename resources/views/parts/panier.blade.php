@@ -79,122 +79,86 @@
                 </div>
             </div>
 
-            <div class="py-12 bg-gray-100 rounded-b md:py-24 lg:rounded-r-lg md:rounded-bl-none panier">
-                <div class="max-w-lg px-4 mx-auto lg:px-8">
-                    <form class="grid grid-cols-6 gap-4">
-                        <div class="col-span-3">
-                            <label class="block mb-1 text-sm text-gray-600" for="nom">
+            <div class="w-full max-w-xl px-10 py-12 space-y-3 bg-gray-200 rounded-r-xl">
+                <form action="" enctype="multipart/form-data" method="POST"
+                    class="w-full max-w-lg">
+                    @csrf
+                    <div class="flex flex-wrap mb-6 -mx-3">
+                        <div class="w-full px-3 mb-6 md:w-1/2 md:mb-0">
+                            <label class="block mb-2 text-xs font-bold tracking-wide uppercase"
+                                for="grid-first-name">
                                 Nom
                             </label>
+                            <input name="nom"
+                                class="block w-full px-4 py-3 leading-tight text-center text-gray-700 border rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500"
+                                id="grid-first-name" type="text" placeholder="" value="{{ Auth::user()->nom }}">
 
-                            <input class="rounded-lg shadow-sm border-gray-200 w-full text-sm p-2.5" type="text"
-                                id="nom" />
                         </div>
-
-                        <div class="col-span-3">
-                            <label class="block mb-1 text-sm text-gray-600" for="prenom">
+                        <div class="w-full px-3 md:w-1/2">
+                            <label class="block mb-2 text-xs font-bold tracking-wide uppercase"
+                                for="grid-last-name">
                                 Prenom
                             </label>
-
-                            <input class="rounded-lg shadow-sm border-gray-200 w-full text-sm p-2.5" type="text"
-                                id="Prenom" />
+                            <input name="prenom"
+                                class="block w-full px-4 py-3 leading-tight text-center text-gray-700 border rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500"
+                                id="grid-last-name" type="text" placeholder="" value="{{ Auth::user()->prenom }}">
                         </div>
-
-                        <div class="col-span-6">
-                            <label class="block mb-1 text-sm text-gray-600" for="email">
-                                Email
-                            </label>
-
-                            <input class="rounded-lg shadow-sm border-gray-200 w-full text-sm p-2.5" type="email"
-                                id="email" />
-                        </div>
-
-                        <div class="col-span-6">
-                            <label class="block mb-1 text-sm text-gray-600" for="phone">
+                       
+                    </div>     
+                    <div class="flex flex-wrap mb-6 -mx-3">
+                        <div class="w-1/2 px-3">
+                            <label class="block mb-2 text-xs font-bold tracking-wide uppercase">
                                 Telephone
                             </label>
-
-                            <input class="rounded-lg shadow-sm border-gray-200 w-full text-sm p-2.5" type="tel"
-                                id="phone" />
+                            <input name="telephone"
+                                class="block w-full px-4 py-3 leading-tight text-center text-gray-700 border rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500"
+                                placeholder="" value=" {{ Auth::user()->numero_telephone }}">
                         </div>
-
-                        <fieldset class="col-span-6">
-                            <legend class="block mb-4 text-sm text-gray-600">
-                                Détails de la carte
-                            </legend>
-
-                            <div class="-space-y-px bg-white rounded-lg shadow-sm">
-                                <div class="">
-                                    <label class="mb-4 sr-only" for="card-number">Numéro de carte</label>
-
-                                    <input
-                                        class="border-gray-200 relative rounded-t-lg w-full focus:z-10 text-sm p-2.5 mb-4 placeholder-gray-400"
-                                        type="text" name="card-number" id="card-number"
-                                        placeholder="Numero de carte" />
-                                </div>
-
-                                <div class="flex -space-x-px">
-                                    <div class="flex-1">
-                                        <label class="sr-only" for="card-expiration-date">
-                                            Date d'expiration
-                                        </label>
-
-                                        <input
-                                            class="border-gray-200 relative rounded-bl-lg w-full focus:z-10 text-sm p-2.5 placeholder-gray-400"
-                                            type="text" name="card-expiration-date" id="card-expiration-date"
-                                            placeholder="Mois/Année" />
-                                    </div>
-
-                                    <div class="flex-1">
-                                        <label class="sr-only" for="card-cvc">CVC</label>
-
-                                        <input
-                                            class="border-gray-200 relative rounded-br-lg w-full focus:z-10 text-sm p-2.5 placeholder-gray-400"
-                                            type="text" name="card-cvc" id="card-cvc" placeholder="CVC" />
-                                    </div>
-                                </div>
-                            </div>
-                        </fieldset>
-
-                        <fieldset class="col-span-6">
-                            <legend class="block mb-1 text-sm text-gray-600">
-                                Adresse Postale
-                            </legend>
-
-                            <div class="-space-y-px bg-white rounded-lg shadow-sm">
-                                <div>
-                                    <label class="sr-only" for="country">Pays</label>
-
-                                    <select
-                                        class="border-gray-200 relative rounded-t-lg w-full focus:z-10 text-sm p-2.5"
-                                        id="country" name="country" autocomplete="country-name">
-                                        <option>La Réunion</option>
-
-                                    </select>
-                                </div>
-
-                                <div>
-                                    <label class="sr-only" for="postal-code">
-                                        Code Postale
-                                    </label>
-
-                                    <input
-                                        class="border-gray-200 relative rounded-b-lg w-full focus:z-10 text-sm p-2.5 placeholder-gray-400"
-                                        type="text" name="postal-code" id="postal-code"
-                                        autocomplete="postal-code" placeholder="Code Postale" />
-                                </div>
-                            </div>
-                        </fieldset>
-
-                        <div class="col-span-6">
-                            <button class="rounded-lg bg-black text-sm p-2.5 text-white w-full block" type="submit">
-                                Payer maintenant
-                            </button>
+                        <div class="w-1/2 px-3">
+                            <label class="block mb-2 text-xs font-bold tracking-wide uppercase">
+                                Email
+                            </label>
+                            <input name="email"
+                                class="block w-full px-4 py-3 leading-tight text-center text-gray-700 border rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500"
+                                placeholder="" value=" {{ Auth::user()->email }}">
                         </div>
-                    </form>
-                </div>
+                    </div>
+                    <div class="flex flex-wrap mb-6 -mx-3">
+                        <div class="w-full px-3">
+                            <label class="block mb-2 text-xs font-bold tracking-wide uppercase">
+                                Adresse
+                            </label>
+                            <input name="address"
+                                class="block w-full px-4 py-3 leading-tight text-center text-gray-700 border rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500"
+                                placeholder="" value=" {{ Auth::user()->address }}">
+                        </div>
+                    </div>
+               
+                    <div class="flex flex-wrap mb-2 -mx-3">
+                        <div class="w-full px-3 mb-6 md:w-1/2 md:mb-0">
+                            <label class="block mb-2 text-xs font-bold tracking-wide uppercase"
+                                for="grid-zip">
+                                Code-Postal
+                            </label>
+                            <input name="zip"
+                                class="block w-full px-4 py-3 leading-tight text-center text-gray-700 border rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500"
+                                id="grid-zip" type="text" placeholder="90210" value=" {{ Auth::user()->zipCode }}">
+                        </div>
+                        <div class="w-full px-3 pb-4 mb-6 md:w-1/2 md:mb-0">
+                            <label class="block mb-2 text-xs font-bold tracking-wide uppercase"
+                                for="grid-city">
+                                Ville
+                            </label>
+                            <input name="city"
+                                class="block w-full px-4 py-3 leading-tight text-center text-gray-700 border rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500"
+                                id="grid-city" type="text" placeholder="" value=" {{ Auth::user()->city }}">
+                        </div>
+                        <button
+                            class="block w-full p-3 mt-8 text-center text-gray-900 transition-colors duration-200 bg-teal-400 rounded hover:bg-teal-200 focus:bg-teal-200">Passer au paiement</button>
+                    </div>
+                </form>
             </div>
+
         </div>
     </div>
-
 </div>
