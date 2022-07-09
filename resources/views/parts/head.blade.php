@@ -1,6 +1,6 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>AllDamnLife - Réduis le prix de tes abonnements</title>
+<title> AllDamnLife - Réduis le prix de tes abonnements</title>
 <meta name="title" content="Réduis le prix de tes abonnements - AllDamnLife">
 <meta name="description" content="Moins de dépenses ? Plus d'économies ? Avec AllDamnLife, réduis le prix de tes abonnements Netflix, Deezer, Spotify et bien d'autres !">
 
