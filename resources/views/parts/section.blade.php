@@ -26,8 +26,8 @@
                                 <div class="flex flex-col items-center content-center pt-6">
                                     <span class="ribbon2">{{ (int) $produit->prix }}
                                         €</span>
-                                    <p class="my-4 text-xl">{{ $produit->titre }}</p>
-                                    <img class="w-auto h-20 pb-4 icon" src="{{ $produit->image }}">
+                                    <p class="mt-10 mb-2 text-xl">{{ $produit->titre }}</p>
+                                    <img class="w-auto h-20 icon" src="{{ $produit->image }}">
                                     <span class="p-4 clamp">{{ $produit->description }}</span>
 
                                     <form @auth action="/addtocart/{{ $produit->id }}" method="post"
