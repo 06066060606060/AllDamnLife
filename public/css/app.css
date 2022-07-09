@@ -8937,10 +8937,6 @@ video {
   --tw-bg-opacity: 1;
   background-color: rgb(0 0 0 / var(--tw-bg-opacity));
 }
-.bg-blue-800 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(30 64 175 / var(--tw-bg-opacity));
-}
 .bg-opacity-60 {
   --tw-bg-opacity: 0.6;
 }
@@ -9489,6 +9485,7 @@ h1 {
       border-radius: 10px;
     color: white;
     transform: rotateY(180deg);
+    overflow: hidden;
   }
 
 /* BANDEAU PRIX CARTE */
@@ -9507,6 +9504,27 @@ h1 {
     padding-right: 55px;
     backface-visibility: hidden;
     -webkit-backface-visibility: hidden; /* Safari */
+}
+
+.ribbon2 {
+    position: absolute;
+    left: -30px;
+    top: 20px;
+    z-index: 2;
+    text-align: right;
+    color: white;
+    transform: rotate(-45deg);
+    padding-top: 4px;
+    padding-bottom: 4px;
+    background-color: rgb(25, 79, 141);
+    padding-left: 57px;
+    padding-right: 55px;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+    -o-transform: rotate(-45deg);
 }
 
 .clamp {

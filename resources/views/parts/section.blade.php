@@ -6,7 +6,7 @@
                     <div class="flip-card-inner">
                         <div class="flip-card-front">
                             <div class="front flex items-center justify-center flex-col">
-                                <span class="ribbon cr cr-top cr-right cr-sticky cr-blue">{{ (int) $produit->prix }}
+                                <span class="ribbon">{{ (int) $produit->prix }}
                                     €</span>
                                 <img class="icon h-[248px] w-auto" src="{{ $produit->image }}">
                                 <div class="flex items-center justify-center p-2 flex-row">
@@ -24,10 +24,11 @@
                         <div class="flip-card-back">
                             <div class="back">
                                 <div class="flex flex-col items-center content-center pt-6">
-                                    <p class="mt-2 text-xl">{{ $produit->titre }}</p>
+                                    <span class="ribbon2">{{ (int) $produit->prix }}
+                                        €</span>
+                                    <p class="my-4 text-xl">{{ $produit->titre }}</p>
                                     <img class="w-auto h-20 pb-4 icon" src="{{ $produit->image }}">
-                                    <span class="px-6 bg-blue-800">{{ (int) $produit->prix }} €</span>
-                                    <span class="p-2 clamp">{{ $produit->description }}</span>
+                                    <span class="p-4 clamp">{{ $produit->description }}</span>
 
                                     <form @auth action="/addtocart/{{ $produit->id }}" method="post"
                                         onsubmit="myButton.disabled = true; return true;" @else
