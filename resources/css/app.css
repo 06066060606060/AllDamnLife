@@ -78,6 +78,11 @@ h1 {
   .flip-card:hover .flip-card-inner {
     transform: rotateY(180deg);
   }
+
+  .flip-card:hover .ribbon {
+    visibility: hidden;
+    transition-delay: 500ms;
+}
   
   /* Position the front and back side */
   .flip-card-front, .flip-card-back {
@@ -109,8 +114,8 @@ h1 {
 .ribbon {
     position: absolute;
     right: -30px;
+    z-index: 5;
     top: 20px;
-    z-index: 1;
     text-align: right;
     color: white;
     transform: rotate(45deg);
