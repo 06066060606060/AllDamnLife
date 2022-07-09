@@ -260,10 +260,15 @@ h1 {
 #place-holder-center{
     text-align: center;
     text-align: -webkit-center;
+    -webkit-appearance: none; /* turn off drop-down arrow*/
+    -moz-appearance: none;
+    text-align:-moz-center;
+    appearance: none;
 }
 
+
 select {
-    text-indent: 33% hanging;   /* FIX POUR CENTRER SELECT  TEXT DANS SAFARI */
+   /* text-indent: 33% hanging;   /* FIX POUR CENTRER SELECT  TEXT DANS SAFARI */
     text-align: center;
     text-align: -webkit-center;
     -webkit-appearance: none; /* turn off drop-down arrow*/
@@ -271,3 +276,10 @@ select {
     text-align:-moz-center;
     appearance: none;
 }
+
+_::-webkit-full-page-media, _:future, :root .apple {
+
+    padding-left: 53px;
+  }
+/* Safari 10.1+ */
+
