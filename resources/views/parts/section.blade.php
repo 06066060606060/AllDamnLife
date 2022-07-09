@@ -2,14 +2,14 @@
 <div class="max-w-screen-xl p-5 mx-auto text-gray-100">
         <div class="grid justify-items-center">
             @forelse ($produits as $produit)
-                <div class="flip-card">
+                <div class="flip-card opacity-95">
                     <div class="flip-card-inner">
                         <div class="flip-card-front">
-                            <div class="front flex items-center justify-center flex-col">
+                            <div class="flex flex-col items-center justify-center front">
                                 <span class="ribbon">{{ (int) $produit->prix }}
                                     €</span>
                                 <img class="icon h-[248px] w-auto" src="{{ $produit->image }}">
-                                <div class="flex items-center justify-center p-2 flex-row">
+                                <div class="flex flex-row items-center justify-center p-2">
                                     @if ($produit->note)
                                         @for ($i = 0; $i < round($produit->note); $i++)
                                             <i class="px-1 text-yellow-500 fa-solid fa-star"></i>
