@@ -9496,7 +9496,7 @@ h1 {
 /* BANDEAU PRIX CARTE */
 .ribbon {
     position: absolute;
-    right: -30px;
+    right: -38px;
     z-index: 5;
     top: 20px;
     text-align: right;
@@ -9505,15 +9505,15 @@ h1 {
     padding-top: 4px;
     padding-bottom: 4px;
     background-color: rgb(25, 79, 141);
-    padding-left: 57px;
-    padding-right: 55px;
+    padding-left: 59px;
+    padding-right: 59px;
     backface-visibility: hidden;
     -webkit-backface-visibility: hidden; /* Safari */
 }
 
 .ribbon2 {
     position: absolute;
-    left: -30px;
+    left: -38px;
     top: 20px;
     z-index: 10;
     text-align: right;
@@ -9522,8 +9522,8 @@ h1 {
     padding-top: 4px;
     padding-bottom: 4px;
     background-color: rgb(25, 79, 141);
-    padding-left: 57px;
-    padding-right: 55px;
+    padding-left: 59px;
+    padding-right: 59px;
     backface-visibility: hidden;
     -webkit-backface-visibility: hidden;
     -webkit-transform: rotate(-45deg);
