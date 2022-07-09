@@ -9505,6 +9505,8 @@ h1 {
     background-color: rgb(25, 79, 141);
     padding-left: 57px;
     padding-right: 55px;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden; /* Safari */
 }
 
 .clamp {
@@ -9970,10 +9972,6 @@ select {
 
   .sm\:items-center {
     align-items: center;
-  }
-
-  .sm\:justify-center {
-    justify-content: center;
   }
 
   .sm\:justify-between {
