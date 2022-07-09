@@ -127,7 +127,7 @@ h1 {
     position: absolute;
     left: -30px;
     top: 20px;
-    z-index: 2;
+    z-index: 10;
     text-align: right;
     color: white;
     transform: rotate(-45deg);
