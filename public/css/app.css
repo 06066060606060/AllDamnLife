@@ -9298,9 +9298,6 @@ video {
 .opacity-70 {
   opacity: 0.7;
 }
-.opacity-90 {
-  opacity: 0.9;
-}
 .opacity-95 {
   opacity: 0.95;
 }
@@ -9404,12 +9401,12 @@ video {
 }
 
 *::-moz-selection {
-    background-color: rgb(4, 0, 66);
+    background-color: rgb(49, 47, 136);
     color: white;
 }
 
 *::selection {
-    background-color: rgb(4, 0, 66);
+    background-color: rgb(49, 47, 136);
     color: white;
 }
 

@@ -16,12 +16,12 @@
 }
 
 *::-moz-selection {
-    background-color: rgb(4, 0, 66);
+    background-color: rgb(49, 47, 136);
     color: white;
 }
 
 *::selection {
-    background-color: rgb(4, 0, 66);
+    background-color: rgb(49, 47, 136);
     color: white;
 }
 
