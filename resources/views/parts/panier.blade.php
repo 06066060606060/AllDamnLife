@@ -15,7 +15,7 @@
                     </div>
                     @php($totalcost = 0)
                     <div class="mt-4">
-                        <p class="text-gray-200">Contenu du panier</p>
+                        <p class="text-xl text-gray-200">Contenu du panier</p>
                         @if (session('cart_delete'))
                             <div x-data="{ show: true }" x-show="show" x-init="setTimeout(() => show = false, 3000)" class="pt-2 pr-4">
                                 <span class='text-red-500 text-bold'>Article supprimé du panier</span>
@@ -79,7 +79,7 @@
                 </div>
             </div>
 
-            <div class="w-full max-w-xl px-10 py-12 space-y-3 bg-gray-200 rounded-r-xl">
+            <div class="w-full max-w-xl px-10 py-12 space-y-3 bg-gray-200 rounded-b md:rounded-r">
                 <form action="" enctype="multipart/form-data" method="POST"
                     class="w-full max-w-lg">
                     @csrf
