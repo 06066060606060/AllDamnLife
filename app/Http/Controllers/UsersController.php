@@ -17,7 +17,7 @@ class UsersController extends Controller
     public function getUsers()
     {
      
-        $users = User::paginate(8);
+        $users = User::paginate(10);
         return view('users', [
             'users' => $users,
             
