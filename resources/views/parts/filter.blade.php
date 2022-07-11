@@ -15,13 +15,13 @@
             <form action="{{ route('searchfilter') }}" method="get">
 
                 <input type="text" name="q" placeholder="Recherche..." id="place-holder-center"
-                    class="mx-1  w-[188px] my-2 btnmenu text-center h-[43.99px] py-3 px-2 text-sm text-white bg-gray-600 border-transparent rounded-md focus:border-gray-500"
+                    class="mx-1  w-[188px] my-2 btnmenu text-center h-[43.99px] py-3 px-2 text-sm text-white bg-gray-600 border  border-transparent rounded-md hover:border-emerald-500"
                     value="{{ request()->q ?? '' }}">
 
 
                 <select name="categories"  
-                    class="mx-1 w-[188px] text-center my-2 appearance-none  btnmenu h-[43.99px] py-3 text-sm text-white bg-gray-600 border-transparent  border hover:border-emerald-400 rounded-md  apple">
-                    <option value="" class="px-0 text-center " id="place-holder-center">Catégories </option>
+                    class="mx-1 w-[188px] text-center my-2 appearance-none  btnmenu h-[43.99px] py-3 text-sm text-white bg-gray-600 border-transparent rounded-md focus:border-gray-500 apple">
+                    <option value="" class="px-0 text-center" id="place-holder-center">Catégories </option>
 
                     @foreach ($categories as $categorie)
                   

@@ -3,5 +3,5 @@
 @section('main')
 @include('parts.backmenu')
 @include('parts.crudCategories')
-
+{{$categories->links()}}
 @endsection

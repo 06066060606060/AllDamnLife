@@ -74,7 +74,7 @@ class ProductController extends Controller
 
     public function getAllProducts()
     {
-        $cards = Produits::All();
+        $cards = Produits::paginate(8);
         $categories = Categories::all();
 
         return view('giftCards', [
