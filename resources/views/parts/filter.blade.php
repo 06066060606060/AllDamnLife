@@ -20,19 +20,19 @@
 
 
                 <select name="categories"  
-                    class="mx-1 w-[188px] text-center my-2 appearance-none  btnmenu h-[43.99px] py-3 text-sm text-white bg-gray-600 border-transparent rounded-md focus:border-gray-500 apple">
-                    <option value="" class="text-center px-0" id="place-holder-center">Catégories </option>
+                    class="mx-1 w-[188px] text-center my-2 appearance-none  btnmenu h-[43.99px] py-3 text-sm text-white bg-gray-600 border  border-transparent rounded-md hover:border-emerald-500 apple">
+                    <option value="" class="px-0 text-center" id="place-holder-center">Catégories </option>
 
                     @foreach ($categories as $categorie)
-                        <option value="{{ $categorie->id_cat }}"
-                            {{ $urlcat == $categorie->id_cat ? 'selected' : '' }} class="text-center">
-                            {{ $categorie->label }}
+                  
+                    <option value="{{ $categorie->id_cat }}" {{ $urlcat == $categorie->id_cat ? 'selected' : '' }} class="text-center ">{{ $categorie->label }}
+
                         </option>
                     @endforeach
                 </select>
 
                 <select name="note"
-                    class="mx-1 w-[188px] my-2 appearance-none btnmenu  h-[43.99px] py-3 text-center text-sm text-white bg-gray-600 border-transparent rounded-md focus:border-gray-500 apple">
+                    class="mx-1 w-[188px] my-2 appearance-none btnmenu  h-[43.99px] py-3 text-center text-sm text-white bg-gray-600 hover:border-emerald-400 border border-transparent rounded-md focus:border-gray-500 apple">
                     <option value="" class="text-center">Notes</option>
                     <option value="1" {{ $urlnote == 1 ? 'selected' : '' }} class="text-center text-yellow-500">★
                     </option>
@@ -47,7 +47,7 @@
                 </select>
 
                 <select name="prix"
-                    class="mx-1  w-[188px] my-2 appearance-none btnmenu h-[43.99px] text-center py-3 text-sm text-white bg-gray-600 border-transparent rounded-md focus:border-gray-500 apple">
+                    class="mx-1 border hover:border-emerald-400  w-[188px] my-2 appearance-none btnmenu h-[43.99px] text-center py-3 text-sm text-white bg-gray-600 border-transparent rounded-md focus:border-gray-500 apple">
                     <option value="" class="text-center">Prix</option>
                     <option value="10" {{ $urlprix == 10 ? 'selected' : '' }} class="text-center">
                         moins de 10€</option>
