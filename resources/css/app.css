@@ -275,6 +275,7 @@ select {
     -moz-appearance: none;
     text-align:-moz-center;
     appearance: none;
+    outline: none;
 }
 
 _::-webkit-full-page-media, _:future, :root .apple {
