@@ -20,7 +20,7 @@
         @endif
         @if (session('error'))
             <div x-data="{ show: true }" x-show="show" x-init="setTimeout(() => show = false, 6000, PopupUser())" class="pt-2 pr-4">
-                <div id="popmenu" class="px-4 py-2 text-red-400 btnmenu">Login ou Mots de passe incorrect</div>
+                <div id="popmenu" class="px-4 py-2 text-red-400 btnmenu">Login ou mot de passe incorrect</div>
             </div>
         @endif
         @if (session('desactivate'))

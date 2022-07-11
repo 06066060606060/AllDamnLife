@@ -15,12 +15,12 @@
             <form action="{{ route('searchfilter') }}" method="get">
 
                 <input type="text" name="q" placeholder="Recherche..." id="place-holder-center"
-                    class="mx-1  w-[188px] my-2 btnmenu text-center h-[43.99px] py-3 px-2 text-sm text-white bg-gray-600 border-transparent rounded-md focus:border-gray-500"
+                    class="mx-1  w-[188px] my-2 btnmenu text-center h-[43.99px] py-3 px-2 text-sm text-white bg-gray-600 border  border-transparent rounded-md hover:border-emerald-500"
                     value="{{ request()->q ?? '' }}">
 
 
                 <select name="categories"  
-                    class="mx-1  w-[188px] text-center my-2 appearance-none btnmenu h-[43.99px] py-3 text-sm text-white bg-gray-600 border-transparent rounded-md focus:border-gray-500" id="place-holder-center">
+                    class="mx-1  w-[188px] text-center my-2 appearance-none btnmenu h-[43.99px] py-3 text-sm text-white bg-gray-600 border  border-transparent rounded-md hover:border-emerald-500 " id="place-holder-center">
                     <option value="" class="text-center">Catégories </option>
 
                     @foreach ($categories as $categorie)
@@ -32,7 +32,7 @@
                 </select>
 
                 <select name="note"
-                    class="mx-1  w-[188px] my-2 appearance-none btnmenu  h-[43.99px] py-3 text-center text-sm text-white bg-gray-600 border-transparent rounded-md focus:border-gray-500" id="place-holder-center">
+                    class="mx-1  w-[188px] my-2 appearance-none btnmenu  h-[43.99px] py-3 text-center text-sm text-white bg-gray-600 border  border-transparent rounded-md hover:border-emerald-500" id="place-holder-center">
                     <option value="" class="text-center">Notes</option>
                     <option value="1" {{ $urlnote == 1 ? 'selected' : '' }}  class="text-center text-yellow-500">★</option>
                     <option value="2" {{ $urlnote == 2 ? 'selected' : '' }}  class="text-center text-yellow-500">★★</option>
@@ -42,7 +42,7 @@
                 </select>
 
                 <select name="prix"
-                    class="#place-holder-cente mx-1  w-[188px] my-2 appearance-none btnmenu h-[43.99px] text-center py-3 text-sm text-white bg-gray-600 border-transparent rounded-md focus:border-gray-500 " id="place-holder-center">
+                    class="#place-holder-cente mx-1  w-[188px] my-2 appearance-none btnmenu h-[43.99px] text-center py-3 text-sm text-white bg-gray-600 border  border-transparent rounded-md hover:border-emerald-500 " id="place-holder-center">
                     <option value="" class="text-center">Prix</option>
                     <option value="10" {{ $urlprix == 10 ? 'selected' : '' }} class="text-center">
                         moins de 10€</option>
