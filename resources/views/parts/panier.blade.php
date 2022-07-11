@@ -9,7 +9,7 @@
                 class="py-8 bg-gray-600 rounded-t rounded-b-none md:rounded-br-none md:rounded-tr-none md:rounded-l-lg md:py-12 panier">
                 <div class="max-w-lg px-4 mx-auto md:px-8">
                     <div class="flex items-center">
-                        <img class="w-10 h-10  rounded-full" src="{{ Auth::user()->photo }}">
+                        <img class="w-10 h-10 rounded-full" src="{{ Auth::user()->photo }}">
 
                         <h2 class="ml-4 font-medium text-white"> {{ Auth::user()->prenom }}</h2>
                     </div>
