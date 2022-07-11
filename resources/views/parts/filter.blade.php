@@ -21,7 +21,7 @@
 
                 <select name="categories"  
                     class="mx-1 w-[188px] text-center my-2 appearance-none  btnmenu h-[43.99px] py-3 text-sm text-white bg-gray-600 border-transparent rounded-md focus:border-gray-500 apple">
-                    <option class="text-center px-0" id="place-holder-center">Catégories </option>
+                    <option value=""  class="text-center px-0" id="place-holder-center">Catégories </option>
 
                     @foreach ($categories as $categorie)
                   
