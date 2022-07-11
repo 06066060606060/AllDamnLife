@@ -12,7 +12,7 @@ class CategoriesController extends Controller
 
     public function getCateg()
     {
-        $categories = Categories::paginate(2);
+        $categories = Categories::paginate(10);
         return view('categories', [
             'categories' => $categories,
         ]);
