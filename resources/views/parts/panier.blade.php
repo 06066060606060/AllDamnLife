@@ -80,13 +80,11 @@
             </div>
 
             <div class="w-full max-w-xl px-10 py-12 space-y-3 bg-gray-200 rounded-r-xl">
-                <form action="" enctype="multipart/form-data" method="POST"
-                    class="w-full max-w-lg">
+                <form action="" enctype="multipart/form-data" method="POST" class="w-full max-w-lg">
                     @csrf
                     <div class="flex flex-wrap mb-6 -mx-3">
                         <div class="w-full px-3 mb-6 md:w-1/2 md:mb-0">
-                            <label class="block mb-2 text-xs font-bold tracking-wide uppercase"
-                                for="grid-first-name">
+                            <label class="block mb-2 text-xs font-bold tracking-wide uppercase" for="grid-first-name">
                                 Nom
                             </label>
                             <input name="nom"
@@ -95,16 +93,15 @@
 
                         </div>
                         <div class="w-full px-3 md:w-1/2">
-                            <label class="block mb-2 text-xs font-bold tracking-wide uppercase"
-                                for="grid-last-name">
+                            <label class="block mb-2 text-xs font-bold tracking-wide uppercase" for="grid-last-name">
                                 Prenom
                             </label>
                             <input name="prenom"
                                 class="block w-full px-4 py-3 leading-tight text-center text-gray-700 border rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500"
                                 id="grid-last-name" type="text" placeholder="" value="{{ Auth::user()->prenom }}">
                         </div>
-                       
-                    </div>     
+
+                    </div>
                     <div class="flex flex-wrap mb-6 -mx-3">
                         <div class="w-1/2 px-3">
                             <label class="block mb-2 text-xs font-bold tracking-wide uppercase">
@@ -133,20 +130,19 @@
                                 placeholder="" value=" {{ Auth::user()->address }}">
                         </div>
                     </div>
-               
+
                     <div class="flex flex-wrap mb-2 -mx-3">
                         <div class="w-full px-3 mb-6 md:w-1/2 md:mb-0">
-                            <label class="block mb-2 text-xs font-bold tracking-wide uppercase"
-                                for="grid-zip">
+                            <label class="block mb-2 text-xs font-bold tracking-wide uppercase" for="grid-zip">
                                 Code-Postal
                             </label>
                             <input name="zip"
                                 class="block w-full px-4 py-3 leading-tight text-center text-gray-700 border rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500"
-                                id="grid-zip" type="text" placeholder="90210" value=" {{ Auth::user()->zipCode }}">
+                                id="grid-zip" type="text" placeholder="90210"
+                                value=" {{ Auth::user()->zipCode }}">
                         </div>
                         <div class="w-full px-3 pb-4 mb-6 md:w-1/2 md:mb-0">
-                            <label class="block mb-2 text-xs font-bold tracking-wide uppercase"
-                                for="grid-city">
+                            <label class="block mb-2 text-xs font-bold tracking-wide uppercase" for="grid-city">
                                 Ville
                             </label>
                             <input name="city"
@@ -154,7 +150,8 @@
                                 id="grid-city" type="text" placeholder="" value=" {{ Auth::user()->city }}">
                         </div>
                         <button
-                            class="block w-full p-3 mt-8 text-center text-gray-900 transition-colors duration-200 bg-teal-400 rounded hover:bg-teal-200 focus:bg-teal-200">Passer au paiement</button>
+                            class="block w-full p-3 mt-8 text-center text-gray-900 transition-colors duration-200 bg-teal-400 rounded hover:bg-teal-200 focus:bg-teal-200">Passer
+                            au paiement</button>
                     </div>
                 </form>
             </div>
