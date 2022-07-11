@@ -9576,7 +9576,6 @@ h1 {
     -moz-appearance: none;
     text-align:-moz-center;
     appearance: none;
-<<<<<<< HEAD
 }
 
 
@@ -9590,21 +9589,6 @@ select {
     appearance: none;
 }
 
-=======
-}
-
-
-select {
-   /* text-indent: 33% hanging;   /* FIX POUR CENTRER SELECT  TEXT DANS SAFARI */
-    text-align: center;
-    text-align: -webkit-center;
-    -webkit-appearance: none; /* turn off drop-down arrow*/
-    -moz-appearance: none;
-    text-align:-moz-center;
-    appearance: none;
-}
-
->>>>>>> 37fa46e2f2b6963562cb0d93a2a7a3b11d812631
 _::-webkit-full-page-media, _:future, :root .apple {
 
     padding-left: 53px;
@@ -9632,17 +9616,10 @@ _::-webkit-full-page-media, _:future, :root .apple {
   --tw-border-opacity: 1;
   border-color: rgb(96 165 250 / var(--tw-border-opacity));
 }
-<<<<<<< HEAD
-.hover\:border-gray-500:hover {
-  --tw-border-opacity: 1;
-  border-color: rgb(107 114 128 / var(--tw-border-opacity));
-}
 .hover\:border-emerald-500:hover {
   --tw-border-opacity: 1;
   border-color: rgb(16 185 129 / var(--tw-border-opacity));
 }
-=======
->>>>>>> 37fa46e2f2b6963562cb0d93a2a7a3b11d812631
 .hover\:bg-teal-200:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(153 246 228 / var(--tw-bg-opacity));
