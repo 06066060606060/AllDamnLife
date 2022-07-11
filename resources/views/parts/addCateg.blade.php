@@ -47,7 +47,7 @@
                                     type="text" name="label" placeholder="Nom de la catégorie" required/>
                             </div>
                             <button type="submit"
-                                class="block w-full p-3 text-center text-gray-900 transition-colors duration-200 bg-teal-400 rounded hover:bg-teal-200 focus:bg-teal-200">Ajouter</button>
+                                class=" block w-full p-3 text-center text-gray-900 transition-colors duration-200 bg-teal-400 rounded hover:bg-teal-200 focus:bg-teal-200">Ajouter</button>
 
                         </form>
                     </div>
