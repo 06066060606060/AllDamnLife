@@ -43,7 +43,7 @@
                         {{ $produit->description }}
                     </span>
                     <a
-                        class="flex items-center justify-center h-8 px-4 pt-1 pb-1 mx-1 mb-2 space-x-2 tracking-wide text-white bg-blue-400 rounded-md">
+                        class="flex items-center justify-center h-8 px-4 pt-1 pb-1 mx-1 mb-2 space-x-2 tracking-wide text-white bg-emerald-400 rounded-md">
                         {{ $produit->prix }} €
                     </a>
 
