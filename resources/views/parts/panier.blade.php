@@ -9,7 +9,7 @@
                 class="py-8 bg-gray-600 rounded-t rounded-b-none md:rounded-br-none md:rounded-tr-none md:rounded-l-lg md:py-12 panier">
                 <div class="max-w-lg px-4 mx-auto md:px-8">
                     <div class="flex items-center">
-                        <img class="w-10 h-10  rounded-full" src="{{ Auth::user()->photo }}">
+                        <img class="w-10 h-10 rounded-full" src="{{ Auth::user()->photo }}">
 
                         <h2 class="ml-4 font-medium text-white"> {{ Auth::user()->prenom }}</h2>
                     </div>
@@ -80,7 +80,7 @@
             </div>
 
             <div class="w-full max-w-xl px-10 py-12 space-y-3 bg-gray-200 rounded-r-xl">
-                <form action="" enctype="multipart/form-data" method="POST" class="w-full max-w-lg">
+                <form action="/" enctype="multipart/form-data"  class="w-full max-w-lg">
                     @csrf
                     <div class="flex flex-wrap mb-6 -mx-3">
                         <div class="w-full px-3 mb-6 md:w-1/2 md:mb-0">
