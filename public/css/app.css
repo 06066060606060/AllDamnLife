@@ -9860,6 +9860,11 @@ h1 {
   border-color: rgb(147 197 253 / var(--tw-border-opacity));
 }
 
+.focus\:border-emerald-500:focus {
+  --tw-border-opacity: 1;
+  border-color: rgb(16 185 129 / var(--tw-border-opacity));
+}
+
 .focus\:bg-teal-200:focus {
   --tw-bg-opacity: 1;
   background-color: rgb(153 246 228 / var(--tw-bg-opacity));
