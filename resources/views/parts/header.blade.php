@@ -28,12 +28,16 @@
                 <div id="popmenu" class="px-4 py-2 text-red-400 btnmenu">Connection impossible, Compte désactivé</div>
             </div>
         @endif
-        @if  ($errors->has('password'))
+        
+        @if ($errors->has('email','password'))
         <div x-data="{ show: true }" x-show="show" x-init="setTimeout(() => show = false, 6000, PopupUser())" class="pt-2 pr-4">
-            <div id="popmenu" class="px-4 py-2 text-red-400 btnmenu">Les mots de passe de correspondent pas</div>
+            <div id="popmenu" class="px-4 py-2 text-red-400 btnmenu">Cet email existe déjà ou n'est pas valide et les mots de passe ne correspondent pas</div>
         </div>
-    @endif
-    @if  ($errors->has('email'))
+    @elseif   ($errors->has('password'))
+        <div x-data="{ show: true }" x-show="show" x-init="setTimeout(() => show = false, 6000, PopupUser())" class="pt-2 pr-4">
+            <div id="popmenu" class="px-4 py-2 text-red-400 btnmenu">Les mots de passe ne correspondent pas</div>
+        </div>
+        @elseif ($errors->has('email'))
     <div x-data="{ show: true }" x-show="show" x-init="setTimeout(() => show = false, 6000, PopupUser())" class="pt-2 pr-4">
         <div id="popmenu" class="px-4 py-2 text-red-400 btnmenu">Cet email existe déjà ou n'est pas valide</div>
     </div>
