@@ -1,6 +1,6 @@
 @if ($paginator->hasPages())
     <nav role="Page navigation" aria-label="{{ __('Pagination Navigation') }}" class="flex items-center justify-center ">
-        <div class="justify-center  sm:flex-1 sm:flex sm:items-center">
+        <div class="pt-6 justify-center  sm:flex-1 sm:flex sm:items-center">
             
               
 
