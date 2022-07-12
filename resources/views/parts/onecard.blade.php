@@ -132,11 +132,11 @@
             <div class="flex flex-col mt-4">
                 @for ($i = 5; $i > 0; $i--)
                     <div class="flex items-center space-x-1">
-                        <span class="flex-shrink-0 w-12 text-sm">{{ $i }}</span>
+                        <span class="flex-shrink-0 w-12 text-sm"> {{ $noteProduct['note'][$i] }}</span>
                         <div class="flex-1 h-4 overflow-hidden bg-gray-700 rounded-sm">
                             <div class="h-4 bg-orange-300 " style="width:{{ $noteProduct['prct'][$i] }}%;"></div>
                         </div>
-                        <span class="flex-shrink-0 w-12 text-sm"> {{ $noteProduct['note'][$i] }}</span>
+                        <span class="flex-shrink-0 w-12 text-sm"> {{ $i }}</span>
                     </div>
                 @endfor
             </div>
