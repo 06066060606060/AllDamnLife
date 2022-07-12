@@ -8441,9 +8441,6 @@ video {
 .ml-3 {
   margin-left: 0.75rem;
 }
-.-mb-1 {
-  margin-bottom: -0.25rem;
-}
 .block {
   display: block;
 }
@@ -8512,12 +8509,6 @@ video {
 }
 .h-5 {
   height: 1.25rem;
-}
-.h-\[41\.99px\] {
-  height: 41.99px;
-}
-.h-\[42\.99px\] {
-  height: 42.99px;
 }
 .min-h-screen {
   min-height: 100vh;
@@ -9121,13 +9112,13 @@ video {
   font-size: 1.25rem;
   line-height: 1.75rem;
 }
-.text-3xl {
-  font-size: 1.875rem;
-  line-height: 2.25rem;
-}
 .text-lg {
   font-size: 1.125rem;
   line-height: 1.75rem;
+}
+.text-3xl {
+  font-size: 1.875rem;
+  line-height: 2.25rem;
 }
 .font-bold {
   font-weight: 700;
@@ -10083,11 +10074,6 @@ _::-webkit-full-page-media, _:future, :root .apple {
 
   .md\:border-b-2 {
     border-bottom-width: 2px;
-  }
-
-  .md\:border-gray-900 {
-    --tw-border-opacity: 1;
-    border-color: rgb(17 24 39 / var(--tw-border-opacity));
   }
 
   .md\:border-gray-200 {

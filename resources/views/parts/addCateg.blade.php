@@ -11,7 +11,7 @@
 <div x-data="{ modelOpen: false }">
 
     <button @click="modelOpen =!modelOpen"
-        class="p-3 pl-4 pr-4 font-bold text-white transition duration-500 ease-in-out bg-sky-500 rounded-lg hover:ring-2 ring-offset-2 ring-emerald-500">Ajouter
+        class="p-3 pl-4 pr-4 font-bold text-white transition duration-500 ease-in-out border border-white bg-sky-500 rounded-lg hover:ring-2 ring-offset-2 ring-emerald-500">Ajouter
         une catégorie</button>
     </button>
 
