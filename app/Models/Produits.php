@@ -3,7 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Model; 
+use Illuminate\Database\Eloquent\Model;
 
 
 class Produits extends Model
@@ -17,11 +17,11 @@ class Produits extends Model
         'image',
         'note',
         'actif',
-        
-    ];
-   
 
-    
+    ];
+
+
+
     public function produit()
     {
         return $this;
@@ -29,17 +29,15 @@ class Produits extends Model
 
     public function comment()
     {
-        return $this->hasMany(Comments::class, 'id_comm', 'user_id', 'product_id', 'contenu', 'note' )->orderBy('created_at', 'DESC');
+        return $this->hasMany(Comments::class, 'id_comm', 'user_id', 'product_id', 'contenu', 'note')->orderBy('created_at', 'DESC');
     }
 
     public function produit_categorie()
     {
-        return $this->belongsToMany(Categories::class,'produits_categories','prod_id','categorie_id');
+        return $this->belongsToMany(Categories::class, 'produits_categories', 'prod_id', 'categorie_id');
     }
     public function categorie()
     {
-        return $this->belongsToMany(Categories::class,'produits_categories','prod_id','categorie_id');
+        return $this->belongsToMany(Categories::class, 'produits_categories', 'prod_id', 'categorie_id');
     }
-
 }
-

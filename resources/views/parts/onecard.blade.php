@@ -19,7 +19,7 @@
                             <div class="flex flex-col items-center w-full">
                                 <div class="flex flex-col items-center py-6 space-y-3">
                                     <div class="flex space-x-3">
-                                        @for ($i = 0; $i < round($noteProduct['average'] ); $i++)
+                                        @for ($i = 0; $i < round($noteProduct['average']); $i++)
                                             <i class="text-yellow-500 fa-solid fa-star"></i>
                                         @endfor
                                     </div>
@@ -70,8 +70,9 @@
                             </label>
                         </div>
                         <div class="flex items-center justify-center">
-                        <input type="submit" name="myButtonAdd" value="Ajouter au panier"
-                            class=" h-8 px-4 p-1 mx-1 space-x-2 tracking-wide text-white transition-colors duration-200 transform rounded-md btnmenu bg-emerald-500 hover:bg-emerald-300 focus:outline-none focus:bg-emerald-700"></div>
+                            <input type="submit" name="myButtonAdd" value="Ajouter au panier"
+                                class=" h-8 px-4 p-1 mx-1 space-x-2 tracking-wide text-white transition-colors duration-200 transform rounded-md btnmenu bg-emerald-500 hover:bg-emerald-300 focus:outline-none focus:bg-emerald-700">
+                        </div>
                     </form>
 
                 </div>
@@ -112,7 +113,7 @@
         </div>
 
 
-        {{-- New Notation Étoiles --}}
+        {{-- Notation Étoiles --}}
 
         <div
             class="container flex flex-col w-full max-w-lg pt-6 pb-4 mx-auto mt-10 mb-8 text-gray-100 transition duration-500 bg-gray-900 rounded-lg sm:mx-auto btnmenu hover:scale-105">
@@ -121,7 +122,7 @@
 
                 <div class="flex flex-row space-x-2 text-yellow-500">
 
-                    @for ($i = 0; $i < round($noteProduct['average'] ); $i++)
+                    @for ($i = 0; $i < round($noteProduct['average']); $i++)
                         <i class="text-yellow-500 fa-solid fa-star"></i>
                     @endfor
                     <span class="text-gray-400"> {{ $noteProduct['average'] }} sur 5</span>
