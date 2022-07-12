@@ -1,7 +1,6 @@
 @extends('layouts.app')
 
 @section('main')
-@include('parts.backmenu')
-@include('parts.userprofile')
-
+    @include('parts.backmenu')
+    @include('parts.userprofile')
 @endsection

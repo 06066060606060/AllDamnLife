@@ -9383,7 +9383,7 @@ body {
     padding: 1em;
 
     font-family: "Lato", sans-serif;
-    background-image: url(/img/newbg.svg);
+    background-image: url(/img/SimpleShiny.svg);
     background-repeat: no-repeat;
     background-size: cover;
 }
@@ -9952,6 +9952,11 @@ _::-webkit-full-page-media, _:future, :root .apple {
     padding-right: 1.5rem;
   }
 
+  .sm\:text-sm {
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+  }
+
   .sm\:text-4xl {
     font-size: 2.25rem;
     line-height: 2.5rem;
@@ -10071,9 +10076,9 @@ _::-webkit-full-page-media, _:future, :root .apple {
     border-bottom-width: 2px;
   }
 
-  .md\:border-gray-900 {
+  .md\:border-gray-200 {
     --tw-border-opacity: 1;
-    border-color: rgb(17 24 39 / var(--tw-border-opacity));
+    border-color: rgb(229 231 235 / var(--tw-border-opacity));
   }
 
   .md\:bg-transparent {
