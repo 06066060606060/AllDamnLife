@@ -39,7 +39,7 @@
             <div class="relative p-6 pt-16 md:p-8 md:pl-12 md:rounded-r-2xl lg:pl-20 lg:p-16">
                 <div class="flex flex-col justify-center">
                     <h1 class="text-white">{{ $produit->titre }}</h1>
-                    <span class="px-6 py-4 text-lg font-light text-white">
+                    <span class="px-6 py-4 text-sm font-light text-white">
                         {{ $produit->description }}
                     </span>
                     <a
