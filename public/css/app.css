@@ -9075,12 +9075,6 @@ video {
 .pl-2 {
   padding-left: 0.5rem;
 }
-.pr-5 {
-  padding-right: 1.25rem;
-}
-.pr-2 {
-  padding-right: 0.5rem;
-}
 .text-left {
   text-align: left;
 }
@@ -9961,11 +9955,6 @@ _::-webkit-full-page-media, _:future, :root .apple {
   .sm\:text-4xl {
     font-size: 2.25rem;
     line-height: 2.5rem;
-  }
-
-  .sm\:text-xs {
-    font-size: 0.75rem;
-    line-height: 1rem;
   }
 
   .sm\:text-sm {
