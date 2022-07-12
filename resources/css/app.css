@@ -65,6 +65,7 @@ h1 {
     height: 400px;
     perspective: 1000px; 
   }
+
   
   .flip-card-inner {
     position: relative;
@@ -77,7 +78,13 @@ h1 {
   
   .flip-card:hover .flip-card-inner {
     transform: rotateY(180deg);
-  }
+  
+}
+
+.flip-card:focus-within .flip-card-inner {
+    transform: rotateY(180deg);
+  
+}
 
   .flip-card:hover .ribbon {
     visibility: hidden;
