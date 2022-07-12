@@ -7,7 +7,7 @@
    
    
         
-        <div class="flex flex-row flex-wrap space-x-4 md:space-x-8 	">
+        <div class="flex flex-row flex-wrap space-x-4 md:space-x-8 ">
             <div class="mx-4">
                     <a class="mx-8 items-end text-white" href="https://www.instagram.com/alldamnlife/?hl=fr" target="_blank">Instagram</a>
                     <a class=" text-white" href="https://www.facebook.com/alldamnlife" target="_blank">Facebook</a>

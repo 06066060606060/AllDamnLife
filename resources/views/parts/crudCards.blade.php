@@ -8,7 +8,7 @@
                         <tr
                             class="flex flex-col mb-2 rounded-l-lg bg-emerald-500 flex-no wrap sm:table-row sm:rounded-none sm:mb-0 ">
                            
-                            <th class="h-12 p-3 text-center "></th>
+                            <th class="h-12 p-3 text-center "><i class="fa-solid fa-file-image fa-xl"></i></th>
                             <th class="h-12 p-3 text-center ">Titre</th>
                             <th class="h-12 p-3 text-center ">Prix</th>
                             <th class="h-12 p-3 text-center ">Consulter</th>

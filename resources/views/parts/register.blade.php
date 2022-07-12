@@ -41,7 +41,7 @@
                                     class="w-full px-4 py-3 text-gray-100 bg-gray-900 border-gray-700 rounded-md focus:border-emerald-400">
                             </div>
                             <div class="space-y-1 text-sm">
-                                <label for="email" class="block text-gray-400">Email</label>
+                                <label for="email" class="block text-gray-400">E-mail</label>
                                 <input type="email" name="email" id="email" placeholder="exemple@mail.com"
                                     class="w-full px-4 py-3 text-gray-100 bg-gray-900 border-gray-700 rounded-md focus:border-emerald-400">
                             </div>
@@ -52,8 +52,8 @@
 
                             </div>
                             <div class="space-y-1 text-sm">
-                                <label for="password" class="block text-gray-400">Confirmation du mot de passe</label>
-                                <input id="password" type="password" name="password_confirmation" required placeholder="Confirmation du mot de passe"
+                                <label for="password" class="block text-gray-400">Confirmer votre mot de passe</label>
+                                <input id="password" type="password" name="password_confirmation" required placeholder="Confirmer votre mot de passe"
                                     class="w-full px-4 py-3 text-gray-100 bg-gray-900 border-gray-700 rounded-md focus:border-emerald-400">
 
                             </div>
