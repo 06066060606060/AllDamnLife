@@ -60,7 +60,7 @@
                                         <span class="m-auto text-2xl font-thin">−</span>
                                     </button>
                                     <input type="number" name="quantite" style="-moz-appearance: textfield"
-                                        class="flex items-center w-full      font-semibold text-center text-gray-700 bg-gray-300 outline-none outline focus:outline-none text-md hover:text-black focus:text-black md:text-basecursor-default"
+                                        class="flex items-center w-full font-semibold text-center text-gray-700 bg-gray-300 outline-none outline focus:outline-none text-md hover:text-black focus:text-black md:text-basecursor-default"
                                         name="custom-input-number" min="1" value="1"></input>
                                     <button data-action="increment" onclick="return false;"
                                         class="w-20 h-full text-gray-600 bg-gray-300 rounded-r cursor-pointer hover:text-gray-700 hover:bg-gray-400">
