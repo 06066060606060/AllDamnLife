@@ -24,7 +24,7 @@ class AuthController extends Controller
             'password' => 'required',
             'password' => 'required|confirmed|min:6'
         ]);
-        
+
         $user = new User();
         $user->nom = $validate['nom'];
         $user->prenom = $validate['prenom'];
@@ -32,8 +32,6 @@ class AuthController extends Controller
         $user->password = Hash::make($validate['password']);
         $user->save();
         return redirect()->back();
-
-
     }
 
     public function login(Request $request)
@@ -54,7 +52,6 @@ class AuthController extends Controller
                 $request->session()->invalidate();
                 return redirect()->back()->with('desactivate', 'log');
             }
-           
         }
         return redirect()->back()->with('error', 'log');
     }

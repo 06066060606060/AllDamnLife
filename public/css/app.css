@@ -8441,6 +8441,9 @@ video {
 .ml-3 {
   margin-left: 0.75rem;
 }
+.-mb-1 {
+  margin-bottom: -0.25rem;
+}
 .block {
   display: block;
 }
@@ -8509,6 +8512,12 @@ video {
 }
 .h-5 {
   height: 1.25rem;
+}
+.h-\[41\.99px\] {
+  height: 41.99px;
+}
+.h-\[42\.99px\] {
+  height: 42.99px;
 }
 .min-h-screen {
   min-height: 100vh;
@@ -9075,12 +9084,6 @@ video {
 .pl-2 {
   padding-left: 0.5rem;
 }
-.pr-5 {
-  padding-right: 1.25rem;
-}
-.pr-2 {
-  padding-right: 0.5rem;
-}
 .text-left {
   text-align: left;
 }
@@ -9389,7 +9392,7 @@ body {
     padding: 1em;
 
     font-family: "Lato", sans-serif;
-    background-image: url(/img/newbg.svg);
+    background-image: url(/img/SimpleShiny.svg);
     background-repeat: no-repeat;
     background-size: cover;
 }
@@ -9958,19 +9961,14 @@ _::-webkit-full-page-media, _:future, :root .apple {
     padding-right: 1.5rem;
   }
 
-  .sm\:text-4xl {
-    font-size: 2.25rem;
-    line-height: 2.5rem;
-  }
-
-  .sm\:text-xs {
-    font-size: 0.75rem;
-    line-height: 1rem;
-  }
-
   .sm\:text-sm {
     font-size: 0.875rem;
     line-height: 1.25rem;
+  }
+
+  .sm\:text-4xl {
+    font-size: 2.25rem;
+    line-height: 2.5rem;
   }
 }
 @media (min-width: 768px) {
@@ -10090,6 +10088,11 @@ _::-webkit-full-page-media, _:future, :root .apple {
   .md\:border-gray-900 {
     --tw-border-opacity: 1;
     border-color: rgb(17 24 39 / var(--tw-border-opacity));
+  }
+
+  .md\:border-gray-200 {
+    --tw-border-opacity: 1;
+    border-color: rgb(229 231 235 / var(--tw-border-opacity));
   }
 
   .md\:bg-transparent {
