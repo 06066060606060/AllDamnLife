@@ -1,6 +1,6 @@
 <div x-data="{ modelOpen: false }">
     <button @click="modelOpen =!modelOpen"
-        class="p-3 pl-4 pr-4 mt-4 font-bold text-white transition duration-500 ease-in-out bg-blue-600 rounded-lg hover:ring-2 ring-offset-2 ring-blue-400">Ajouter
+        class="p-3 pl-4 pr-4 mt-4 font-bold text-white transition duration-500 ease-in-out bg-sky-500 rounded-lg  border border-white hover:ring-2 ring-offset-2 ring-emerald-500">Ajouter
         une carte cadeau</button>
 
 
