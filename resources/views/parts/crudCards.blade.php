@@ -20,7 +20,7 @@
                 <tbody class="flex-1 sm:flex-none">
                     @forelse ($cards as $card)
                         <tr class="flex flex-col flex-no-wrap mb-2 bg-gray-700 sm:table-row -p-2 sm:mb-0">
-                             <td class="h-12 truncate "><img class="w-10 h-10 mx-auto sm:w-14 sm:h-14"
+                             <td class="h-12 truncate "><img class="w-10 h-10 mx-auto sm:w-14 sm:h-14 drop-shadow-md"
                                     src="{{ $card->image }}" alt="">
                             </td>  
                             <td class="h-12 p-3 text-white ">{{ $card->titre }}</td>
