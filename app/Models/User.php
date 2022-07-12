@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Models;
+
 use App\Models\Paniers;
 use Laravel\Sanctum\HasApiTokens;
 use Illuminate\Database\Eloquent\Model;
@@ -14,7 +15,7 @@ use Illuminate\Validation\Rules\Enum;
 class User extends Authenticatable
 {
     use HasApiTokens, HasFactory, Notifiable;
- 
+
 
     protected $fillable = [
         'name',
@@ -40,10 +41,4 @@ class User extends Authenticatable
     {
         return $this->belongsTo(Paniers::class, 'prod_id', 'user_id', 'quantite');
     }
-    
 }
-
-
-
-   
-

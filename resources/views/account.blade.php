@@ -1,10 +1,9 @@
 @extends('layouts.app')
 
 @section('main')
-@auth
-@include('parts.backmenu')
-@endauth
+    @auth
+        @include('parts.backmenu')
+    @endauth
 
-@include('parts.profile')
-
+    @include('parts.profile')
 @endsection

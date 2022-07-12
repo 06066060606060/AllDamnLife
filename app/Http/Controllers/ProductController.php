@@ -202,7 +202,7 @@ class ProductController extends Controller
         $comm->user_id = Auth::user()->id;
         $comm->product_id = $id;
         $comm->note = $request->note;
-        
+
         $comm->save();
         $produit->update();
         return redirect()->route('getCard', ['id' => $id]);

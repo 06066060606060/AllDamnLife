@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('main')
-@include('parts.backmenu')
-@include('parts.crudCards')
-{{$cards->links()}}
+    @include('parts.backmenu')
+    @include('parts.crudCards')
+    {{ $cards->links() }}
 @endsection
