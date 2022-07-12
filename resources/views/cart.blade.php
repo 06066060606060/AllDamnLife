@@ -1,6 +1,5 @@
 @extends('layouts.app')
 
 @section('main')
-@include('parts.panier')
-
+    @include('parts.panier')
 @endsection

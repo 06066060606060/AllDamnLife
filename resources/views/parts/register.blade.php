@@ -53,12 +53,13 @@
                             </div>
                             <div class="space-y-1 text-sm">
                                 <label for="password" class="block text-gray-400">Confirmer votre mot de passe</label>
-                                <input id="password" type="password" name="password_confirmation" required placeholder="Confirmer votre mot de passe"
+                                <input id="password" type="password" name="password_confirmation" required
+                                    placeholder="Confirmer votre mot de passe"
                                     class="w-full px-4 py-3 text-gray-100 bg-gray-900 border-gray-700 rounded-md focus:border-emerald-400">
 
                             </div>
-                                
-                                <button
+
+                            <button
                                 class="block w-full p-3 text-center text-white transition-colors duration-200 rounded bg-emerald-500 hover:bg-emerald-400 focus:bg-emerald-400">S'inscrire
                             </button>
                         </form>
