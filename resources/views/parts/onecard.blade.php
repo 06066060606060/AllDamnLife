@@ -43,7 +43,7 @@
                         {{ $produit->description }}
                     </span>
                     <a
-                        class="flex items-center justify-center h-8 pt-1 pb-1 mx-1 mb-2 space-x-2 tracking-wide text-white text-2xl rounded-md">
+                        class="flex items-center justify-center h-8 pt-1 pb-1 mx-1 mb-2 space-x-2 text-2xl tracking-wide text-white rounded-md">
                         {{ $produit->prix }} €
                     </a>
 
@@ -60,7 +60,7 @@
                                         <span class="m-auto text-2xl font-thin">−</span>
                                     </button>
                                     <input type="number" name="quantite" style="-moz-appearance: textfield"
-                                        class="flex items-center w-full      font-semibold text-center text-gray-700 bg-gray-300 outline-none outline focus:outline-none text-md hover:text-black focus:text-black md:text-basecursor-default"
+                                        class="flex items-center w-full font-semibold text-center text-gray-700 bg-gray-300 outline-none outline focus:outline-none text-md hover:text-black focus:text-black md:text-basecursor-default"
                                         name="custom-input-number" min="1" value="1"></input>
                                     <button data-action="increment" onclick="return false;"
                                         class="w-20 h-full text-gray-600 bg-gray-300 rounded-r cursor-pointer hover:text-gray-700 hover:bg-gray-400">
@@ -71,7 +71,7 @@
                         </div>
                         <div class="flex items-center justify-center">
                             <input type="submit" name="myButtonAdd" value="Ajouter au panier"
-                                class=" h-8 px-4 p-1 mx-1 space-x-2 tracking-wide text-white transition-colors duration-200 transform rounded-md btnmenu bg-emerald-500 hover:bg-emerald-300 focus:outline-none focus:bg-emerald-700">
+                                class="h-8 p-1 px-4 mx-1 space-x-2 tracking-wide text-white transition-colors duration-200 transform rounded-md  btnmenu bg-emerald-500 hover:bg-emerald-300 focus:outline-none focus:bg-emerald-700">
                         </div>
                     </form>
 

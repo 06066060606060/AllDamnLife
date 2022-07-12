@@ -1,6 +1,6 @@
 @php   use \App\Http\Controllers\CategoriesController; @endphp
 <div class="max-w-screen-xl p-5 mx-auto text-gray-100">
-    <div class="grid justify-items-center xl:grid-col-4">
+    <div class="gride justify-items-center x">
         @forelse ($produits as $produit)
             <div class="opacity-100 flip-card">
                 <div class="flip-card-inner">
