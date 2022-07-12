@@ -1,8 +1,8 @@
 @php   use \App\Http\Controllers\CategoriesController; @endphp
 <div class="max-w-screen-xl p-5 mx-auto text-gray-100">
-    <div class="grid justify-items-center">
+    <div class="gride justify-items-center x">
         @forelse ($produits as $produit)
-            <div class="flip-card opacity-100">
+            <div class="opacity-100 flip-card">
                 <div class="flip-card-inner">
                     <div class="flip-card-front">
                         <div class="flex flex-col items-center justify-center front">
@@ -40,10 +40,9 @@
                                     <button name="myButton" type="submit">Ajouter au panier</button>
                                 </form>
 
-                                    <a href="/card/{{ $produit->id }}"
-                                        class="transition-colors duration-150  rounded w-36 text-lg underline text-bold text-white hover:text-gray-800">Plus
-                                        d'infos</a>
-                                </div>
+                                <a href="/card/{{ $produit->id }}"
+                                    class="text-lg text-white underline transition-colors duration-150 rounded w-36 text-bold hover:text-gray-800">Plus
+                                    d'info</a>
                             </div>
                         </div>
                     </div>
