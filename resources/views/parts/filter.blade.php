@@ -15,24 +15,23 @@
             <form action="{{ route('searchfilter') }}" method="get">
 
                 <input type="text" name="q" placeholder="Recherche..." id="place-holder-center"
-                    class="outline-none mx-1  w-[188px] my-2 btnmenu text-center h-[43.99px] py-3 px-2 text-sm text-white bg-gray-900 border border-transparent rounded-md hover:border-emerald-500 focus:border-emerald-500"
+                    class="outline-none mx-1  w-[188px] my-2 btnmenu text-center h-[43.99px] py-3 px-2 text-sm text-white bg-gray-600 border border-transparent rounded-md hover:border-emerald-500 focus:border-emerald-500"
                     value="{{ request()->q ?? '' }}">
 
 
-                <select name="categories"
-                    class="mx-1 w-[188px] text-center my-2 appearance-none  btnmenu h-[43.99px] py-3 text-sm text-white bg-gray-900 border border-transparent rounded-md hover:border-emerald-500 apple">
+                <select name="categories"  
+                    class="mx-1 w-[188px] text-center my-2 appearance-none  btnmenu h-[43.99px] py-3 text-sm text-white bg-gray-600 border border-transparent rounded-md hover:border-emerald-500 apple">
                     <option value="" class="text-center   px-0" id="place-holder-center">Catégories </option>
 
                     @foreach ($categories as $categorie)
-                        <option value="{{ $categorie->id_cat }}"
-                            {{ $urlcat == $categorie->id_cat ? 'selected' : '' }} class="text-center ">
-                            {{ $categorie->label }}
+                  
+                    <option value="{{ $categorie->id_cat }}" {{ $urlcat == $categorie->id_cat ? 'selected' : '' }} class="text-center ">{{ $categorie->label }}
                         </option>
                     @endforeach
                 </select>
 
                 <select name="note"
-                    class="mx-1 w-[188px] my-2 appearance-none btnmenu  h-[43.99px] py-3 text-center text-sm text-white bg-gray-900 border border-transparent rounded-md hover:border-emerald-500 apple">
+                    class="mx-1 w-[188px] my-2 appearance-none btnmenu  h-[43.99px] py-3 text-center text-sm text-white bg-gray-600 border border-transparent rounded-md hover:border-emerald-500 apple">
                     <option value="" class="text-center">Notes</option>
                     <option value="1" {{ $urlnote == 1 ? 'selected' : '' }} class="text-center text-yellow-500">★
                     </option>
@@ -47,7 +46,7 @@
                 </select>
 
                 <select name="prix"
-                    class="mx-1  w-[188px] my-2 appearance-none btnmenu h-[43.99px] text-center py-3 text-sm text-white bg-gray-900 border border-transparent rounded-md hover:border-emerald-500 apple">
+                    class="mx-1  w-[188px] my-2 appearance-none btnmenu h-[43.99px] text-center py-3 text-sm text-white bg-gray-600 border border-transparent rounded-md hover:border-emerald-500 apple">
                     <option value="" class="text-center">Prix</option>
                     <option value="10" {{ $urlprix == 10 ? 'selected' : '' }} class="text-center">
                         moins de 10€</option>
@@ -64,12 +63,11 @@
                     </option>
                 </select>
 
-                <a href="/"> <input type="button"
-                        class="mx-1  w-[188px] my-2 h-[43.99px] text-sm text-center  text-gray-100 rounded-md btnmenu bg-violet-500 hover:bg-violet-400 focus:outline-none focus:bg-violet-900"
-                        value="Effacer les filtres">
-
-
-                    </input></a>
+              <a href="/">  <input type="button" 
+                    class="mx-1  w-[188px] my-2 h-[43.99px] text-sm text-center  text-gray-100 rounded-md btnmenu bg-violet-500 hover:bg-violet-400 focus:outline-none focus:bg-violet-900" value="Effacer les filtres">
+                    
+                       
+              </input></a>
                 <button
                     class="mx-1  w-[188px] my-2 btnmenu h-[43.99px] text-sm text-center text-gray-100 transition-colors duration-200 bg-emerald-500 hover:bg-emerald-400 focus:outline-none focus:bg-emerald-500 rounded-md">Valider</button>
 
