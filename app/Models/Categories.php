@@ -14,16 +14,15 @@ class Categories extends Model
     protected $fillable = [
         'id_cat',
         'label',
-        
+
     ];
 
     public function produit()
     {
-       return $this->belongsToMany(Produits::class);
+        return $this->belongsToMany(Produits::class);
     }
     public function categorie_produits()
     {
-        return $this->belongsToMany(Produits::class,'produits_categories','categorie_id', 'prod_id');
+        return $this->belongsToMany(Produits::class, 'produits_categories', 'categorie_id', 'prod_id');
     }
-
 }

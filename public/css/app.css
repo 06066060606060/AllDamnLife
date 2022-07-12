@@ -9075,12 +9075,6 @@ video {
 .pl-2 {
   padding-left: 0.5rem;
 }
-.pr-5 {
-  padding-right: 1.25rem;
-}
-.pr-2 {
-  padding-right: 0.5rem;
-}
 .text-left {
   text-align: left;
 }
@@ -9118,13 +9112,13 @@ video {
   font-size: 1.25rem;
   line-height: 1.75rem;
 }
-.text-3xl {
-  font-size: 1.875rem;
-  line-height: 2.25rem;
-}
 .text-lg {
   font-size: 1.125rem;
   line-height: 1.75rem;
+}
+.text-3xl {
+  font-size: 1.875rem;
+  line-height: 2.25rem;
 }
 .font-bold {
   font-weight: 700;
@@ -9389,7 +9383,7 @@ body {
     padding: 1em;
 
     font-family: "Lato", sans-serif;
-    background-image: url(/img/newbg.svg);
+    background-image: url(/img/SimpleShiny.svg);
     background-repeat: no-repeat;
     background-size: cover;
 }
@@ -9958,19 +9952,14 @@ _::-webkit-full-page-media, _:future, :root .apple {
     padding-right: 1.5rem;
   }
 
-  .sm\:text-4xl {
-    font-size: 2.25rem;
-    line-height: 2.5rem;
-  }
-
-  .sm\:text-xs {
-    font-size: 0.75rem;
-    line-height: 1rem;
-  }
-
   .sm\:text-sm {
     font-size: 0.875rem;
     line-height: 1.25rem;
+  }
+
+  .sm\:text-4xl {
+    font-size: 2.25rem;
+    line-height: 2.5rem;
   }
 }
 @media (min-width: 768px) {
@@ -10087,9 +10076,9 @@ _::-webkit-full-page-media, _:future, :root .apple {
     border-bottom-width: 2px;
   }
 
-  .md\:border-gray-900 {
+  .md\:border-gray-200 {
     --tw-border-opacity: 1;
-    border-color: rgb(17 24 39 / var(--tw-border-opacity));
+    border-color: rgb(229 231 235 / var(--tw-border-opacity));
   }
 
   .md\:bg-transparent {

@@ -46,7 +46,4 @@ class CategoriesController extends Controller
         $categorie->save();
         return redirect()->route('categories');
     }
-
-
-
 }

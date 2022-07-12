@@ -19,7 +19,7 @@
                             <div class="flex flex-col items-center w-full">
                                 <div class="flex flex-col items-center py-6 space-y-3">
                                     <div class="flex space-x-3">
-                                        @for ($i = 0; $i < round($noteProduct['average'] ); $i++)
+                                        @for ($i = 0; $i < round($noteProduct['average']); $i++)
                                             <i class="text-yellow-500 fa-solid fa-star"></i>
                                         @endfor
                                     </div>
@@ -39,7 +39,7 @@
             <div class="relative p-6 pt-16 md:p-8 md:pl-12 md:rounded-r-2xl lg:pl-20 lg:p-16">
                 <div class="flex flex-col justify-center">
                     <h1 class="text-white">{{ $produit->titre }}</h1>
-                    <span class="px-6 py-4 text-sm font-light text-white">
+                    <span class="px-6 py-4 text-lg font-light text-white">
                         {{ $produit->description }}
                     </span>
                     <a
@@ -70,8 +70,9 @@
                             </label>
                         </div>
                         <div class="flex items-center justify-center">
-                        <input type="submit" name="myButtonAdd" value="Ajouter au panier"
-                            class=" h-8 px-4 p-1 mx-1 space-x-2 tracking-wide text-white transition-colors duration-200 transform rounded-md btnmenu bg-emerald-500 hover:bg-emerald-300 focus:outline-none focus:bg-emerald-700"></div>
+                            <input type="submit" name="myButtonAdd" value="Ajouter au panier"
+                                class=" h-8 px-4 p-1 mx-1 space-x-2 tracking-wide text-white transition-colors duration-200 transform rounded-md btnmenu bg-emerald-500 hover:bg-emerald-300 focus:outline-none focus:bg-emerald-700">
+                        </div>
                     </form>
 
                 </div>
@@ -112,7 +113,7 @@
         </div>
 
 
-        {{-- New Notation Étoiles --}}
+        {{-- Notation Étoiles --}}
 
         <div
             class="container flex flex-col w-full max-w-lg pt-6 pb-4 mx-auto mt-10 mb-8 text-gray-100 transition duration-500 bg-gray-900 rounded-lg sm:mx-auto btnmenu hover:scale-105">
@@ -121,7 +122,7 @@
 
                 <div class="flex flex-row space-x-2 text-yellow-500">
 
-                    @for ($i = 0; $i < round($noteProduct['average'] ); $i++)
+                    @for ($i = 0; $i < round($noteProduct['average']); $i++)
                         <i class="text-yellow-500 fa-solid fa-star"></i>
                     @endfor
                     <span class="text-gray-400"> {{ $noteProduct['average'] }} sur 5</span>
@@ -132,11 +133,11 @@
             <div class="flex flex-col mt-4">
                 @for ($i = 5; $i > 0; $i--)
                     <div class="flex items-center space-x-1">
-                        <span class="flex-shrink-0 w-12 text-sm">{{ $i }}</span>
+                        <span class="flex-shrink-0 w-12 text-sm"> {{ $noteProduct['note'][$i] }}</span>
                         <div class="flex-1 h-4 overflow-hidden bg-gray-700 rounded-sm">
                             <div class="h-4 bg-orange-300 " style="width:{{ $noteProduct['prct'][$i] }}%;"></div>
                         </div>
-                        <span class="flex-shrink-0 w-12 text-sm"> {{ $noteProduct['note'][$i] }}</span>
+                        <span class="flex-shrink-0 w-12 text-sm"> {{ $i }}</span>
                     </div>
                 @endfor
             </div>
