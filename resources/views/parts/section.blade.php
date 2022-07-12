@@ -42,7 +42,7 @@
 
                                     <a href="/card/{{ $produit->id }}"
                                         class="transition-colors duration-150  rounded w-36 text-lg underline text-bold text-white hover:text-gray-800">Plus
-                                        d'info</a>
+                                        d'infos</a>
                                 </div>
                             </div>
                         </div>

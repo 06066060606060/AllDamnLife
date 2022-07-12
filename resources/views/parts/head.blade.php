@@ -19,4 +19,4 @@
 <meta property="twitter:image" content="http://alldamnlife.com/wp-content/uploads/2022/06/logo-with-partner-1024x1024.png">
 <script src="{{ mix('js/app.js') }}" defer></script>
 <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-<link rel="icon" type="image/x-icon" href="/img/logo1.png">
+<link rel="icon" type="image/x-icon" href="/img/logohead.png">
