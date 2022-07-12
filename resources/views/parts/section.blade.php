@@ -2,7 +2,7 @@
 <div class="max-w-screen-xl p-5 mx-auto text-gray-100">
         <div class="grid justify-items-center">
             @forelse ($produits as $produit)
-                <div class="flip-card opacity-95">
+                <div class="flip-card opacity-100">
                     <div class="flip-card-inner">
                         <div class="flip-card-front">
                             <div class="flex flex-col items-center justify-center front">
@@ -34,14 +34,14 @@
                                         onsubmit="myButton.disabled = true; return true;" @else
                                             onclick="document.getElementById('primaryButton').click()"
                                         onsubmit="return false" @endauth
-                                        class="px-2 py-2 mt-4 mb-3 transition-colors duration-150 rounded w-36 bg-emerald-500 hover:bg-emerald-300 hover:text-gray-800">
+                                        class="px-2 py-2 mt-4 mb-3 transition-colors duration-150 rounded w-36 bg-violet-800 hover:bg-emerald-300 hover:text-violet-800">
                                         @csrf
                                         <input type="hidden" name="quantite" value="1">
                                         <button name="myButton" type="submit">Ajouter au panier</button>
                                     </form>
 
                                     <a href="/card/{{ $produit->id }}"
-                                        class="transition-colors duration-150 bg-blue-600 rounded w-36 hover:bg-blue-400 hover:text-gray-800">Plus
+                                        class="transition-colors duration-150  rounded w-36 text-lg underline text-bold text-white hover:text-gray-800">Plus
                                         d'info</a>
                                 </div>
                             </div>
