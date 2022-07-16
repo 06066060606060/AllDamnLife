@@ -74,7 +74,7 @@ class ProductController extends Controller
 
     public function getAllProducts()
     {
-        $cards = Produits::All();
+        $cards = Produits::paginate(8);
         $categories = Categories::all();
 
         return view('giftCards', [
@@ -202,7 +202,7 @@ class ProductController extends Controller
         $comm->user_id = Auth::user()->id;
         $comm->product_id = $id;
         $comm->note = $request->note;
-        
+
         $comm->save();
         $produit->update();
         return redirect()->route('getCard', ['id' => $id]);

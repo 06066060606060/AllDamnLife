@@ -12,7 +12,7 @@ class CategoriesController extends Controller
 
     public function getCateg()
     {
-        $categories = Categories::all();
+        $categories = Categories::paginate(10);
         return view('categories', [
             'categories' => $categories,
         ]);
@@ -46,7 +46,4 @@ class CategoriesController extends Controller
         $categorie->save();
         return redirect()->route('categories');
     }
-
-
-
 }

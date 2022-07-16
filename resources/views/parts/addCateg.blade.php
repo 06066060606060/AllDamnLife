@@ -11,7 +11,7 @@
 <div x-data="{ modelOpen: false }">
 
     <button @click="modelOpen =!modelOpen"
-        class="p-3 pl-4 pr-4 font-bold text-white transition duration-500 ease-in-out bg-blue-600 rounded-lg hover:ring-2 ring-offset-2 ring-blue-400">Ajouter
+        class="p-3 pl-4 pr-4 font-bold text-white transition duration-500 ease-in-out bg-sky-500 rounded-lg hover:ring-2 ring-offset-2 ring-emerald-500">Ajouter
         une catégorie</button>
     </button>
 
@@ -44,10 +44,10 @@
                             <div class="space-y-1 text-sm">
                                 <input value=""
                                     class="w-full px-4 py-3 text-gray-100 bg-gray-900 border-gray-700 rounded-md focus:border-teal-400"
-                                    type="text" name="label" placeholder="Nom de la catégorie" required/>
+                                    type="text" name="label" placeholder="Nom de la catégorie" required />
                             </div>
                             <button type="submit"
-                                class="block w-full p-3 text-center text-gray-900 transition-colors duration-200 bg-teal-400 rounded hover:bg-teal-200 focus:bg-teal-200">Ajouter</button>
+                                class=" block w-full p-3 text-center text-gray-900 transition-colors duration-200 bg-teal-400 rounded hover:bg-teal-200 focus:bg-teal-200">Ajouter</button>
 
                         </form>
                     </div>

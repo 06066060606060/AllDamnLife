@@ -1,7 +1,7 @@
 <div x-data="{ modelOpen: false }">
 
     <button @click="modelOpen =!modelOpen" id="secondaryButton"
-        class="flex items-center justify-center px-4 py-2 mx-1 space-x-2 text-sm tracking-wide text-white capitalize transition-colors duration-200 transform bg-gray-500 rounded-md btnmenu hover:bg-gray-700 focus:outline-none focus:bg-gray-500 focus:ring focus:ring-gray-300 focus:ring-opacity-50">
+        class="flex items-center justify-center px-4 py-2 mx-1 space-x-2 text-sm tracking-wide text-white capitalize transition-colors duration-200 transform bg-gray-900 rounded-md btnmenu hover:bg-gray-700 focus:outline-none focus:bg-gray-500 focus:ring focus:ring-gray-300 focus:ring-opacity-50">
         <span>S'inscrire</span>
     </button>
 
@@ -41,7 +41,7 @@
                                     class="w-full px-4 py-3 text-gray-100 bg-gray-900 border-gray-700 rounded-md focus:border-emerald-400">
                             </div>
                             <div class="space-y-1 text-sm">
-                                <label for="email" class="block text-gray-400">Email</label>
+                                <label for="email" class="block text-gray-400">E-mail</label>
                                 <input type="email" name="email" id="email" placeholder="exemple@mail.com"
                                     class="w-full px-4 py-3 text-gray-100 bg-gray-900 border-gray-700 rounded-md focus:border-emerald-400">
                             </div>
@@ -52,13 +52,14 @@
 
                             </div>
                             <div class="space-y-1 text-sm">
-                                <label for="password" class="block text-gray-400">Confirmation du mot de passe</label>
-                                <input id="password" type="password" name="password_confirmation" required placeholder="Confirmation du mot de passe"
+                                <label for="password" class="block text-gray-400">Confirmer votre mot de passe</label>
+                                <input id="password" type="password" name="password_confirmation" required
+                                    placeholder="Confirmer votre mot de passe"
                                     class="w-full px-4 py-3 text-gray-100 bg-gray-900 border-gray-700 rounded-md focus:border-emerald-400">
 
                             </div>
-                                
-                                <button
+
+                            <button
                                 class="block w-full p-3 text-center text-white transition-colors duration-200 rounded bg-emerald-500 hover:bg-emerald-400 focus:bg-emerald-400">S'inscrire
                             </button>
                         </form>

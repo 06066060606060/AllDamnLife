@@ -9,7 +9,8 @@
 
         @if (session('cart_ok'))
             <div x-data="{ show: true }" x-show="show" x-init="setTimeout(() => show = false, 3000, PopupUser())" class="pt-1 pr-4">
-                <div id="popmenu" class="px-4 py-2 text-xs btnmenu text-emerald-500"><i class="fa-solid fa-basket-shopping"></i>&zwnj; Article ajouté au panier</div>
+                <div id="popmenu" class="px-4 py-2 text-xs btnmenu text-emerald-500"><i
+                        class="fa-solid fa-basket-shopping"></i>&zwnj; Article ajouté au panier</div>
             </div>
         @endif
 
@@ -20,7 +21,7 @@
         @endif
         @if (session('error'))
             <div x-data="{ show: true }" x-show="show" x-init="setTimeout(() => show = false, 6000, PopupUser())" class="pt-2 pr-4">
-                <div id="popmenu" class="px-4 py-2 text-red-400 btnmenu">Login ou Mots de passe incorrect</div>
+                <div id="popmenu" class="px-4 py-2 text-red-400 btnmenu">Login ou mot de passe incorrect</div>
             </div>
         @endif
         @if (session('desactivate'))
@@ -28,16 +29,22 @@
                 <div id="popmenu" class="px-4 py-2 text-red-400 btnmenu">Connection impossible, Compte désactivé</div>
             </div>
         @endif
-        @if  ($errors->has('password'))
-        <div x-data="{ show: true }" x-show="show" x-init="setTimeout(() => show = false, 6000, PopupUser())" class="pt-2 pr-4">
-            <div id="popmenu" class="px-4 py-2 text-red-400 btnmenu">Les mots de passe de correspondent pas</div>
-        </div>
-    @endif
-    @if  ($errors->has('email'))
-    <div x-data="{ show: true }" x-show="show" x-init="setTimeout(() => show = false, 6000, PopupUser())" class="pt-2 pr-4">
-        <div id="popmenu" class="px-4 py-2 text-red-400 btnmenu">Cet email existe déjà ou n'est pas valide</div>
-    </div>
-@endif
+
+
+        @if ($errors->has('email', 'password'))
+            <div x-data="{ show: true }" x-show="show" x-init="setTimeout(() => show = false, 6000, PopupUser())" class="pt-2 pr-4">
+                <div id="popmenu" class="px-4 py-2 text-red-400 btnmenu">Email ou mot de passe invalide</div>
+            </div>
+        @elseif ($errors->has('password'))
+            <div x-data="{ show: true }" x-show="show" x-init="setTimeout(() => show = false, 6000, PopupUser())" class="pt-2 pr-4">
+                <div id="popmenu" class="px-4 py-2 text-red-400 btnmenu">Les mots de passe ne correspondent pas</div>
+            </div>
+        @elseif ($errors->has('email'))
+            <div x-data="{ show: true }" x-show="show" x-init="setTimeout(() => show = false, 6000, PopupUser())" class="pt-2 pr-4">
+                <div id="popmenu" class="px-4 py-2 text-red-400 btnmenu">Cet email existe déjà ou n'est pas valide
+                </div>
+            </div>
+        @endif
 
         <div class="sm:hidden md:flex lg:flex">
             @guest
@@ -51,7 +58,7 @@
                 <div class="items-center hidden space-x-2 md:flex lg:flex">
                     @if (Auth::user()->profil == 'admin')
                         <a href="/giftCards"
-                            class="flex items-center justify-center h-8 px-4 pt-1 pb-1 mx-1 space-x-2 tracking-wide text-white transition-colors duration-200 transform bg-blue-600 rounded-md tooltip btnmenu hover:bg-blue-400 focus:outline-none focus:bg-blue-500">
+                            class="flex items-center justify-center h-8 px-4 pt-1 pb-1 mx-1 space-x-2 tracking-wide text-white transition-colors duration-200 transform bg-sky-500 rounded-md tooltip btnmenu hover:bg-blue-400 focus:outline-none focus:bg-blue-500">
                             <i class="fa-solid fa-gear"></i>
                             <span class="px-4 tooltiptext">Gestion</span>
                         </a>
@@ -68,7 +75,7 @@
                         <span class="articles">{{ CartController::MonPanier() }}</span>
                     </a>
                     <a href="/logout"
-                        class="flex items-center justify-center h-8 px-4 pt-1 pb-1 mx-1 space-x-2 tracking-wide text-white transition-colors duration-200 transform bg-gray-600 rounded-md tooltip btnmenu hover:bg-gray-400 focus:outline-none focus:bg-gray-500">
+                        class="flex items-center justify-center h-8 px-4 pt-1 pb-1 mx-1 space-x-2 tracking-wide text-white transition-colors duration-200 transform bg-gray-900 rounded-md tooltip btnmenu hover:bg-gray-400 focus:outline-none focus:bg-gray-500">
                         <i class="fa-solid fa-right-from-bracket"></i>
                         <span class="px-4 tooltiptext">Se déconnecter</span>
                     </a>

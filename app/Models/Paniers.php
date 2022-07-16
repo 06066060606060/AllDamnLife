@@ -12,10 +12,10 @@ class Paniers extends Model
     protected $fillable = [
         'user_id',
         'prod_id',
-        
+
     ];
 
-    
+
     public function user()
     {
         return $this->belongsTo(User::class);
@@ -25,5 +25,4 @@ class Paniers extends Model
     {
         return $this->belongsTo(Produits::class);
     }
-
 }

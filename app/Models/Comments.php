@@ -13,7 +13,7 @@ class Comments extends Model
     protected $fillable = [
         'contenu',
         'titre',
-        
+
     ];
 
     public function produit()
@@ -28,4 +28,3 @@ class Comments extends Model
 }
 
 //comment
-

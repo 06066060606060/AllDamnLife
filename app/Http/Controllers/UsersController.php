@@ -16,10 +16,11 @@ class UsersController extends Controller
 {
     public function getUsers()
     {
-     
-        $users = User::all();
+
+        $users = User::paginate(10);
         return view('users', [
             'users' => $users,
+
         ]);
     }
 
@@ -38,19 +39,18 @@ class UsersController extends Controller
 
     public function updateProfil(Request $request, $id)
     {
-$users = User::where('id', '=', $id)->get();
+        $users = User::where('id', '=', $id)->get();
         $users = User::find($id);
         if ($request->file('photo') != null) {
             $img = Storage::disk('public')->put('img', $request->file('photo'));
             $path = '/storage/' . $img;
-        } elseif($request->file('photo') == null) {
-           $path=$users->photo;
-            
-        }else{
-             $path = 'img/avatar.png' ;
+        } elseif ($request->file('photo') == null) {
+            $path = $users->photo;
+        } else {
+            $path = 'img/avatar.png';
         }
 
-        
+
         $users->nom = $request['nom'];
         $users->prenom = $request['prenom'];
         $users->username = $request['username'];
@@ -61,18 +61,17 @@ $users = User::where('id', '=', $id)->get();
         $users->zipCode = $request['zip'];
         $users->photo = $path;
         if ($request->filled('role')) {
-            $users->profil = $request['role']; }
-            else {
-                $users->profil = $users->profil;
-            }
+            $users->profil = $request['role'];
+        } else {
+            $users->profil = $users->profil;
+        }
         $users->update();
         return redirect()->back();
     }
 
     public function profil()
     {
-        return view('account', [
-        ]);
+        return view('account', []);
     }
 
     public function userprofil($id)
@@ -81,19 +80,18 @@ $users = User::where('id', '=', $id)->get();
         $produits = Produits::all();
         $user = User::where('id', '=', $id)->get();
         $user = User::find($id);
-       
+
         return view('userAccount', [
             'produits' => $produits,
             'comments' => $comments,
             'user' => $user,
-            
+
         ]);
     }
 
     public function Allusers()
     {
-        return view('account', [
-        ]);
+        return view('account', []);
     }
 
     public function showUsers($id)
@@ -103,6 +101,4 @@ $users = User::where('id', '=', $id)->get();
             'users' => $users,
         ]);
     }
-
-    
 }
