@@ -58,7 +58,7 @@
                 <div class="items-center hidden space-x-2 md:flex lg:flex">
                     @if (Auth::user()->profil == 'admin')
                         <a href="/giftCards"
-                            class="flex items-center justify-center h-8 px-4 pt-1 pb-1 mx-1 space-x-2 tracking-wide text-white transition-colors duration-200 transform bg-sky-500 rounded-md tooltip btnmenu hover:bg-blue-400 focus:outline-none focus:bg-blue-500">
+                            class="flex items-center justify-center h-8 px-4 pt-1 pb-1 mx-1 space-x-2 tracking-wide text-white transition-colors duration-200 transform rounded-md bg-sky-500 tooltip btnmenu hover:bg-blue-400 focus:outline-none focus:bg-blue-500">
                             <i class="fa-solid fa-gear"></i>
                             <span class="px-4 tooltiptext">Gestion</span>
                         </a>

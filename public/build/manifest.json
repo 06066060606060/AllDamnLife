@@ -1,10 +1,10 @@
 {
   "resources/js/app.js": {
-    "file": "assets/app.6b2bc8fa.js",
+    "file": "assets/app.a6844c2e.js",
     "src": "resources/js/app.js",
     "isEntry": true,
     "css": [
-      "assets/app.e602c467.css"
+      "assets/app.6bf17bf6.css"
     ],
     "assets": [
       "assets/fa-regular-400.6a274e76.woff2",
@@ -16,7 +16,7 @@
     ]
   },
   "resources/css/app.css": {
-    "file": "assets/app.e602c467.css",
+    "file": "assets/app.6bf17bf6.css",
     "src": "resources/css/app.css",
     "isEntry": true
   }

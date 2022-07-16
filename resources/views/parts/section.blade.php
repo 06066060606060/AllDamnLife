@@ -1,5 +1,5 @@
 @php   use \App\Http\Controllers\CategoriesController; @endphp
-<div class="max-w-screen-xl p-5 mx-auto text-gray-100">
+<div class="max-w-screen-xl p-5 mx-auto text-gray-100"  id="app">
     <div class="gride justify-items-center x">
         @forelse ($produits as $produit)
             <div class="opacity-100 flip-card">
@@ -30,15 +30,7 @@
                                 <img class="w-auto h-20 icon" src="{{ $produit->image }}">
                                 <span class="p-4 clamp">{{ $produit->description }}</span>
 
-                                <form @auth action="/addtocart/{{ $produit->id }}" method="post"
-                                    onsubmit="myButton.disabled = true; return true;" @else
-                                        onclick="document.getElementById('primaryButton').click()" onsubmit="return false"
-                                    @endauth
-                                    class="px-2 py-2 mt-4 mb-3 transition-colors duration-150 rounded w-36 bg-violet-800 hover:bg-emerald-300 hover:text-violet-800">
-                                    @csrf
-                                    <input type="hidden" name="quantite" value="1">
-                                    <button name="myButton" type="submit">Ajouter au panier</button>
-                                </form>
+                                <add-to-cart :produit-id="{{ $produit->id }}"></add-to-cart>
 
                                 <a href="/card/{{ $produit->id }}"
                                     class="text-lg text-white underline transition-colors duration-150 rounded w-36 text-bold hover:text-gray-800">Plus
