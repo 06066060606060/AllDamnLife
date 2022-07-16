@@ -5,8 +5,20 @@
 </template>
 
 <script setup>
-const produitId = defineProps(['produitId'])
-const addToCart = () => {
-console.log(produitId);
-}
+import axios from 'axios';
+
+const data = defineProps(['produitId'])
+  console.log(myToken.csrfToken);
+
+const addToCart = async() => {
+     console.log('oki')
+         axios.post('/addtocart/'+data.produitId,{
+            _token: myToken.csrfToken,
+            quantite: 1,
+           
+         })
+       
+        .catch(err => console.log(err));
+        
+    }
 </script>

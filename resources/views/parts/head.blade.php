@@ -3,6 +3,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 @vite(['resources/css/app.css', 'resources/js/app.js'])
 <title> AllDamnLife - Réduis le prix de tes abonnements</title>
+<script> myToken =  <?php echo json_encode(['csrfToken' => csrf_token(),]); ?></script>
 
 <!-- SEO Google -->
 <meta name="title" content="Réduis le prix de tes abonnements - AllDamnLife">

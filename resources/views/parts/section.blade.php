@@ -30,7 +30,7 @@
                                 <img class="w-auto h-20 icon" src="{{ $produit->image }}">
                                 <span class="p-4 clamp">{{ $produit->description }}</span>
 
-                                <add-to-cart :produit-id="{{ $produit->id }}"></add-to-cart>
+                                <add-to-cart :produit-id="{{ $produit->id }}" :logged-id="{{ Auth::check()}}"></add-to-cart>
 
                                 <a href="/card/{{ $produit->id }}"
                                     class="text-lg text-white underline transition-colors duration-150 rounded w-36 text-bold hover:text-gray-800">Plus
