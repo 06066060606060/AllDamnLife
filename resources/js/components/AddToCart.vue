@@ -17,7 +17,7 @@ const addToCart = async() => {
             quantite: 1,
            
          })
-       
+        alert('Produit ajouté au panier')
         .catch(err => console.log(err));
         
     }
