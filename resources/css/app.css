@@ -29,6 +29,9 @@
     display: none;
 }
 
+[v-cloak] {
+    display: none;
+  }
 
 img {
     -webkit-user-select: none;
