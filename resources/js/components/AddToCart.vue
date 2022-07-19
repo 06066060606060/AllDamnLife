@@ -10,10 +10,10 @@
 import axios from 'axios';
 
 const data = defineProps(['produitId'])
-console.log(myToken.csrfToken);
+
 
 const addToCart = async () => {
-  console.log('add to cart')
+ 
   PopupUser()
   axios.post('/addtocart/' + data.produitId, {
     _token: myToken.csrfToken,
@@ -24,11 +24,11 @@ const addToCart = async () => {
 }
 
 function PopupUser() {
-  console.log('popup');
+ 
   var updateElement = document.getElementById("pop");
   updateElement.classList.toggle("active");
   setTimeout(() => { updateElement.classList.toggle("active"); }, 500);
-  console.log('popup oki');
+  // alert("Votre produit a été ajouté au panier");
 }
 
 </script>
