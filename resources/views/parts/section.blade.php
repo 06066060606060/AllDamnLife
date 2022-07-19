@@ -1,8 +1,11 @@
 @php   use \App\Http\Controllers\CategoriesController; @endphp
 
-<div id="pop" class="px-4 py-2 text-xs btnmenu text-emerald-500"><i class="fa-solid fa-basket-shopping"></i>&zwnj; Article ajouté au panier</div>
-
 <div class="max-w-screen-xl p-5 mx-auto text-gray-100" id="app">
+
+    <div v-cloak>
+        <div id="pop" class="px-4 py-2 text-xs btnmenu text-emerald-500"><i class="fa-solid fa-basket-shopping"></i>&zwnj; Article ajouté au panier</div>
+    </div>
+
     <div class="gride justify-items-center x">
         @forelse ($produits as $produit)
             <div class="opacity-100 flip-card">
